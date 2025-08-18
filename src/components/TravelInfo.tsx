@@ -11,7 +11,7 @@ const TravelInfo = () => {
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
-            All information ni behöver för att komma till oss och bo bekvämt under helgen
+            TEST TEST All information ni behöver för att komma till oss och bo bekvämt under helgen
           </p>
         </div>
 
