@@ -61,7 +61,25 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				wedding: {
+					cream: 'hsl(var(--wedding-cream))',
+					gold: 'hsl(var(--wedding-gold))',
+					sage: 'hsl(var(--wedding-sage))',
+					blush: 'hsl(var(--wedding-blush))'
 				}
+			},
+			fontFamily: {
+				script: 'var(--font-script)',
+				serif: 'var(--font-serif)'
+			},
+			backgroundImage: {
+				'gradient-romantic': 'var(--gradient-romantic)',
+				'gradient-gold': 'var(--gradient-gold)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'elegant': 'var(--shadow-elegant)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
