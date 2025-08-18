@@ -11,7 +11,7 @@ const TravelInfo = () => {
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
-            TEST TEST All information ni behöver för att komma till oss och bo bekvämt under helgen
+            All information ni behöver för att komma till oss och bo bekvämt under helgen
           </p>
         </div>
 
@@ -80,7 +80,7 @@ const TravelInfo = () => {
                   <h4 className="font-semibold text-primary mb-2">Sevärdheter:</h4>
                   <ul className="space-y-1 text-sm">
                     <li>• Västerås domkyrka</li>
-                    <li>• Kokpunkten Actionbad</li>
+                    <li>• Frösåker Golfbana</li>
                   </ul>
                 </div>
                 <div>
