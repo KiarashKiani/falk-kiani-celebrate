@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* Wedding Design System - Elegant & Romantic */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 @layer base {
   :root {
@@ -44,7 +43,7 @@
 
     /* Typography */
     --font-script: 'Dancing Script', cursive;
-    --font-serif: 'Crimson Text', serif;
+    --font-sans: 'Open Sans', sans-serif;
 
     /* Gradients */
     --gradient-romantic: linear-gradient(135deg, hsl(var(--wedding-cream)), hsl(var(--wedding-blush)));

@@ -71,7 +71,7 @@ export default {
 			},
 			fontFamily: {
 				script: 'var(--font-script)',
-				serif: 'var(--font-serif)'
+				sans: 'var(--font-sans)'
 			},
 			backgroundImage: {
 				'gradient-romantic': 'var(--gradient-romantic)',
