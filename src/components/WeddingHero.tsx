@@ -22,26 +22,6 @@ const WeddingHero = () => {
             Vi gifter oss!
           </p>
         </div>
-        
-        <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-elegant">
-          <h2 className="font-serif text-2xl font-semibold text-primary mb-4">
-            17–18 september 2026
-          </h2>
-          <p className="font-serif text-lg text-muted-foreground mb-2">
-            <span className="font-semibold">Fredag 17 september:</span> Meet & Greet, start kl. 18.00
-          </p>
-          <p className="font-serif text-lg text-muted-foreground mb-6">
-            <span className="font-semibold">Lördag 18 september:</span> Vigsel, bröllopsmiddag & fest
-          </p>
-          <div className="border-t border-border pt-4">
-            <p className="font-serif text-lg text-primary font-semibold">
-              Nybynäsgård (Magasinet), utanför Västerås
-            </p>
-            <p className="font-serif text-muted-foreground">
-              En vacker miljö där vi vill samla våra nära och kära för att fira vår dag
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
