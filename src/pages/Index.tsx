@@ -11,12 +11,12 @@ import PasswordGate from "@/components/PasswordGate";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <WeddingNavigation />
       <main>
         <section id="home">
           <WeddingHero />
         </section>
         <PasswordGate>
+          <WeddingNavigation />
           <CountdownTimer />
           <TravelInfo />
           <Timeline />
