@@ -16,8 +16,8 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
   const CORRECT_PASSWORD = "KimjaJohanna";
 
   useEffect(() => {
-    // Check if user is already authenticated
-    const stored = localStorage.getItem("wedding-authenticated");
+    // Check if user is already authenticated (session only)
+    const stored = sessionStorage.getItem("wedding-authenticated");
     if (stored === "true") {
       setIsAuthenticated(true);
     }
@@ -27,7 +27,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
     e.preventDefault();
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
-      localStorage.setItem("wedding-authenticated", "true");
+      sessionStorage.setItem("wedding-authenticated", "true");
       setError("");
     } else {
       setError("Fel lösenord. Försök igen.");
