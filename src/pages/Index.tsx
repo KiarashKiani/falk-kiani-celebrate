@@ -6,6 +6,7 @@ import Timeline from "@/components/Timeline";
 import RSVPForm from "@/components/RSVPForm";
 import WeddingDetails from "@/components/WeddingDetails";
 import ContactSection from "@/components/ContactSection";
+import PasswordGate from "@/components/PasswordGate";
 
 const Index = () => {
   return (
@@ -15,12 +16,14 @@ const Index = () => {
         <section id="home">
           <WeddingHero />
         </section>
-        <CountdownTimer />
-        <TravelInfo />
-        <Timeline />
-        <RSVPForm />
-        <WeddingDetails />
-        <ContactSection />
+        <PasswordGate>
+          <CountdownTimer />
+          <TravelInfo />
+          <Timeline />
+          <RSVPForm />
+          <WeddingDetails />
+          <ContactSection />
+        </PasswordGate>
       </main>
     </div>
   );
