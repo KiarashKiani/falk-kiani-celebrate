@@ -31,11 +31,14 @@ const WeddingNavigation = () => {
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash" 
-            className="h-12 w-auto"
+            className="h-10 md:h-12 w-auto"
             style={{
-              imageRendering: 'pixelated',
-              filter: 'contrast(1.1) brightness(1.05)'
+              imageRendering: 'auto',
+              filter: 'none',
+              maxWidth: '100%',
+              height: 'auto'
             }}
+            loading="eager"
           />
           
           {/* Desktop Navigation */}
