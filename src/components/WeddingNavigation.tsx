@@ -32,6 +32,10 @@ const WeddingNavigation = () => {
             src={weddingLogo} 
             alt="Josefin & Kiarash" 
             className="h-8 w-auto"
+            style={{
+              imageRendering: 'pixelated',
+              filter: 'contrast(1.1) brightness(1.05)'
+            }}
           />
           
           {/* Desktop Navigation */}
