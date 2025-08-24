@@ -13,13 +13,11 @@ const WeddingHero = () => {
       
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-8">
-          <div className="bg-white p-8 rounded-lg">
-            <img 
-              src={weddingLogo} 
-              alt="Josefin & Kiarash Wedding Logo" 
-              className="w-96 h-auto mx-auto"
-            />
-          </div>
+          <img 
+            src={weddingLogo} 
+            alt="Josefin & Kiarash Wedding Logo" 
+            className="w-96 h-auto mx-auto mb-6"
+          />
           <p className="font-serif text-xl md:text-2xl text-primary/80 mb-8">
             Vi gifter oss!
           </p>
