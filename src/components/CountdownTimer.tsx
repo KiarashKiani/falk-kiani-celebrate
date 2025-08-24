@@ -32,12 +32,6 @@ const CountdownTimer = () => {
   return (
     <section id="countdown" className="py-20 bg-gradient-gold">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
-          Nedräkning till vår stora dag
-        </h2>
-        <p className="font-serif text-lg text-muted-foreground mb-12">
-          Vi räknar ner dagarna tills vi får fira med er!
-        </p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="bg-card rounded-2xl p-6 shadow-soft">
