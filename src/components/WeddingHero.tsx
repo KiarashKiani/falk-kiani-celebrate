@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+const weddingLogo = "/lovable-uploads/9231c8ff-f323-4623-b942-658fec2dcfa5.png";
 
 const WeddingHero = () => {
   return (
@@ -13,11 +13,11 @@ const WeddingHero = () => {
       
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-8">
-          <Heart className="w-12 h-12 mx-auto mb-6 text-primary animate-pulse" />
-          <h1 className="font-script text-6xl md:text-8xl font-bold text-primary mb-4">
-            Josefin & Kiarash
-          </h1>
-          <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
+          <img 
+            src={weddingLogo} 
+            alt="Josefin & Kiarash Wedding Logo" 
+            className="w-96 h-auto mx-auto mb-6"
+          />
           <p className="font-serif text-xl md:text-2xl text-primary/80 mb-8">
             Vi gifter oss!
           </p>
