@@ -46,7 +46,7 @@
     --font-sans: 'Open Sans', sans-serif;
 
     /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(var(--wedding-cream)), hsl(var(--wedding-blush)));
+    --gradient-romantic: linear-gradient(135deg, hsl(95 30% 32%), hsl(95 25% 28%));
     --gradient-gold: linear-gradient(135deg, hsl(var(--wedding-gold)), hsl(var(--accent)));
 
     /* Shadows */
