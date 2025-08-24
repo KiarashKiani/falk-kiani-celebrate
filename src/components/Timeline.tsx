@@ -41,14 +41,6 @@ const Timeline = () => {
       description: "Nu dansar vi natten lång!",
       icon: Music,
       color: "text-primary"
-    },
-    {
-      day: "Söndag 19 september",
-      title: "Avslutande brunch",
-      time: "11:00",
-      description: "En avslappnad brunch för att avrunda helgen tillsammans",
-      icon: Coffee,
-      color: "text-wedding-sage"
     }
   ];
 
