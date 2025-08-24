@@ -59,9 +59,14 @@ const TravelInfo = () => {
             <CardContent className="font-serif text-muted-foreground">
               <p className="font-semibold mb-2">Nybynäs Gård</p>
               <p className="text-sm">Kärrbo Nyby 1, 725 97 Västerås</p>
-              <button className="mt-3 text-primary hover:text-primary/70 text-sm underline">
+              <a 
+                href="https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69?g_st=ipc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 text-primary hover:text-primary/70 text-sm underline"
+              >
                 Öppna i Google Maps
-              </button>
+              </a>
             </CardContent>
           </Card>
 
