@@ -16,14 +16,11 @@ const WeddingHero = () => {
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
-            className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto mx-auto mb-6"
+            className="w-96 h-auto mx-auto mb-6"
             style={{
-              imageRendering: 'auto',
-              filter: 'none',
-              maxWidth: '100%',
-              height: 'auto'
+              imageRendering: 'pixelated',
+              filter: 'contrast(1.1) brightness(1.05)'
             }}
-            loading="eager"
           />
           <p className="font-serif text-xl md:text-2xl text-primary/80 mb-8">
             Vi gifter oss!
