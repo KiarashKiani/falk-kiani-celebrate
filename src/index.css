@@ -42,7 +42,7 @@
     --wedding-blush: 15 25% 90%;
 
     /* Typography */
-    --font-script: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-script: 'Josefin Sans', sans-serif;
     --font-sans: 'Open Sans', sans-serif;
 
     /* Gradients */
