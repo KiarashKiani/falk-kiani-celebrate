@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 
+const weddingLogo = "/lovable-uploads/9231c8ff-f323-4623-b942-658fec2dcfa5.png";
+
 const WeddingNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,8 +28,13 @@ const WeddingNavigation = () => {
     <nav className="fixed top-0 w-full bg-card/90 backdrop-blur-md border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="font-script text-2xl font-bold text-primary">
-            J & K
+          <div className="flex items-center">
+            <img 
+              src={weddingLogo} 
+              alt="Josefin & Kiarash" 
+              className="h-8 w-auto"
+              style={{ backgroundColor: '#4B6B3D' }}
+            />
           </div>
           
           {/* Desktop Navigation */}
