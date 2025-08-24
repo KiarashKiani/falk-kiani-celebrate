@@ -1,4 +1,4 @@
-const weddingLogo = "/lovable-uploads/9231c8ff-f323-4623-b942-658fec2dcfa5.png";
+const weddingLogo = "/lovable-uploads/22fe2962-279f-4216-b9f3-3e88381f178f.png";
 
 const WeddingHero = () => {
   return (
