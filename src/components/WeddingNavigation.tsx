@@ -31,7 +31,7 @@ const WeddingNavigation = () => {
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash" 
-            className="h-12 w-auto"
+            className="h-18 w-auto"
             style={{
               imageRendering: 'pixelated',
               filter: 'contrast(1.1) brightness(1.05)'
