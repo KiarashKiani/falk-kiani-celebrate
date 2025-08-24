@@ -18,7 +18,7 @@ const WeddingDetails = () => {
     {
       icon: Baby,
       title: "Barn",
-      content: "Barn är varmt välkomna under dagen. På kvällen önskar vi fira med vuxna gäster.",
+      content: "Vi vill att ni som gäster ska kunna njuta fullt ut utan vardagens ansvar. Därför firar vi som en vuxenfest. Ammande spädbarn är givetvis varmt välkomna.",
       color: "text-wedding-gold"
     },
     {
