@@ -5,6 +5,7 @@ import TravelInfo from "@/components/TravelInfo";
 import Timeline from "@/components/Timeline";
 import RSVPForm from "@/components/RSVPForm";
 import WeddingDetails from "@/components/WeddingDetails";
+import ClothingCode from "@/components/ClothingCode";
 import ContactSection from "@/components/ContactSection";
 import PasswordGate from "@/components/PasswordGate";
 
@@ -22,6 +23,7 @@ const Index = () => {
           <Timeline />
           <RSVPForm />
           <WeddingDetails />
+          <ClothingCode />
           <ContactSection />
         </PasswordGate>
       </main>
