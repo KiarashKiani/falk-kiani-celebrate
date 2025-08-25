@@ -29,9 +29,15 @@ const WeddingDetails = () => {
     },
     {
       icon: MapPin,
-      title: "Tillgänglighet",
-      content: "Lokalen är handikappanpassad. Hör gärna av er om ni har särskilda behov.",
+      title: "Inomhus / Utomhus",
+      content: "Vigseln hålls i äppellunden utomhus (vid bra väder). Middag och fest hålls inomhus i Magasinet.",
       color: "text-wedding-sage"
+    },
+    {
+      icon: Camera,
+      title: "Bilder efter bröllopet",
+      content: "Efter bröllopet kommer vi samla alla bilder här så att ni kan ladda ner och återuppleva dagen tillsammans med oss.",
+      color: "text-wedding-blush"
     }
   ];
 
@@ -48,92 +54,64 @@ const WeddingDetails = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid of 6 equal-sized boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {details.map((detail, index) => (
-            <Card key={index} className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+            <Card key={index} className="shadow-soft hover:shadow-elegant transition-shadow duration-300 h-full">
               <CardHeader>
-                <CardTitle className="flex items-start font-serif">
+                <CardTitle className="flex items-start font-serif text-lg">
                   <detail.icon className={`w-6 h-6 mr-3 mt-1 ${detail.color} flex-shrink-0`} />
                   <span>{detail.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="font-serif text-muted-foreground">
-                <p>{detail.content}</p>
+                <p className="text-sm leading-relaxed">{detail.content}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Special sections */}
-        <div className="mt-12 space-y-8">
-          {/* Dress code section */}
-          <Card className="shadow-soft">
-            <CardHeader>
-              <CardTitle className="flex items-center font-serif text-xl">
-                <Shirt className="w-6 h-6 mr-3 text-primary" />
-                <span>Klädkod</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="font-serif text-muted-foreground space-y-6">
-              <div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
-                  Fredag – Festfint
-                </h3>
-                <p>Festfint. Kvällarna kan bli svala – ta gärna med en extra tröja eller sjal.</p>
+        {/* Larger Dress Code section */}
+        <Card className="shadow-soft">
+          <CardHeader>
+            <CardTitle className="flex items-center font-serif text-xl">
+              <Shirt className="w-6 h-6 mr-3 text-primary" />
+              <span>Klädkod</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="font-serif text-muted-foreground space-y-6">
+            <div>
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+                Fredag – Festfint
+              </h3>
+              <p>Festfint. Kvällarna kan bli svala – ta gärna med en extra tröja eller sjal.</p>
+            </div>
+            
+            <div>
+              <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
+                Lördag – Mörk kostym (smoking går såklart bra)
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.stroms.com/kladkod-brollop-dam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-serif transition-colors duration-200 text-sm"
+                >
+                  Beskrivning för kvinnor
+                </a>
+                <a
+                  href="https://www.stroms.com/kladkod-brollop-herr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md font-serif transition-colors duration-200 text-sm"
+                >
+                  Beskrivning för män
+                </a>
               </div>
-              
-              <div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
-                  Lördag – Mörk kostym (smoking går såklart bra)
-                </h3>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://www.stroms.com/kladkod-brollop-dam/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-serif transition-colors duration-200 text-sm"
-                  >
-                    Beskrivning för kvinnor
-                  </a>
-                  <a
-                    href="https://www.stroms.com/kladkod-brollop-herr/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md font-serif transition-colors duration-200 text-sm"
-                  >
-                    Beskrivning för män
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="font-serif text-xl">Inomhus / Utomhus</CardTitle>
-              </CardHeader>
-              <CardContent className="font-serif text-muted-foreground">
-                <p>
-                  Vigseln hålls i äppellunden utomhus (vid bra väder). 
-                  Middag och fest hålls inomhus i Magasinet.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="font-serif text-xl">Bilder efter bröllopet</CardTitle>
-              </CardHeader>
-              <CardContent className="font-serif text-muted-foreground">
-                <p>
-                  Efter bröllopet kommer vi samla alla bilder här så att ni kan 
-                  ladda ner och återuppleva dagen tillsammans med oss.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
