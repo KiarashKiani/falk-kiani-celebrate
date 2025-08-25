@@ -1,6 +1,9 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const weddingLogo = "/lovable-uploads/22fe2962-279f-4216-b9f3-3e88381f178f.png";
 
 const WeddingHero = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-romantic overflow-hidden">
       {/* Decorative elements */}
@@ -23,7 +26,7 @@ const WeddingHero = () => {
             }}
           />
           <p className="font-serif text-xl md:text-2xl text-primary/80 mb-8">
-            Vi gifter oss!
+            {t("hero.subtitle")}
           </p>
         </div>
       </div>

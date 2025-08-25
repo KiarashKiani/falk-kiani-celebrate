@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CountdownTimer = () => {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -34,11 +36,11 @@ const CountdownTimer = () => {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
-            Nedräkning till vårt bröllop
+            {t("countdown.title")}
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground">
-            Snart är den stora dagen här!
+            {t("countdown.subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -47,7 +49,7 @@ const CountdownTimer = () => {
               {timeLeft.days}
             </div>
             <div className="font-serif text-sm text-muted-foreground uppercase tracking-wide">
-              Dagar
+              {t("countdown.days")}
             </div>
           </div>
           <div className="bg-card rounded-2xl p-6 shadow-soft">
@@ -55,7 +57,7 @@ const CountdownTimer = () => {
               {timeLeft.hours}
             </div>
             <div className="font-serif text-sm text-muted-foreground uppercase tracking-wide">
-              Timmar
+              {t("countdown.hours")}
             </div>
           </div>
           <div className="bg-card rounded-2xl p-6 shadow-soft">
@@ -63,7 +65,7 @@ const CountdownTimer = () => {
               {timeLeft.minutes}
             </div>
             <div className="font-serif text-sm text-muted-foreground uppercase tracking-wide">
-              Minuter
+              {t("countdown.minutes")}
             </div>
           </div>
           <div className="bg-card rounded-2xl p-6 shadow-soft">
@@ -71,7 +73,7 @@ const CountdownTimer = () => {
               {timeLeft.seconds}
             </div>
             <div className="font-serif text-sm text-muted-foreground uppercase tracking-wide">
-              Sekunder
+              {t("countdown.seconds")}
             </div>
           </div>
         </div>

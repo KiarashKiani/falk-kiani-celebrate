@@ -1,11 +1,11 @@
 import WeddingNavigation from "@/components/WeddingNavigation";
 import WeddingHero from "@/components/WeddingHero";
 import CountdownTimer from "@/components/CountdownTimer";
-import TravelInfo from "@/components/TravelInfo";
-import Timeline from "@/components/Timeline";
-import RSVPForm from "@/components/RSVPForm";
+import TravelInfo from "@/components/TravelInfoUpdated";
+import Timeline from "@/components/TimelineUpdated";
+import RSVPForm from "@/components/RSVPFormUpdated";
 import WeddingDetails from "@/components/WeddingDetails";
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/ContactSectionUpdated";
 import PasswordGate from "@/components/PasswordGate";
 
 const Index = () => {
