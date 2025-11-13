@@ -5,13 +5,6 @@ const WeddingHero = () => {
   const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 opacity-20">
-        <div className="w-32 h-32 border border-primary/20 rounded-full"></div>
-      </div>
-      <div className="absolute bottom-20 right-10 opacity-20">
-        <div className="w-24 h-24 border border-primary/20 rounded-full"></div>
-      </div>
       
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-8">
