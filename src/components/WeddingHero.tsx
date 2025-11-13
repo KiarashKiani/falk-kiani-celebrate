@@ -12,10 +12,6 @@ const WeddingHero = () => {
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
             className="w-96 h-auto mx-auto mb-6"
-            style={{
-              mixBlendMode: 'multiply',
-              filter: 'contrast(1.2)'
-            }}
           />
           <p className="font-serif text-xl md:text-2xl text-foreground mb-8">
             {t("hero.subtitle")}
