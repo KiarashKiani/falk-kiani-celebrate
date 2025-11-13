@@ -11,7 +11,7 @@ const WeddingHero = () => {
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
-            className="w-96 h-auto mx-auto mb-6"
+            className="w-full max-w-2xl h-auto mx-auto mb-6"
           />
           <p className="font-serif text-xl md:text-2xl text-foreground mb-8">
             {t("hero.subtitle")}
