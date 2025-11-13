@@ -41,7 +41,7 @@ const Timeline = () => {
   ];
 
   return (
-    <section id="timeline" className="py-20 bg-gradient-blush">
+    <section id="timeline" className="py-20 bg-wedding-sage">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
