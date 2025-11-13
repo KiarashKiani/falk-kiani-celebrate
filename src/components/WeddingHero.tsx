@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import weddingLogo from "@/assets/wedding-logo.png";
-import TransparentLogo from "@/components/TransparentLogo";
 
 const WeddingHero = () => {
   const { t } = useLanguage();
@@ -9,9 +8,9 @@ const WeddingHero = () => {
       
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-8">
-          <TransparentLogo 
-            src={weddingLogo}
-            alt="Josefin & Kiarash Wedding Logo"
+          <img 
+            src={weddingLogo} 
+            alt="Josefin & Kiarash Wedding Logo" 
             className="w-96 h-auto mx-auto mb-6"
           />
           <p className="font-serif text-xl md:text-2xl text-foreground mb-8">
