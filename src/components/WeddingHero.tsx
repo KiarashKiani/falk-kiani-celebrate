@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const weddingLogo = "/lovable-uploads/22fe2962-279f-4216-b9f3-3e88381f178f.png";
+import weddingLogo from "@/assets/wedding-logo.png";
 
 const WeddingHero = () => {
   const { t } = useLanguage();
