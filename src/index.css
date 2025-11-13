@@ -7,33 +7,33 @@
 @layer base {
   :root {
     /* Elegant Wedding Color Palette */
-    --background: 95 30% 32%;
-    --foreground: 90 35% 78%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 95 30% 32%;
-    --card-foreground: 90 35% 78%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 95 30% 32%;
-    --popover-foreground: 90 35% 78%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 90 35% 78%;
-    --primary-foreground: 95 30% 32%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 95 25% 28%;
-    --secondary-foreground: 90 35% 78%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 95 20% 25%;
-    --muted-foreground: 90 30% 65%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 95 25% 35%;
-    --accent-foreground: 90 35% 78%;
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 30 15% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 95%;
-    --ring: 25 25% 35%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 0 0% 60%;
 
     /* Wedding-specific colors */
     --wedding-cream: 30 25% 95%;
@@ -46,7 +46,7 @@
     --font-sans: 'Open Sans', sans-serif;
 
     /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(95 30% 32%), hsl(95 25% 28%));
+    --gradient-romantic: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%));
     --gradient-gold: linear-gradient(135deg, hsl(var(--wedding-gold)), hsl(var(--accent)));
 
     /* Shadows */
