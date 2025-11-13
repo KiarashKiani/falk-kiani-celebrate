@@ -4,7 +4,7 @@ import weddingLogo from "@/assets/wedding-logo.png";
 const WeddingHero = () => {
   const { t } = useLanguage();
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-romantic overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 opacity-20">
         <div className="w-32 h-32 border border-primary/20 rounded-full"></div>
@@ -24,7 +24,7 @@ const WeddingHero = () => {
               filter: 'contrast(1.1) brightness(1.05)'
             }}
           />
-          <p className="font-serif text-xl md:text-2xl text-primary/80 mb-8">
+          <p className="font-serif text-xl md:text-2xl text-foreground mb-8">
             {t("hero.subtitle")}
           </p>
         </div>
