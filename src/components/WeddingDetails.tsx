@@ -1,4 +1,4 @@
-import { Shirt, Car, Baby, Camera, Gift, MapPin, Bus, Hotel, Calendar } from "lucide-react";
+import { Shirt, Car, Baby, Camera, Gift, MapPin, Bus, Hotel } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -23,12 +23,6 @@ const WeddingDetails = () => {
       title: t("travel.directions.title"),
       content: t("travel.directions.content"),
       color: "text-wedding-blush"
-    },
-    {
-      icon: Calendar,
-      title: t("travel.weekend.title"),
-      content: t("travel.weekend.content"),
-      color: "text-primary"
     },
     {
       icon: Car,
