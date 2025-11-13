@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import weddingLogo from "@/assets/wedding-logo.png";
+import weddingLogo from "@/assets/wedding-logo-2026.png";
 
 const WeddingHero = () => {
   const { t } = useLanguage();
