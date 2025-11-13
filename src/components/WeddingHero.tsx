@@ -4,7 +4,7 @@ import weddingLogo from "@/assets/wedding-logo.png";
 const WeddingHero = () => {
   const { t } = useLanguage();
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-wedding-sage overflow-hidden">
       
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-8">
