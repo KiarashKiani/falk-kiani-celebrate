@@ -1,7 +1,6 @@
 import WeddingNavigation from "@/components/WeddingNavigation";
 import WeddingHero from "@/components/WeddingHero";
 import CountdownTimer from "@/components/CountdownTimer";
-import TravelInfo from "@/components/TravelInfoUpdated";
 import Timeline from "@/components/TimelineUpdated";
 import RSVPForm from "@/components/RSVPFormUpdated";
 import WeddingDetails from "@/components/WeddingDetails";
@@ -18,7 +17,6 @@ const Index = () => {
         <PasswordGate>
           <WeddingNavigation />
           <CountdownTimer />
-          <TravelInfo />
           <Timeline />
           <RSVPForm />
           <WeddingDetails />
