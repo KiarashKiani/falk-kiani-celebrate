@@ -32,7 +32,7 @@ const WeddingNavigation = () => {
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash" 
-            className="h-8 w-auto"
+            className="h-12 w-auto"
           />
           
           {/* Desktop Navigation */}
