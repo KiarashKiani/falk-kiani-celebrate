@@ -13,8 +13,8 @@ const WeddingHero = () => {
             alt="Josefin & Kiarash Wedding Logo" 
             className="w-96 h-auto mx-auto mb-6"
             style={{
-              imageRendering: 'pixelated',
-              filter: 'contrast(1.1) brightness(1.05)'
+              mixBlendMode: 'multiply',
+              filter: 'contrast(1.2)'
             }}
           />
           <p className="font-serif text-xl md:text-2xl text-foreground mb-8">
