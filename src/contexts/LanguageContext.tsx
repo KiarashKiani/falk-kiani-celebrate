@@ -340,8 +340,33 @@ const translations = {
   }
 };
 
+const getInitialLanguage = (): Language => {
+  // Check if user has a saved preference
+  const saved = localStorage.getItem('wedding-language') as Language | null;
+  if (saved && ['sv', 'en', 'de'].includes(saved)) {
+    return saved;
+  }
+  
+  // Detect from browser language
+  const browserLang = navigator.language.toLowerCase();
+  
+  if (browserLang.startsWith('de')) {
+    return 'de';
+  }
+  if (browserLang.startsWith('en')) {
+    return 'en';
+  }
+  // Default to Swedish
+  return 'sv';
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('sv');
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+
+  const setLanguage = (lang: Language) => {
+    localStorage.setItem('wedding-language', lang);
+    setLanguageState(lang);
+  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;
