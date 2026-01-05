@@ -119,6 +119,13 @@ const translations = {
     'contact.message': 'Vi ser fram emot att fira med er! Har ni några frågor är ni alltid välkomna att höra av er till oss.',
     'contact.regards': 'Med kärlek,',
     'contact.names': 'Josefin & Kiarash',
+    
+    // Password Gate
+    'password.title': 'Välkommen till vårt bröllop',
+    'password.subtitle': 'För att se mer detaljerad information behöver du ange lösenordet',
+    'password.placeholder': 'Ange lösenord',
+    'password.error': 'Fel lösenord. Försök igen.',
+    'password.submit': 'Fortsätt',
   },
   en: {
     // Navigation
@@ -228,6 +235,13 @@ const translations = {
     'contact.message': 'We look forward to celebrating with you! If you have any questions, please don\'t hesitate to reach out to us.',
     'contact.regards': 'With love,',
     'contact.names': 'Josefin & Kiarash',
+    
+    // Password Gate
+    'password.title': 'Welcome to our wedding',
+    'password.subtitle': 'To see more detailed information, please enter the password',
+    'password.placeholder': 'Enter password',
+    'password.error': 'Wrong password. Please try again.',
+    'password.submit': 'Continue',
   },
   de: {
     // Navigation
@@ -337,6 +351,13 @@ const translations = {
     'contact.message': 'Wir freuen uns darauf, mit euch zu feiern! Bei Fragen könnt ihr euch jederzeit an uns wenden.',
     'contact.regards': 'Mit Liebe,',
     'contact.names': 'Josefin & Kiarash',
+    
+    // Password Gate
+    'password.title': 'Willkommen zu unserer Hochzeit',
+    'password.subtitle': 'Um weitere Informationen zu sehen, gib bitte das Passwort ein',
+    'password.placeholder': 'Passwort eingeben',
+    'password.error': 'Falsches Passwort. Bitte versuche es erneut.',
+    'password.submit': 'Weiter',
   }
 };
 
