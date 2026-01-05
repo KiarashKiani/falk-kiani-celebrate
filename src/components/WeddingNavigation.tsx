@@ -51,10 +51,10 @@ const WeddingNavigation = () => {
             <div className="flex items-center space-x-2 ml-4">
               <Globe className="w-4 h-4 text-primary" />
               <button
-                onClick={() => setLanguage(language === 'sv' ? 'en' : 'sv')}
+                onClick={() => setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv')}
                 className="font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
               >
-                {language === 'sv' ? 'English' : 'Svenska'}
+                {language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}
               </button>
             </div>
           </div>
@@ -91,12 +91,12 @@ const WeddingNavigation = () => {
                 <Globe className="w-4 h-4 text-primary" />
                 <button
                   onClick={() => {
-                    setLanguage(language === 'sv' ? 'en' : 'sv');
+                    setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv');
                     setIsOpen(false);
                   }}
                   className="font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
                 >
-                  {language === 'sv' ? 'English' : 'Svenska'}
+                  {language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}
                 </button>
               </div>
             </div>

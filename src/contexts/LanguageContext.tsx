@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'sv' | 'en';
+type Language = 'sv' | 'en' | 'de';
 
 interface LanguageContextType {
   language: Language;
@@ -227,6 +227,115 @@ const translations = {
     'contact.title': 'Contact',
     'contact.message': 'We look forward to celebrating with you! If you have any questions, please don\'t hesitate to reach out to us.',
     'contact.regards': 'With love,',
+    'contact.names': 'Josefin & Kiarash',
+  },
+  de: {
+    // Navigation
+    'nav.home': 'Startseite',
+    'nav.info': 'Information',
+    'nav.travel': 'Anreise',
+    'nav.timeline': 'Ablauf',
+    'nav.rsvp': 'RSVP',
+    'nav.contact': 'Kontakt',
+    
+    // Hero
+    'hero.subtitle': 'Wir heiraten!',
+    
+    // Countdown
+    'countdown.title': 'Countdown zu unserer Hochzeit',
+    'countdown.subtitle': 'Wir zählen die Tage, bis wir mit euch feiern können!',
+    'countdown.days': 'Tage',
+    'countdown.hours': 'Stunden',
+    'countdown.minutes': 'Minuten',
+    'countdown.seconds': 'Sekunden',
+    
+    // Travel Info
+    'travel.title': 'Anreiseinformationen',
+    'travel.subtitle': 'Alle wichtigen Informationen für eure Reise zu unserer Hochzeit',
+    'travel.transport.title': 'Transport',
+    'travel.transport.content': 'Shuttle-Busse werden zwischen dem Stadtzentrum von Västerås und Nybynäs Gård verkehren. Weitere Informationen folgen!',
+    'travel.accommodation.title': 'Unterkunft',
+    'travel.accommodation.content': 'Wir empfehlen Hotels im Stadtzentrum von Västerås. Das Steam Hotel und das Elite Stadshotellet Västerås sind beide ausgezeichnete Optionen.',
+    'travel.directions.title': 'Wegbeschreibung',
+    'travel.directions.content': 'Nybynäs Gård, KÄRRBO NYBY 1, 725 97 Västerås. Etwa 20 Minuten vom Stadtzentrum Västerås mit dem Auto.',
+    'travel.weekend.title': 'Wochenendtipps',
+    'travel.weekend.content': 'Für diejenigen, die länger bleiben, empfehlen wir die Altstadt von Västerås, Anundshög und die wunderschönen Strände am Mälaren-See zu erkunden.',
+    
+    // Timeline
+    'timeline.title': 'Wochenendprogramm',
+    'timeline.subtitle': 'Das erwartet euch an unseren Hochzeitstagen',
+    'timeline.friday.title': 'Freitag - Willkommenstreffen',
+    'timeline.friday.time': '18:00 Uhr',
+    'timeline.friday.description': 'Entspanntes Kennenlernen mit Getränken und kleinen Häppchen. Eine perfekte Gelegenheit, andere Gäste vor dem großen Tag kennenzulernen.',
+    'timeline.saturday.title': 'Samstag - Trauung',
+    'timeline.saturday.time': '15:00 Uhr',
+    'timeline.saturday.description': 'Die Trauungszeremonie findet im wunderschönen Apfelgarten auf Nybynäs Gård statt.',
+    'timeline.dinner.title': 'Abendessen & Feier',
+    'timeline.dinner.time': '17:00 Uhr',
+    'timeline.dinner.description': 'Hochzeitsessen gefolgt von Tanz und Feier bis spät in den Abend.',
+    'timeline.dancing.title': 'Tanz & Musik',
+    'timeline.dancing.time': '21:00 Uhr',
+    'timeline.dancing.description': 'DJ und Tanzfläche geöffnet. Kommt und tanzt die Nacht durch!',
+    
+    // RSVP
+    'rsvp.title': 'Rückmeldung',
+    'rsvp.subtitle': 'Bitte antwortet bis spätestens [Datum]',
+    'rsvp.attending': 'Werdet ihr dabei sein?',
+    'rsvp.attending.yes': 'Ja, ich bin dabei!',
+    'rsvp.attending.no': 'Nein, ich kann leider nicht kommen',
+    'rsvp.names': 'Name(n)',
+    'rsvp.names.placeholder': 'Dein Name (und der Name deines Partners/deiner Partnerin, falls zutreffend)',
+    'rsvp.email': 'E-Mail',
+    'rsvp.email.placeholder': 'deine@email.de',
+    'rsvp.plusOne': 'Bringst du eine Begleitung mit?',
+    'rsvp.dietary': 'Allergien/Ernährungsanforderungen',
+    'rsvp.dietary.placeholder': 'Bitte teile uns eventuelle Allergien oder besondere Ernährungsanforderungen mit...',
+    'rsvp.meal': 'Menüwahl',
+    'rsvp.meal.meat': 'Fleisch',
+    'rsvp.meal.fish': 'Fisch',
+    'rsvp.meal.vegetarian': 'Vegetarisch',
+    'rsvp.meal.vegan': 'Vegan',
+    'rsvp.shuttle': 'Möchtest du den Shuttle-Bus nutzen?',
+    'rsvp.shuttle.both': 'Ja, Hin- und Rückfahrt',
+    'rsvp.shuttle.to': 'Nur Hinfahrt',
+    'rsvp.shuttle.from': 'Nur Rückfahrt',
+    'rsvp.shuttle.no': 'Nein danke',
+    'rsvp.song': 'Musikwunsch',
+    'rsvp.song.placeholder': 'Welches Lied möchtest du auf der Party hören?',
+    'rsvp.message': 'Nachricht an uns',
+    'rsvp.message.placeholder': 'Schreibe uns eine Nachricht...',
+    'rsvp.submit': 'Rückmeldung senden',
+    'rsvp.success': 'Vielen Dank! Deine Antwort wurde gespeichert. Wir senden dir weitere Details, wenn die Hochzeit näher rückt.',
+    'rsvp.error': 'Bitte fülle alle Pflichtfelder aus.',
+    'rsvp.required': 'Dieses Feld ist erforderlich',
+    'rsvp.email.invalid': 'Bitte gib eine gültige E-Mail-Adresse ein',
+    
+    // Wedding Details
+    'details.title': 'Gut zu wissen',
+    'details.subtitle': 'Hier sind alle praktischen Informationen, um euren Tag so schön wie möglich zu gestalten',
+    'details.parking.title': 'Parken',
+    'details.parking.content': 'Kostenlose Parkplätze stehen auf Nybynäsgård zur Verfügung',
+    'details.children.title': 'Kinder',
+    'details.children.content': 'Wir möchten, dass ihr den Tag ohne Alltagsverantwortung genießen könnt, daher ist die Hochzeit nur für Erwachsene. Stillende Säuglinge sind natürlich willkommen.',
+    'details.hashtag.title': 'Hashtag',
+    'details.hashtag.content': '#FalkKiani2026 - Teilt gerne eure Fotos!',
+    'details.gifts.title': 'Hochzeitswünsche',
+    'details.gifts.content': 'Das Wichtigste für uns ist, dass ihr kommt und mit uns feiert. Wenn ihr dennoch ein Geschenk machen möchtet, freuen wir uns über einen Beitrag zu unseren Flitterwochen.',
+    'details.venue.title': 'Drinnen / Draußen',
+    'details.venue.content': 'Die Trauung findet im Apfelgarten im Freien statt (bei gutem Wetter). Abendessen und Feier finden drinnen im Magasinet statt.',
+    'details.photos.title': 'Fotos nach der Hochzeit',
+    'details.photos.content': 'Nach der Hochzeit werden wir hier alle Fotos sammeln, damit ihr sie herunterladen und den Tag mit uns noch einmal erleben könnt.',
+    'details.dresscode.title': 'Dresscode',
+    'details.dresscode.friday.title': 'Freitag – Festlich elegant',
+    'details.dresscode.friday.content': 'Festlich elegant. Abende können kühl werden – bringt gerne eine leichte Jacke mit.',
+    'details.dresscode.saturday.title': 'Samstag – Dunkler Anzug (Smoking willkommen)',
+    'details.dresscode.women': 'Hinweise für Damen',
+    'details.dresscode.men': 'Hinweise für Herren',
+    
+    // Contact
+    'contact.title': 'Kontakt',
+    'contact.message': 'Wir freuen uns darauf, mit euch zu feiern! Bei Fragen könnt ihr euch jederzeit an uns wenden.',
+    'contact.regards': 'Mit Liebe,',
     'contact.names': 'Josefin & Kiarash',
   }
 };
