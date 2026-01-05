@@ -6,6 +6,7 @@ import RSVPForm from "@/components/RSVPFormUpdated";
 import WeddingDetails from "@/components/WeddingDetails";
 import ContactSection from "@/components/ContactSectionUpdated";
 import PasswordGate from "@/components/PasswordGate";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
           <WeddingHero />
         </section>
         <PasswordGate>
+          <MusicPlayer />
           <WeddingNavigation />
           <CountdownTimer />
           <Timeline />
