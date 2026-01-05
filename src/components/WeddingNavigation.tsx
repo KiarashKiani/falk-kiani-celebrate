@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import weddingLogo from "@/assets/wedding-logo.png";
@@ -49,12 +49,12 @@ const WeddingNavigation = () => {
             
             {/* Language Toggle */}
             <div className="flex items-center space-x-2 ml-4">
-              <Globe className="w-4 h-4 text-primary" />
               <button
                 onClick={() => setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv')}
-                className="font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
+                className="flex items-center space-x-1.5 font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
               >
-                {language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}
+                <span className="text-base">{language === 'sv' ? '🇬🇧' : language === 'en' ? '🇩🇪' : '🇸🇪'}</span>
+                <span>{language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}</span>
               </button>
             </div>
           </div>
@@ -87,16 +87,16 @@ const WeddingNavigation = () => {
               ))}
               
               {/* Mobile Language Toggle */}
-              <div className="flex items-center px-3 py-2 space-x-2 border-t border-border mt-2 pt-3">
-                <Globe className="w-4 h-4 text-primary" />
+              <div className="flex items-center px-3 py-2 border-t border-border mt-2 pt-3">
                 <button
                   onClick={() => {
                     setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv');
                     setIsOpen(false);
                   }}
-                  className="font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
+                  className="flex items-center space-x-2 font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
                 >
-                  {language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}
+                  <span className="text-base">{language === 'sv' ? '🇬🇧' : language === 'en' ? '🇩🇪' : '🇸🇪'}</span>
+                  <span>{language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}</span>
                 </button>
               </div>
             </div>
