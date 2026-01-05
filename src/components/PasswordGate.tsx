@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Lock, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PasswordGateProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState("");
+  const { t } = useLanguage();
 
   const CORRECT_PASSWORD = "KimjaJohanna";
 
@@ -30,7 +32,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
       sessionStorage.setItem("wedding-authenticated", "true");
       setError("");
     } else {
-      setError("Fel lösenord. Försök igen.");
+      setError(t('password.error'));
       setPassword("");
     }
   };
@@ -49,10 +51,10 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
             </div>
           </div>
           <CardTitle className="text-2xl font-script text-primary">
-            Välkommen till vårt bröllop
+            {t('password.title')}
           </CardTitle>
           <p className="text-muted-foreground">
-            För att se mer detaljerad information behöver du ange lösenordet
+            {t('password.subtitle')}
           </p>
         </CardHeader>
         <CardContent>
@@ -60,7 +62,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
             <div className="space-y-2">
               <Input
                 type="password"
-                placeholder="Ange lösenord"
+                placeholder={t('password.placeholder')}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="text-center"
@@ -71,7 +73,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
             </div>
             <Button type="submit" className="w-full">
               <Heart className="w-4 h-4 mr-2" />
-              Fortsätt
+              {t('password.submit')}
             </Button>
           </form>
         </CardContent>
