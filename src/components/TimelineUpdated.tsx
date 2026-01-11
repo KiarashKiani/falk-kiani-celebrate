@@ -1,9 +1,14 @@
 import { Clock, Heart, Music } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState, useRef } from "react";
 
 const Timeline = () => {
   const { t } = useLanguage();
+  const [fridayVisible, setFridayVisible] = useState(false);
+  const [saturdayVisible, setSaturdayVisible] = useState(false);
+  const fridayRef = useRef<HTMLDivElement>(null);
+  const saturdayRef = useRef<HTMLDivElement>(null);
 
   const saturdayEvents = [
     {
@@ -11,27 +16,65 @@ const Timeline = () => {
       time: t("timeline.saturday.time"),
       description: t("timeline.saturday.description"),
       icon: Heart,
-      color: "text-wedding-gold"
+      color: "bg-gradient-to-br from-wedding-gold/20 to-wedding-blush/30",
+      iconColor: "text-wedding-gold",
+      delay: "0ms"
     },
     {
       title: t("timeline.dinner.title"),
       time: t("timeline.dinner.time"),
       description: t("timeline.dinner.description"),
       icon: Clock,
-      color: "text-wedding-blush"
+      color: "bg-gradient-to-br from-wedding-blush/20 to-wedding-sage/30",
+      iconColor: "text-primary",
+      delay: "100ms"
     },
     {
       title: t("timeline.dancing.title"),
       time: t("timeline.dancing.time"),
       description: t("timeline.dancing.description"),
       icon: Music,
-      color: "text-primary"
+      color: "bg-gradient-to-br from-wedding-sage/20 to-wedding-cream/40",
+      iconColor: "text-wedding-olive",
+      delay: "200ms"
     }
   ];
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const fridayObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setFridayVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    const saturdayObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setSaturdayVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    if (fridayRef.current) fridayObserver.observe(fridayRef.current);
+    if (saturdayRef.current) saturdayObserver.observe(saturdayRef.current);
+
+    return () => {
+      fridayObserver.disconnect();
+      saturdayObserver.disconnect();
+    };
+  }, []);
+
   return (
     <section id="timeline" className="py-20 bg-wedding-sage">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
             {t("timeline.title")}
@@ -42,60 +85,144 @@ const Timeline = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
-          {/* Friday Event - Special wavy border design */}
+        {/* Friday Section - Calm & Minimal */}
+        <div 
+          ref={fridayRef}
+          className={`mb-20 transition-all duration-1000 ease-out ${
+            fridayVisible 
+              ? "opacity-100 translate-y-0 scale-100" 
+              : "opacity-0 translate-y-8 scale-95"
+          }`}
+        >
           <div className="flex justify-center">
-            <div className="relative w-full max-w-md aspect-square">
-              {/* Wavy border SVG frame */}
-              <svg
-                viewBox="0 0 400 400"
-                className="w-full h-full absolute inset-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <path
-                  d="M30,50 
-                     Q50,25 70,50 Q90,75 110,50 Q130,25 150,50 Q170,75 190,50 Q210,25 230,50 Q250,75 270,50 Q290,25 310,50 Q330,75 350,50 Q370,25 385,50
-                     Q405,75 385,100 Q365,125 385,150 Q405,175 385,200 Q365,225 385,250 Q405,275 385,300 Q365,325 385,350
-                     Q370,375 350,350 Q330,325 310,350 Q290,375 270,350 Q250,325 230,350 Q210,375 190,350 Q170,325 150,350 Q130,375 110,350 Q90,325 70,350 Q50,375 30,350
-                     Q5,325 30,300 Q55,275 30,250 Q5,225 30,200 Q55,175 30,150 Q5,125 30,100 Q55,75 30,50 Z"
-                  fill="none"
-                  className="stroke-wedding-olive"
-                  strokeWidth="2.5"
-                />
-              </svg>
-              
-              {/* Content overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-16 py-12">
-                <h3 className="font-script text-5xl md:text-6xl text-wedding-olive mb-6">
-                  Fredag
-                </h3>
-                <p className="font-serif text-xl md:text-2xl text-primary mb-4">
-                  Mingel: 18:00
-                </p>
-                <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed max-w-[280px]">
-                  {t("timeline.friday.description")}
-                </p>
+            <div className="relative w-full max-w-lg">
+              {/* Decorative wavy border frame */}
+              <div className="absolute inset-0 -m-4">
+                <svg
+                  viewBox="0 0 400 280"
+                  className="w-full h-full"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M30,35 
+                       Q50,15 70,35 Q90,55 110,35 Q130,15 150,35 Q170,55 190,35 Q210,15 230,35 Q250,55 270,35 Q290,15 310,35 Q330,55 350,35 Q370,15 385,35
+                       Q400,55 385,80 Q370,105 385,130 Q400,155 385,180 Q370,205 385,230 Q400,255 385,270
+                       Q370,285 350,265 Q330,245 310,265 Q290,285 270,265 Q250,245 230,265 Q210,285 190,265 Q170,245 150,265 Q130,285 110,265 Q90,245 70,265 Q50,285 30,265
+                       Q15,245 30,220 Q45,195 30,170 Q15,145 30,120 Q45,95 30,70 Q15,45 30,35 Z"
+                    fill="none"
+                    className="stroke-wedding-olive"
+                    strokeWidth="2"
+                  />
+                </svg>
               </div>
+              
+              {/* Friday Card Content */}
+              <Card className="relative bg-card/80 backdrop-blur-sm border-none shadow-elegant overflow-hidden">
+                <CardContent className="p-8 md:p-12 text-center">
+                  <div className="mb-6">
+                    <span className="inline-block px-4 py-1 rounded-full bg-wedding-olive/10 text-wedding-olive font-serif text-sm tracking-wider uppercase">
+                      {t("timeline.friday.title").split(" ")[0]}
+                    </span>
+                  </div>
+                  <h3 className="font-script text-4xl md:text-5xl text-wedding-olive mb-4">
+                    {t("timeline.friday.title").includes("-") 
+                      ? t("timeline.friday.title").split("-")[1]?.trim() || t("timeline.friday.title")
+                      : "Mingel"
+                    }
+                  </h3>
+                  <p className="font-serif text-xl md:text-2xl text-primary mb-6">
+                    {t("timeline.friday.time")}
+                  </p>
+                  <div className="w-16 h-px bg-wedding-olive/30 mx-auto mb-6"></div>
+                  <p className="font-serif text-muted-foreground text-base md:text-lg leading-relaxed max-w-md mx-auto">
+                    {t("timeline.friday.description")}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
+        </div>
 
-          {/* Saturday Events - Regular cards */}
-          {saturdayEvents.map((event, index) => (
-            <Card key={index} className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center font-serif text-xl">
-                  <event.icon className={`w-6 h-6 mr-3 ${event.color}`} />
-                  <div>
-                    <span className="block">{event.title}</span>
-                    <span className="text-sm text-muted-foreground font-normal">{event.time}</span>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-serif text-muted-foreground">
-                <p>{event.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Saturday Section - Dynamic & Rich */}
+        <div ref={saturdayRef}>
+          {/* Saturday Header */}
+          <div 
+            className={`text-center mb-12 transition-all duration-700 ease-out ${
+              saturdayVisible 
+                ? "opacity-100 translate-y-0" 
+                : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
+                {t("timeline.saturday.title").split(" ")[0] || "Lördag"}
+              </span>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
+            </div>
+            <h3 className="font-script text-3xl md:text-4xl text-primary">
+              {t("timeline.saturday.title").includes("-") 
+                ? t("timeline.saturday.title").split("-")[1]?.trim()
+                : t("timeline.saturday.title")
+              }
+            </h3>
+          </div>
+
+          {/* Saturday Events Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {saturdayEvents.map((event, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-700 ease-out ${
+                  saturdayVisible 
+                    ? "opacity-100 translate-y-0" 
+                    : "opacity-0 translate-y-12"
+                }`}
+                style={{ 
+                  transitionDelay: saturdayVisible ? `${(index + 1) * 150}ms` : "0ms" 
+                }}
+              >
+                <Card 
+                  className={`group h-full ${event.color} border-none shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 overflow-hidden`}
+                >
+                  <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                    {/* Icon & Time Header */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className={`w-14 h-14 rounded-2xl bg-card/60 backdrop-blur-sm flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                        <event.icon className={`w-7 h-7 ${event.iconColor}`} />
+                      </div>
+                      <span className="font-serif text-lg text-muted-foreground bg-card/40 px-3 py-1 rounded-full">
+                        {event.time}
+                      </span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h4 className="font-serif text-xl md:text-2xl font-semibold text-primary mb-4 group-hover:text-wedding-olive transition-colors duration-300">
+                      {event.title.includes("-") 
+                        ? event.title.split("-")[1]?.trim() || event.title
+                        : event.title
+                      }
+                    </h4>
+                    
+                    {/* Decorative Line */}
+                    <div className="w-10 h-0.5 bg-wedding-olive/30 mb-4 group-hover:w-16 transition-all duration-300"></div>
+                    
+                    {/* Description */}
+                    <p className="font-serif text-muted-foreground leading-relaxed flex-grow">
+                      {event.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Swipe Hint */}
+          <div className="md:hidden mt-8 text-center">
+            <p className="font-serif text-sm text-muted-foreground/60 animate-pulse">
+              ↕ {t("language") === "sv" ? "Scrolla för att se alla aktiviteter" : "Scroll to see all activities"}
+            </p>
+          </div>
         </div>
       </div>
     </section>
