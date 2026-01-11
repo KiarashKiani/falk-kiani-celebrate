@@ -40,7 +40,7 @@ const WavyCard = ({
     </svg>
     
     {/* Content */}
-    <div className="relative px-6 py-8 text-center h-full flex flex-col justify-start">
+    <div className="relative px-6 pt-12 pb-8 text-center h-full flex flex-col justify-start">
       {children}
     </div>
   </div>
