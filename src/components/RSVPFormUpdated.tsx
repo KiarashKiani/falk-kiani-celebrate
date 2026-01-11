@@ -8,9 +8,10 @@ import { Label } from "./ui/label";
 import { Checkbox } from "./ui/checkbox";
 import { useToast } from "./ui/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const RSVPForm = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [attending, setAttending] = useState("");
   const [names, setNames] = useState("");
@@ -21,8 +22,9 @@ const RSVPForm = () => {
   const [shuttle, setShuttle] = useState("");
   const [songRequest, setSongRequest] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!attending || !names || !email) {
@@ -41,9 +43,57 @@ const RSVPForm = () => {
       return;
     }
 
-    toast({
-      title: t("rsvp.success"),
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-rsvp-emails", {
+        body: {
+          names,
+          email,
+          attending,
+          plusOne,
+          dietary,
+          mealChoice,
+          shuttle,
+          songRequest,
+          message,
+          language,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending RSVP:", error);
+        toast({
+          title: t("rsvp.error"),
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log("RSVP sent successfully:", data);
+      toast({
+        title: t("rsvp.success"),
+      });
+
+      // Reset form
+      setAttending("");
+      setNames("");
+      setEmail("");
+      setPlusOne(false);
+      setDietary("");
+      setMealChoice("");
+      setShuttle("");
+      setSongRequest("");
+      setMessage("");
+    } catch (err) {
+      console.error("Error submitting RSVP:", err);
+      toast({
+        title: t("rsvp.error"),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -199,8 +249,8 @@ const RSVPForm = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full font-serif">
-                {t("rsvp.submit")}
+              <Button type="submit" className="w-full font-serif" disabled={isSubmitting}>
+                {isSubmitting ? "..." : t("rsvp.submit")}
               </Button>
             </form>
           </CardContent>
