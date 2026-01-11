@@ -166,7 +166,7 @@ const Timeline = () => {
                 <p className="font-serif text-xl md:text-2xl text-primary mb-4">
                   {t("timeline.friday.time")}
                 </p>
-                <p className="font-serif text-muted-foreground text-base md:text-lg leading-relaxed">
+                <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed max-w-[280px] mx-auto">
                   {t("timeline.friday.description")}
                 </p>
               </WavyCard>
