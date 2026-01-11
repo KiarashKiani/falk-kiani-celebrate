@@ -1,70 +1,123 @@
-import { Shirt, Car, Baby, Camera, Gift, MapPin, Bus, Hotel } from "lucide-react";
+import { Shirt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useState, useRef } from "react";
+
+// Reusable wavy border card component
+const WavyCard = ({ 
+  children, 
+  className = "",
+  visible = true,
+  delay = "0ms"
+}: { 
+  children: React.ReactNode; 
+  className?: string;
+  visible?: boolean;
+  delay?: string;
+}) => (
+  <div 
+    className={`relative transition-all duration-700 ease-out ${
+      visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+    } ${className}`}
+    style={{ transitionDelay: visible ? delay : "0ms" }}
+  >
+    {/* Wavy border SVG frame */}
+    <svg
+      viewBox="0 0 200 240"
+      className="absolute inset-0 w-full h-full"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M15,25 
+           Q25,10 40,25 Q55,40 70,25 Q85,10 100,25 Q115,40 130,25 Q145,10 160,25 Q175,40 185,25
+           Q200,40 185,60 Q170,80 185,100 Q200,120 185,140 Q170,160 185,180 Q200,200 185,220
+           Q175,235 160,220 Q145,205 130,220 Q115,235 100,220 Q85,205 70,220 Q55,235 40,220 Q25,205 15,220
+           Q0,205 15,185 Q30,165 15,145 Q0,125 15,105 Q30,85 15,65 Q0,45 15,25 Z"
+        fill="none"
+        className="stroke-wedding-olive"
+        strokeWidth="2"
+      />
+    </svg>
+    
+    {/* Content */}
+    <div className="relative px-6 py-8 text-center h-full flex flex-col justify-start">
+      {children}
+    </div>
+  </div>
+);
 
 const WeddingDetails = () => {
   const { t } = useLanguage();
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
   
   const details = [
     {
-      icon: Bus,
       title: t("travel.transport.title"),
       content: t("travel.transport.content"),
-      color: "text-wedding-sage"
+      delay: "0ms"
     },
     {
-      icon: Hotel,
       title: t("travel.accommodation.title"),
       content: t("travel.accommodation.content"),
-      color: "text-wedding-gold"
+      delay: "100ms"
     },
     {
-      icon: MapPin,
       title: t("travel.directions.title"),
       content: t("travel.directions.content"),
-      color: "text-wedding-blush"
+      delay: "200ms"
     },
     {
-      icon: Car,
       title: t("details.parking.title"),
       content: t("details.parking.content"),
-      color: "text-wedding-sage"
+      delay: "300ms"
     },
     {
-      icon: Baby,
       title: t("details.children.title"),
       content: t("details.children.content"),
-      color: "text-wedding-gold"
+      delay: "400ms"
     },
     {
-      icon: Camera,
       title: t("details.hashtag.title"),
       content: t("details.hashtag.content"),
-      color: "text-wedding-blush"
+      delay: "500ms"
     },
     {
-      icon: Gift,
       title: t("details.gifts.title"),
       content: t("details.gifts.content"),
-      color: "text-primary"
+      delay: "600ms"
     },
     {
-      icon: MapPin,
       title: t("details.venue.title"),
       content: t("details.venue.content"),
-      color: "text-wedding-sage"
+      delay: "700ms"
     },
     {
-      icon: Camera,
       title: t("details.photos.title"),
       content: t("details.photos.content"),
-      color: "text-wedding-blush"
+      delay: "800ms"
     }
   ];
 
   return (
     <section id="details" className="py-20 bg-wedding-sage">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
             {t("details.title")}
@@ -75,20 +128,22 @@ const WeddingDetails = () => {
           </p>
         </div>
 
-        {/* Grid of 6 equal-sized boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* Grid of wavy boxes - 3 per row */}
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-12">
           {details.map((detail, index) => (
-            <Card key={index} className="shadow-soft hover:shadow-elegant transition-shadow duration-300 h-full">
-              <CardHeader>
-                <CardTitle className="flex items-start font-serif text-lg">
-                  <detail.icon className={`w-6 h-6 mr-3 mt-1 ${detail.color} flex-shrink-0`} />
-                  <span>{detail.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-serif text-muted-foreground">
-                <p className="text-sm leading-relaxed">{detail.content}</p>
-              </CardContent>
-            </Card>
+            <WavyCard 
+              key={index} 
+              visible={visible}
+              delay={detail.delay}
+              className="hover:-translate-y-2 transition-transform duration-300 min-h-[240px]"
+            >
+              <h3 className="font-script text-2xl md:text-3xl text-wedding-olive mb-3">
+                {detail.title}
+              </h3>
+              <p className="font-serif text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
+                {detail.content}
+              </p>
+            </WavyCard>
           ))}
         </div>
 
