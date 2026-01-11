@@ -10,9 +10,8 @@ const WeddingNavigation = () => {
 
   const navItems = [
     { name: t("nav.home"), href: "#home" },
-    { name: t("nav.info"), href: "#info" },
-    { name: t("nav.travel"), href: "#travel" },
     { name: t("nav.timeline"), href: "#timeline" },
+    { name: t("nav.info"), href: "#details" },
     { name: t("nav.rsvp"), href: "#rsvp" },
     { name: t("nav.contact"), href: "#contact" }
   ];
