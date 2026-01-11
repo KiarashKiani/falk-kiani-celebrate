@@ -159,11 +159,11 @@ const Timeline = () => {
             }`}
           >
             <div className="flex justify-center">
-              <WavyCard className="w-full max-w-md" visible={fridayVisible}>
-                <h3 className="font-script text-4xl md:text-5xl text-wedding-olive mb-6">
+              <WavyCard className="w-full max-w-sm" visible={fridayVisible}>
+                <h3 className="font-script text-3xl md:text-4xl text-wedding-olive mb-3">
                   Meet & Greet
                 </h3>
-                <p className="font-serif text-xl md:text-2xl text-primary mb-4">
+                <p className="font-serif text-lg text-primary mb-4">
                   {t("timeline.friday.time")}
                 </p>
                 <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed max-w-[280px] mx-auto">
