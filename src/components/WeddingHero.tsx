@@ -14,8 +14,35 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
   const { t } = useLanguage();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
 
   const CORRECT_PASSWORD = "KimjaJohanna";
+
+  useEffect(() => {
+    // Wedding date: July 17, 2026, 18:00
+    const weddingDate = new Date('2026-07-17T18:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = weddingDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,17 +59,54 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-wedding-sage overflow-hidden">
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
-        {/* Logo and subtitle - positioned higher */}
+        {/* Logo */}
         <div className="mb-6">
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
-            className="w-72 md:w-96 h-auto mx-auto mb-4"
+            className="w-72 md:w-96 h-auto mx-auto"
           />
-          <p className="font-serif text-xl md:text-2xl text-foreground">
-            {t("hero.subtitle")}
-          </p>
         </div>
+
+        {/* Countdown Timer */}
+        {!showPasswordInput && (
+          <div className="w-full max-w-2xl mb-8">
+            <div className="grid grid-cols-4 gap-3 md:gap-6">
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                  {timeLeft.days}
+                </div>
+                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                  {t("countdown.days")}
+                </div>
+              </div>
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                  {timeLeft.hours}
+                </div>
+                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                  {t("countdown.hours")}
+                </div>
+              </div>
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                  {timeLeft.minutes}
+                </div>
+                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                  {t("countdown.minutes")}
+                </div>
+              </div>
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                  {timeLeft.seconds}
+                </div>
+                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                  {t("countdown.seconds")}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Password input - compact and visible without scrolling */}
         {showPasswordInput && (
