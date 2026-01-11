@@ -70,9 +70,15 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
 
         {/* Countdown Timer */}
         {!showPasswordInput && (
-          <div className="w-full max-w-2xl mb-8">
+          <div className="w-full max-w-2xl mb-8 animate-fade-in">
+            <h2 className="font-script text-3xl md:text-4xl font-bold text-primary mb-2">
+              {t("countdown.title")}
+            </h2>
+            <p className="font-serif text-base text-muted-foreground mb-6">
+              {t("countdown.subtitle")}
+            </p>
             <div className="grid grid-cols-4 gap-3 md:gap-6">
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.days}
                 </div>
@@ -80,7 +86,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.days")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.hours}
                 </div>
@@ -88,7 +94,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.hours")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.minutes}
                 </div>
@@ -96,7 +102,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.minutes")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft">
+              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.seconds}
                 </div>
