@@ -271,10 +271,9 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Send confirmation email to guest
+    // Send confirmation email to guest (no-reply)
     const confirmationEmail = await resend.emails.send({
-      from: "Falk & Kiani <hello@falkkiani.se>",
-      replyTo: "falkkiani2026@gmail.com",
+      from: "Falk & Kiani <noreply@falkkiani.se>",
       to: [data.email],
       subject: getConfirmationSubject(data.language),
       html: getConfirmationEmail(data),
