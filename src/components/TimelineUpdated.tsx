@@ -208,7 +208,7 @@ const Timeline = () => {
                 <p className="font-serif text-lg text-primary mb-4">
                   {event.time}
                 </p>
-                <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed">
+                <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed max-w-[280px] mx-auto">
                   {event.description}
                 </p>
               </WavyCard>
