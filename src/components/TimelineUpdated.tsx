@@ -1,4 +1,3 @@
-import { Clock, Heart, Music, LucideIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
 
@@ -49,7 +48,6 @@ interface SaturdayEvent {
   title: string;
   time: string;
   description: string;
-  icon: LucideIcon;
   delay: string;
 }
 
@@ -65,21 +63,18 @@ const Timeline = () => {
       title: t("timeline.saturday.title"),
       time: t("timeline.saturday.time"),
       description: t("timeline.saturday.description"),
-      icon: Heart,
       delay: "150ms"
     },
     {
       title: t("timeline.dinner.title"),
       time: t("timeline.dinner.time"),
       description: t("timeline.dinner.description"),
-      icon: Clock,
       delay: "300ms"
     },
     {
       title: t("timeline.dancing.title"),
       time: t("timeline.dancing.time"),
       description: t("timeline.dancing.description"),
-      icon: Music,
       delay: "450ms"
     }
   ];
@@ -189,9 +184,6 @@ const Timeline = () => {
                 delay={event.delay}
                 className="hover:-translate-y-2 transition-transform duration-300"
               >
-                <div className="flex justify-center mb-4">
-                  <event.icon className="w-8 h-8 text-wedding-olive" />
-                </div>
                 <h4 className="font-script text-3xl md:text-4xl text-wedding-olive mb-3">
                   {getDisplayTitle(event.title)}
                 </h4>
