@@ -133,26 +133,44 @@ const Timeline = () => {
         </div>
 
         {/* Friday Section - Calm & Minimal */}
-        <div 
-          ref={fridayRef}
-          className={`mb-20 transition-all duration-1000 ease-out ${
-            fridayVisible 
-              ? "opacity-100 translate-y-0 scale-100" 
-              : "opacity-0 translate-y-8 scale-95"
-          }`}
-        >
-          <div className="flex justify-center">
-            <WavyCard className="w-full max-w-md" visible={fridayVisible}>
-              <h3 className="font-script text-5xl md:text-6xl text-wedding-olive mb-6">
+        <div ref={fridayRef}>
+          {/* Friday Header */}
+          <div 
+            className={`text-center mb-12 transition-all duration-700 ease-out ${
+              fridayVisible 
+                ? "opacity-100 translate-y-0" 
+                : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
                 {t("timeline.friday.title").split(" ")[0] || "Fredag"}
-              </h3>
-              <p className="font-serif text-xl md:text-2xl text-primary mb-4">
-                {t("timeline.friday.time")}
-              </p>
-              <p className="font-serif text-muted-foreground text-base md:text-lg leading-relaxed">
-                {t("timeline.friday.description")}
-              </p>
-            </WavyCard>
+              </span>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
+            </div>
+          </div>
+
+          <div 
+            className={`mb-20 transition-all duration-1000 ease-out ${
+              fridayVisible 
+                ? "opacity-100 translate-y-0 scale-100" 
+                : "opacity-0 translate-y-8 scale-95"
+            }`}
+          >
+            <div className="flex justify-center">
+              <WavyCard className="w-full max-w-md" visible={fridayVisible}>
+                <h3 className="font-script text-5xl md:text-6xl text-wedding-olive mb-6">
+                  Meet & Greet
+                </h3>
+                <p className="font-serif text-xl md:text-2xl text-primary mb-4">
+                  {t("timeline.friday.time")}
+                </p>
+                <p className="font-serif text-muted-foreground text-base md:text-lg leading-relaxed">
+                  {t("timeline.friday.description")}
+                </p>
+              </WavyCard>
+            </div>
           </div>
         </div>
 
