@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lovely May Font Family */
+@font-face {
+  font-family: 'Lovely May';
+  src: url('/fonts/Lovely_May_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lovely May';
+  src: url('/fonts/Lovely_May_Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lovely May Script';
+  src: url('/fonts/Lovely_May_Script.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Wedding Design System - Elegant & Romantic */
 
 @layer base {
