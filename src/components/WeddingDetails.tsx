@@ -22,6 +22,9 @@ const WavyCard = ({
     } ${className}`}
     style={{ transitionDelay: visible ? delay : "0ms" }}
   >
+    {/* White background inside the frame */}
+    <div className="absolute inset-[8%] bg-white rounded-lg"></div>
+    
     {/* Wavy border image frame */}
     <img 
       src={wavyBorder} 
