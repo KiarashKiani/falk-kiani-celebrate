@@ -36,6 +36,55 @@
   font-display: swap;
 }
 
+/* Inria Serif Font Family */
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Wedding Design System - Elegant & Romantic */
 
 @layer base {
