@@ -68,9 +68,10 @@
     --wedding-olive: 85 25% 35%;
 
     /* Typography */
-    --font-script: 'Josefin Sans', sans-serif;
-    --font-sans: 'Open Sans', sans-serif;
-    --font-elegant: 'Cormorant Garamond', serif;
+    --font-headline: 'Lovely May', serif;
+    --font-calligraphy: 'Brittany', cursive; /* Will be added when font uploaded */
+    --font-subheadline: 'Inria Serif', serif;
+    --font-body: 'Inria Serif', serif;
 
     /* Gradients */
     --gradient-romantic: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%));
