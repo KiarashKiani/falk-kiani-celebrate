@@ -45,6 +45,7 @@
     /* Typography */
     --font-script: 'Josefin Sans', sans-serif;
     --font-sans: 'Open Sans', sans-serif;
+    --font-elegant: 'Cormorant Garamond', serif;
 
     /* Gradients */
     --gradient-romantic: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%));
