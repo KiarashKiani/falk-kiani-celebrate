@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+/* Brittany Signature Font */
+@font-face {
+  font-family: 'Brittany';
+  src: url('/fonts/Brittany-Signature-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Wedding Design System - Elegant & Romantic */
 
 @layer base {
@@ -146,5 +155,15 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inria Serif', serif;
+  }
+
+  h1, h2 {
+    font-family: 'Lovely May', serif;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
   }
 }

@@ -10,7 +10,7 @@ const TravelInfo = () => {
             Reseinformation
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
-          <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             All information ni behöver för att komma till oss och bo bekvämt under helgen
           </p>
         </div>
@@ -19,12 +19,12 @@ const TravelInfo = () => {
           {/* Transportation */}
           <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center font-serif">
+              <CardTitle className="flex items-center font-bold">
                 <Bus className="w-6 h-6 mr-3 text-primary" />
                 Bussar
               </CardTitle>
             </CardHeader>
-            <CardContent className="font-serif text-muted-foreground">
+            <CardContent className="text-muted-foreground">
               <p>Vi ordnar bussar till och från Västerås centrum till Nybynäsgård både fredag och lördag.</p>
               <p className="mt-2 font-semibold">Bussarna avgår från våra rekommenderade hotell.</p>
             </CardContent>
@@ -33,12 +33,12 @@ const TravelInfo = () => {
           {/* Accommodation */}
           <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center font-serif">
+              <CardTitle className="flex items-center font-bold">
                 <Hotel className="w-6 h-6 mr-3 text-primary" />
                 Logi
               </CardTitle>
             </CardHeader>
-            <CardContent className="font-serif text-muted-foreground">
+            <CardContent className="text-muted-foreground">
               <p className="mb-3">Vi rekommenderar följande hotell i Västerås:</p>
               <ul className="space-y-2 text-sm">
                 <li>• Steam Hotel (design & spa)</li>
@@ -51,12 +51,12 @@ const TravelInfo = () => {
           {/* Directions */}
           <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center font-serif">
+              <CardTitle className="flex items-center font-bold">
                 <MapPin className="w-6 h-6 mr-3 text-primary" />
                 Vägbeskrivning
               </CardTitle>
             </CardHeader>
-            <CardContent className="font-serif text-muted-foreground">
+            <CardContent className="text-muted-foreground">
               <p className="font-semibold mb-2">Nybynäs Gård</p>
               <p className="text-sm">Kärrbo Nyby 1, 725 97 Västerås</p>
               <a 
@@ -73,12 +73,12 @@ const TravelInfo = () => {
           {/* Itinerary Recommendations */}
           <Card className="md:col-span-2 lg:col-span-3 shadow-soft hover:shadow-elegant transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center font-serif">
+              <CardTitle className="flex items-center font-bold">
                 <Calendar className="w-6 h-6 mr-3 text-primary" />
                 Rekommendationer för helgen
               </CardTitle>
             </CardHeader>
-            <CardContent className="font-serif text-muted-foreground">
+            <CardContent className="text-muted-foreground">
               <p className="mb-4">För er som stannar längre rekommenderar vi att upptäcka Västerås och Mälarregionen.</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

@@ -12,7 +12,7 @@ const ContactSection = () => {
         
         <Card className="shadow-soft">
           <CardContent className="p-8">
-            <p className="font-serif text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8">
               Har ni frågor eller funderingar? Tveka inte att höra av er till oss!
             </p>
             
@@ -21,7 +21,7 @@ const ContactSection = () => {
                 <Mail className="w-5 h-5 text-primary" />
                 <a 
                   href="mailto:josefin.kiarash@wedding.se" 
-                  className="font-serif text-primary hover:text-primary/70 transition-colors"
+                  className="text-primary hover:text-primary/70 transition-colors"
                 >
                   josefin.kiarash@wedding.se
                 </a>
@@ -31,7 +31,7 @@ const ContactSection = () => {
                 <Phone className="w-5 h-5 text-primary" />
                 <a 
                   href="tel:+46701234567" 
-                  className="font-serif text-primary hover:text-primary/70 transition-colors"
+                  className="text-primary hover:text-primary/70 transition-colors"
                 >
                   +46 70 123 45 67
                 </a>
@@ -39,17 +39,17 @@ const ContactSection = () => {
               
               <div className="flex items-center justify-center space-x-3">
                 <Instagram className="w-5 h-5 text-primary" />
-                <span className="font-serif text-muted-foreground">
+                <span className="text-muted-foreground">
                   Följ oss: @falkkiani2026
                 </span>
               </div>
             </div>
             
             <div className="mt-8 pt-6 border-t border-border">
-              <p className="font-serif text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 Vi ser så mycket fram emot att fira vår kärlek tillsammans med er!
               </p>
-              <p className="font-script text-xl text-primary mt-2">
+              <p className="text-xl text-primary mt-2" style={{ fontFamily: "'Brittany', cursive" }}>
                 Med all vår kärlek, Josefin & Kiarash
               </p>
             </div>

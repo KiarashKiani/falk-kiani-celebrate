@@ -61,11 +61,11 @@ const RSVPForm = () => {
             OSA - Svara här
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
-          <p className="font-serif text-lg text-muted-foreground mb-4">
-            Vi är tacksamma om ni svarar senast <span className="font-semibold text-primary">1 juni 2026</span>
+          <p className="text-lg text-muted-foreground mb-4">
+            Vi är tacksamma om ni svarar senast <span className="font-bold text-primary">1 juni 2026</span>
           </p>
           <div className="bg-wedding-blush/50 rounded-lg p-4 inline-block">
-            <p className="font-serif text-sm text-primary">
+            <p className="text-sm text-primary">
               💌 Deadline: 1 juni 2026
             </p>
           </div>
@@ -73,7 +73,7 @@ const RSVPForm = () => {
 
         <Card className="shadow-elegant">
           <CardHeader>
-            <CardTitle className="flex items-center font-serif text-2xl">
+            <CardTitle className="flex items-center text-2xl font-bold">
               <Mail className="w-6 h-6 mr-3 text-primary" />
               Din anmälan
             </CardTitle>
@@ -82,56 +82,52 @@ const RSVPForm = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Attendance */}
               <div className="space-y-3">
-                <Label className="font-serif text-lg font-semibold">Kan ni komma? *</Label>
+                <Label className="text-lg font-bold">Kan ni komma? *</Label>
                 <RadioGroup 
                   value={formData.attending} 
                   onValueChange={(value) => setFormData({...formData, attending: value})}
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="yes" id="yes" />
-                    <Label htmlFor="yes" className="font-serif">Ja, vi kommer gärna!</Label>
+                    <Label htmlFor="yes">Ja, vi kommer gärna!</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="no" id="no" />
-                    <Label htmlFor="no" className="font-serif">Tyvärr kan vi inte komma</Label>
+                    <Label htmlFor="no">Tyvärr kan vi inte komma</Label>
                   </div>
                 </RadioGroup>
               </div>
 
-              {/* Names */}
               <div className="space-y-2">
-                <Label htmlFor="names" className="font-serif font-semibold">Namn *</Label>
+                <Label htmlFor="names" className="font-bold">Namn *</Label>
                 <Input
                   id="names"
                   value={formData.names}
                   onChange={(e) => setFormData({...formData, names: e.target.value})}
                   placeholder="Era namn"
-                  className="font-serif"
                 />
               </div>
 
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="font-serif font-semibold">E-post *</Label>
+                <Label htmlFor="email" className="font-bold">E-post *</Label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   placeholder="er@email.se"
-                  className="font-serif"
                 />
               </div>
 
               {/* Address */}
               <div className="space-y-2">
-                <Label htmlFor="address" className="font-serif font-semibold">Postadress (för eventuella utskick)</Label>
+                <Label htmlFor="address" className="font-bold">Postadress (för eventuella utskick)</Label>
                 <Textarea
                   id="address"
                   value={formData.address}
                   onChange={(e) => setFormData({...formData, address: e.target.value})}
                   placeholder="Er postadress"
-                  className="font-serif"
                 />
               </div>
 
@@ -143,51 +139,49 @@ const RSVPForm = () => {
                     checked={formData.plusOne}
                     onCheckedChange={(checked) => setFormData({...formData, plusOne: checked as boolean})}
                   />
-                  <Label htmlFor="plusOne" className="font-serif">Jag tar med en +1</Label>
+                  <Label htmlFor="plusOne">Jag tar med en +1</Label>
                 </div>
                 {formData.plusOne && (
                   <Input
                     value={formData.plusOneName}
                     onChange={(e) => setFormData({...formData, plusOneName: e.target.value})}
                     placeholder="Namn på +1"
-                    className="font-serif"
                   />
                 )}
               </div>
 
               {/* Dietary restrictions */}
               <div className="space-y-2">
-                <Label htmlFor="dietary" className="font-serif font-semibold">Allergier eller specialkost</Label>
+                <Label htmlFor="dietary" className="font-bold">Allergier eller specialkost</Label>
                 <Textarea
                   id="dietary"
                   value={formData.dietary}
                   onChange={(e) => setFormData({...formData, dietary: e.target.value})}
                   placeholder="Berätta om eventuella allergier eller specialkost"
-                  className="font-serif"
                 />
               </div>
 
               {/* Meal choice */}
               <div className="space-y-3">
-                <Label className="font-serif font-semibold">Föredragen måltid</Label>
+                <Label className="font-bold">Föredragen måltid</Label>
                 <RadioGroup 
-                  value={formData.mealChoice} 
+                  value={formData.mealChoice}
                   onValueChange={(value) => setFormData({...formData, mealChoice: value})}
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="optionA" id="optionA" />
-                    <Label htmlFor="optionA" className="font-serif">Alternativ A (kommer specificeras senare)</Label>
+                    <Label htmlFor="optionA">Alternativ A (kommer specificeras senare)</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="optionB" id="optionB" />
-                    <Label htmlFor="optionB" className="font-serif">Alternativ B (kommer specificeras senare)</Label>
+                    <Label htmlFor="optionB">Alternativ B (kommer specificeras senare)</Label>
                   </div>
                 </RadioGroup>
               </div>
 
               <Button 
                 type="submit" 
-                className="w-full font-serif text-lg py-6 bg-primary hover:bg-primary/90"
+                className="w-full text-lg py-6 bg-primary hover:bg-primary/90"
               >
                 Skicka OSA
               </Button>

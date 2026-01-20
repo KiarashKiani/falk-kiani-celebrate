@@ -74,39 +74,39 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
             <h2 className="text-3xl md:text-4xl font-normal text-primary mb-2 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
               {t("countdown.title")}
             </h2>
-            <p className="font-serif text-base text-muted-foreground mb-6">
+            <p className="text-base text-muted-foreground mb-6">
               {t("countdown.subtitle")}
             </p>
             <div className="grid grid-cols-4 gap-3 md:gap-6">
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
                   {timeLeft.days}
                 </div>
-                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
                   {t("countdown.days")}
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
                   {timeLeft.hours}
                 </div>
-                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
                   {t("countdown.hours")}
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
                   {timeLeft.minutes}
                 </div>
-                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
                   {t("countdown.minutes")}
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="font-script text-2xl md:text-4xl font-bold text-primary mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
                   {timeLeft.seconds}
                 </div>
-                <div className="font-serif text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
                   {t("countdown.seconds")}
                 </div>
               </div>
