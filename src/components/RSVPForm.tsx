@@ -57,7 +57,7 @@ const RSVPForm = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <Heart className="w-12 h-12 mx-auto mb-6 text-primary" />
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl font-normal text-primary mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
             OSA - Svara här
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>

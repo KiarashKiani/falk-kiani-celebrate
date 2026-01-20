@@ -5,7 +5,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
+        <h2 className="text-4xl md:text-5xl font-normal text-primary mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
           Kontakt
         </h2>
         <div className="w-24 h-px bg-primary mx-auto mb-12"></div>
