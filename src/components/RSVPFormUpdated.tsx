@@ -150,104 +150,120 @@ const RSVPForm = () => {
     }
   };
 
+  // Section header component for consistent styling
+  const SectionHeader = ({ children }: { children: React.ReactNode }) => (
+    <div className="mb-6">
+      <h3 className="font-serif font-bold text-lg text-primary mb-2">
+        {children}
+      </h3>
+      <div className="h-px bg-primary/20 w-full"></div>
+    </div>
+  );
+
+  // Styled input wrapper with consistent styling
+  const inputStyles = "font-serif bg-background border-primary/20 rounded-lg focus:border-primary focus:ring-primary/20";
+
   const renderGuestFields = (
     guest: GuestDetails,
     setGuest: React.Dispatch<React.SetStateAction<GuestDetails>>,
     prefix: string,
     label: string
   ) => (
-    <div className="space-y-6 p-6 bg-muted/30 rounded-lg animate-fade-in">
-      <h3 className="font-script text-xl text-primary border-b border-primary/20 pb-2">
-        {label}
-      </h3>
-      
-      {/* Name */}
-      <div className="space-y-2">
-        <Label htmlFor={`${prefix}-name`} className="font-serif">
-          Namn *
-        </Label>
-        <Input
-          id={`${prefix}-name`}
-          value={guest.name}
-          onChange={(e) => setGuest({ ...guest, name: e.target.value })}
-          placeholder="Ditt namn"
-          className="font-serif"
-        />
-      </div>
+    <Card className="border-primary/10 bg-card/50 shadow-none animate-fade-in">
+      <CardContent className="pt-6 space-y-6">
+        <SectionHeader>{label}</SectionHeader>
+        
+        {/* Name */}
+        <div className="space-y-2">
+          <Label htmlFor={`${prefix}-name`} className="font-serif font-bold text-foreground">
+            Namn <span className="text-primary">*</span>
+          </Label>
+          <Input
+            id={`${prefix}-name`}
+            value={guest.name}
+            onChange={(e) => setGuest({ ...guest, name: e.target.value })}
+            placeholder="Ditt namn"
+            className={inputStyles}
+          />
+        </div>
 
-      {/* Dietary */}
-      <div className="space-y-2">
-        <Label htmlFor={`${prefix}-dietary`} className="font-serif">
-          Allergier och specialkost
-        </Label>
-        <Textarea
-          id={`${prefix}-dietary`}
-          value={guest.dietary}
-          onChange={(e) => setGuest({ ...guest, dietary: e.target.value })}
-          placeholder="Ange eventuella allergier eller kostpreferenser"
-          className="font-serif"
-        />
-      </div>
+        {/* Dietary */}
+        <div className="space-y-2">
+          <Label htmlFor={`${prefix}-dietary`} className="font-serif font-bold text-foreground">
+            Allergier och specialkost
+          </Label>
+          <Textarea
+            id={`${prefix}-dietary`}
+            value={guest.dietary}
+            onChange={(e) => setGuest({ ...guest, dietary: e.target.value })}
+            placeholder="Ange eventuella allergier eller kostpreferenser"
+            className={`${inputStyles} min-h-[80px]`}
+          />
+        </div>
 
-      {/* Meal Choice */}
-      <div className="space-y-3">
-        <Label className="font-serif">Måltidsval</Label>
-        <RadioGroup 
-          value={guest.mealChoice} 
-          onValueChange={(value) => setGuest({ ...guest, mealChoice: value })}
-        >
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="meat" id={`${prefix}-meat`} />
-            <Label htmlFor={`${prefix}-meat`} className="font-serif">Kött</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="fish" id={`${prefix}-fish`} />
-            <Label htmlFor={`${prefix}-fish`} className="font-serif">Fisk</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="vegetarian" id={`${prefix}-vegetarian`} />
-            <Label htmlFor={`${prefix}-vegetarian`} className="font-serif">Vegetarisk</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="vegan" id={`${prefix}-vegan`} />
-            <Label htmlFor={`${prefix}-vegan`} className="font-serif">Vegansk</Label>
-          </div>
-        </RadioGroup>
-      </div>
+        {/* Meal Choice */}
+        <div className="space-y-4">
+          <Label className="font-serif font-bold text-foreground">Måltidsval</Label>
+          <RadioGroup 
+            value={guest.mealChoice} 
+            onValueChange={(value) => setGuest({ ...guest, mealChoice: value })}
+            className="grid grid-cols-2 gap-3"
+          >
+            {[
+              { value: "meat", label: "Kött" },
+              { value: "fish", label: "Fisk" },
+              { value: "vegetarian", label: "Vegetarisk" },
+              { value: "vegan", label: "Vegansk" },
+            ].map((option) => (
+              <div 
+                key={option.value}
+                className="flex items-center space-x-3 p-3 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+              >
+                <RadioGroupItem value={option.value} id={`${prefix}-${option.value}`} />
+                <Label htmlFor={`${prefix}-${option.value}`} className="font-serif cursor-pointer flex-1">
+                  {option.label}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+        </div>
 
-      {/* Shuttle */}
-      <div className="space-y-3">
-        <Label className="font-serif">Vill du åka med pendlingsbussen?</Label>
-        <RadioGroup 
-          value={guest.shuttle} 
-          onValueChange={(value) => setGuest({ ...guest, shuttle: value })}
-        >
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="both" id={`${prefix}-shuttle-both`} />
-            <Label htmlFor={`${prefix}-shuttle-both`} className="font-serif">Ja, tur och retur</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="to" id={`${prefix}-shuttle-to`} />
-            <Label htmlFor={`${prefix}-shuttle-to`} className="font-serif">Bara dit</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="from" id={`${prefix}-shuttle-from`} />
-            <Label htmlFor={`${prefix}-shuttle-from`} className="font-serif">Bara hem</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="no" id={`${prefix}-shuttle-no`} />
-            <Label htmlFor={`${prefix}-shuttle-no`} className="font-serif">Nej tack</Label>
-          </div>
-        </RadioGroup>
-      </div>
-    </div>
+        {/* Shuttle */}
+        <div className="space-y-4">
+          <Label className="font-serif font-bold text-foreground">Vill du åka med pendlingsbussen?</Label>
+          <RadioGroup 
+            value={guest.shuttle} 
+            onValueChange={(value) => setGuest({ ...guest, shuttle: value })}
+            className="grid grid-cols-2 gap-3"
+          >
+            {[
+              { value: "both", label: "Ja, tur och retur" },
+              { value: "to", label: "Bara dit" },
+              { value: "from", label: "Bara hem" },
+              { value: "no", label: "Nej tack" },
+            ].map((option) => (
+              <div 
+                key={option.value}
+                className="flex items-center space-x-3 p-3 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+              >
+                <RadioGroupItem value={option.value} id={`${prefix}-shuttle-${option.value}`} />
+                <Label htmlFor={`${prefix}-shuttle-${option.value}`} className="font-serif cursor-pointer flex-1">
+                  {option.label}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+        </div>
+      </CardContent>
+    </Card>
   );
 
   return (
     <section id="rsvp" className="py-20 bg-wedding-sage">
       <div className="max-w-2xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
             OSA
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
@@ -256,107 +272,138 @@ const RSVPForm = () => {
           </p>
         </div>
 
-        <Card className="shadow-soft">
-          <CardContent className="pt-6 space-y-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Step 1: Are you coming? */}
-              <div className="space-y-4">
-                <Label className="font-serif text-lg">Kommer du?</Label>
-                <RadioGroup value={attending} onValueChange={setAttending}>
-                  <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                    <RadioGroupItem value="yes" id="attending-yes" />
-                    <Label htmlFor="attending-yes" className="font-serif cursor-pointer flex-1">
-                      Ja, jag kommer
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                    <RadioGroupItem value="no" id="attending-no" />
-                    <Label htmlFor="attending-no" className="font-serif cursor-pointer flex-1">
-                      Nej, jag kan tyvärr inte komma
-                    </Label>
-                  </div>
+        {/* Main Form Card */}
+        <Card className="shadow-elegant border-primary/10 overflow-hidden">
+          <CardContent className="p-8 space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              
+              {/* Attendance Section */}
+              <div className="space-y-6">
+                <SectionHeader>Kommer du?</SectionHeader>
+                <RadioGroup value={attending} onValueChange={setAttending} className="space-y-3">
+                  {[
+                    { value: "yes", label: "Ja, jag kommer" },
+                    { value: "no", label: "Nej, jag kan tyvärr inte komma" },
+                  ].map((option) => (
+                    <div 
+                      key={option.value}
+                      className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                        attending === option.value 
+                          ? "border-primary bg-primary/5" 
+                          : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
+                      }`}
+                    >
+                      <RadioGroupItem value={option.value} id={`attending-${option.value}`} />
+                      <Label 
+                        htmlFor={`attending-${option.value}`} 
+                        className="font-serif text-base cursor-pointer flex-1"
+                      >
+                        {option.label}
+                      </Label>
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
 
               {/* If attending YES - show expanded form */}
               {attending === "yes" && (
-                <div className="space-y-6 animate-fade-in">
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-serif">
-                      E-post *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="din@epost.se"
-                      className="font-serif"
-                    />
+                <div className="space-y-8 animate-fade-in">
+                  
+                  {/* Contact Section */}
+                  <div className="space-y-6">
+                    <SectionHeader>Kontaktuppgifter</SectionHeader>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="font-serif font-bold text-foreground">
+                        E-post <span className="text-primary">*</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="din@epost.se"
+                        className={inputStyles}
+                      />
+                    </div>
                   </div>
 
                   {/* Main Guest Details */}
                   {renderGuestFields(mainGuest, setMainGuest, "main", "Dina uppgifter")}
 
-                  {/* Bringing Partner? */}
-                  <div className="space-y-4">
-                    <Label className="font-serif text-lg">Tar du med dig en partner?</Label>
-                    <RadioGroup value={bringingPartner} onValueChange={setBringingPartner}>
-                      <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                        <RadioGroupItem value="yes" id="partner-yes" />
-                        <Label htmlFor="partner-yes" className="font-serif cursor-pointer flex-1">
-                          Ja
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                        <RadioGroupItem value="no" id="partner-no" />
-                        <Label htmlFor="partner-no" className="font-serif cursor-pointer flex-1">
-                          Nej
-                        </Label>
-                      </div>
+                  {/* Bringing Partner Section */}
+                  <div className="space-y-6">
+                    <SectionHeader>Tar du med dig en partner?</SectionHeader>
+                    <RadioGroup value={bringingPartner} onValueChange={setBringingPartner} className="space-y-3">
+                      {[
+                        { value: "yes", label: "Ja" },
+                        { value: "no", label: "Nej" },
+                      ].map((option) => (
+                        <div 
+                          key={option.value}
+                          className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                            bringingPartner === option.value 
+                              ? "border-primary bg-primary/5" 
+                              : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
+                          }`}
+                        >
+                          <RadioGroupItem value={option.value} id={`partner-${option.value}`} />
+                          <Label 
+                            htmlFor={`partner-${option.value}`} 
+                            className="font-serif text-base cursor-pointer flex-1"
+                          >
+                            {option.label}
+                          </Label>
+                        </div>
+                      ))}
                     </RadioGroup>
                   </div>
 
                   {/* Partner Guest Details */}
                   {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", "Partnerns uppgifter")}
 
-                  {/* Song Request */}
-                  <div className="space-y-2">
-                    <Label htmlFor="song" className="font-serif">
-                      Önska en låt
-                    </Label>
-                    <Input
-                      id="song"
-                      value={songRequest}
-                      onChange={(e) => setSongRequest(e.target.value)}
-                      placeholder="Vilken låt får dig att dansa?"
-                      className="font-serif"
-                    />
-                  </div>
+                  {/* Extras Section */}
+                  <Card className="border-primary/10 bg-card/50 shadow-none">
+                    <CardContent className="pt-6 space-y-6">
+                      <SectionHeader>Övrigt</SectionHeader>
+                      
+                      {/* Song Request */}
+                      <div className="space-y-2">
+                        <Label htmlFor="song" className="font-serif font-bold text-foreground">
+                          Önska en låt
+                        </Label>
+                        <Input
+                          id="song"
+                          value={songRequest}
+                          onChange={(e) => setSongRequest(e.target.value)}
+                          placeholder="Vilken låt får dig att dansa?"
+                          className={inputStyles}
+                        />
+                      </div>
 
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-serif">
-                      Meddelande till oss
-                    </Label>
-                    <Textarea
-                      id="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Något du vill berätta för oss?"
-                      className="font-serif"
-                    />
-                  </div>
+                      {/* Message */}
+                      <div className="space-y-2">
+                        <Label htmlFor="message" className="font-serif font-bold text-foreground">
+                          Meddelande till oss
+                        </Label>
+                        <Textarea
+                          id="message"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          placeholder="Något du vill berätta för oss?"
+                          className={`${inputStyles} min-h-[100px]`}
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               )}
 
-              {/* Submit Button - always visible after initial selection */}
+              {/* Submit Button */}
               {attending && (
-                <div className="animate-fade-in">
+                <div className="animate-fade-in pt-4">
                   <Button 
                     type="submit" 
-                    className="w-full font-serif text-lg py-6" 
+                    className="w-full font-serif text-lg py-6 rounded-xl bg-primary hover:bg-primary/90 transition-all shadow-md hover:shadow-lg" 
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Skickar..." : "Skicka OSA"}
