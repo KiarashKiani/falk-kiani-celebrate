@@ -52,7 +52,7 @@ const Timeline = () => {
             Schema för helgen
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
-          <p className="font-serif text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             Så här ser vår bröllopshelg ut – vi hoppas ni kan vara med på allt!
           </p>
         </div>
@@ -66,20 +66,20 @@ const Timeline = () => {
               
               <div className="flex-1 bg-card rounded-2xl p-6 shadow-soft">
                 {event.day && (
-                  <h3 className="font-serif text-lg font-semibold text-primary mb-2">
+                  <h3 className="text-lg font-bold text-primary mb-2">
                     {event.day}
                   </h3>
                 )}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                  <h4 className="font-serif text-xl font-semibold text-primary">
+                  <h4 className="text-xl font-bold text-primary">
                     {event.title}
                   </h4>
                   <div className="flex items-center text-muted-foreground mt-1 md:mt-0">
                     <Clock className="w-4 h-4 mr-1" />
-                    <span className="font-serif">{event.time}</span>
+                    <span>{event.time}</span>
                   </div>
                 </div>
-                <p className="font-serif text-muted-foreground">
+                <p className="text-muted-foreground">
                   {event.description}
                 </p>
               </div>
