@@ -22,19 +22,19 @@ const WavyCard = ({
     } ${className}`}
     style={{ transitionDelay: visible ? delay : "0ms" }}
   >
-    {/* White background inside the frame */}
-    <div className="absolute inset-[8%] bg-white rounded-lg"></div>
+    {/* White background - bottom layer */}
+    <div className="absolute inset-0 bg-white" style={{ margin: '8%', borderRadius: '8px' }}></div>
     
-    {/* Wavy border image frame */}
+    {/* Wavy border image frame - on top */}
     <img 
       src={wavyBorder} 
       alt="" 
-      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
+      className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
       aria-hidden="true"
     />
     
-    {/* Content */}
-    <div className="relative px-6 pt-12 pb-8 text-center h-full flex flex-col justify-start">
+    {/* Content - highest layer */}
+    <div className="relative z-20 px-8 pt-12 pb-8 text-center h-full flex flex-col justify-start">
       {children}
     </div>
   </div>
