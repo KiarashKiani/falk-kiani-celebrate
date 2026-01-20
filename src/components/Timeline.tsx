@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+import wavyBorder from "@/assets/wavy-border.png";
 
-// Wavy border card component matching the design
+// Wavy border card component using the image
 const WavyEventCard = ({ 
   children, 
   className = "",
@@ -18,23 +19,13 @@ const WavyEventCard = ({
     } ${className}`}
     style={{ transitionDelay: visible ? delay : "0ms" }}
   >
-    {/* Wavy border SVG frame */}
-    <svg
-      viewBox="0 0 200 180"
-      className="absolute inset-0 w-full h-full"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M15,20 
-           Q25,8 40,20 Q55,32 70,20 Q85,8 100,20 Q115,32 130,20 Q145,8 160,20 Q175,32 185,20
-           Q198,32 185,50 Q172,68 185,86 Q198,104 185,122 Q172,140 185,158
-           Q175,170 160,158 Q145,146 130,158 Q115,170 100,158 Q85,146 70,158 Q55,170 40,158 Q25,146 15,158
-           Q2,146 15,128 Q28,110 15,92 Q2,74 15,56 Q28,38 15,20 Z"
-        fill="white"
-        className="stroke-wedding-olive"
-        strokeWidth="2"
-      />
-    </svg>
+    {/* Wavy border image frame */}
+    <img 
+      src={wavyBorder} 
+      alt="" 
+      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
+      aria-hidden="true"
+    />
     
     {/* Content */}
     <div className="relative px-8 py-10 text-center h-full flex flex-col justify-center">
