@@ -66,7 +66,6 @@ const Timeline = () => {
   const fridayEvents = [
     {
       title: "Mingel",
-      time: "18:00",
       description: "Avslappnat mingel med drinkar och lätta tilltugg. En perfekt chans att träffa andra gäster innan den stora dagen.",
       delay: "0ms"
     }
@@ -125,13 +124,10 @@ const Timeline = () => {
                 delay={event.delay}
                 className="w-full max-w-md min-h-[200px]"
               >
-                <h4 className="text-3xl md:text-4xl text-primary mb-2" style={{ fontFamily: "'Brittany', cursive" }}>
+                <h4 className="text-3xl md:text-4xl text-primary mb-3" style={{ fontFamily: "'Brittany', cursive" }}>
                   {event.title}
                 </h4>
-                <p className="text-lg font-bold text-wedding-olive mb-4 uppercase tracking-wide">
-                  {event.time}
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-[280px] mx-auto">
+                <p className="text-muted-foreground text-base leading-relaxed max-w-[280px] mx-auto">
                   {event.description}
                 </p>
               </WavyEventCard>
