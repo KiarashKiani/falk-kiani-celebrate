@@ -19,19 +19,16 @@ const WavyEventCard = ({
     } ${className}`}
     style={{ transitionDelay: visible ? delay : "0ms" }}
   >
-    {/* White background - bottom layer */}
-    <div className="absolute inset-0 bg-white" style={{ margin: '8%', borderRadius: '8px' }}></div>
-    
-    {/* Wavy border image frame - on top */}
+    {/* Wavy border image frame - stretches to fill container */}
     <img 
       src={wavyBorder} 
       alt="" 
-      className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
+      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
       aria-hidden="true"
     />
     
-    {/* Content - highest layer */}
-    <div className="relative z-20 px-8 py-10 text-center h-full flex flex-col justify-center">
+    {/* Content - on top of the border */}
+    <div className="relative z-10 px-10 py-8 text-center h-full flex flex-col justify-center">
       {children}
     </div>
   </div>
