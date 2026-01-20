@@ -2,40 +2,7 @@ import { Shirt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
-import wavyBorder from "@/assets/wavy-border.png";
-
-// Reusable wavy border card component using image
-const WavyCard = ({ 
-  children, 
-  className = "",
-  visible = true,
-  delay = "0ms"
-}: { 
-  children: React.ReactNode; 
-  className?: string;
-  visible?: boolean;
-  delay?: string;
-}) => (
-  <div 
-    className={`relative transition-all duration-700 ease-out ${
-      visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-    } ${className}`}
-    style={{ transitionDelay: visible ? delay : "0ms" }}
-  >
-    {/* Wavy border image frame - stretches to fill container */}
-    <img 
-      src={wavyBorder} 
-      alt="" 
-      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-      aria-hidden="true"
-    />
-    
-    {/* Content - on top of the border */}
-    <div className="relative z-10 px-10 py-8 text-center h-full flex flex-col justify-center">
-      {children}
-    </div>
-  </div>
-);
+import WavyBorderCard from "./ui/WavyBorderCard";
 
 const WeddingDetails = () => {
   const { t } = useLanguage();
@@ -122,7 +89,7 @@ const WeddingDetails = () => {
         {/* Grid of wavy boxes - 3 per row */}
         <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-12">
           {details.map((detail, index) => (
-            <WavyCard 
+            <WavyBorderCard 
               key={index} 
               visible={visible}
               delay={detail.delay}
@@ -134,7 +101,7 @@ const WeddingDetails = () => {
               <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
                 {detail.content}
               </p>
-            </WavyCard>
+            </WavyBorderCard>
           ))}
         </div>
 

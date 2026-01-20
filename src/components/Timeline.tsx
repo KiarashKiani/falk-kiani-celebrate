@@ -1,38 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import wavyBorder from "@/assets/wavy-border.png";
-
-// Wavy border card component using the image
-const WavyEventCard = ({ 
-  children, 
-  className = "",
-  visible = true,
-  delay = "0ms"
-}: { 
-  children: React.ReactNode; 
-  className?: string;
-  visible?: boolean;
-  delay?: string;
-}) => (
-  <div 
-    className={`relative transition-all duration-700 ease-out ${
-      visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-    } ${className}`}
-    style={{ transitionDelay: visible ? delay : "0ms" }}
-  >
-    {/* Wavy border image frame - stretches to fill container */}
-    <img 
-      src={wavyBorder} 
-      alt="" 
-      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-      aria-hidden="true"
-    />
-    
-    {/* Content - on top of the border */}
-    <div className="relative z-10 px-10 py-8 text-center h-full flex flex-col justify-center">
-      {children}
-    </div>
-  </div>
-);
+import WavyBorderCard from "./ui/WavyBorderCard";
 
 // Day header with horizontal lines
 const DayHeader = ({ children }: { children: React.ReactNode }) => (
@@ -110,7 +77,7 @@ const Timeline = () => {
         <div className="mb-20" ref={sectionRef}>
           <DayHeader>Friday</DayHeader>
           <div className="flex justify-center">
-            <WavyEventCard 
+            <WavyBorderCard 
               visible={visible}
               delay={fridayEvent.delay}
               className="w-full max-w-lg min-h-[220px]"
@@ -124,7 +91,7 @@ const Timeline = () => {
               <p className="text-muted-foreground text-base leading-relaxed max-w-[320px] mx-auto">
                 {fridayEvent.description}
               </p>
-            </WavyEventCard>
+            </WavyBorderCard>
           </div>
         </div>
 
@@ -133,7 +100,7 @@ const Timeline = () => {
           <DayHeader>Saturday</DayHeader>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {saturdayEvents.map((event, index) => (
-              <WavyEventCard 
+              <WavyBorderCard 
                 key={index}
                 visible={visible}
                 delay={event.delay}
@@ -148,7 +115,7 @@ const Timeline = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {event.description}
                 </p>
-              </WavyEventCard>
+              </WavyBorderCard>
             ))}
           </div>
         </div>
