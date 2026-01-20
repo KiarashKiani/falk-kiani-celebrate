@@ -127,7 +127,7 @@ const Timeline = () => {
             {t("timeline.title")}
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Inria Serif', serif" }}>
             {t("timeline.subtitle")}
           </p>
         </div>
