@@ -70,10 +70,11 @@ export default {
 					olive: 'hsl(var(--wedding-olive))'
 				}
 			},
-			fontFamily: {
-				script: 'var(--font-script)',
-				sans: 'var(--font-sans)'
-			},
+		fontFamily: {
+			script: 'var(--font-script)',
+			sans: 'var(--font-sans)',
+			serif: "'Inria Serif', serif"
+		},
 			backgroundImage: {
 				'gradient-romantic': 'var(--gradient-romantic)',
 				'gradient-gold': 'var(--gradient-gold)'
