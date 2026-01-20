@@ -49,7 +49,7 @@ const ContactSection = () => {
               <p className="text-sm text-muted-foreground">
                 Vi ser så mycket fram emot att fira vår kärlek tillsammans med er!
               </p>
-              <p className="text-xl text-primary mt-2" style={{ fontFamily: "'Brittany', cursive" }}>
+              <p className="text-xl text-primary mt-2 font-bold">
                 Med all vår kärlek, Josefin & Kiarash
               </p>
             </div>

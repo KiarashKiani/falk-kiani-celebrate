@@ -137,7 +137,7 @@ const WeddingDetails = () => {
               delay={detail.delay}
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[240px]"
             >
-              <h3 className="text-2xl md:text-3xl text-wedding-olive mb-3" style={{ fontFamily: "'Brittany', cursive" }}>
+              <h3 className="text-2xl md:text-3xl text-wedding-olive mb-3 font-bold">
                 {detail.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
