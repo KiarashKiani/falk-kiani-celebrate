@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -7,6 +6,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
 import { useToast } from "./ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import WavyBorderCard from "./ui/WavyBorderCard";
 
 interface GuestDetails {
   name: string;
@@ -152,11 +152,11 @@ const RSVPForm = () => {
 
   // Section header component for consistent styling
   const SectionHeader = ({ children }: { children: React.ReactNode }) => (
-    <div className="mb-6">
+    <div className="mb-6 text-center">
       <h3 className="font-serif font-bold text-lg text-primary mb-2">
         {children}
       </h3>
-      <div className="h-px bg-primary/20 w-full"></div>
+      <div className="h-px bg-primary/20 w-16 mx-auto"></div>
     </div>
   );
 
@@ -167,10 +167,11 @@ const RSVPForm = () => {
     guest: GuestDetails,
     setGuest: React.Dispatch<React.SetStateAction<GuestDetails>>,
     prefix: string,
-    label: string
+    label: string,
+    delayMs: number = 0
   ) => (
-    <Card className="border-primary/10 bg-card/50 shadow-none animate-fade-in">
-      <CardContent className="pt-6 space-y-6">
+    <WavyBorderCard className="min-h-[420px]" delay={`${delayMs}ms`}>
+      <div className="space-y-6 text-left">
         <SectionHeader>{label}</SectionHeader>
         
         {/* Name */}
@@ -197,17 +198,17 @@ const RSVPForm = () => {
             value={guest.dietary}
             onChange={(e) => setGuest({ ...guest, dietary: e.target.value })}
             placeholder="Ange eventuella allergier eller kostpreferenser"
-            className={`${inputStyles} min-h-[80px]`}
+            className={`${inputStyles} min-h-[60px]`}
           />
         </div>
 
         {/* Meal Choice */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           <Label className="font-serif font-bold text-foreground">Måltidsval</Label>
           <RadioGroup 
             value={guest.mealChoice} 
             onValueChange={(value) => setGuest({ ...guest, mealChoice: value })}
-            className="grid grid-cols-2 gap-3"
+            className="grid grid-cols-2 gap-2"
           >
             {[
               { value: "meat", label: "Kött" },
@@ -217,10 +218,10 @@ const RSVPForm = () => {
             ].map((option) => (
               <div 
                 key={option.value}
-                className="flex items-center space-x-3 p-3 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+                className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
               >
-                <RadioGroupItem value={option.value} id={`${prefix}-${option.value}`} />
-                <Label htmlFor={`${prefix}-${option.value}`} className="font-serif cursor-pointer flex-1">
+                <RadioGroupItem value={option.value} id={`${prefix}-${option.value}`} className="shrink-0" />
+                <Label htmlFor={`${prefix}-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
                   {option.label}
                 </Label>
               </div>
@@ -229,38 +230,38 @@ const RSVPForm = () => {
         </div>
 
         {/* Shuttle */}
-        <div className="space-y-4">
-          <Label className="font-serif font-bold text-foreground">Vill du åka med pendlingsbussen?</Label>
+        <div className="space-y-3">
+          <Label className="font-serif font-bold text-foreground">Pendlingsbuss?</Label>
           <RadioGroup 
             value={guest.shuttle} 
             onValueChange={(value) => setGuest({ ...guest, shuttle: value })}
-            className="grid grid-cols-2 gap-3"
+            className="grid grid-cols-2 gap-2"
           >
             {[
-              { value: "both", label: "Ja, tur och retur" },
+              { value: "both", label: "Tur & retur" },
               { value: "to", label: "Bara dit" },
               { value: "from", label: "Bara hem" },
               { value: "no", label: "Nej tack" },
             ].map((option) => (
               <div 
                 key={option.value}
-                className="flex items-center space-x-3 p-3 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+                className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
               >
-                <RadioGroupItem value={option.value} id={`${prefix}-shuttle-${option.value}`} />
-                <Label htmlFor={`${prefix}-shuttle-${option.value}`} className="font-serif cursor-pointer flex-1">
+                <RadioGroupItem value={option.value} id={`${prefix}-shuttle-${option.value}`} className="shrink-0" />
+                <Label htmlFor={`${prefix}-shuttle-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
                   {option.label}
                 </Label>
               </div>
             ))}
           </RadioGroup>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </WavyBorderCard>
   );
 
   return (
     <section id="rsvp" className="py-20 bg-wedding-sage">
-      <div className="max-w-2xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
@@ -272,147 +273,148 @@ const RSVPForm = () => {
           </p>
         </div>
 
-        {/* Main Form Card */}
-        <Card className="shadow-elegant border-primary/10 overflow-hidden">
-          <CardContent className="p-8 space-y-8">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              
-              {/* Attendance Section */}
-              <div className="space-y-6">
-                <SectionHeader>Kommer du?</SectionHeader>
-                <RadioGroup value={attending} onValueChange={setAttending} className="space-y-3">
-                  {[
-                    { value: "yes", label: "Ja, jag kommer" },
-                    { value: "no", label: "Nej, jag kan tyvärr inte komma" },
-                  ].map((option) => (
-                    <div 
-                      key={option.value}
-                      className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                        attending === option.value 
-                          ? "border-primary bg-primary/5" 
-                          : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
-                      }`}
-                    >
-                      <RadioGroupItem value={option.value} id={`attending-${option.value}`} />
-                      <Label 
-                        htmlFor={`attending-${option.value}`} 
-                        className="font-serif text-base cursor-pointer flex-1"
-                      >
-                        {option.label}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
-              </div>
-
-              {/* If attending YES - show expanded form */}
-              {attending === "yes" && (
-                <div className="space-y-8 animate-fade-in">
-                  
-                  {/* Contact Section */}
-                  <div className="space-y-6">
-                    <SectionHeader>Kontaktuppgifter</SectionHeader>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="font-serif font-bold text-foreground">
-                        E-post <span className="text-primary">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="din@epost.se"
-                        className={inputStyles}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Main Guest Details */}
-                  {renderGuestFields(mainGuest, setMainGuest, "main", "Dina uppgifter")}
-
-                  {/* Bringing Partner Section */}
-                  <div className="space-y-6">
-                    <SectionHeader>Tar du med dig en partner?</SectionHeader>
-                    <RadioGroup value={bringingPartner} onValueChange={setBringingPartner} className="space-y-3">
-                      {[
-                        { value: "yes", label: "Ja" },
-                        { value: "no", label: "Nej" },
-                      ].map((option) => (
-                        <div 
-                          key={option.value}
-                          className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                            bringingPartner === option.value 
-                              ? "border-primary bg-primary/5" 
-                              : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
-                          }`}
-                        >
-                          <RadioGroupItem value={option.value} id={`partner-${option.value}`} />
-                          <Label 
-                            htmlFor={`partner-${option.value}`} 
-                            className="font-serif text-base cursor-pointer flex-1"
-                          >
-                            {option.label}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-
-                  {/* Partner Guest Details */}
-                  {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", "Partnerns uppgifter")}
-
-                  {/* Extras Section */}
-                  <Card className="border-primary/10 bg-card/50 shadow-none">
-                    <CardContent className="pt-6 space-y-6">
-                      <SectionHeader>Övrigt</SectionHeader>
-                      
-                      {/* Song Request */}
-                      <div className="space-y-2">
-                        <Label htmlFor="song" className="font-serif font-bold text-foreground">
-                          Önska en låt
-                        </Label>
-                        <Input
-                          id="song"
-                          value={songRequest}
-                          onChange={(e) => setSongRequest(e.target.value)}
-                          placeholder="Vilken låt får dig att dansa?"
-                          className={inputStyles}
-                        />
-                      </div>
-
-                      {/* Message */}
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="font-serif font-bold text-foreground">
-                          Meddelande till oss
-                        </Label>
-                        <Textarea
-                          id="message"
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                          placeholder="Något du vill berätta för oss?"
-                          className={`${inputStyles} min-h-[100px]`}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              )}
-
-              {/* Submit Button */}
-              {attending && (
-                <div className="animate-fade-in pt-4">
-                  <Button 
-                    type="submit" 
-                    className="w-full font-serif text-lg py-6 rounded-xl bg-primary hover:bg-primary/90 transition-all shadow-md hover:shadow-lg" 
-                    disabled={isSubmitting}
+        <form onSubmit={handleSubmit} className="space-y-8">
+          
+          {/* Attendance Section */}
+          <WavyBorderCard className="min-h-[180px]">
+            <div className="space-y-6 text-left">
+              <SectionHeader>Kommer du?</SectionHeader>
+              <RadioGroup value={attending} onValueChange={setAttending} className="space-y-3">
+                {[
+                  { value: "yes", label: "Ja, jag kommer" },
+                  { value: "no", label: "Nej, jag kan tyvärr inte komma" },
+                ].map((option) => (
+                  <div 
+                    key={option.value}
+                    className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                      attending === option.value 
+                        ? "border-primary bg-primary/5" 
+                        : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
+                    }`}
                   >
-                    {isSubmitting ? "Skickar..." : "Skicka OSA"}
-                  </Button>
+                    <RadioGroupItem value={option.value} id={`attending-${option.value}`} />
+                    <Label 
+                      htmlFor={`attending-${option.value}`} 
+                      className="font-serif text-base cursor-pointer flex-1"
+                    >
+                      {option.label}
+                    </Label>
+                  </div>
+                ))}
+              </RadioGroup>
+            </div>
+          </WavyBorderCard>
+
+          {/* If attending YES - show expanded form */}
+          {attending === "yes" && (
+            <div className="space-y-8 animate-fade-in">
+              
+              {/* Contact Section */}
+              <WavyBorderCard className="min-h-[160px]" delay="100ms">
+                <div className="space-y-6 text-left">
+                  <SectionHeader>Kontaktuppgifter</SectionHeader>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="font-serif font-bold text-foreground">
+                      E-post <span className="text-primary">*</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="din@epost.se"
+                      className={inputStyles}
+                    />
+                  </div>
                 </div>
-              )}
-            </form>
-          </CardContent>
-        </Card>
+              </WavyBorderCard>
+
+              {/* Main Guest Details */}
+              {renderGuestFields(mainGuest, setMainGuest, "main", "Dina uppgifter", 200)}
+
+              {/* Bringing Partner Section */}
+              <WavyBorderCard className="min-h-[180px]" delay="300ms">
+                <div className="space-y-6 text-left">
+                  <SectionHeader>Tar du med dig en partner?</SectionHeader>
+                  <RadioGroup value={bringingPartner} onValueChange={setBringingPartner} className="space-y-3">
+                    {[
+                      { value: "yes", label: "Ja" },
+                      { value: "no", label: "Nej" },
+                    ].map((option) => (
+                      <div 
+                        key={option.value}
+                        className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                          bringingPartner === option.value 
+                            ? "border-primary bg-primary/5" 
+                            : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
+                        }`}
+                      >
+                        <RadioGroupItem value={option.value} id={`partner-${option.value}`} />
+                        <Label 
+                          htmlFor={`partner-${option.value}`} 
+                          className="font-serif text-base cursor-pointer flex-1"
+                        >
+                          {option.label}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+              </WavyBorderCard>
+
+              {/* Partner Guest Details */}
+              {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", "Partnerns uppgifter", 400)}
+
+              {/* Extras Section */}
+              <WavyBorderCard className="min-h-[260px]" delay="500ms">
+                <div className="space-y-6 text-left">
+                  <SectionHeader>Övrigt</SectionHeader>
+                  
+                  {/* Song Request */}
+                  <div className="space-y-2">
+                    <Label htmlFor="song" className="font-serif font-bold text-foreground">
+                      Önska en låt
+                    </Label>
+                    <Input
+                      id="song"
+                      value={songRequest}
+                      onChange={(e) => setSongRequest(e.target.value)}
+                      placeholder="Vilken låt får dig att dansa?"
+                      className={inputStyles}
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="font-serif font-bold text-foreground">
+                      Meddelande till oss
+                    </Label>
+                    <Textarea
+                      id="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Något du vill berätta för oss?"
+                      className={`${inputStyles} min-h-[80px]`}
+                    />
+                  </div>
+                </div>
+              </WavyBorderCard>
+            </div>
+          )}
+
+          {/* Submit Button */}
+          {attending && (
+            <div className="animate-fade-in pt-4">
+              <Button 
+                type="submit" 
+                className="w-full font-serif text-lg py-6 rounded-xl bg-primary hover:bg-primary/90 transition-all shadow-md hover:shadow-lg" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Skickar..." : "Skicka OSA"}
+              </Button>
+            </div>
+          )}
+        </form>
       </div>
     </section>
   );
