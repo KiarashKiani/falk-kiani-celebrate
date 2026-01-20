@@ -3,10 +3,112 @@ import { Resend } from "npm:resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
+// Allowed origins for CORS - restrict to wedding website domains
+const ALLOWED_ORIGINS = [
+  "https://falk-kiani-celebrate.lovable.app",
+  "https://id-preview--eb0e59a1-4e5c-437b-9aa9-3a6605d24d00.lovable.app",
+  "http://localhost:5173",
+  "http://localhost:8080"
+];
+
+const getCorsHeaders = (origin: string | null): Record<string, string> => {
+  const allowedOrigin = origin && ALLOWED_ORIGINS.some(o => origin.startsWith(o.replace(/https?:\/\//, ''))) 
+    ? origin 
+    : ALLOWED_ORIGINS[0];
+  
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  };
+};
+
+// Simple in-memory rate limiting (resets on function cold start)
+const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
+const RATE_LIMIT_MAX = 5; // Max submissions per window
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+const checkRateLimit = (ip: string): boolean => {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+  
+  if (!record || (now - record.timestamp) > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.set(ip, { count: 1, timestamp: now });
+    return true;
+  }
+  
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+  
+  record.count++;
+  return true;
+};
+
+// HTML escape function to prevent XSS in emails
+const escapeHtml = (unsafe: string): string => {
+  if (!unsafe) return "";
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+};
+
+// Input validation constants
+const MAX_NAME_LENGTH = 100;
+const MAX_DIETARY_LENGTH = 500;
+const MAX_MESSAGE_LENGTH = 1000;
+const MAX_SONG_LENGTH = 200;
+const MAX_EMAIL_LENGTH = 254;
+
+// Validate and sanitize input
+const validateInput = (data: RSVPEmailRequest): { valid: boolean; error?: string } => {
+  // Check attending field
+  if (!data.attending || !["yes", "no"].includes(data.attending)) {
+    return { valid: false, error: "Invalid attendance value" };
+  }
+
+  // Validate email if provided
+  if (data.email) {
+    if (data.email.length > MAX_EMAIL_LENGTH) {
+      return { valid: false, error: "Email is too long" };
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      return { valid: false, error: "Invalid email format" };
+    }
+  }
+
+  // Validate guests array
+  if (data.attending === "yes") {
+    if (!data.guests || !Array.isArray(data.guests) || data.guests.length === 0) {
+      return { valid: false, error: "At least one guest is required" };
+    }
+    
+    for (const guest of data.guests) {
+      if (!guest.name || typeof guest.name !== "string") {
+        return { valid: false, error: "Guest name is required" };
+      }
+      if (guest.name.length > MAX_NAME_LENGTH) {
+        return { valid: false, error: "Guest name is too long" };
+      }
+      if (guest.dietary && guest.dietary.length > MAX_DIETARY_LENGTH) {
+        return { valid: false, error: "Dietary information is too long" };
+      }
+    }
+  }
+
+  // Validate optional fields
+  if (data.songRequest && data.songRequest.length > MAX_SONG_LENGTH) {
+    return { valid: false, error: "Song request is too long" };
+  }
+  if (data.message && data.message.length > MAX_MESSAGE_LENGTH) {
+    return { valid: false, error: "Message is too long" };
+  }
+
+  return { valid: true };
 };
 
 interface Guest {
@@ -32,7 +134,7 @@ const getMealText = (meal: string): string => {
     vegetarian: "Vegetarisk",
     vegan: "Vegansk",
   };
-  return texts[meal] || meal || "Ej valt";
+  return texts[meal] || escapeHtml(meal) || "Ej valt";
 };
 
 const getShuttleText = (shuttle: string): string => {
@@ -42,7 +144,7 @@ const getShuttleText = (shuttle: string): string => {
     from: "Bara hem",
     no: "Nej tack",
   };
-  return texts[shuttle] || shuttle || "Ej valt";
+  return texts[shuttle] || escapeHtml(shuttle) || "Ej valt";
 };
 
 const getConfirmationEmail = (data: RSVPEmailRequest): string => {
@@ -51,10 +153,10 @@ const getConfirmationEmail = (data: RSVPEmailRequest): string => {
   
   const guestSummary = (guest: Guest, label: string) => `
     <div style="background: #f8f6f3; padding: 20px; border-radius: 8px; margin: 15px 0;">
-      <h3 style="color: #2d4a3e; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e8e4df; padding-bottom: 10px;">${label}: ${guest.name}</h3>
+      <h3 style="color: #2d4a3e; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e8e4df; padding-bottom: 10px;">${escapeHtml(label)}: ${escapeHtml(guest.name)}</h3>
       <div style="margin: 10px 0;">
         <strong style="color: #2d4a3e;">Allergier/Specialkost:</strong>
-        <span style="color: #4a4a4a;"> ${guest.dietary || "Inga"}</span>
+        <span style="color: #4a4a4a;"> ${escapeHtml(guest.dietary) || "Inga"}</span>
       </div>
       <div style="margin: 10px 0;">
         <strong style="color: #2d4a3e;">Måltidsval:</strong>
@@ -86,7 +188,7 @@ const getConfirmationEmail = (data: RSVPEmailRequest): string => {
           <h1>💍 Falk & Kiani 2026 💍</h1>
         </div>
         <div class="content">
-          <p style="font-size: 18px;">Hej ${mainGuest?.name || ""}!</p>
+          <p style="font-size: 18px;">Hej ${escapeHtml(mainGuest?.name || "")}!</p>
           <p>Tack för din OSA! Vi är så glada att du kommer och firar med oss.</p>
           
           <p><strong>Här är en sammanfattning av ditt svar:</strong></p>
@@ -97,14 +199,14 @@ const getConfirmationEmail = (data: RSVPEmailRequest): string => {
           ${data.songRequest ? `
           <div style="margin: 20px 0;">
             <strong style="color: #2d4a3e;">Låtönskemål:</strong>
-            <span style="color: #4a4a4a;"> ${data.songRequest}</span>
+            <span style="color: #4a4a4a;"> ${escapeHtml(data.songRequest)}</span>
           </div>
           ` : ""}
           
           ${data.message ? `
           <div style="margin: 20px 0;">
             <strong style="color: #2d4a3e;">Meddelande:</strong>
-            <span style="color: #4a4a4a;"> ${data.message}</span>
+            <span style="color: #4a4a4a;"> ${escapeHtml(data.message)}</span>
           </div>
           ` : ""}
           
@@ -178,12 +280,12 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
   const guestRow = (guest: Guest, label: string) => `
     <tr style="background: #f0f9f6;">
       <td colspan="2" style="padding: 15px; font-weight: bold; color: #2d4a3e; border-bottom: 2px solid #2d4a3e;">
-        ${label}: ${guest.name}
+        ${escapeHtml(label)}: ${escapeHtml(guest.name)}
       </td>
     </tr>
     <tr>
       <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Allergier/Specialkost</td>
-      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${guest.dietary || "Inga"}</td>
+      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${escapeHtml(guest.dietary) || "Inga"}</td>
     </tr>
     <tr>
       <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Måltidsval</td>
@@ -210,7 +312,7 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
         </div>
         <div style="padding: 20px; background: #f8f6f3; border-radius: 0 0 8px 8px;">
           <div style="margin-bottom: 15px;">
-            <strong>E-post:</strong> <a href="mailto:${data.email}">${data.email}</a>
+            <strong>E-post:</strong> <a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a>
           </div>
           <div style="margin-bottom: 15px;">
             <strong>Antal gäster:</strong> ${data.guests?.length || 1}
@@ -224,14 +326,14 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
           ${data.songRequest ? `
           <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
             <strong style="color: #2d4a3e;">🎵 Låtönskemål:</strong>
-            <p style="margin: 5px 0 0 0;">${data.songRequest}</p>
+            <p style="margin: 5px 0 0 0;">${escapeHtml(data.songRequest)}</p>
           </div>
           ` : ""}
           
           ${data.message ? `
           <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
             <strong style="color: #2d4a3e;">💬 Meddelande:</strong>
-            <p style="margin: 5px 0 0 0;">${data.message}</p>
+            <p style="margin: 5px 0 0 0;">${escapeHtml(data.message)}</p>
           </div>
           ` : ""}
         </div>
@@ -242,17 +344,45 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
 };
 
 const handler = async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Only allow POST requests
+  if (req.method !== "POST") {
+    return new Response(
+      JSON.stringify({ error: "Method not allowed" }),
+      { status: 405, headers: { "Content-Type": "application/json", ...corsHeaders } }
+    );
+  }
+
+  // Rate limiting based on IP
+  const clientIP = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() 
+    || req.headers.get("cf-connecting-ip") 
+    || req.headers.get("x-real-ip") 
+    || "unknown";
+  
+  if (!checkRateLimit(clientIP)) {
+    console.warn(`Rate limit exceeded for IP: ${clientIP}`);
+    return new Response(
+      JSON.stringify({ error: "Too many requests. Please try again later." }),
+      { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+    );
+  }
+
   try {
     const data: RSVPEmailRequest = await req.json();
-    console.log("Received RSVP submission:", JSON.stringify(data, null, 2));
+    console.log("Received RSVP submission from IP:", clientIP);
 
-    if (!data.attending) {
+    // Validate input
+    const validation = validateInput(data);
+    if (!validation.valid) {
+      console.warn("Validation failed:", validation.error);
       return new Response(
-        JSON.stringify({ error: "Missing attending field" }),
+        JSON.stringify({ error: validation.error }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
@@ -263,12 +393,12 @@ const handler = async (req: Request): Promise<Response> => {
       replyTo: data.email || "falkkiani2026@gmail.com",
       to: ["falkkiani2026@gmail.com"],
       subject: data.attending === "yes" 
-        ? `✅ Ny OSA: ${data.guests?.[0]?.name || "Gäst"} kommer!${data.guests?.length > 1 ? ` (+1)` : ""}`
+        ? `✅ Ny OSA: ${escapeHtml(data.guests?.[0]?.name || "Gäst")} kommer!${data.guests?.length > 1 ? ` (+1)` : ""}`
         : `❌ OSA: Kan inte komma`,
       html: getNotificationEmail(data),
     });
 
-    console.log("Notification email sent:", notificationEmail);
+    console.log("Notification email sent successfully");
 
     // Send confirmation email to guest (only if attending and has email)
     if (data.attending === "yes" && data.email) {
@@ -279,7 +409,7 @@ const handler = async (req: Request): Promise<Response> => {
         subject: "Tack för din OSA - Falk & Kiani 2026",
         html: getConfirmationEmail(data),
       });
-      console.log("Confirmation email sent:", confirmationEmail);
+      console.log("Confirmation email sent successfully");
     }
 
     return new Response(
@@ -287,9 +417,12 @@ const handler = async (req: Request): Promise<Response> => {
       { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   } catch (error: any) {
+    // Log detailed error server-side only
     console.error("Error in send-rsvp-emails function:", error);
+    
+    // Return generic error message to client
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Unable to process your RSVP. Please try again later." }),
       { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }
