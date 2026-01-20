@@ -28,9 +28,20 @@ const WavyEventCard = ({
     />
     
     {/* Content */}
-    <div className="relative px-8 py-10 text-center h-full flex flex-col justify-center">
+    <div className="relative px-6 py-8 text-center h-full flex flex-col justify-center">
       {children}
     </div>
+  </div>
+);
+
+// Day header with horizontal lines
+const DayHeader = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-center justify-center gap-4 mb-10">
+    <div className="h-px w-16 bg-wedding-olive"></div>
+    <h3 className="text-xl md:text-2xl text-wedding-olive uppercase tracking-[0.3em]" style={{ fontFamily: "'Lovely May', serif" }}>
+      {children}
+    </h3>
+    <div className="h-px w-16 bg-wedding-olive"></div>
   </div>
 );
 
@@ -54,38 +65,31 @@ const Timeline = () => {
     return () => observer.disconnect();
   }, []);
 
-  const fridayEvents = [
-    {
-      title: "Mingel",
-      description: "Avslappnat mingel med drinkar och lätta tilltugg. En perfekt chans att träffa andra gäster innan den stora dagen.",
-      delay: "0ms"
-    }
-  ];
+  const fridayEvent = {
+    title: "Meet & Greet",
+    time: "6:00 PM",
+    description: "Relaxed meet and greet with drinks and light bites. A perfect chance to meet other guests before the big day.",
+    delay: "0ms"
+  };
 
   const saturdayEvents = [
     {
-      title: "Vigselceremoni",
-      time: "15:00",
-      description: "Vi säger ja till varandra i äppellunden",
+      title: "Ceremony",
+      time: "3:00 PM",
+      description: "The wedding ceremony will be held in the beautiful apple orchard at Nybynäs Gård.",
       delay: "100ms"
     },
     {
-      title: "Skål & Mingel",
-      time: "16:00",
-      description: "Champagne och gratulationer efter ceremonin",
+      title: "Dinner & Party",
+      time: "5:00 PM",
+      description: "Wedding dinner followed by dancing and celebration late into the evening.",
       delay: "200ms"
     },
     {
-      title: "Bröllopsmiddag",
-      time: "17:30",
-      description: "Festmiddag i Magasinet med tal och skratt",
+      title: "Dancing & Music",
+      time: "9:00 PM",
+      description: "DJ and dance floor open. Come and dance the night away!",
       delay: "300ms"
-    },
-    {
-      title: "Fest & Dans",
-      time: "20:00",
-      description: "Nu dansar vi natten lång!",
-      delay: "400ms"
     }
   ];
 
@@ -103,49 +107,45 @@ const Timeline = () => {
         </div>
 
         {/* Friday Section */}
-        <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl text-center text-wedding-olive mb-8 uppercase tracking-[0.3em]" style={{ fontFamily: "'Lovely May', serif" }}>
-            Fredag
-          </h3>
-          <div ref={sectionRef} className="flex justify-center">
-            {fridayEvents.map((event, index) => (
-              <WavyEventCard 
-                key={index}
-                visible={visible}
-                delay={event.delay}
-                className="w-full max-w-md min-h-[200px]"
-              >
-                <h4 className="text-3xl md:text-4xl text-primary mb-3" style={{ fontFamily: "'Brittany', cursive" }}>
-                  {event.title}
-                </h4>
-                <p className="text-muted-foreground text-base leading-relaxed max-w-[280px] mx-auto">
-                  {event.description}
-                </p>
-              </WavyEventCard>
-            ))}
+        <div className="mb-20" ref={sectionRef}>
+          <DayHeader>Friday</DayHeader>
+          <div className="flex justify-center">
+            <WavyEventCard 
+              visible={visible}
+              delay={fridayEvent.delay}
+              className="w-full max-w-lg min-h-[220px]"
+            >
+              <h4 className="text-3xl md:text-4xl text-wedding-olive mb-2" style={{ fontFamily: "'Lovely May', serif" }}>
+                {fridayEvent.title}
+              </h4>
+              <p className="text-lg font-bold text-wedding-olive mb-4 uppercase tracking-wide">
+                {fridayEvent.time}
+              </p>
+              <p className="text-muted-foreground text-base leading-relaxed max-w-[320px] mx-auto">
+                {fridayEvent.description}
+              </p>
+            </WavyEventCard>
           </div>
         </div>
 
         {/* Saturday Section */}
         <div>
-          <h3 className="text-3xl md:text-4xl text-center text-wedding-olive mb-8 uppercase tracking-[0.3em]" style={{ fontFamily: "'Lovely May', serif" }}>
-            Lördag
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
+          <DayHeader>Saturday</DayHeader>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {saturdayEvents.map((event, index) => (
               <WavyEventCard 
                 key={index}
                 visible={visible}
                 delay={event.delay}
-                className="min-h-[200px]"
+                className="min-h-[220px]"
               >
-                <h4 className="text-2xl md:text-3xl text-primary mb-2" style={{ fontFamily: "'Brittany', cursive" }}>
+                <h4 className="text-2xl md:text-3xl text-wedding-olive mb-2" style={{ fontFamily: "'Lovely May', serif" }}>
                   {event.title}
                 </h4>
                 <p className="text-base font-bold text-wedding-olive mb-3 uppercase tracking-wide">
                   {event.time}
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-[260px] mx-auto">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {event.description}
                 </p>
               </WavyEventCard>
