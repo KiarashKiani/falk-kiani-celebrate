@@ -81,7 +81,7 @@ const WeddingDetails = () => {
             {t("details.title")}
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("details.subtitle")}
           </p>
         </div>
@@ -98,7 +98,7 @@ const WeddingDetails = () => {
               <h3 className="text-2xl md:text-3xl text-wedding-olive mb-3 font-bold">
                 {detail.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
+              <p className="font-serif text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
                 {detail.content}
               </p>
             </WavyBorderCard>
@@ -113,12 +113,12 @@ const WeddingDetails = () => {
               <span>{t("details.dresscode.title")}</span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-muted-foreground space-y-6">
+          <CardContent className="font-serif text-muted-foreground space-y-6">
             <div>
               <h3 className="text-lg font-bold text-foreground mb-2">
                 {t("details.dresscode.friday.title")}
               </h3>
-              <p>{t("details.dresscode.friday.content")}</p>
+              <p className="font-serif">{t("details.dresscode.friday.content")}</p>
             </div>
             
             <div>
@@ -130,7 +130,7 @@ const WeddingDetails = () => {
                   href="https://www.stroms.com/kladkod-brollop-dam/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors duration-200 text-sm"
+                  className="font-serif inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors duration-200 text-sm"
                 >
                   {t("details.dresscode.women")}
                 </a>
@@ -138,7 +138,7 @@ const WeddingDetails = () => {
                   href="https://www.stroms.com/kladkod-brollop-herr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md transition-colors duration-200 text-sm"
+                  className="font-serif inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md transition-colors duration-200 text-sm"
                 >
                   {t("details.dresscode.men")}
                 </a>
