@@ -71,7 +71,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
         {/* Countdown Timer */}
         {!showPasswordInput && (
           <div className="w-full max-w-2xl mb-8 animate-fade-in">
-            <h2 className="font-script text-3xl md:text-4xl font-bold text-primary mb-2">
+            <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-2 uppercase tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               {t("countdown.title")}
             </h2>
             <p className="font-serif text-base text-muted-foreground mb-6">
