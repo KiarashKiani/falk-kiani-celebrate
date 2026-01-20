@@ -79,7 +79,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
             </p>
             <div className="grid grid-cols-4 gap-3 md:gap-6">
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.days}
                 </div>
                 <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
@@ -87,7 +87,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.hours}
                 </div>
                 <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
@@ -95,7 +95,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.minutes}
                 </div>
                 <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
@@ -103,7 +103,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                 </div>
               </div>
               <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-2xl md:text-4xl font-bold text-primary mb-1" style={{ fontFamily: "'Brittany', cursive" }}>
+                <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.seconds}
                 </div>
                 <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
