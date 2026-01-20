@@ -2,8 +2,9 @@ import { Shirt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
+import wavyBorder from "@/assets/wavy-border.png";
 
-// Reusable wavy border card component
+// Reusable wavy border card component using image
 const WavyCard = ({ 
   children, 
   className = "",
@@ -21,23 +22,13 @@ const WavyCard = ({
     } ${className}`}
     style={{ transitionDelay: visible ? delay : "0ms" }}
   >
-    {/* Wavy border SVG frame */}
-    <svg
-      viewBox="0 0 200 240"
-      className="absolute inset-0 w-full h-full"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M15,25 
-           Q25,10 40,25 Q55,40 70,25 Q85,10 100,25 Q115,40 130,25 Q145,10 160,25 Q175,40 185,25
-           Q200,40 185,60 Q170,80 185,100 Q200,120 185,140 Q170,160 185,180 Q200,200 185,220
-           Q175,235 160,220 Q145,205 130,220 Q115,235 100,220 Q85,205 70,220 Q55,235 40,220 Q25,205 15,220
-           Q0,205 15,185 Q30,165 15,145 Q0,125 15,105 Q30,85 15,65 Q0,45 15,25 Z"
-        fill="none"
-        className="stroke-wedding-olive"
-        strokeWidth="2"
-      />
-    </svg>
+    {/* Wavy border image frame */}
+    <img 
+      src={wavyBorder} 
+      alt="" 
+      className="absolute inset-0 w-full h-full object-fill pointer-events-none"
+      aria-hidden="true"
+    />
     
     {/* Content */}
     <div className="relative px-6 pt-12 pb-8 text-center h-full flex flex-col justify-start">
