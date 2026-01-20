@@ -153,17 +153,21 @@
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    font-family: 'Inria Serif', serif !important;
+  }
+
+  p, span, div, li, a, label, input, textarea, button {
     font-family: 'Inria Serif', serif;
   }
 
   h1, h2 {
-    font-family: 'Lovely May', serif;
+    font-family: 'Lovely May', serif !important;
   }
 
   h3, h4, h5, h6 {
-    font-family: 'Inria Serif', serif;
+    font-family: 'Inria Serif', serif !important;
     font-weight: 700;
   }
 }
