@@ -6,7 +6,7 @@ const TravelInfo = () => {
     <section id="travel" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl font-normal text-primary mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
             Reseinformation
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
