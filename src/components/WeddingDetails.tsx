@@ -74,7 +74,7 @@ const WeddingDetails = () => {
     <section id="details" className="py-24 bg-wedding-sage">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-normal text-primary mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
+          <h2 className="text-4xl md:text-5xl font-normal mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
             {t("details.title")}
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
