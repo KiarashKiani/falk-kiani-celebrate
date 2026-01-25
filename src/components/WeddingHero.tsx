@@ -78,7 +78,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
               {t("countdown.subtitle")}
             </p>
             <div className="grid grid-cols-4 gap-3 md:gap-5">
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.days}
                 </div>
@@ -86,7 +86,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.days")}
                 </div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.hours}
                 </div>
@@ -94,7 +94,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.hours")}
                 </div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.minutes}
                 </div>
@@ -102,7 +102,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                   {t("countdown.minutes")}
                 </div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.seconds}
                 </div>
