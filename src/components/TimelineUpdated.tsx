@@ -1,81 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
 
-// Wavy card with olive stroke and white/peach background - matches reference design
-const FridayWavyCard = ({
-  children,
-  className = "",
-  visible = true,
-  delay = "0ms"
-}: {
-  children: React.ReactNode;
-  className?: string;
-  visible?: boolean;
-  delay?: string;
-}) => {
-  const clipId = useId();
-  
-  // Organic hand-drawn wavy path matching the reference
-  const wavyPath = `
-    M 20,15
-    C 35,5 55,25 80,12 C 105,0 125,20 150,10 C 175,0 190,15 195,25
-    C 205,45 185,65 198,90 C 210,115 190,135 200,160 C 210,185 195,200 185,210
-    C 170,225 145,205 120,218 C 95,230 70,210 45,222 C 20,235 5,215 5,200
-    C -5,175 20,155 8,130 C -5,105 15,85 5,60 C -5,35 10,20 20,15
-    Z
-  `;
-
-  return (
-    <div
-      className={`relative transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      } ${className}`}
-      style={{ transitionDelay: visible ? delay : "0ms" }}
-    >
-      {/* SVG Wavy Border */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 200 230"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <defs>
-          <clipPath id={clipId}>
-            <path d={wavyPath} />
-          </clipPath>
-        </defs>
-        
-        {/* White/cream fill */}
-        <rect 
-          x="0" 
-          y="0" 
-          width="200" 
-          height="230" 
-          fill="#fffdf9"
-          clipPath={`url(#${clipId})`}
-        />
-        
-        {/* Olive green wavy border stroke */}
-        <path
-          d={wavyPath}
-          fill="none"
-          stroke="#416631"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
-
-      {/* Content */}
-      <div className="relative z-10 px-10 py-12 text-left h-full flex flex-col justify-center">
-        {children}
-      </div>
-    </div>
-  );
-};
-
-// Original wavy card for Saturday (peach background)
+// Reusable wavy border card component
 const WavyCard = ({
   children,
   className = "",
@@ -289,7 +215,7 @@ const Timeline = () => {
 
           {/* Friday - Single centered wavy card */}
           <div className="flex justify-center mb-20">
-            <FridayWavyCard
+            <WavyCard
               visible={fridayVisible}
               delay="100ms"
               className="hover:-translate-y-2 transition-transform duration-300 max-w-md w-full min-h-[280px]"
@@ -306,7 +232,7 @@ const Timeline = () => {
               <p className="font-serif text-sm text-muted-foreground mt-4 italic">
                 {getDisplayTitle(t("timeline.friday.bus.title"))}: {t("timeline.friday.bus.time")}
               </p>
-            </FridayWavyCard>
+            </WavyCard>
           </div>
         </div>
 
