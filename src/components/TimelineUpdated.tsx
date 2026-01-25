@@ -168,9 +168,8 @@ const Timeline = () => {
           {/* Friday - Single centered wavy card */}
           <div className="flex justify-center mb-20">
             <WavyCard visible={fridayVisible} delay="100ms" className="hover:-translate-y-2 transition-transform duration-300 max-w-md w-full min-h-[280px]">
-              <h4 className="text-4xl md:text-5xl mb-4 inline-block transform -rotate-3 px-0" style={{
-              fontFamily: "'Brittany', cursive",
-              color: '#322e29'
+              <h4 className="font-script text-4xl md:text-5xl mb-4" style={{
+              color: '#416631'
             }}>
                 {getDisplayTitle(t("timeline.friday.title"))}
               </h4>
