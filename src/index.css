@@ -85,76 +85,71 @@
   font-display: swap;
 }
 
-/* Wedding Design System - Elegant & Romantic */
+/* Wedding Design System - Modern, Warm & Celebratory */
 
 @layer base {
   :root {
-    /* Elegant Wedding Color Palette */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    /* Elegant Wedding Color Palette - Warm & Soft */
+    --background: 30 30% 99%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card: 30 25% 99%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 30 25% 99%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 30 10% 18%;
+    --primary-foreground: 30 30% 98%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 30 15% 96%;
+    --secondary-foreground: 30 10% 18%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 30 12% 94%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 30 15% 92%;
+    --accent-foreground: 30 10% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 0 0% 60%;
+    --border: 30 15% 88%;
+    --input: 30 15% 95%;
+    --ring: 30 10% 55%;
 
-    /* Wedding-specific colors */
-    --wedding-cream: 30 25% 95%;
-    --wedding-gold: 40 35% 75%;
-    --wedding-sage: 34 100% 97%;
-    --wedding-blush: 15 25% 90%;
-    --wedding-olive: 102 35% 30%;
+    /* Wedding-specific colors - Warmer palette */
+    --wedding-cream: 28 35% 95%;
+    --wedding-gold: 38 40% 72%;
+    --wedding-sage: 28 55% 96%;
+    --wedding-blush: 20 30% 92%;
+    --wedding-olive: 100 32% 28%;
+    --wedding-champagne: 35 45% 85%;
 
     /* Typography */
     --font-headline: 'Lovely May', serif;
-    --font-calligraphy: 'Brittany', cursive; /* Will be added when font uploaded */
+    --font-calligraphy: 'Brittany', cursive;
     --font-subheadline: 'Inria Serif', serif;
     --font-body: 'Inria Serif', serif;
 
-    /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --gradient-gold: linear-gradient(135deg, hsl(var(--wedding-gold)), hsl(var(--accent)));
+    /* Gradients - Softer transitions */
+    --gradient-romantic: linear-gradient(135deg, hsl(30 30% 99%), hsl(28 35% 97%));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--wedding-champagne)), hsl(var(--accent)));
+    --gradient-warm: linear-gradient(180deg, hsl(28 55% 96%) 0%, hsl(30 30% 99%) 100%);
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -8px hsl(var(--primary) / 0.15);
-    --shadow-elegant: 0 8px 30px -12px hsl(var(--primary) / 0.2);
+    /* Shadows - Softer & warmer */
+    --shadow-soft: 0 4px 24px -8px hsl(30 20% 30% / 0.08);
+    --shadow-elegant: 0 8px 32px -12px hsl(30 20% 30% / 0.12);
 
     --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
+    --sidebar-background: 30 20% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 

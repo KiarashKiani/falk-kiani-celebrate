@@ -156,7 +156,7 @@ const RSVPForm = () => {
       <h3 className="font-serif font-bold text-lg text-primary mb-2">
         {children}
       </h3>
-      <div className="h-px bg-primary/20 w-16 mx-auto"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-wedding-olive/40 to-transparent w-24 mx-auto"></div>
     </div>
   );
 
@@ -260,14 +260,14 @@ const RSVPForm = () => {
   );
 
   return (
-    <section id="rsvp" className="py-20 bg-wedding-sage">
+    <section id="rsvp" className="py-24 bg-wedding-sage">
       <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
             OSA
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground">
             Vänligen svara senast den 1 april 2026
           </p>

@@ -67,7 +67,8 @@ export default {
 					gold: 'hsl(var(--wedding-gold))',
 					sage: 'hsl(var(--wedding-sage))',
 					blush: 'hsl(var(--wedding-blush))',
-					olive: 'hsl(var(--wedding-olive))'
+					olive: 'hsl(var(--wedding-olive))',
+					champagne: 'hsl(var(--wedding-champagne))'
 				}
 			},
 		fontFamily: {
