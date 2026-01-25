@@ -32,24 +32,14 @@ const WeddingDetails = () => {
       delay: "0ms"
     },
     {
-      title: t("details.hashtag.title"),
-      content: t("details.hashtag.content"),
-      delay: "100ms"
-    },
-    {
       title: t("details.gifts.title"),
       content: t("details.gifts.content"),
-      delay: "200ms"
+      delay: "100ms"
     },
     {
       title: t("details.venue.title"),
       content: t("details.venue.content"),
-      delay: "300ms"
-    },
-    {
-      title: t("details.photos.title"),
-      content: t("details.photos.content"),
-      delay: "400ms"
+      delay: "200ms"
     }
   ];
 
