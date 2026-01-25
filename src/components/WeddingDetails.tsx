@@ -106,7 +106,7 @@ const WeddingDetails = () => {
         </div>
 
         {/* Larger Dress Code section */}
-        <Card className="shadow-soft">
+        <Card className="shadow-soft bg-wedding-sage border-wedding-olive/20">
           <CardHeader>
             <CardTitle className="flex items-center text-xl font-bold">
               <Shirt className="w-6 h-6 mr-3 text-primary" />
