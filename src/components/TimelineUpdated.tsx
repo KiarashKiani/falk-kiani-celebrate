@@ -205,12 +205,12 @@ const Timeline = () => {
               fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
-              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
+            <div className="inline-flex items-center gap-6 mb-6">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-xl md:text-2xl">
                 {t("timeline.friday.title").split(" ")[0] || "Fredag"}
               </span>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
+              <div className="w-16 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
             </div>
           </div>
 
@@ -242,12 +242,12 @@ const Timeline = () => {
               saturdayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
-              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
+            <div className="inline-flex items-center gap-6 mb-6">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-xl md:text-2xl">
                 {t("timeline.saturday.day")}
               </span>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
+              <div className="w-16 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
             </div>
           </div>
 
