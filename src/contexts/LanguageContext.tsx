@@ -135,8 +135,10 @@ const translations = {
     'accommodation.steam.description': 'Modernt designhotell vid Mälaren med spa och restaurang.',
     'accommodation.steam.discount': '10% rabatt för bröllopsgäster',
     'accommodation.steam.code': 'Använd kod: bröllop2026',
+    'accommodation.steam.pricing': 'Priserna är dynamiska och varierar.',
     'accommodation.elite.description': 'Klassiskt stadshotell i centrala Västerås.',
     'accommodation.elite.booking': 'Ring eller maila och nämn "Josefin & Kiarash"',
+    'accommodation.elite.pricing': 'Dubbelrum 1 350 kr/natt • Enkelrum 1 150 kr/natt',
     
     // Contact
     'contact.title': 'Kontakt',
@@ -275,8 +277,10 @@ const translations = {
     'accommodation.steam.description': 'Modern design hotel by Lake Mälaren with spa and restaurant.',
     'accommodation.steam.discount': '10% discount for wedding guests',
     'accommodation.steam.code': 'Use code: bröllop2026',
+    'accommodation.steam.pricing': 'Prices are dynamic and vary.',
     'accommodation.elite.description': 'Classic city hotel in central Västerås.',
     'accommodation.elite.booking': 'Call or email and mention "Josefin & Kiarash"',
+    'accommodation.elite.pricing': 'Double room 1,350 SEK/night • Single room 1,150 SEK/night',
     
     // Contact
     'contact.title': 'Contact',
@@ -415,8 +419,10 @@ const translations = {
     'accommodation.steam.description': 'Modernes Designhotel am Mälaren-See mit Spa und Restaurant.',
     'accommodation.steam.discount': '10% Rabatt für Hochzeitsgäste',
     'accommodation.steam.code': 'Code verwenden: bröllop2026',
+    'accommodation.steam.pricing': 'Preise sind dynamisch und variieren.',
     'accommodation.elite.description': 'Klassisches Stadthotel im Zentrum von Västerås.',
     'accommodation.elite.booking': 'Anrufen oder per E-Mail mit Nennung von "Josefin & Kiarash"',
+    'accommodation.elite.pricing': 'Doppelzimmer 1.350 SEK/Nacht • Einzelzimmer 1.150 SEK/Nacht',
     
     // Contact
     'contact.title': 'Kontakt',
