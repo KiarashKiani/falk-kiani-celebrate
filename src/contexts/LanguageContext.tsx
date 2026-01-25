@@ -40,6 +40,7 @@ const translations = {
     'travel.accommodation.content': 'Vi rekommenderar hotell i Västerås centrum. Steam Hotel och Elite Stadshotellet Västerås är båda utmärkta alternativ.',
     'travel.directions.title': 'Vägbeskrivning',
     'travel.directions.content': 'Nybynäs Gård, KÄRRBO NYBY 1, 725 97 Västerås. Cirka 20 minuter från Västerås centrum med bil.',
+    'travel.directions.link': 'Öppna i Google Maps',
     'travel.weekend.title': 'Helgtips',
     'travel.weekend.content': 'För er som stannar längre rekommenderar vi att utforska Västerås gamla stad, Anundshög och de vackra stränderna vid Mälaren.',
     
@@ -182,6 +183,7 @@ const translations = {
     'travel.accommodation.content': 'We recommend hotels in Västerås city center. Steam Hotel and Elite Stadshotellet Västerås are both excellent options.',
     'travel.directions.title': 'Directions',
     'travel.directions.content': 'Nybynäs Gård, KÄRRBO NYBY 1, 725 97 Västerås. About 20 minutes from Västerås city center by car.',
+    'travel.directions.link': 'Open in Google Maps',
     'travel.weekend.title': 'Weekend Tips',
     'travel.weekend.content': 'For those staying longer, we recommend exploring Västerås old town, Anundshög, and the beautiful shores of Lake Mälaren.',
     
@@ -324,6 +326,7 @@ const translations = {
     'travel.accommodation.content': 'Wir empfehlen Hotels im Stadtzentrum von Västerås. Das Steam Hotel und das Elite Stadshotellet Västerås sind beide ausgezeichnete Optionen.',
     'travel.directions.title': 'Wegbeschreibung',
     'travel.directions.content': 'Nybynäs Gård, KÄRRBO NYBY 1, 725 97 Västerås. Etwa 20 Minuten vom Stadtzentrum Västerås mit dem Auto.',
+    'travel.directions.link': 'In Google Maps öffnen',
     'travel.weekend.title': 'Wochenendtipps',
     'travel.weekend.content': 'Für diejenigen, die länger bleiben, empfehlen wir die Altstadt von Västerås, Anundshög und die wunderschönen Strände am Mälaren-See zu erkunden.',
     
