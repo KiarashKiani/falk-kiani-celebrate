@@ -227,10 +227,7 @@ const Timeline = () => {
                 {getDisplayTitle(t("timeline.friday.title"))}
               </h4>
               <p className="font-serif text-base md:text-lg text-muted-foreground leading-relaxed">
-                {t("timeline.friday.description")} {t("timeline.friday.time")}.
-              </p>
-              <p className="font-serif text-sm text-muted-foreground mt-4 italic">
-                {getDisplayTitle(t("timeline.friday.bus.title"))}: {t("timeline.friday.bus.time")}
+                {t("timeline.friday.description")}
               </p>
             </WavyCard>
           </div>
