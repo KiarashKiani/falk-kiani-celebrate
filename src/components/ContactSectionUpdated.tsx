@@ -14,7 +14,7 @@ const ContactSection = () => {
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
         </div>
 
-        <Card className="shadow-soft mb-12">
+        <Card className="shadow-soft mb-12 bg-wedding-sage border-wedding-olive/20">
           <CardHeader>
             
           </CardHeader>
