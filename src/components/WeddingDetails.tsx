@@ -1,4 +1,4 @@
-import { Shirt } from "lucide-react";
+import { Shirt, MapPin, Bus, Car } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
@@ -27,46 +27,29 @@ const WeddingDetails = () => {
   
   const details = [
     {
-      title: t("travel.transport.title"),
-      content: t("travel.transport.content"),
-      delay: "0ms"
-    },
-    {
-      title: t("travel.directions.title"),
-      content: t("travel.directions.content"),
-      delay: "100ms",
-      link: "https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69",
-      linkText: t("travel.directions.link")
-    },
-    {
-      title: t("details.parking.title"),
-      content: t("details.parking.content"),
-      delay: "200ms"
-    },
-    {
       title: t("details.children.title"),
       content: t("details.children.content"),
-      delay: "300ms"
+      delay: "0ms"
     },
     {
       title: t("details.hashtag.title"),
       content: t("details.hashtag.content"),
-      delay: "400ms"
+      delay: "100ms"
     },
     {
       title: t("details.gifts.title"),
       content: t("details.gifts.content"),
-      delay: "500ms"
+      delay: "200ms"
     },
     {
       title: t("details.venue.title"),
       content: t("details.venue.content"),
-      delay: "600ms"
+      delay: "300ms"
     },
     {
       title: t("details.photos.title"),
       content: t("details.photos.content"),
-      delay: "700ms"
+      delay: "400ms"
     }
   ];
 
@@ -81,6 +64,56 @@ const WeddingDetails = () => {
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("details.subtitle")}
           </p>
+        </div>
+
+        {/* How to Get Here Section - Full Width */}
+        <div className="mb-12">
+          <WavyBorderCard 
+            visible={visible}
+            delay="0ms"
+            className="hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl text-wedding-olive mb-6 font-bold">
+              {t("travel.findus.title")}
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {/* Address & Map */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
+                <p className="font-serif text-sm font-semibold text-primary mb-2">
+                  {t("travel.findus.address")}
+                </p>
+                <p className="font-serif text-xs text-muted-foreground mb-3">
+                  {t("travel.findus.distance")}
+                </p>
+                <a 
+                  href="https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-serif text-sm text-wedding-olive hover:underline"
+                >
+                  {t("travel.findus.link")} →
+                </a>
+              </div>
+              
+              {/* Bus Transport */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <Bus className="w-8 h-8 text-primary mx-auto mb-3" />
+                <p className="font-serif text-sm text-muted-foreground">
+                  {t("travel.findus.transport")}
+                </p>
+              </div>
+              
+              {/* Parking */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <Car className="w-8 h-8 text-primary mx-auto mb-3" />
+                <p className="font-serif text-sm text-muted-foreground">
+                  {t("travel.findus.parking")}
+                </p>
+              </div>
+            </div>
+          </WavyBorderCard>
         </div>
 
         {/* Accommodation Section - Full Width */}
@@ -179,16 +212,6 @@ const WeddingDetails = () => {
               <p className="font-serif text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
                 {detail.content}
               </p>
-              {detail.link && (
-                <a 
-                  href={detail.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-3 font-serif text-sm text-wedding-olive hover:underline"
-                >
-                  {detail.linkText}
-                </a>
-              )}
             </WavyBorderCard>
           ))}
         </div>
