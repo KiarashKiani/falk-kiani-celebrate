@@ -74,39 +74,39 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
             <h2 className="text-3xl md:text-4xl font-normal text-primary mb-2 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
               {t("countdown.title")}
             </h2>
-            <p className="text-base text-muted-foreground mb-6">
+            <p className="text-base text-muted-foreground mb-8">
               {t("countdown.subtitle")}
             </p>
-            <div className="grid grid-cols-4 gap-3 md:gap-6">
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="grid grid-cols-4 gap-3 md:gap-5">
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.days}
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
                   {t("countdown.days")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.hours}
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
                   {t("countdown.hours")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.minutes}
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
                   {t("countdown.minutes")}
                 </div>
               </div>
-              <div className="bg-card rounded-2xl p-4 md:p-6 shadow-soft transition-transform duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-champagne/30 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary mb-1">
                   {timeLeft.seconds}
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide font-bold">
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
                   {t("countdown.seconds")}
                 </div>
               </div>

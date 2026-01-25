@@ -74,13 +74,13 @@ const WeddingDetails = () => {
   ];
 
   return (
-    <section id="details" className="py-20 bg-wedding-sage">
+    <section id="details" className="py-24 bg-wedding-sage">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-normal text-primary mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif" }}>
             {t("details.title")}
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-6"></div>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("details.subtitle")}
           </p>

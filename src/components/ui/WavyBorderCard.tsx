@@ -55,12 +55,14 @@ const WavyBorderCard = ({
           clipPath={`url(#${clipId})`}
         />
         
-        {/* Wavy border stroke */}
+        {/* Wavy border stroke - refined weight */}
         <path
           d={wavyPath}
           fill="none"
           stroke="hsl(var(--wedding-olive))"
-          strokeWidth="1.5"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           vectorEffect="non-scaling-stroke"
         />
       </svg>
