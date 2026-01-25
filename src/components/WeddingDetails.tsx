@@ -109,6 +109,9 @@ const WeddingDetails = () => {
                   <p className="font-serif text-xs text-muted-foreground mt-1">
                     {t("accommodation.steam.code")}
                   </p>
+                  <p className="font-serif text-xs text-muted-foreground mt-2 italic">
+                    {t("accommodation.steam.pricing")}
+                  </p>
                 </div>
                 <a 
                   href="https://steamhotel.se" 
@@ -130,9 +133,12 @@ const WeddingDetails = () => {
                   <p className="font-serif text-sm font-semibold text-primary">
                     {t("accommodation.elite.booking")}
                   </p>
+                  <p className="font-serif text-xs text-muted-foreground mt-2">
+                    {t("accommodation.elite.pricing")}
+                  </p>
                   <a 
                     href="tel:+46771788789" 
-                    className="font-serif text-xs text-wedding-olive hover:underline block mt-1"
+                    className="font-serif text-xs text-wedding-olive hover:underline block mt-2"
                   >
                     +46 (0)771-788 789
                   </a>
