@@ -215,9 +215,7 @@ const Timeline = () => {
             <div className="inline-flex items-center gap-4 mb-6">
               <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
               <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
-                {t("timeline.saturday.ceremony.title").split(" ")[0] === t("timeline.saturday.ceremony.title")
-                  ? "Lördag"
-                  : "Lördag"}
+                {t("timeline.saturday.day")}
               </span>
               <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
             </div>
