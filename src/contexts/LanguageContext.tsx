@@ -131,6 +131,13 @@ const translations = {
     'details.dresscode.women': 'Beskrivning för kvinnor',
     'details.dresscode.men': 'Beskrivning för män',
     
+    // Accommodation details
+    'accommodation.steam.description': 'Modernt designhotell vid Mälaren med spa och restaurang.',
+    'accommodation.steam.discount': '10% rabatt för bröllopsgäster',
+    'accommodation.steam.code': 'Använd kod: bröllop2026',
+    'accommodation.elite.description': 'Klassiskt stadshotell i centrala Västerås.',
+    'accommodation.elite.booking': 'Ring eller maila och nämn "Josefin & Kiarash"',
+    
     // Contact
     'contact.title': 'Kontakt',
     'contact.message': 'Vi ser fram emot att fira med er! Har ni några frågor är ni alltid välkomna att höra av er till oss.',
@@ -264,6 +271,13 @@ const translations = {
     'details.dresscode.women': 'Guide for women (Swedish)',
     'details.dresscode.men': 'Guide for men (Swedish)',
     
+    // Accommodation details
+    'accommodation.steam.description': 'Modern design hotel by Lake Mälaren with spa and restaurant.',
+    'accommodation.steam.discount': '10% discount for wedding guests',
+    'accommodation.steam.code': 'Use code: bröllop2026',
+    'accommodation.elite.description': 'Classic city hotel in central Västerås.',
+    'accommodation.elite.booking': 'Call or email and mention "Josefin & Kiarash"',
+    
     // Contact
     'contact.title': 'Contact',
     'contact.message': 'We look forward to celebrating with you! If you have any questions, please don\'t hesitate to reach out to us.',
@@ -396,6 +410,13 @@ const translations = {
     'details.dresscode.saturday.title': 'Samstag – Dunkler Anzug (Smoking willkommen)',
     'details.dresscode.women': 'Hinweise für Damen',
     'details.dresscode.men': 'Hinweise für Herren',
+    
+    // Accommodation details
+    'accommodation.steam.description': 'Modernes Designhotel am Mälaren-See mit Spa und Restaurant.',
+    'accommodation.steam.discount': '10% Rabatt für Hochzeitsgäste',
+    'accommodation.steam.code': 'Code verwenden: bröllop2026',
+    'accommodation.elite.description': 'Klassisches Stadthotel im Zentrum von Västerås.',
+    'accommodation.elite.booking': 'Anrufen oder per E-Mail mit Nennung von "Josefin & Kiarash"',
     
     // Contact
     'contact.title': 'Kontakt',
