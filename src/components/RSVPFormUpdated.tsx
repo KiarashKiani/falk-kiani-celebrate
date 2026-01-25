@@ -6,6 +6,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
 import { useToast } from "./ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 import WavyBorderCard from "./ui/WavyBorderCard";
 
 interface GuestDetails {
@@ -17,6 +18,7 @@ interface GuestDetails {
 
 const RSVPForm = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   // Step 1: Are you coming?
   const [attending, setAttending] = useState<string>("");
@@ -177,13 +179,13 @@ const RSVPForm = () => {
         {/* Name */}
         <div className="space-y-2">
           <Label htmlFor={`${prefix}-name`} className="font-serif font-bold text-foreground">
-            Namn <span className="text-primary">*</span>
+            {t("rsvp.names")} <span className="text-primary">*</span>
           </Label>
           <Input
             id={`${prefix}-name`}
             value={guest.name}
             onChange={(e) => setGuest({ ...guest, name: e.target.value })}
-            placeholder="Ditt namn"
+            placeholder={t("rsvp.names.placeholder")}
             className={inputStyles}
           />
         </div>
@@ -191,30 +193,30 @@ const RSVPForm = () => {
         {/* Dietary */}
         <div className="space-y-2">
           <Label htmlFor={`${prefix}-dietary`} className="font-serif font-bold text-foreground">
-            Allergier och specialkost
+            {t("rsvp.dietary")}
           </Label>
           <Textarea
             id={`${prefix}-dietary`}
             value={guest.dietary}
             onChange={(e) => setGuest({ ...guest, dietary: e.target.value })}
-            placeholder="Ange eventuella allergier eller kostpreferenser"
+            placeholder={t("rsvp.dietary.placeholder")}
             className={`${inputStyles} min-h-[60px]`}
           />
         </div>
 
         {/* Meal Choice */}
         <div className="space-y-3">
-          <Label className="font-serif font-bold text-foreground">Måltidsval</Label>
+          <Label className="font-serif font-bold text-foreground">{t("rsvp.meal")}</Label>
           <RadioGroup 
             value={guest.mealChoice} 
             onValueChange={(value) => setGuest({ ...guest, mealChoice: value })}
             className="grid grid-cols-2 gap-2"
           >
             {[
-              { value: "meat", label: "Kött" },
-              { value: "fish", label: "Fisk" },
-              { value: "vegetarian", label: "Vegetarisk" },
-              { value: "vegan", label: "Vegansk" },
+              { value: "meat", label: t("rsvp.meal.meat") },
+              { value: "fish", label: t("rsvp.meal.fish") },
+              { value: "vegetarian", label: t("rsvp.meal.vegetarian") },
+              { value: "vegan", label: t("rsvp.meal.vegan") },
             ].map((option) => (
               <div 
                 key={option.value}
@@ -231,17 +233,17 @@ const RSVPForm = () => {
 
         {/* Shuttle */}
         <div className="space-y-3">
-          <Label className="font-serif font-bold text-foreground">Pendlingsbuss?</Label>
+          <Label className="font-serif font-bold text-foreground">{t("rsvp.shuttle")}</Label>
           <RadioGroup 
             value={guest.shuttle} 
             onValueChange={(value) => setGuest({ ...guest, shuttle: value })}
             className="grid grid-cols-2 gap-2"
           >
             {[
-              { value: "both", label: "Tur & retur" },
-              { value: "to", label: "Bara dit" },
-              { value: "from", label: "Bara hem" },
-              { value: "no", label: "Nej tack" },
+              { value: "both", label: t("rsvp.shuttle.both") },
+              { value: "to", label: t("rsvp.shuttle.to") },
+              { value: "from", label: t("rsvp.shuttle.from") },
+              { value: "no", label: t("rsvp.shuttle.no") },
             ].map((option) => (
               <div 
                 key={option.value}
@@ -265,11 +267,11 @@ const RSVPForm = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
-            OSA
+            {t("rsvp.title")}
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground">
-            Vänligen svara senast den 1 april 2026
+            {t("rsvp.subtitle").replace('[Datum]', '1 april 2026').replace('[Date]', 'April 1, 2026')}
           </p>
         </div>
 
@@ -278,11 +280,11 @@ const RSVPForm = () => {
           {/* Attendance Section */}
           <WavyBorderCard className="min-h-[180px]">
             <div className="space-y-6 text-left">
-              <SectionHeader>Kommer du?</SectionHeader>
+              <SectionHeader>{t("rsvp.attending")}</SectionHeader>
               <RadioGroup value={attending} onValueChange={setAttending} className="space-y-3">
                 {[
-                  { value: "yes", label: "Ja, jag kommer" },
-                  { value: "no", label: "Nej, jag kan tyvärr inte komma" },
+                  { value: "yes", label: t("rsvp.attending.yes") },
+                  { value: "no", label: t("rsvp.attending.no") },
                 ].map((option) => (
                   <div 
                     key={option.value}
@@ -312,17 +314,17 @@ const RSVPForm = () => {
               {/* Contact Section */}
               <WavyBorderCard className="min-h-[160px]" delay="100ms">
                 <div className="space-y-6 text-left">
-                  <SectionHeader>Kontaktuppgifter</SectionHeader>
+                  <SectionHeader>{t("rsvp.email")}</SectionHeader>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="font-serif font-bold text-foreground">
-                      E-post <span className="text-primary">*</span>
+                      {t("rsvp.email")} <span className="text-primary">*</span>
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="din@epost.se"
+                      placeholder={t("rsvp.email.placeholder")}
                       className={inputStyles}
                     />
                   </div>
@@ -330,16 +332,16 @@ const RSVPForm = () => {
               </WavyBorderCard>
 
               {/* Main Guest Details */}
-              {renderGuestFields(mainGuest, setMainGuest, "main", "Dina uppgifter", 200)}
+              {renderGuestFields(mainGuest, setMainGuest, "main", t("rsvp.names"), 200)}
 
               {/* Bringing Partner Section */}
               <WavyBorderCard className="min-h-[180px]" delay="300ms">
                 <div className="space-y-6 text-left">
-                  <SectionHeader>Tar du med dig en partner?</SectionHeader>
+                  <SectionHeader>{t("rsvp.plusOne")}</SectionHeader>
                   <RadioGroup value={bringingPartner} onValueChange={setBringingPartner} className="space-y-3">
                     {[
-                      { value: "yes", label: "Ja" },
-                      { value: "no", label: "Nej" },
+                      { value: "yes", label: t("rsvp.attending.yes").split(',')[0] || "Yes" },
+                      { value: "no", label: "No" },
                     ].map((option) => (
                       <div 
                         key={option.value}
@@ -363,23 +365,23 @@ const RSVPForm = () => {
               </WavyBorderCard>
 
               {/* Partner Guest Details */}
-              {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", "Partnerns uppgifter", 400)}
+              {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", t("rsvp.names"), 400)}
 
               {/* Extras Section */}
               <WavyBorderCard className="min-h-[260px]" delay="500ms">
                 <div className="space-y-6 text-left">
-                  <SectionHeader>Övrigt</SectionHeader>
+                  <SectionHeader>{t("rsvp.message")}</SectionHeader>
                   
                   {/* Song Request */}
                   <div className="space-y-2">
                     <Label htmlFor="song" className="font-serif font-bold text-foreground">
-                      Önska en låt
+                      {t("rsvp.song")}
                     </Label>
                     <Input
                       id="song"
                       value={songRequest}
                       onChange={(e) => setSongRequest(e.target.value)}
-                      placeholder="Vilken låt får dig att dansa?"
+                      placeholder={t("rsvp.song.placeholder")}
                       className={inputStyles}
                     />
                   </div>
@@ -387,13 +389,13 @@ const RSVPForm = () => {
                   {/* Message */}
                   <div className="space-y-2">
                     <Label htmlFor="message" className="font-serif font-bold text-foreground">
-                      Meddelande till oss
+                      {t("rsvp.message")}
                     </Label>
                     <Textarea
                       id="message"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Något du vill berätta för oss?"
+                      placeholder={t("rsvp.message.placeholder")}
                       className={`${inputStyles} min-h-[80px]`}
                     />
                   </div>
@@ -410,7 +412,7 @@ const RSVPForm = () => {
                 className="w-full font-serif text-lg py-6 rounded-xl bg-primary hover:bg-primary/90 transition-all shadow-md hover:shadow-lg" 
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Skickar..." : "Skicka OSA"}
+                {isSubmitting ? "..." : t("rsvp.submit")}
               </Button>
             </div>
           )}
