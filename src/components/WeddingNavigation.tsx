@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import weddingLogo from "@/assets/wedding-logo.png";
+import weddingLogo from "@/assets/wedding-logo-updated.png";
 
 const WeddingNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
