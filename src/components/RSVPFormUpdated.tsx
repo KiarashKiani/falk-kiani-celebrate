@@ -266,7 +266,7 @@ const RSVPForm = () => {
       <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
+          <h2 className="font-script text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wider" style={{ color: '#416631' }}>
             {t("rsvp.title")}
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
