@@ -97,12 +97,12 @@ const WeddingDetails = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Steam Hotel */}
-              <div className="text-left rounded-lg p-6" style={{ backgroundColor: '#fff9f1' }}>
+              <div className="text-left rounded-lg p-6 flex flex-col" style={{ backgroundColor: '#fff9f1' }}>
                 <h4 className="font-serif text-xl font-bold text-primary mb-3">Steam Hotel</h4>
                 <p className="font-serif text-muted-foreground text-sm mb-3">
                   {t("accommodation.steam.description")}
                 </p>
-                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3">
+                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
                   <p className="font-serif text-sm font-semibold text-primary">
                     {t("accommodation.steam.discount")}
                   </p>
@@ -124,12 +124,12 @@ const WeddingDetails = () => {
               </div>
               
               {/* Elite Stadshotellet */}
-              <div className="text-left rounded-lg p-6" style={{ backgroundColor: '#fff9f1' }}>
+              <div className="text-left rounded-lg p-6 flex flex-col" style={{ backgroundColor: '#fff9f1' }}>
                 <h4 className="font-serif text-xl font-bold text-primary mb-3">Elite Stadshotellet Västerås</h4>
                 <p className="font-serif text-muted-foreground text-sm mb-3">
                   {t("accommodation.elite.description")}
                 </p>
-                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3">
+                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
                   <p className="font-serif text-sm font-semibold text-primary">
                     {t("accommodation.elite.booking")}
                   </p>

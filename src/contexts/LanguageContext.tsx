@@ -132,7 +132,7 @@ const translations = {
     'details.dresscode.men': 'Beskrivning för män',
     
     // Accommodation details
-    'accommodation.steam.description': 'Modernt designhotell vid Mälaren med spa och restaurang.',
+    'accommodation.steam.description': 'Designhotell vid Mälaren med spa.',
     'accommodation.steam.discount': '10% rabatt för bröllopsgäster',
     'accommodation.steam.code': 'Använd kod: bröllop2026',
     'accommodation.steam.pricing': 'Priserna är dynamiska och varierar.',
@@ -274,7 +274,7 @@ const translations = {
     'details.dresscode.men': 'Guide for men (Swedish)',
     
     // Accommodation details
-    'accommodation.steam.description': 'Modern design hotel by Lake Mälaren with spa and restaurant.',
+    'accommodation.steam.description': 'Design hotel by Lake Mälaren with spa.',
     'accommodation.steam.discount': '10% discount for wedding guests',
     'accommodation.steam.code': 'Use code: bröllop2026',
     'accommodation.steam.pricing': 'Prices are dynamic and vary.',
@@ -416,7 +416,7 @@ const translations = {
     'details.dresscode.men': 'Hinweise für Herren',
     
     // Accommodation details
-    'accommodation.steam.description': 'Modernes Designhotel am Mälaren-See mit Spa und Restaurant.',
+    'accommodation.steam.description': 'Designhotel am Mälaren-See mit Spa.',
     'accommodation.steam.discount': '10% Rabatt für Hochzeitsgäste',
     'accommodation.steam.code': 'Code verwenden: bröllop2026',
     'accommodation.steam.pricing': 'Preise sind dynamisch und variieren.',
