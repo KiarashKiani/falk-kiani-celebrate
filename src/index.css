@@ -208,10 +208,12 @@
 
   h1, h2 {
     font-family: 'Lovely May', serif !important;
+    color: hsl(var(--wedding-olive));
   }
 
   h3, h4, h5, h6 {
     font-family: 'Inria Serif', serif !important;
     font-weight: 700;
+    color: hsl(var(--wedding-olive));
   }
 }
