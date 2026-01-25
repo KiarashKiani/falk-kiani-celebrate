@@ -1,7 +1,81 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useId } from "react";
 
-// Reusable wavy border card component
+// Wavy card with olive stroke and white/peach background - matches reference design
+const FridayWavyCard = ({
+  children,
+  className = "",
+  visible = true,
+  delay = "0ms"
+}: {
+  children: React.ReactNode;
+  className?: string;
+  visible?: boolean;
+  delay?: string;
+}) => {
+  const clipId = useId();
+  
+  // Organic hand-drawn wavy path matching the reference
+  const wavyPath = `
+    M 20,15
+    C 35,5 55,25 80,12 C 105,0 125,20 150,10 C 175,0 190,15 195,25
+    C 205,45 185,65 198,90 C 210,115 190,135 200,160 C 210,185 195,200 185,210
+    C 170,225 145,205 120,218 C 95,230 70,210 45,222 C 20,235 5,215 5,200
+    C -5,175 20,155 8,130 C -5,105 15,85 5,60 C -5,35 10,20 20,15
+    Z
+  `;
+
+  return (
+    <div
+      className={`relative transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+      } ${className}`}
+      style={{ transitionDelay: visible ? delay : "0ms" }}
+    >
+      {/* SVG Wavy Border */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 200 230"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <defs>
+          <clipPath id={clipId}>
+            <path d={wavyPath} />
+          </clipPath>
+        </defs>
+        
+        {/* White/cream fill */}
+        <rect 
+          x="0" 
+          y="0" 
+          width="200" 
+          height="230" 
+          fill="#fffdf9"
+          clipPath={`url(#${clipId})`}
+        />
+        
+        {/* Olive green wavy border stroke */}
+        <path
+          d={wavyPath}
+          fill="none"
+          stroke="#416631"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+
+      {/* Content */}
+      <div className="relative z-10 px-10 py-12 text-left h-full flex flex-col justify-center">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Original wavy card for Saturday (peach background)
 const WavyCard = ({
   children,
   className = "",
@@ -12,30 +86,63 @@ const WavyCard = ({
   className?: string;
   visible?: boolean;
   delay?: string;
-}) => (
-  <div
-    className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`}
-    style={{ transitionDelay: visible ? delay : "0ms" }}
-  >
-    {/* Wavy border SVG frame */}
-    <svg viewBox="0 0 200 240" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-      <path
-        d="M15,25 
-           Q25,10 40,25 Q55,40 70,25 Q85,10 100,25 Q115,40 130,25 Q145,10 160,25 Q175,40 185,25
-           Q200,40 185,60 Q170,80 185,100 Q200,120 185,140 Q170,160 185,180 Q200,200 185,220
-           Q175,235 160,220 Q145,205 130,220 Q115,235 100,220 Q85,205 70,220 Q55,235 40,220 Q25,205 15,220
-           Q0,205 15,185 Q30,165 15,145 Q0,125 15,105 Q30,85 15,65 Q0,45 15,25 Z"
-        fill="hsl(var(--wedding-sage))"
-        stroke="none"
-      />
-    </svg>
+}) => {
+  const clipId = useId();
+  
+  const wavyPath = `
+    M 15,8
+    C 25,5 35,11 50,8 C 65,5 75,11 90,8 C 105,5 115,11 130,8 C 145,5 155,11 170,8 C 180,6 188,10 192,15
+    C 195,25 189,35 192,50 C 195,65 189,75 192,90 C 195,105 189,115 192,130 C 195,145 189,155 192,170 C 194,180 190,188 185,192
+    C 175,195 165,189 150,192 C 135,195 125,189 110,192 C 95,195 85,189 70,192 C 55,195 45,189 30,192 C 20,194 12,190 8,185
+    C 5,175 11,165 8,150 C 5,135 11,125 8,110 C 5,95 11,85 8,70 C 5,55 11,45 8,30 C 6,20 10,12 15,8
+    Z
+  `;
 
-    {/* Content */}
-    <div className="relative px-8 pt-14 pb-10 text-center bg-wedding-sage">
-      {children}
+  return (
+    <div
+      className={`relative transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+      } ${className}`}
+      style={{ transitionDelay: visible ? delay : "0ms" }}
+    >
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 200 200"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <defs>
+          <clipPath id={clipId}>
+            <path d={wavyPath} />
+          </clipPath>
+        </defs>
+        
+        <rect 
+          x="0" 
+          y="0" 
+          width="200" 
+          height="200" 
+          fill="hsl(var(--wedding-sage))"
+          clipPath={`url(#${clipId})`}
+        />
+        
+        <path
+          d={wavyPath}
+          fill="none"
+          stroke="hsl(var(--wedding-olive))"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+
+      <div className="relative z-10 px-10 py-8 text-center h-full flex flex-col justify-center">
+        {children}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 interface TimelineEvent {
   titleKey: string;
@@ -166,41 +273,40 @@ const Timeline = () => {
 
         {/* Friday Section */}
         <div ref={fridayRef}>
-          {/* Friday Header */}
+          {/* Friday Header - Elegant serif like reference */}
           <div
             className={`text-center mb-12 transition-all duration-700 ease-out ${
               fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
-              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
-                {t("timeline.friday.title").split(" ")[0] || "Fredag"}
-              </span>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
-            </div>
+            <h3 
+              className="text-4xl md:text-5xl tracking-[0.2em] uppercase"
+              style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}
+            >
+              {t("timeline.friday.title").split(" ")[0] || "Fredag"}
+            </h3>
           </div>
 
-          {/* Friday Events Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 mb-20 max-w-2xl mx-auto">
-            {fridayEvents.map((event, index) => (
-              <WavyCard
-                key={index}
-                visible={fridayVisible}
-                delay={event.delay}
-                className="hover:-translate-y-2 transition-transform duration-300"
+          {/* Friday - Single centered wavy card */}
+          <div className="flex justify-center mb-20">
+            <FridayWavyCard
+              visible={fridayVisible}
+              delay="100ms"
+              className="hover:-translate-y-2 transition-transform duration-300 max-w-md w-full min-h-[280px]"
+            >
+              <h4 
+                className="text-4xl md:text-5xl mb-4"
+                style={{ fontFamily: "'Brittany Signature', cursive", color: '#322e29' }}
               >
-                <h3 className="font-script text-3xl md:text-4xl text-wedding-olive mb-3">
-                  {getDisplayTitle(t(event.titleKey))}
-                </h3>
-                <p className="font-serif text-lg text-primary mb-4">
-                  {t(event.timeKey)}
-                </p>
-                <p className="font-serif text-muted-foreground text-sm md:text-base leading-relaxed max-w-[280px] mx-auto">
-                  {t(event.descriptionKey)}
-                </p>
-              </WavyCard>
-            ))}
+                {getDisplayTitle(t("timeline.friday.title"))}
+              </h4>
+              <p className="font-serif text-base md:text-lg text-muted-foreground leading-relaxed">
+                {t("timeline.friday.description")} {t("timeline.friday.time")}.
+              </p>
+              <p className="font-serif text-sm text-muted-foreground mt-4 italic">
+                {getDisplayTitle(t("timeline.friday.bus.title"))}: {t("timeline.friday.bus.time")}
+              </p>
+            </FridayWavyCard>
           </div>
         </div>
 
