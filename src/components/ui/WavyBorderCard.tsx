@@ -45,13 +45,13 @@ const WavyBorderCard = ({
           </clipPath>
         </defs>
         
-        {/* White fill */}
+        {/* Peach fill */}
         <rect 
           x="0" 
           y="0" 
           width="200" 
           height="200" 
-          fill="white"
+          fill="hsl(var(--wedding-sage))"
           clipPath={`url(#${clipId})`}
         />
         

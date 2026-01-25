@@ -25,7 +25,7 @@ const WavyCard = ({
     </svg>
     
     {/* Content */}
-    <div className="relative px-8 pt-14 pb-10 text-center bg-primary-foreground">
+    <div className="relative px-8 pt-14 pb-10 text-center bg-wedding-sage">
       {children}
     </div>
   </div>;
