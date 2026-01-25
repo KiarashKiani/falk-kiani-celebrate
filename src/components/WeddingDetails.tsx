@@ -32,44 +32,39 @@ const WeddingDetails = () => {
       delay: "0ms"
     },
     {
-      title: t("travel.accommodation.title"),
-      content: t("travel.accommodation.content"),
-      delay: "100ms"
-    },
-    {
       title: t("travel.directions.title"),
       content: t("travel.directions.content"),
-      delay: "200ms"
+      delay: "100ms"
     },
     {
       title: t("details.parking.title"),
       content: t("details.parking.content"),
-      delay: "300ms"
+      delay: "200ms"
     },
     {
       title: t("details.children.title"),
       content: t("details.children.content"),
-      delay: "400ms"
+      delay: "300ms"
     },
     {
       title: t("details.hashtag.title"),
       content: t("details.hashtag.content"),
-      delay: "500ms"
+      delay: "400ms"
     },
     {
       title: t("details.gifts.title"),
       content: t("details.gifts.content"),
-      delay: "600ms"
+      delay: "500ms"
     },
     {
       title: t("details.venue.title"),
       content: t("details.venue.content"),
-      delay: "700ms"
+      delay: "600ms"
     },
     {
       title: t("details.photos.title"),
       content: t("details.photos.content"),
-      delay: "800ms"
+      delay: "700ms"
     }
   ];
 
@@ -84,6 +79,75 @@ const WeddingDetails = () => {
           <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("details.subtitle")}
           </p>
+        </div>
+
+        {/* Accommodation Section - Full Width */}
+        <div className="mb-12">
+          <WavyBorderCard 
+            visible={visible}
+            delay="0ms"
+            className="hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h3 className="text-3xl md:text-4xl text-wedding-olive mb-6 font-bold">
+              {t("travel.accommodation.title")}
+            </h3>
+            <p className="font-serif text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto mb-8">
+              {t("travel.accommodation.content")}
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Steam Hotel */}
+              <div className="text-left bg-white/50 rounded-lg p-6">
+                <h4 className="font-serif text-xl font-bold text-primary mb-3">Steam Hotel</h4>
+                <p className="font-serif text-muted-foreground text-sm mb-3">
+                  {t("accommodation.steam.description")}
+                </p>
+                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3">
+                  <p className="font-serif text-sm font-semibold text-primary">
+                    {t("accommodation.steam.discount")}
+                  </p>
+                  <p className="font-serif text-xs text-muted-foreground mt-1">
+                    {t("accommodation.steam.code")}
+                  </p>
+                </div>
+                <a 
+                  href="https://steamhotel.se" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-serif text-sm text-wedding-olive hover:underline"
+                >
+                  steamhotel.se →
+                </a>
+              </div>
+              
+              {/* Elite Stadshotellet */}
+              <div className="text-left bg-white/50 rounded-lg p-6">
+                <h4 className="font-serif text-xl font-bold text-primary mb-3">Elite Stadshotellet Västerås</h4>
+                <p className="font-serif text-muted-foreground text-sm mb-3">
+                  {t("accommodation.elite.description")}
+                </p>
+                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3">
+                  <p className="font-serif text-sm font-semibold text-primary">
+                    {t("accommodation.elite.booking")}
+                  </p>
+                  <a 
+                    href="mailto:reservation@vasteras@elite.se" 
+                    className="font-serif text-xs text-wedding-olive hover:underline block mt-1"
+                  >
+                    reservation@vasteras@elite.se
+                  </a>
+                </div>
+                <a 
+                  href="https://elite.se/sv/hotell/vasteras/elite-stadshotellet-vasteras/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-serif text-sm text-wedding-olive hover:underline"
+                >
+                  elite.se →
+                </a>
+              </div>
+            </div>
+          </WavyBorderCard>
         </div>
 
         {/* Grid of wavy boxes - 3 per row */}
