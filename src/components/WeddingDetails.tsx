@@ -131,10 +131,16 @@ const WeddingDetails = () => {
                     {t("accommodation.elite.booking")}
                   </p>
                   <a 
-                    href="mailto:reservation@vasteras@elite.se" 
+                    href="tel:+46771788789" 
                     className="font-serif text-xs text-wedding-olive hover:underline block mt-1"
                   >
-                    reservation@vasteras@elite.se
+                    +46 (0)771-788 789
+                  </a>
+                  <a 
+                    href="mailto:centralreservation@elite.se" 
+                    className="font-serif text-xs text-wedding-olive hover:underline block mt-1"
+                  >
+                    centralreservation@elite.se
                   </a>
                 </div>
                 <a 
