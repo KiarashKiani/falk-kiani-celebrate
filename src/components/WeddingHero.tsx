@@ -75,7 +75,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
             <h2 className="text-3xl md:text-4xl font-normal mb-2 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
               {t("countdown.title")}
             </h2>
-            <p className="text-base mb-8" style={{ color: '#416631' }}>
+            <p className="text-base mb-8" style={{ color: '#322e29' }}>
               {t("countdown.subtitle")}
             </p>
             <div className="grid grid-cols-4 gap-3 md:gap-5">
