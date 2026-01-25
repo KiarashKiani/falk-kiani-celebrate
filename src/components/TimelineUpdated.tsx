@@ -221,7 +221,7 @@ const Timeline = () => {
               className="hover:-translate-y-2 transition-transform duration-300 max-w-md w-full min-h-[280px]"
             >
               <h4 
-                className="text-4xl md:text-5xl mb-4"
+                className="text-4xl md:text-5xl mb-4 inline-block transform -rotate-3"
                 style={{ fontFamily: "'Brittany', cursive", color: '#322e29' }}
               >
                 {getDisplayTitle(t("timeline.friday.title"))}
