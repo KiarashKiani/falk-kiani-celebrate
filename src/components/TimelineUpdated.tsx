@@ -155,7 +155,7 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="font-script text-4xl md:text-5xl font-bold text-primary mb-4">
+          <h2 className="font-script text-4xl md:text-5xl font-bold mb-4" style={{ color: '#416631' }}>
             {t("timeline.title")}
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
