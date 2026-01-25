@@ -53,7 +53,7 @@ const ContactSection = () => {
             <img 
               src={weddingLogo} 
               alt="Josefin & Kiarash" 
-              className="w-16 md:w-20 h-auto mx-auto opacity-80"
+              className="w-16 md:w-20 h-auto mx-auto opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
             />
           </div>
         </div>
