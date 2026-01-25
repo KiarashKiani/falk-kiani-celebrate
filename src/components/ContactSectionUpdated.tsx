@@ -21,7 +21,7 @@ const ContactSection = () => {
             
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-center">
               <div className="flex flex-col items-center space-y-2">
                 <Mail className="w-6 h-6 text-primary" />
                 <a href="mailto:contact@example.com" className="font-serif text-muted-foreground hover:text-primary transition-colors">
