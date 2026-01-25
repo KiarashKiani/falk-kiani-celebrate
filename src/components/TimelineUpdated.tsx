@@ -199,18 +199,19 @@ const Timeline = () => {
 
         {/* Friday Section */}
         <div ref={fridayRef}>
-          {/* Friday Header - Elegant serif like reference */}
+          {/* Friday Header - with decorative lines */}
           <div
             className={`text-center mb-12 transition-all duration-700 ease-out ${
               fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <h3 
-              className="text-4xl md:text-5xl tracking-[0.2em] uppercase"
-              style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}
-            >
-              {t("timeline.friday.title").split(" ")[0] || "Fredag"}
-            </h3>
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-sm">
+                {t("timeline.friday.title").split(" ")[0] || "Fredag"}
+              </span>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
+            </div>
           </div>
 
           {/* Friday - Single centered wavy card */}
