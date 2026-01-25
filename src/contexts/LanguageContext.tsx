@@ -194,7 +194,7 @@ const translations = {
     // Friday events
     'timeline.friday.title': 'Friday - Meet & Greet',
     'timeline.friday.time': 'From 6:00 PM',
-    'timeline.friday.description': 'Drop in. Food and beverages will be served.',
+    'timeline.friday.description': 'A relaxed mingle with drinks and light bites. A perfect chance to meet other guests before the big day.',
     'timeline.friday.bus.title': 'Bus to hotels',
     'timeline.friday.bus.time': '11:00 PM',
     'timeline.friday.bus.description': 'Transport to the hotels.',
@@ -337,7 +337,7 @@ const translations = {
     // Friday events
     'timeline.friday.title': 'Freitag - Meet & Greet',
     'timeline.friday.time': 'Ab 18:00 Uhr',
-    'timeline.friday.description': 'Drop-in. Essen und Getränke werden serviert.',
+    'timeline.friday.description': 'Ein entspanntes Beisammensein mit Drinks und kleinen Häppchen. Eine perfekte Gelegenheit, andere Gäste vor dem großen Tag kennenzulernen.',
     'timeline.friday.bus.title': 'Bus zu den Hotels',
     'timeline.friday.bus.time': '23:00 Uhr',
     'timeline.friday.bus.description': 'Transport zu den Hotels.',
