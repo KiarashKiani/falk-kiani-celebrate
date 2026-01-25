@@ -34,7 +34,9 @@ const WeddingDetails = () => {
     {
       title: t("travel.directions.title"),
       content: t("travel.directions.content"),
-      delay: "100ms"
+      delay: "100ms",
+      link: "https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69",
+      linkText: t("travel.directions.link")
     },
     {
       title: t("details.parking.title"),
@@ -177,6 +179,16 @@ const WeddingDetails = () => {
               <p className="font-serif text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
                 {detail.content}
               </p>
+              {detail.link && (
+                <a 
+                  href={detail.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 font-serif text-sm text-wedding-olive hover:underline"
+                >
+                  {detail.linkText}
+                </a>
+              )}
             </WavyBorderCard>
           ))}
         </div>
