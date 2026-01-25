@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import weddingLogo from "@/assets/wedding-logo-hero.svg";
+import weddingLogo from "@/assets/wedding-logo.svg";
 
 interface WeddingHeroProps {
   onAuthenticated?: () => void;
