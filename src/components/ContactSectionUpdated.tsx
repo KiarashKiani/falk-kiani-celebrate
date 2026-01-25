@@ -1,6 +1,8 @@
 import { Mail, Instagram } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import weddingLogo from "@/assets/wedding-logo.svg";
+
 const ContactSection = () => {
   const {
     t
@@ -41,9 +43,18 @@ const ContactSection = () => {
           <p className="font-serif text-lg text-muted-foreground mb-6">
             {t("contact.message")}
           </p>
-          <div className="font-script text-xl text-primary">
+          <div className="font-script text-xl text-primary mb-8">
             <p>{t("contact.regards")}</p>
             <p className="font-bold">{t("contact.names")}</p>
+          </div>
+          
+          {/* Logo at the bottom */}
+          <div className="mt-8">
+            <img 
+              src={weddingLogo} 
+              alt="Josefin & Kiarash" 
+              className="w-32 md:w-40 h-auto mx-auto opacity-80"
+            />
           </div>
         </div>
       </div>
