@@ -51,7 +51,7 @@ const translations = {
     // Friday events
     'timeline.friday.title': 'Fredag - Meet & Greet',
     'timeline.friday.time': 'Från 18:00',
-    'timeline.friday.description': 'Drop in. Mat och dryck serveras.',
+    'timeline.friday.description': 'Avslappnat mingel med drinkar och lätta tilltugg. En perfekt chans att träffa andra gäster innan den stora dagen.',
     'timeline.friday.bus.title': 'Buss till hotellen',
     'timeline.friday.bus.time': '23:00',
     'timeline.friday.bus.description': 'Transport till hotellen.',
