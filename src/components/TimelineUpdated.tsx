@@ -222,7 +222,7 @@ const Timeline = () => {
             >
               <h4 
                 className="text-4xl md:text-5xl mb-4"
-                style={{ fontFamily: "'Brittany Signature', cursive", color: '#322e29' }}
+                style={{ fontFamily: "'Brittany', cursive", color: '#322e29' }}
               >
                 {getDisplayTitle(t("timeline.friday.title"))}
               </h4>
