@@ -121,7 +121,7 @@ const WeddingDetails = () => {
               </div>
               
               {/* Elite Stadshotellet */}
-              <div className="text-left bg-white/50 rounded-lg p-6">
+              <div className="text-left rounded-lg p-6" style={{ backgroundColor: '#fff9f1' }}>
                 <h4 className="font-serif text-xl font-bold text-primary mb-3">Elite Stadshotellet Västerås</h4>
                 <p className="font-serif text-muted-foreground text-sm mb-3">
                   {t("accommodation.elite.description")}
