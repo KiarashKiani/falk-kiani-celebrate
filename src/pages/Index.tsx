@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import WeddingNavigation from "@/components/WeddingNavigation";
 import WeddingHero from "@/components/WeddingHero";
+import CountdownSection from "@/components/CountdownSection";
 import Timeline from "@/components/TimelineUpdated";
 import RSVPForm from "@/components/RSVPFormUpdated";
 import WeddingDetails from "@/components/WeddingDetails";
@@ -41,6 +42,9 @@ const Index = () => {
         <WeddingNavigation />
         <section id="home">
           <WeddingHero />
+        </section>
+        <section id="countdown">
+          <CountdownSection />
         </section>
         <section id="timeline">
           <Timeline />
