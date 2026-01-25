@@ -65,6 +65,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
             className="w-42 md:w-52 lg:w-58 h-auto mx-auto"
+            style={{ imageRendering: 'crisp-edges', shapeRendering: 'crispEdges' }}
           />
         </div>
 
