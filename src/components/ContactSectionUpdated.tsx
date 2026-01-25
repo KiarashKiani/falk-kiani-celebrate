@@ -53,7 +53,7 @@ const ContactSection = () => {
             <img 
               src={weddingLogo} 
               alt="Josefin & Kiarash" 
-              className="w-32 md:w-40 h-auto mx-auto opacity-80"
+              className="w-16 md:w-20 h-auto mx-auto opacity-80"
             />
           </div>
         </div>
