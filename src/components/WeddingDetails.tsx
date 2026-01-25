@@ -97,7 +97,7 @@ const WeddingDetails = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Steam Hotel */}
-              <div className="text-left bg-white/50 rounded-lg p-6">
+              <div className="text-left bg-wedding-champagne/40 rounded-lg p-6">
                 <h4 className="font-serif text-xl font-bold text-primary mb-3">Steam Hotel</h4>
                 <p className="font-serif text-muted-foreground text-sm mb-3">
                   {t("accommodation.steam.description")}
