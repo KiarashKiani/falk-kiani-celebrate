@@ -137,7 +137,7 @@ const translations = {
     'accommodation.steam.code': 'Använd kod: bröllop2026',
     'accommodation.steam.pricing': 'Priserna är dynamiska och varierar.',
     'accommodation.elite.description': 'Klassiskt stadshotell i centrala Västerås.',
-    'accommodation.elite.booking': 'Ring eller maila och nämn "Josefin & Kiarash"',
+    'accommodation.elite.booking': 'Ring eller maila och nämn "Bröllop Josefin & Kiarash"',
     'accommodation.elite.pricing': 'Dubbelrum 1 350 kr/natt • Enkelrum 1 150 kr/natt',
     
     // Contact
@@ -279,7 +279,7 @@ const translations = {
     'accommodation.steam.code': 'Use code: bröllop2026',
     'accommodation.steam.pricing': 'Prices are dynamic and vary.',
     'accommodation.elite.description': 'Classic city hotel in central Västerås.',
-    'accommodation.elite.booking': 'Call or email and mention "Josefin & Kiarash"',
+    'accommodation.elite.booking': 'Call or email and mention "Bröllop Josefin & Kiarash"',
     'accommodation.elite.pricing': 'Double room 1,350 SEK/night • Single room 1,150 SEK/night',
     
     // Contact
@@ -421,7 +421,7 @@ const translations = {
     'accommodation.steam.code': 'Code verwenden: bröllop2026',
     'accommodation.steam.pricing': 'Preise sind dynamisch und variieren.',
     'accommodation.elite.description': 'Klassisches Stadthotel im Zentrum von Västerås.',
-    'accommodation.elite.booking': 'Anrufen oder per E-Mail mit Nennung von "Josefin & Kiarash"',
+    'accommodation.elite.booking': 'Anrufen oder per E-Mail mit Nennung von "Bröllop Josefin & Kiarash"',
     'accommodation.elite.pricing': 'Doppelzimmer 1.350 SEK/Nacht • Einzelzimmer 1.150 SEK/Nacht',
     
     // Contact
