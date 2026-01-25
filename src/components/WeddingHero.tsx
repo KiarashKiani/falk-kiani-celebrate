@@ -60,11 +60,11 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
     <section className="relative min-h-screen flex items-center justify-center bg-wedding-sage overflow-hidden">
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
         {/* Logo */}
-        <div className="mb-6">
+        <div className="mb-8">
           <img 
             src={weddingLogo} 
             alt="Josefin & Kiarash Wedding Logo" 
-            className="w-72 md:w-96 h-auto mx-auto"
+            className="w-64 md:w-80 lg:w-96 h-auto mx-auto"
           />
         </div>
 
