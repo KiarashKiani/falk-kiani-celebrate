@@ -41,35 +41,35 @@ const CountdownSection = () => {
           {t("countdown.subtitle")}
         </p>
         <div className="grid grid-cols-4 gap-3 md:gap-5">
-          <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#416631' }}>
+          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
               {timeLeft.days}
             </div>
-            <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
               {t("countdown.days")}
             </div>
           </div>
-          <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#416631' }}>
+          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
               {timeLeft.hours}
             </div>
-            <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
               {t("countdown.hours")}
             </div>
           </div>
-          <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#416631' }}>
+          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
               {timeLeft.minutes}
             </div>
-            <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
               {t("countdown.minutes")}
             </div>
           </div>
-          <div className="bg-wedding-sage backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-soft border border-wedding-olive/20 transition-all duration-300 hover:shadow-elegant hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#416631' }}>
+          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
               {timeLeft.seconds}
             </div>
-            <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide">
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
               {t("countdown.seconds")}
             </div>
           </div>
