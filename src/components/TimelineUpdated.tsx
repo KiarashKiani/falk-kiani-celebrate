@@ -157,7 +157,9 @@ const Timeline = () => {
               borderColor="#416631"
               className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[280px]"
             >
-              <TwoPartTitle part1="VÄLKOMST" part2="MINGEL" color="#416631" />
+              <h4 className="font-brittany text-3xl md:text-4xl mb-4" style={{ color: '#416631' }}>
+                välkomstmingel
+              </h4>
               <div
                 className="font-serif text-sm text-left space-y-1 tracking-wide"
                 style={{ color: '#416631' }}
