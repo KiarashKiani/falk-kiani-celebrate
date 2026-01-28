@@ -40,7 +40,7 @@ const colors = {
   sageGreen: "#8fa882",      // Softer sage
   mutedOrange: "#c49a6c",    // Warmer, muted orange
   textOlive: "#5a6b4d",      // Softer text color
-  cream: "#fdf6f0"           // Warm peachy cream from reference
+  cream: "#fef5ef"           // Warmer peachy cream
 };
 
 // Wavy border card with organic, hand-drawn feel
