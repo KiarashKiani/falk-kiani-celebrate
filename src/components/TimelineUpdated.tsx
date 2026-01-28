@@ -141,7 +141,7 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="font-brittany text-5xl md:text-6xl mb-4" style={{ color: '#ff8a00' }}>
+          <h2 className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#ff8a00' }}>
             {t("timeline.header") || "Info"}
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: '#416631' }}>
