@@ -1,8 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
-import handsIllustration from "@/assets/hands-illustration.png";
-import cocktailGlassesIllustration from "@/assets/cocktail-glasses-illustration.png";
-import weddingRingsIllustration from "@/assets/wedding-rings-illustration.png";
 
 // Wavy border card with customizable border color
 const WavyCard = ({
@@ -220,8 +217,6 @@ const Timeline = () => {
               delay="100ms"
               borderColor="#416631"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
-              illustration={handsIllustration}
-              illustrationPosition="bottom-right"
             >
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color="#416631" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
@@ -235,8 +230,6 @@ const Timeline = () => {
               delay="200ms"
               borderColor="#7a9a6d"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
-              illustration={weddingRingsIllustration}
-              illustrationPosition="top-right"
             >
               <TwoPartTitle part1="MIDDAG" part2="FEST" color="#416631" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
@@ -250,8 +243,6 @@ const Timeline = () => {
               delay="300ms"
               borderColor="#d4914a"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
-              illustration={cocktailGlassesIllustration}
-              illustrationPosition="top-right"
             >
               <TwoPartTitle part1="DRINKAR" part2="DANS" color="#d4914a" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
