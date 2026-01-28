@@ -1,5 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
+import handsIllustration from "@/assets/hands-illustration.png";
+import cocktailGlassesIllustration from "@/assets/cocktail-glasses-illustration.png";
+import weddingRingsIllustration from "@/assets/wedding-rings-illustration.png";
 
 // Wavy border card with customizable border color
 const WavyCard = ({
@@ -7,13 +10,17 @@ const WavyCard = ({
   className = "",
   visible = true,
   delay = "0ms",
-  borderColor = "hsl(var(--wedding-olive))"
+  borderColor = "hsl(var(--wedding-olive))",
+  illustration,
+  illustrationPosition = "bottom-right"
 }: {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
   delay?: string;
   borderColor?: string;
+  illustration?: string;
+  illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";
 }) => {
   const clipId = useId();
   const wavyPath = `
@@ -24,6 +31,13 @@ const WavyCard = ({
     C 5,175 11,165 8,150 C 5,135 11,125 8,110 C 5,95 11,85 8,70 C 5,55 11,45 8,30 C 6,20 10,12 15,8
     Z
   `;
+
+  const positionClasses = {
+    "bottom-right": "bottom-4 right-4",
+    "bottom-left": "bottom-4 left-4",
+    "top-right": "top-4 right-4"
+  };
+
   return (
     <div
       className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`}
@@ -54,6 +68,14 @@ const WavyCard = ({
       <div className="relative z-10 px-8 py-10 text-center h-full flex flex-col justify-center">
         {children}
       </div>
+      {illustration && (
+        <img 
+          src={illustration} 
+          alt="" 
+          className={`absolute ${positionClasses[illustrationPosition]} w-20 h-20 md:w-24 md:h-24 object-contain opacity-80 z-10 pointer-events-none`}
+          aria-hidden="true"
+        />
+      )}
     </div>
   );
 };
@@ -187,12 +209,14 @@ const Timeline = () => {
 
           {/* Saturday Events - 3 cards matching reference */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1: Välkomstdrink och Vigsel - Dark olive border */}
+            {/* Card 1: Välkomstdrink och Vigsel - Dark olive border with hands illustration */}
             <WavyCard
               visible={saturdayVisible}
               delay="100ms"
               borderColor="#416631"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
+              illustration={handsIllustration}
+              illustrationPosition="bottom-right"
             >
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color="#416631" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
@@ -200,12 +224,14 @@ const Timeline = () => {
               </p>
             </WavyCard>
 
-            {/* Card 2: Middag och Fest - Sage green border */}
+            {/* Card 2: Middag och Fest - Sage green border with rings illustration */}
             <WavyCard
               visible={saturdayVisible}
               delay="200ms"
               borderColor="#7a9a6d"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
+              illustration={weddingRingsIllustration}
+              illustrationPosition="top-right"
             >
               <TwoPartTitle part1="MIDDAG" part2="FEST" color="#416631" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
@@ -213,12 +239,14 @@ const Timeline = () => {
               </p>
             </WavyCard>
 
-            {/* Card 3: Drinkar och Dans - Orange border */}
+            {/* Card 3: Drinkar och Dans - Orange border with cocktail glasses */}
             <WavyCard
               visible={saturdayVisible}
               delay="300ms"
               borderColor="#d4914a"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
+              illustration={cocktailGlassesIllustration}
+              illustrationPosition="top-right"
             >
               <TwoPartTitle part1="DRINKAR" part2="DANS" color="#d4914a" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
