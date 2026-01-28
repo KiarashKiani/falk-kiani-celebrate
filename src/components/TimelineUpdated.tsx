@@ -31,9 +31,9 @@ const WavyCard = ({
   `;
 
   const positionClasses = {
-    "bottom-right": "bottom-4 right-4",
-    "bottom-left": "bottom-4 left-4",
-    "top-right": "top-4 right-4"
+    "bottom-right": "bottom-2 right-2",
+    "bottom-left": "bottom-2 left-2",
+    "top-right": "top-2 right-2"
   };
 
   return (
@@ -70,7 +70,7 @@ const WavyCard = ({
         <img 
           src={illustration} 
           alt="" 
-          className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-32 md:h-32 object-contain z-10 pointer-events-none`}
+          className={`absolute ${positionClasses[illustrationPosition]} w-16 h-16 md:w-20 md:h-20 object-contain z-0 pointer-events-none opacity-70`}
           aria-hidden="true"
         />
       )}
