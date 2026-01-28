@@ -164,20 +164,20 @@ const Timeline = () => {
           {/* Friday - Single centered wavy card */}
           <div className="flex justify-center mb-20">
             <WavyCard visible={fridayVisible} delay="100ms" className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[320px]">
-              <h3 className="font-serif text-2xl mb-1 uppercase tracking-[0.2em] md:text-xl font-extrabold" style={{
+              <h3 className="font-serif text-base mb-1 uppercase tracking-wider" style={{
               color: '#416631'
             }}>
                 {t("timeline.friday.day") || "Fredag"}
               </h3>
-              <h4 className="font-brittany md:text-5xl mb-6 text-3xl font-serif font-thin" style={{
+              <h4 className="font-serif text-2xl md:text-3xl mb-6 tracking-wider" style={{
               color: '#416631'
             }}>
                 {t("timeline.friday.event") || "välkomstmingel"}
               </h4>
-              <div className="font-serif text-base md:text-lg text-left space-y-1" style={{
+              <div className="font-serif text-base text-left space-y-1 tracking-wider" style={{
               color: '#322e29'
             }}>
-                <p className="tracking-wider text-base">{t("timeline.friday.time") || "Från 18:00"}</p>
+                <p>{t("timeline.friday.time") || "Från 18:00"}</p>
                 <p>{t("timeline.friday.location") || "Vi samlas på Nybynäs Gård"}</p>
                 <p>{t("timeline.friday.food") || "Mat och dryck serveras."}</p>
                 <p>{t("timeline.friday.end") || "Kvällen avslutas med bussar tillbaka till Västerås."}</p>
