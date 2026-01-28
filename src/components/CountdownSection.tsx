@@ -34,12 +34,9 @@ const CountdownSection = () => {
   return (
     <section className="py-20 bg-wedding-sage">
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-normal mb-2 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-normal mb-8 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
           {t("countdown.title")}
         </h2>
-        <p className="text-base mb-8" style={{ color: '#322e29' }}>
-          {t("countdown.subtitle")}
-        </p>
         <div className="grid grid-cols-4 gap-3 md:gap-5">
           <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
