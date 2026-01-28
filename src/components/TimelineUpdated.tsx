@@ -140,27 +140,26 @@ const Timeline = () => {
 
         {/* Friday Section */}
         <div ref={fridayRef}>
+          {/* Friday Header - Script font like Saturday */}
+          <div className={`text-center mb-12 transition-all duration-700 ease-out ${fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+            <h3
+              className="font-brittany text-4xl md:text-5xl"
+              style={{ color: '#416631' }}
+            >
+              {t("timeline.friday.day") || "Fredag"}
+            </h3>
+          </div>
+
           <div className="flex justify-center mb-20">
             <WavyCard 
               visible={fridayVisible} 
               delay="100ms" 
               borderColor="#416631"
-              className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[320px]"
+              className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[280px]"
             >
-              <h3
-                className="font-serif text-base mb-1 uppercase tracking-wider"
-                style={{ color: '#416631' }}
-              >
-                {t("timeline.friday.day") || "Fredag"}
-              </h3>
-              <h4
-                className="font-brittany text-3xl md:text-4xl mb-6"
-                style={{ color: '#416631' }}
-              >
-                {t("timeline.friday.event") || "välkomstmingel"}
-              </h4>
+              <TwoPartTitle part1="VÄLKOMST" part2="MINGEL" color="#416631" />
               <div
-                className="font-serif text-base text-left space-y-1 tracking-wide"
+                className="font-serif text-sm text-left space-y-1 tracking-wide"
                 style={{ color: '#416631' }}
               >
                 <p>{t("timeline.friday.time") || "Från 18:00"}</p>
