@@ -70,7 +70,7 @@ const WavyCard = ({
         <img 
           src={illustration} 
           alt="" 
-          className={`absolute ${positionClasses[illustrationPosition]} w-28 h-28 md:w-36 md:h-36 object-contain z-20 pointer-events-none`}
+          className={`absolute ${positionClasses[illustrationPosition]} w-32 h-32 md:w-40 md:h-40 object-contain z-0 pointer-events-none opacity-40`}
           aria-hidden="true"
         />
       )}
