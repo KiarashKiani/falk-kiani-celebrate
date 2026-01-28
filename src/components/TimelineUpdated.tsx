@@ -164,12 +164,12 @@ const Timeline = () => {
           {/* Friday - Single centered wavy card */}
           <div className="flex justify-center mb-20">
             <WavyCard visible={fridayVisible} delay="100ms" className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[320px]">
-              <h3 className="font-serif text-2xl mb-1 uppercase tracking-[0.2em] font-normal md:text-xl" style={{
+              <h3 className="font-serif text-2xl mb-1 uppercase tracking-[0.2em] md:text-xl font-extrabold" style={{
               color: '#416631'
             }}>
                 {t("timeline.friday.day") || "Fredag"}
               </h3>
-              <h4 className="font-brittany md:text-5xl mb-6 text-3xl" style={{
+              <h4 className="font-brittany md:text-5xl mb-6 text-3xl font-serif font-thin" style={{
               color: '#416631'
             }}>
                 {t("timeline.friday.event") || "välkomstmingel"}
