@@ -31,9 +31,9 @@ const WavyCard = ({
   `;
 
   const positionClasses = {
-    "bottom-right": "bottom-2 right-2",
-    "bottom-left": "bottom-2 left-2",
-    "top-right": "top-2 right-2"
+    "bottom-right": "bottom-4 right-4",
+    "bottom-left": "bottom-4 left-4",
+    "top-right": "-top-2 -right-2"
   };
 
   return (
@@ -63,14 +63,14 @@ const WavyCard = ({
           vectorEffect="non-scaling-stroke"
         />
       </svg>
-      <div className="relative z-10 px-8 py-10 text-center h-full flex flex-col justify-center">
+      <div className="relative z-10 px-6 py-8 text-left h-full flex flex-col justify-start">
         {children}
       </div>
       {illustration && (
         <img 
           src={illustration} 
           alt="" 
-          className={`absolute ${positionClasses[illustrationPosition]} w-16 h-16 md:w-20 md:h-20 object-contain z-0 pointer-events-none opacity-70`}
+          className={`absolute ${positionClasses[illustrationPosition]} w-28 h-28 md:w-36 md:h-36 object-contain z-20 pointer-events-none`}
           aria-hidden="true"
         />
       )}
@@ -88,16 +88,16 @@ const TwoPartTitle = ({
   part2: string; 
   color?: string;
 }) => (
-  <div className="mb-4">
+  <div className="mb-3">
     <span 
-      className="block font-serif text-xl md:text-2xl uppercase tracking-[0.15em] font-light"
+      className="block font-serif text-lg md:text-xl uppercase tracking-[0.15em] font-light"
       style={{ color }}
     >
       {part1}
     </span>
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center gap-1">
       <span 
-        className="font-brittany text-2xl md:text-3xl italic"
+        className="font-brittany text-xl md:text-2xl italic"
         style={{ color }}
       >
         och
@@ -214,10 +214,10 @@ const Timeline = () => {
               borderColor="#416631"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
               illustration={handsIllustration}
-              illustrationPosition="bottom-left"
+              illustrationPosition="bottom-right"
             >
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color="#416631" />
-              <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
+              <p className="font-serif text-sm tracking-wide mt-auto" style={{ color: '#416631' }}>
                 {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
               </p>
             </WavyCard>
@@ -230,7 +230,7 @@ const Timeline = () => {
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
             >
               <TwoPartTitle part1="MIDDAG" part2="FEST" color="#416631" />
-              <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
+              <p className="font-serif text-sm tracking-wide mt-auto" style={{ color: '#416631' }}>
                 {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
               </p>
             </WavyCard>
@@ -245,7 +245,7 @@ const Timeline = () => {
               illustrationPosition="top-right"
             >
               <TwoPartTitle part1="DRINKAR" part2="DANS" color="#d4914a" />
-              <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
+              <p className="font-serif text-sm tracking-wide mt-auto" style={{ color: '#416631' }}>
                 {t("timeline.dancing.description") || "Dansa natten lång!"}
               </p>
             </WavyCard>
