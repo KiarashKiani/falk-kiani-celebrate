@@ -78,7 +78,7 @@ const WavyCard = ({
   );
 };
 
-// Title with "och" in script font
+// Title with "och" in script font - matching reference style
 const TwoPartTitle = ({ 
   part1, 
   part2, 
@@ -88,22 +88,22 @@ const TwoPartTitle = ({
   part2: string; 
   color?: string;
 }) => (
-  <div className="mb-3">
+  <div className="mb-4 text-left">
     <span 
-      className="block font-serif text-lg md:text-xl uppercase tracking-[0.15em] font-light"
+      className="block font-serif text-base md:text-lg uppercase tracking-[0.2em] font-light"
       style={{ color }}
     >
       {part1}
     </span>
-    <div className="flex items-center gap-1">
+    <div className="flex items-baseline gap-1">
       <span 
-        className="font-brittany text-xl md:text-2xl italic"
+        className="font-brittany text-lg md:text-xl"
         style={{ color }}
       >
         och
       </span>
       <span 
-        className="font-serif text-2xl md:text-3xl uppercase tracking-[0.1em] font-light"
+        className="font-serif text-2xl md:text-4xl uppercase tracking-[0.05em] font-normal"
         style={{ color }}
       >
         {part2}
