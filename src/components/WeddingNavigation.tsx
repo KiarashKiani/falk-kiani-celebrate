@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import weddingLogo from "@/assets/wedding-logo.svg";
 
 const WeddingNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,46 +24,38 @@ const WeddingNavigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full bg-card/90 backdrop-blur-md border-b border-border z-50">
+    <nav className="sticky top-0 w-full bg-[#fff9f1] z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <img 
-            src={weddingLogo} 
-            alt="Josefin & Kiarash" 
-            className="h-14 w-auto"
-          />
-          
+        <div className="flex justify-center items-center h-16">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="font-serif text-primary hover:text-primary/70 transition-colors duration-200"
+                className="font-serif text-[#416631] hover:text-[#416631]/70 transition-colors duration-200 uppercase tracking-widest text-sm"
               >
                 {item.name}
               </button>
             ))}
             
             {/* Language Toggle */}
-            <div className="flex items-center space-x-2 ml-4">
-              <button
-                onClick={() => setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv')}
-                className="flex items-center space-x-1.5 font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
-              >
-                <span className="text-base">{language === 'sv' ? '🇬🇧' : language === 'en' ? '🇩🇪' : '🇸🇪'}</span>
-                <span>{language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}</span>
-              </button>
-            </div>
+            <button
+              onClick={() => setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv')}
+              className="flex items-center space-x-1.5 font-serif text-[#416631] hover:text-[#416631]/70 transition-colors duration-200 text-sm"
+            >
+              <span className="text-base">{language === 'sv' ? '🇬🇧' : language === 'en' ? '🇩🇪' : '🇸🇪'}</span>
+              <span>{language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}</span>
+            </button>
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-4">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary"
+              className="text-[#416631]"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -73,26 +64,26 @@ const WeddingNavigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden bg-card border-t border-border">
+          <div className="md:hidden bg-[#fff9f1]">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 font-serif text-primary hover:bg-secondary rounded-md transition-colors duration-200"
+                  className="block w-full text-center px-3 py-2 font-serif text-[#416631] hover:bg-[#416631]/10 rounded-md transition-colors duration-200 uppercase tracking-widest text-sm"
                 >
                   {item.name}
                 </button>
               ))}
               
               {/* Mobile Language Toggle */}
-              <div className="flex items-center px-3 py-2 border-t border-border mt-2 pt-3">
+              <div className="flex justify-center px-3 py-2 border-t border-[#416631]/20 mt-2 pt-3">
                 <button
                   onClick={() => {
                     setLanguage(language === 'sv' ? 'en' : language === 'en' ? 'de' : 'sv');
                     setIsOpen(false);
                   }}
-                  className="flex items-center space-x-2 font-serif text-primary hover:text-primary/70 transition-colors duration-200 text-sm"
+                  className="flex items-center space-x-2 font-serif text-[#416631] hover:text-[#416631]/70 transition-colors duration-200 text-sm"
                 >
                   <span className="text-base">{language === 'sv' ? '🇬🇧' : language === 'en' ? '🇩🇪' : '🇸🇪'}</span>
                   <span>{language === 'sv' ? 'English' : language === 'en' ? 'Deutsch' : 'Svenska'}</span>
