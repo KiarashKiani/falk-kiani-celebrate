@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
-
+import handsIllustration from "@/assets/hands-illustration.png";
+import cocktailIllustration from "@/assets/cocktail-illustration.png";
 // Wavy border card with customizable border color
 const WavyCard = ({
   children,
@@ -66,17 +67,12 @@ const WavyCard = ({
         {children}
       </div>
       {illustration && (
-        <div 
-          className={`absolute ${positionClasses[illustrationPosition]} w-20 h-20 md:w-24 md:h-24 z-10 pointer-events-none`}
-          style={{ backgroundColor: '#fff9f1' }}
-        >
-          <img 
-            src={illustration} 
-            alt="" 
-            className="w-full h-full object-contain opacity-90 mix-blend-multiply"
-            aria-hidden="true"
-          />
-        </div>
+        <img 
+          src={illustration} 
+          alt="" 
+          className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-32 md:h-32 object-contain z-10 pointer-events-none`}
+          aria-hidden="true"
+        />
       )}
     </div>
   );
@@ -217,6 +213,8 @@ const Timeline = () => {
               delay="100ms"
               borderColor="#416631"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
+              illustration={handsIllustration}
+              illustrationPosition="bottom-left"
             >
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color="#416631" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
@@ -243,6 +241,8 @@ const Timeline = () => {
               delay="300ms"
               borderColor="#d4914a"
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[280px]"
+              illustration={cocktailIllustration}
+              illustrationPosition="top-right"
             >
               <TwoPartTitle part1="DRINKAR" part2="DANS" color="#d4914a" />
               <p className="font-serif text-sm tracking-wide" style={{ color: '#416631' }}>
