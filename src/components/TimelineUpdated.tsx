@@ -141,13 +141,10 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="font-script text-4xl md:text-5xl font-bold mb-4" style={{
-          color: '#416631'
-        }}>
-            {t("timeline.title")}
+          <h2 className="font-brittany text-5xl md:text-6xl mb-4" style={{ color: '#ff8a00' }}>
+            {t("timeline.header") || "Info"}
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#416631' }}>
             {t("timeline.subtitle")}
           </p>
         </div>
