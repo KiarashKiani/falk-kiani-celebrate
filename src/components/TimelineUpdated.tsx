@@ -177,7 +177,7 @@ const Timeline = () => {
               <div className="font-serif text-base md:text-lg text-left space-y-1" style={{
               color: '#322e29'
             }}>
-                <p className="tracking-wider">{t("timeline.friday.time") || "Från 18:00"}</p>
+                <p className="tracking-wider text-base">{t("timeline.friday.time") || "Från 18:00"}</p>
                 <p>{t("timeline.friday.location") || "Vi samlas på Nybynäs Gård"}</p>
                 <p>{t("timeline.friday.food") || "Mat och dryck serveras."}</p>
                 <p>{t("timeline.friday.end") || "Kvällen avslutas med bussar tillbaka till Västerås."}</p>
