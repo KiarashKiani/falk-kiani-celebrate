@@ -69,12 +69,17 @@ const WavyCard = ({
         {children}
       </div>
       {illustration && (
-        <img 
-          src={illustration} 
-          alt="" 
-          className={`absolute ${positionClasses[illustrationPosition]} w-20 h-20 md:w-24 md:h-24 object-contain opacity-80 z-10 pointer-events-none`}
-          aria-hidden="true"
-        />
+        <div 
+          className={`absolute ${positionClasses[illustrationPosition]} w-20 h-20 md:w-24 md:h-24 z-10 pointer-events-none`}
+          style={{ backgroundColor: '#fff9f1' }}
+        >
+          <img 
+            src={illustration} 
+            alt="" 
+            className="w-full h-full object-contain opacity-90 mix-blend-multiply"
+            aria-hidden="true"
+          />
+        </div>
       )}
     </div>
   );
