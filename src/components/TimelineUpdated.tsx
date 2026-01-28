@@ -141,10 +141,15 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#ff8a00' }}>
+          <h2 className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider" style={{
+          fontFamily: "'Lovely May', serif",
+          color: '#ff8a00'
+        }}>
             {t("timeline.header") || "Info"}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#416631' }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{
+          color: '#416631'
+        }}>
             {t("timeline.subtitle")}
           </p>
         </div>
@@ -153,25 +158,25 @@ const Timeline = () => {
         <div ref={fridayRef}>
           {/* Friday Header - with decorative lines */}
           <div className={`text-center mb-12 transition-all duration-700 ease-out ${fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <div className="inline-flex items-center gap-6 mb-6">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
-              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-xl md:text-2xl">
-                {t("timeline.friday.title").split(" ")[0] || "Fredag"}
-              </span>
-              <div className="w-16 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
-            </div>
+            
           </div>
 
           {/* Friday - Single centered wavy card */}
           <div className="flex justify-center mb-20">
             <WavyCard visible={fridayVisible} delay="100ms" className="hover:-translate-y-2 transition-transform duration-300 max-w-lg w-full min-h-[320px]">
-              <h3 className="font-serif text-2xl md:text-3xl mb-1 uppercase tracking-[0.2em] font-normal" style={{ color: '#416631' }}>
+              <h3 className="font-serif text-2xl mb-1 uppercase tracking-[0.2em] font-normal md:text-xl" style={{
+              color: '#416631'
+            }}>
                 {t("timeline.friday.day") || "Fredag"}
               </h3>
-              <h4 className="font-brittany text-4xl md:text-5xl mb-6" style={{ color: '#416631' }}>
+              <h4 className="font-brittany md:text-5xl mb-6 text-3xl" style={{
+              color: '#416631'
+            }}>
                 {t("timeline.friday.event") || "välkomstmingel"}
               </h4>
-              <div className="font-serif text-base md:text-lg text-left space-y-1" style={{ color: '#322e29' }}>
+              <div className="font-serif text-base md:text-lg text-left space-y-1" style={{
+              color: '#322e29'
+            }}>
                 <p className="tracking-wider">{t("timeline.friday.time") || "Från 18:00"}</p>
                 <p>{t("timeline.friday.location") || "Vi samlas på Nybynäs Gård"}</p>
                 <p>{t("timeline.friday.food") || "Mat och dryck serveras."}</p>
@@ -187,7 +192,7 @@ const Timeline = () => {
           <div className={`text-center mb-12 transition-all duration-700 ease-out ${saturdayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <div className="inline-flex items-center gap-6 mb-6">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-wedding-olive"></div>
-              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-xl md:text-2xl">
+              <span className="font-serif text-wedding-olive tracking-[0.3em] uppercase text-xl md:text-xl">
                 {t("timeline.saturday.day")}
               </span>
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-wedding-olive"></div>
