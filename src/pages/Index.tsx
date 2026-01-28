@@ -39,10 +39,10 @@ const Index = () => {
     <div className="min-h-screen">
       <main>
         <MusicPlayer />
-        <WeddingNavigation />
         <section id="home">
           <WeddingHero />
         </section>
+        <WeddingNavigation />
         <section id="countdown">
           <CountdownSection />
         </section>
