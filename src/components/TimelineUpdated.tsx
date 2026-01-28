@@ -124,22 +124,22 @@ const TwoPartTitle = ({
   part2: string; 
   color?: string;
 }) => (
-  <div className="mb-6">
+  <div className="mb-8">
     <span 
-      className="block font-serif text-sm md:text-base uppercase tracking-[0.3em] font-light"
-      style={{ color, opacity: 0.9 }}
+      className="block font-serif text-xs md:text-sm uppercase tracking-[0.35em] font-extralight"
+      style={{ color, opacity: 0.85 }}
     >
       {part1}
     </span>
-    <div className="flex items-baseline gap-1 mt-1">
+    <div className="flex items-baseline gap-0.5 mt-0.5">
       <span 
-        className="font-brittany text-base md:text-lg font-light"
-        style={{ color, opacity: 0.75 }}
+        className="font-brittany text-sm md:text-base font-light"
+        style={{ color, opacity: 0.6 }}
       >
         och
       </span>
       <span 
-        className="font-serif text-3xl md:text-4xl uppercase tracking-[0.08em] font-normal"
+        className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-light"
         style={{ color }}
       >
         {part2}
