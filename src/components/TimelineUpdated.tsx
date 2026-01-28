@@ -36,11 +36,15 @@ const wavyPaths = {
 
 // Softer, more muted color palette
 const colors = {
-  darkOlive: "#4a5c3d",      // Desaturated dark olive
-  sageGreen: "#8fa882",      // Softer sage
-  mutedOrange: "#c49a6c",    // Warmer, muted orange
-  textOlive: "#5a6b4d",      // Softer text color
-  cream: "#fef5ef"           // Warmer peachy cream
+  darkOlive: "#4a5c3d",
+  // Desaturated dark olive
+  sageGreen: "#8fa882",
+  // Softer sage
+  mutedOrange: "#c49a6c",
+  // Warmer, muted orange
+  textOlive: "#5a6b4d",
+  // Softer text color
+  cream: "#fef5ef" // Warmer peachy cream
 };
 
 // Wavy border card with organic, hand-drawn feel
@@ -64,97 +68,69 @@ const WavyCard = ({
   wavyPath?: string;
 }) => {
   const clipId = useId();
-
   const positionClasses = {
     "bottom-right": "bottom-8 right-6",
     "bottom-left": "bottom-8 left-6",
     "top-right": "top-6 right-6"
   };
-
-  return (
-    <div
-      className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`}
-      style={{ transitionDelay: visible ? delay : "0ms" }}
-    >
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 200 200"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
+  return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
+    transitionDelay: visible ? delay : "0ms"
+  }}>
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <clipPath id={clipId}>
             <path d={wavyPath} />
           </clipPath>
         </defs>
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
-        <path
-          d={wavyPath}
-          fill="none"
-          stroke={borderColor}
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-        />
+        <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       {/* More padding, centered content with breathing room */}
       <div className="relative z-10 px-10 py-12 h-full flex flex-col">
         {children}
       </div>
-      {illustration && (
-        <img 
-          src={illustration} 
-          alt="" 
-          className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`}
-          aria-hidden="true"
-        />
-      )}
-    </div>
-  );
+      {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
+    </div>;
 };
 
 // Title with delicate "och" script - matching reference exactly
-const TwoPartTitle = ({ 
-  part1, 
-  part2, 
+const TwoPartTitle = ({
+  part1,
+  part2,
   color = colors.textOlive
-}: { 
-  part1: string; 
-  part2: string; 
+}: {
+  part1: string;
+  part2: string;
   color?: string;
-}) => (
-  <div className="mb-8">
-    <span 
-      className="block font-serif text-xs md:text-sm uppercase tracking-[0.35em] font-extralight"
-      style={{ color, opacity: 0.85 }}
-    >
+}) => <div className="mb-8">
+    <span className="block font-serif text-xs md:text-sm uppercase tracking-[0.35em] font-extralight" style={{
+    color,
+    opacity: 0.85
+  }}>
       {part1}
     </span>
     <div className="flex items-baseline gap-0.5 mt-0.5">
-      <span 
-        className="font-brittany text-sm md:text-base font-light"
-        style={{ color, opacity: 0.6 }}
-      >
+      <span className="font-brittany text-sm md:text-base font-light" style={{
+      color,
+      opacity: 0.6
+    }}>
         och
       </span>
-      <span 
-        className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-light"
-        style={{ color }}
-      >
+      <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-light" style={{
+      color
+    }}>
         {part2}
       </span>
     </div>
-  </div>
-);
-
+  </div>;
 const Timeline = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
   const [fridayVisible, setFridayVisible] = useState(false);
   const [saturdayVisible, setSaturdayVisible] = useState(false);
   const fridayRef = useRef<HTMLDivElement>(null);
   const saturdayRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observerOptions = {
       threshold: 0.2,
@@ -177,19 +153,21 @@ const Timeline = () => {
       saturdayObserver.disconnect();
     };
   }, []);
-
-  return (
-    <section id="timeline" className="py-28" style={{ backgroundColor: colors.cream }}>
-      <div className="max-w-6xl mx-auto px-6">
+  return <section id="timeline" className="py-28" style={{
+    backgroundColor: colors.cream
+  }}>
+      <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
         {/* Section Header */}
         <div className="text-center mb-24">
-          <h2
-            className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider"
-            style={{ fontFamily: "'Lovely May', serif", color: colors.mutedOrange }}
-          >
+          <h2 className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider" style={{
+          fontFamily: "'Lovely May', serif",
+          color: colors.mutedOrange
+        }}>
             {t("timeline.header") || "Info"}
           </h2>
-          <p className="font-serif text-lg max-w-2xl mx-auto tracking-wide" style={{ color: colors.textOlive }}>
+          <p className="font-serif text-lg max-w-2xl mx-auto tracking-wide" style={{
+          color: colors.textOlive
+        }}>
             {t("timeline.subtitle")}
           </p>
         </div>
@@ -197,29 +175,23 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className={`text-center mb-14 transition-all duration-700 ease-out ${fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3
-              className="font-brittany text-4xl md:text-5xl"
-              style={{ color: colors.textOlive }}
-            >
+            <h3 className="font-brittany text-4xl md:text-5xl" style={{
+            color: colors.textOlive
+          }}>
               {t("timeline.friday.day") || "Fredag"}
             </h3>
           </div>
 
           <div className="flex justify-center mb-24">
-            <WavyCard 
-              visible={fridayVisible} 
-              delay="100ms" 
-              borderColor={colors.darkOlive}
-              wavyPath={wavyPaths.card1}
-              className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]"
-            >
-              <h4 className="font-brittany text-3xl md:text-4xl mb-6" style={{ color: colors.textOlive }}>
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+              <h4 className="font-brittany text-3xl md:text-4xl mb-6" style={{
+              color: colors.textOlive
+            }}>
                 välkomstmingel
               </h4>
-              <div
-                className="font-serif text-sm space-y-2 tracking-wide leading-relaxed"
-                style={{ color: colors.textOlive }}
-              >
+              <div className="font-serif text-sm space-y-2 tracking-wide leading-relaxed" style={{
+              color: colors.textOlive
+            }}>
                 <p>{t("timeline.friday.time") || "Från 18:00"}</p>
                 <p>{t("timeline.friday.location") || "Vi samlas på Nybynäs Gård"}</p>
                 <p>{t("timeline.friday.food") || "Mat och dryck serveras."}</p>
@@ -232,10 +204,9 @@ const Timeline = () => {
         {/* Saturday Section */}
         <div ref={saturdayRef}>
           <div className={`text-center mb-14 transition-all duration-700 ease-out ${saturdayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3
-              className="font-brittany text-4xl md:text-5xl"
-              style={{ color: colors.textOlive }}
-            >
+            <h3 className="font-brittany text-4xl md:text-5xl" style={{
+            color: colors.textOlive
+          }}>
               {t("timeline.saturday.day") || "Lördag"}
             </h3>
           </div>
@@ -243,55 +214,37 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard
-              visible={saturdayVisible}
-              delay="100ms"
-              borderColor={colors.darkOlive}
-              wavyPath={wavyPaths.card1}
-              className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]"
-              illustration={handsIllustration}
-              illustrationPosition="bottom-right"
-            >
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOlive} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{ color: colors.textOlive }}>
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              color: colors.textOlive
+            }}>
                 {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
               </p>
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard
-              visible={saturdayVisible}
-              delay="200ms"
-              borderColor={colors.sageGreen}
-              wavyPath={wavyPaths.card2}
-              className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]"
-            >
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
               <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.sageGreen} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{ color: colors.textOlive }}>
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              color: colors.textOlive
+            }}>
                 {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
               </p>
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard
-              visible={saturdayVisible}
-              delay="300ms"
-              borderColor={colors.mutedOrange}
-              wavyPath={wavyPaths.card3}
-              className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]"
-              illustration={cocktailIllustration}
-              illustrationPosition="top-right"
-            >
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.mutedOrange} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{ color: colors.textOlive }}>
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              color: colors.textOlive
+            }}>
                 {t("timeline.dancing.description") || "Dansa natten lång!"}
               </p>
             </WavyCard>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Timeline;
