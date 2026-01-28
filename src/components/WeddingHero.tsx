@@ -3,7 +3,15 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import weddingHeroCanva from "@/assets/wedding-hero-canva.png";
+import weddingHeroSv from "@/assets/wedding-hero-canva.png";
+import weddingHeroEn from "@/assets/wedding-hero-en.png";
+import weddingHeroDe from "@/assets/wedding-hero-de.png";
+
+const heroImages: Record<string, string> = {
+  sv: weddingHeroSv,
+  en: weddingHeroEn,
+  de: weddingHeroDe,
+};
 
 interface WeddingHeroProps {
   onAuthenticated?: () => void;
@@ -11,9 +19,11 @@ interface WeddingHeroProps {
 }
 
 const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHeroProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  
+  const heroImage = heroImages[language] || weddingHeroSv;
 
   const CORRECT_PASSWORD = "KimjaJohanna";
 
@@ -35,8 +45,8 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
         {/* Canva Hero Design */}
         <div className="mb-8">
           <img 
-            src={weddingHeroCanva} 
-            alt="Josefin & Kiarash - Varmt välkommen att fira vår bröllopshelg med oss - 17-18 juli 2026" 
+            src={heroImage} 
+            alt="Josefin & Kiarash - Wedding Weekend - 17-18 July 2026" 
             className="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl h-auto mx-auto"
           />
         </div>
