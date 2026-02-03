@@ -159,11 +159,11 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-normal mb-3 uppercase tracking-wider" style={{
-          fontFamily: "'Lovely May', serif",
-          color: colors.mutedOrange
+          <h2 className="text-4xl md:text-5xl font-normal mb-3 tracking-wide" style={{
+          fontFamily: "'Brittany', cursive",
+          color: '#ff8a00'
         }}>
-            {t("timeline.header") || "Info"}
+            {t("timeline.header") || "Bröllopshelgen"}
           </h2>
           {/* Decorative flourish */}
           <div className="flex items-center justify-center gap-3 mb-4">
