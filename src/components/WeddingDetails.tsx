@@ -192,10 +192,10 @@ const WeddingDetails = () => {
               delay={detail.delay}
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[240px]"
             >
-              <h3 className="text-2xl md:text-3xl text-wedding-olive mb-3 font-bold">
+              <h3 className="font-lovely-may text-2xl md:text-3xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
                 {detail.title}
               </h3>
-              <p className="font-serif text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
+              <p className="font-serif text-sm leading-relaxed max-w-[240px] mx-auto" style={{ color: '#1b2e00' }}>
                 {detail.content}
               </p>
             </WavyBorderCard>
@@ -205,21 +205,21 @@ const WeddingDetails = () => {
         {/* Larger Dress Code section */}
         <Card className="shadow-soft bg-wedding-sage border-wedding-olive/20">
           <CardHeader>
-            <CardTitle className="flex items-center text-xl font-bold">
-              <Shirt className="w-6 h-6 mr-3 text-primary" />
-              <span>{t("details.dresscode.title")}</span>
+            <CardTitle className="flex items-center text-xl font-extralight">
+              <Shirt className="w-6 h-6 mr-3" style={{ color: '#1b2e00' }} />
+              <span className="font-lovely-may uppercase tracking-wide" style={{ color: '#1b2e00' }}>{t("details.dresscode.title")}</span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="font-serif text-muted-foreground space-y-6">
+          <CardContent className="font-serif space-y-6" style={{ color: '#1b2e00' }}>
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#1b2e00' }}>
                 {t("details.dresscode.friday.title")}
               </h3>
-              <p className="font-serif">{t("details.dresscode.friday.content")}</p>
+              <p className="font-serif" style={{ color: '#1b2e00' }}>{t("details.dresscode.friday.content")}</p>
             </div>
             
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#1b2e00' }}>
                 {t("details.dresscode.saturday.title")}
               </h3>
               <div className="flex flex-col sm:flex-row gap-3">
