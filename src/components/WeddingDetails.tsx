@@ -59,7 +59,7 @@ const WeddingDetails = () => {
             delay="0ms"
             className="hover:-translate-y-1 transition-transform duration-300"
           >
-            <h3 className="font-lovely-may text-3xl md:text-4xl text-wedding-olive mb-6">
+            <h3 className="font-lovely-may text-3xl md:text-4xl text-wedding-olive mb-6 uppercase tracking-wide">
               {t("travel.accommodation.title")}
             </h3>
             <p className="font-serif text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto mb-8">
