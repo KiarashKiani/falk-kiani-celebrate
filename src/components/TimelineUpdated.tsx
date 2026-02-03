@@ -5,13 +5,13 @@ import cocktailIllustration from "@/assets/cocktail-illustration.png";
 
 // More organic, hand-drawn wavy paths for each card position
 const wavyPaths = {
-  // Card 1: Asymmetric with irregular curves
+  // Card 1: Large organic waves like the reference
   card1: `
-    M 18,6
-    C 32,3 42,12 58,7 C 74,2 82,14 98,9 C 114,4 126,13 142,8 C 158,3 168,11 178,7 C 186,4 194,12 196,22
-    C 198,38 190,48 194,66 C 198,84 188,96 193,114 C 198,132 189,146 194,164 C 197,178 191,190 182,196
-    C 166,200 154,192 138,197 C 122,202 108,190 92,196 C 76,202 62,189 46,195 C 30,201 18,191 10,184
-    C 4,170 12,154 6,138 C 0,122 10,106 5,90 C 0,74 9,58 4,42 C -1,26 8,14 18,6
+    M 20,25
+    C 10,15 25,5 45,12 C 65,19 75,3 95,10 C 115,17 130,2 150,8 C 170,14 185,5 195,20
+    C 200,35 195,55 198,75 C 201,95 193,115 197,135 C 201,155 194,175 190,190
+    C 175,198 155,192 135,197 C 115,202 95,190 75,196 C 55,202 35,193 20,185
+    C 5,170 12,150 6,130 C 0,110 10,90 5,70 C 0,50 8,35 20,25
     Z
   `,
   // Card 2: Different wave pattern
