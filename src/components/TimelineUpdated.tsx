@@ -165,12 +165,6 @@ const Timeline = () => {
         }}>
             {t("timeline.header") || "Bröllopshelgen"}
           </h2>
-          <p className="font-serif text-base max-w-xl mx-auto tracking-wide italic" style={{
-          color: colors.textOlive,
-          opacity: 0.85
-        }}>
-            {t("timeline.subtitle")}
-          </p>
         </div>
 
         {/* Friday Section */}
