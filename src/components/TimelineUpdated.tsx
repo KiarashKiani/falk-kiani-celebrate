@@ -171,15 +171,15 @@ const Timeline = () => {
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
             <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
-              <h3 className="text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
-                fontFamily: "'Lovely May', serif",
-                color: colors.textOlive
+              <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
+                color: colors.textOlive,
+                fontWeight: 400
               }}>
                 {t("timeline.friday.day") || "FREDAG"}
               </h3>
-              <h4 className="font-brittany text-3xl md:text-4xl mb-6 text-left" style={{
-              color: colors.textOlive
-            }}>
+              <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left" style={{
+                color: colors.textOlive
+              }}>
                 välkomstmingel
               </h4>
               <div className="font-serif text-sm space-y-2 tracking-wide leading-relaxed" style={{
