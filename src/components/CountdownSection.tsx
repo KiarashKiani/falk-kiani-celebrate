@@ -38,35 +38,35 @@ const CountdownSection = () => {
           {t("countdown.title")}
         </h2>
         <div className="grid grid-cols-4 gap-3 md:gap-5">
-          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
+          <div className="bg-[#89b647] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fffeb8' }}>
               {timeLeft.days}
             </div>
-            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fffeb8' }}>
               {t("countdown.days")}
             </div>
           </div>
-          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
+          <div className="bg-[#89b647] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fffeb8' }}>
               {timeLeft.hours}
             </div>
-            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fffeb8' }}>
               {t("countdown.hours")}
             </div>
           </div>
-          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
+          <div className="bg-[#89b647] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fffeb8' }}>
               {timeLeft.minutes}
             </div>
-            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fffeb8' }}>
               {t("countdown.minutes")}
             </div>
           </div>
-          <div className="bg-[#416631] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fff9f1' }}>
+          <div className="bg-[#89b647] rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] p-4 md:p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="text-2xl md:text-4xl font-bold mb-1" style={{ color: '#fffeb8' }}>
               {timeLeft.seconds}
             </div>
-            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fff9f1' }}>
+            <div className="text-xs md:text-sm uppercase tracking-wide" style={{ color: '#fffeb8' }}>
               {t("countdown.seconds")}
             </div>
           </div>
