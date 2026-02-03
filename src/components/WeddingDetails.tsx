@@ -140,25 +140,25 @@ const WeddingDetails = () => {
             delay="0ms"
             className="hover:-translate-y-1 transition-transform duration-300"
           >
-            <h3 className="text-3xl md:text-4xl text-wedding-olive mb-6 font-bold">
+            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
               {t("travel.findus.title")}
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* Address & Map */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-                <p className="font-serif text-sm font-semibold text-primary mb-2">
+                <MapPin className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.address")}
                 </p>
-                <p className="font-serif text-xs text-muted-foreground mb-3">
+                <p className="font-serif text-xs mb-3" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.distance")}
                 </p>
                 <a 
                   href="https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-serif text-sm text-wedding-olive hover:underline"
+                  className="font-serif text-sm hover:underline" style={{ color: '#1b2e00' }}
                 >
                   {t("travel.findus.link")} →
                 </a>
@@ -166,16 +166,16 @@ const WeddingDetails = () => {
               
               {/* Bus Transport */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <Bus className="w-8 h-8 text-primary mx-auto mb-3" />
-                <p className="font-serif text-sm text-muted-foreground">
+                <Bus className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.transport")}
                 </p>
               </div>
               
               {/* Parking */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <Car className="w-8 h-8 text-primary mx-auto mb-3" />
-                <p className="font-serif text-sm text-muted-foreground">
+                <Car className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.parking")}
                 </p>
               </div>
