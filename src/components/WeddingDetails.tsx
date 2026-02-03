@@ -66,7 +66,7 @@ const WeddingDetails = () => {
               {t("travel.accommodation.content")}
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Steam Hotel */}
               <div className="text-left rounded-lg p-6 flex flex-col" style={{ backgroundColor: '#fff9f1' }}>
                 <h4 className="font-serif text-xl font-bold mb-3" style={{ color: '#1b2e00' }}>Steam Hotel</h4>
