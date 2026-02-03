@@ -7,7 +7,7 @@ const ContactSection = () => {
   const {
     t
   } = useLanguage();
-  return <section id="contact" className="py-24" style={{ backgroundColor: '#fef5ef' }}>
+  return <section id="contact" className="py-24" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-script text-4xl md:text-5xl font-bold mb-4" style={{ color: '#416631' }}>
