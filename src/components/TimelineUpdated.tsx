@@ -88,7 +88,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       {/* More padding, centered content with breathing room */}
-      <div className="relative z-10 px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 h-full flex flex-col overflow-hidden">
+      <div className="relative z-10 px-10 py-12 h-full flex flex-col">
         {children}
       </div>
       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
@@ -100,29 +100,27 @@ const TwoPartTitle = ({
   part1,
   part2,
   color = colors.textOlive,
-  ochColor,
-  ochText = "och"
+  ochColor
 }: {
   part1: string;
   part2: string;
   color?: string;
   ochColor?: string;
-  ochText?: string;
-}) => <div className="mb-6 md:mb-8">
-    <span className="block font-serif text-sm sm:text-base md:text-lg lg:text-xl uppercase tracking-[0.15em] md:tracking-[0.25em] font-extralight leading-tight" style={{
+}) => <div className="mb-8">
+    <span className="block font-serif text-lg md:text-xl uppercase tracking-[0.25em] font-extralight" style={{
     color,
     opacity: 0.85
   }}>
       {part1}
     </span>
-    <div className="flex items-baseline gap-1 mt-0.5 flex-wrap">
-      <span className="font-brittany text-xl sm:text-2xl md:text-3xl font-extralight shrink-0" style={{
+    <div className="flex items-baseline gap-1 mt-0.5">
+      <span className="font-brittany text-2xl md:text-3xl font-extralight" style={{
       color: ochColor || color,
       opacity: 0.85
     }}>
-        {ochText}
+        och
       </span>
-      <span className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-[0.02em] md:tracking-[0.04em] font-extralight leading-tight" style={{
+      <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-extralight" style={{
       color
     }}>
         {part2}
@@ -176,17 +174,17 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[280px] sm:min-h-[320px]">
-              <h3 className="font-lovely-may text-3xl sm:text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide leading-tight" style={{
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+              <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
                 color: colors.textOlive,
                 fontWeight: 400
               }}>
                 {t("timeline.friday.day") || "FREDAG"}
               </h3>
-              <h4 className="font-brittany-heading text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 text-left pl-6 sm:pl-8 leading-tight" style={{
+              <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left pl-8" style={{
                 color: colors.textOlive
               }}>
-                {t("timeline.friday.mingle")}
+                välkomstmingel
               </h4>
               <div className="font-serif text-sm space-y-2 tracking-wide leading-relaxed" style={{
               color: colors.textOlive
@@ -211,11 +209,11 @@ const Timeline = () => {
           </div>
 
           {/* Saturday Events - 3 cards with unique wavy borders */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[280px] sm:min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
-              <TwoPartTitle part1={t("timeline.card1.part1")} part2={t("timeline.card1.part2")} color={colors.darkOliveText} ochColor={colors.darkOlive} ochText={t("timeline.och")} />
-              <p className="font-serif text-xs sm:text-sm tracking-wide mt-auto leading-relaxed" style={{
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
+              <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOliveText} ochColor={colors.darkOlive} />
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
@@ -223,9 +221,9 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[280px] sm:min-h-[320px]">
-              <TwoPartTitle part1={t("timeline.card2.part1")} part2={t("timeline.card2.part2")} color={colors.darkOliveText} ochColor={colors.sageGreen} ochText={t("timeline.och")} />
-              <p className="font-serif text-xs sm:text-sm tracking-wide mt-auto leading-relaxed" style={{
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
+              <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.darkOliveText} ochColor={colors.sageGreen} />
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
@@ -233,9 +231,9 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[280px] sm:min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
-              <TwoPartTitle part1={t("timeline.card3.part1")} part2={t("timeline.card3.part2")} color={colors.darkOliveText} ochColor={colors.mutedOrange} ochText={t("timeline.och")} />
-              <p className="font-serif text-xs sm:text-sm tracking-wide mt-auto leading-relaxed" style={{
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
+              <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.darkOliveText} ochColor={colors.mutedOrange} />
+              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.dancing.description") || "Dansa natten lång!"}
