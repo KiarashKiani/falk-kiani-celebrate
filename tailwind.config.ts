@@ -74,7 +74,8 @@ export default {
 		fontFamily: {
 			script: 'var(--font-script)',
 			sans: 'var(--font-sans)',
-			serif: "'Inria Serif', serif"
+			serif: "'Inria Serif', serif",
+			brittany: "'Brittany', cursive"
 		},
 			backgroundImage: {
 				'gradient-romantic': 'var(--gradient-romantic)',
