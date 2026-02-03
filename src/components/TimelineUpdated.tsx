@@ -158,15 +158,22 @@ const Timeline = () => {
   }}>
       <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
         {/* Section Header */}
-        <div className="text-center mb-24">
-          <h2 className="text-3xl md:text-4xl font-normal mb-4 uppercase tracking-wider" style={{
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-normal mb-3 uppercase tracking-wider" style={{
           fontFamily: "'Lovely May', serif",
           color: colors.mutedOrange
         }}>
             {t("timeline.header") || "Info"}
           </h2>
-          <p className="font-serif text-lg max-w-2xl mx-auto tracking-wide" style={{
-          color: colors.textOlive
+          {/* Decorative flourish */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
+            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: colors.mutedOrange, opacity: 0.5 }}></div>
+            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
+          </div>
+          <p className="font-serif text-base max-w-xl mx-auto tracking-wide italic" style={{
+          color: colors.textOlive,
+          opacity: 0.85
         }}>
             {t("timeline.subtitle")}
           </p>
