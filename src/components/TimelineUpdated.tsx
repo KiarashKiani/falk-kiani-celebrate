@@ -3,33 +3,33 @@ import { useEffect, useState, useRef, useId } from "react";
 import handsIllustration from "@/assets/hands-illustration.png";
 import cocktailIllustration from "@/assets/cocktail-illustration.png";
 
-// More organic, hand-drawn wavy paths for each card position
+// More organic, hand-drawn wavy paths with pronounced curves matching reference
 const wavyPaths = {
-  // Card 1: Asymmetric with irregular curves
+  // Card 1: Pronounced wavy border like reference image
   card1: `
-    M 18,6
-    C 32,3 42,12 58,7 C 74,2 82,14 98,9 C 114,4 126,13 142,8 C 158,3 168,11 178,7 C 186,4 194,12 196,22
-    C 198,38 190,48 194,66 C 198,84 188,96 193,114 C 198,132 189,146 194,164 C 197,178 191,190 182,196
-    C 166,200 154,192 138,197 C 122,202 108,190 92,196 C 76,202 62,189 46,195 C 30,201 18,191 10,184
-    C 4,170 12,154 6,138 C 0,122 10,106 5,90 C 0,74 9,58 4,42 C -1,26 8,14 18,6
+    M 20,12
+    C 35,4 45,18 60,10 C 75,2 85,20 100,12 C 115,4 125,18 140,10 C 155,2 165,16 180,10 C 190,6 198,18 198,30
+    C 198,45 188,55 196,70 C 204,85 188,100 196,115 C 204,130 188,145 196,160 C 200,175 190,190 178,196
+    C 163,202 150,188 135,196 C 120,204 105,188 90,196 C 75,204 60,188 45,196 C 30,204 18,192 10,180
+    C 2,165 14,150 6,135 C -2,120 12,105 4,90 C -4,75 10,60 4,45 C -2,30 10,18 20,12
     Z
   `,
   // Card 2: Different wave pattern
   card2: `
-    M 14,10
-    C 30,4 48,14 66,8 C 84,2 100,15 118,10 C 136,5 152,16 170,12 C 184,8 194,18 198,32
-    C 202,50 192,68 197,86 C 202,104 190,122 196,140 C 202,158 192,174 186,188
-    C 172,196 154,188 136,194 C 118,200 100,186 82,193 C 64,200 46,184 28,191 C 14,196 4,184 2,168
-    C -2,150 10,132 4,114 C -2,96 8,78 3,60 C -2,42 6,24 14,10
+    M 18,14
+    C 33,4 48,20 65,10 C 82,0 95,18 112,10 C 129,2 145,18 162,10 C 178,2 192,16 198,32
+    C 204,50 190,65 198,82 C 206,99 190,115 198,132 C 206,149 192,168 182,184
+    C 168,196 150,184 132,194 C 114,204 96,186 78,196 C 60,206 42,186 24,194 C 10,200 0,184 2,166
+    C 4,148 16,132 6,114 C -4,96 10,78 4,60 C -2,42 10,26 18,14
     Z
   `,
   // Card 3: Another unique variation
   card3: `
-    M 20,8
-    C 38,2 54,16 72,10 C 90,4 108,18 126,12 C 144,6 162,14 180,10 C 192,6 200,20 198,36
-    C 196,56 186,72 192,92 C 198,112 186,130 193,150 C 200,170 188,186 178,194
-    C 160,200 142,188 124,196 C 106,204 88,186 70,194 C 52,202 34,188 18,194 C 6,198 -2,182 2,164
-    C 6,144 16,126 8,108 C 0,90 12,72 6,54 C 0,36 10,18 20,8
+    M 22,10
+    C 40,0 55,20 72,10 C 89,0 105,20 122,10 C 139,0 158,18 175,10 C 190,4 200,22 198,40
+    C 196,60 184,75 194,95 C 204,115 186,135 196,155 C 204,172 190,190 174,196
+    C 156,204 138,186 120,196 C 102,206 84,186 66,196 C 48,206 30,186 14,194 C 2,200 -4,182 4,162
+    C 12,142 20,125 10,105 C 0,85 14,68 6,50 C -2,32 12,16 22,10
     Z
   `
 };
@@ -83,7 +83,7 @@ const WavyCard = ({
           </clipPath>
         </defs>
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
-        <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+        <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       {/* More padding, centered content with breathing room */}
       <div className="relative z-10 px-10 py-12 h-full flex flex-col">
