@@ -44,7 +44,7 @@ const WeddingDetails = () => {
   ];
 
   return (
-    <section id="details" className="py-24 bg-wedding-sage">
+    <section id="details" className="py-24" style={{ backgroundColor: '#fef5ef' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-normal mb-4 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
