@@ -59,10 +59,10 @@ const WeddingDetails = () => {
             delay="0ms"
             className="hover:-translate-y-1 transition-transform duration-300"
           >
-            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
+            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight text-left" style={{ color: '#1b2e00' }}>
               {t("travel.accommodation.title")}
             </h3>
-            <p className="font-serif text-base leading-relaxed max-w-3xl mx-auto mb-8" style={{ color: '#1b2e00' }}>
+            <p className="font-serif text-base leading-relaxed max-w-3xl mb-8 text-left" style={{ color: '#1b2e00' }}>
               {t("travel.accommodation.content")}
             </p>
             
