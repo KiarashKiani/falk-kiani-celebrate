@@ -36,8 +36,10 @@ const wavyPaths = {
 
 // Softer, more muted color palette
 const colors = {
-  darkOlive: "#4a5c3d",
-  // Desaturated dark olive
+  darkOlive: "#3f5f10",
+  // Frame/och color for first card
+  darkOliveText: "#1b2e00",
+  // Text color for first card
   sageGreen: "#8fa882",
   // Softer sage
   mutedOrange: "#c49a6c",
@@ -97,11 +99,13 @@ const WavyCard = ({
 const TwoPartTitle = ({
   part1,
   part2,
-  color = colors.textOlive
+  color = colors.textOlive,
+  ochColor
 }: {
   part1: string;
   part2: string;
   color?: string;
+  ochColor?: string;
 }) => <div className="mb-8">
     <span className="block font-serif text-xs md:text-sm uppercase tracking-[0.35em] font-extralight" style={{
     color,
@@ -111,8 +115,8 @@ const TwoPartTitle = ({
     </span>
     <div className="flex items-baseline gap-1 mt-0.5">
       <span className="font-brittany text-2xl md:text-3xl font-light" style={{
-      color,
-      opacity: 0.7
+      color: ochColor || color,
+      opacity: 0.85
     }}>
         och
       </span>
@@ -208,9 +212,9 @@ const Timeline = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
             <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
-              <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOlive} />
+              <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOliveText} ochColor={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
-              color: colors.textOlive
+              color: colors.darkOliveText
             }}>
                 {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
               </p>
