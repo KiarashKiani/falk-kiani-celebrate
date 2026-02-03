@@ -2,17 +2,16 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
 import handsIllustration from "@/assets/hands-illustration.png";
 import cocktailIllustration from "@/assets/cocktail-illustration.png";
-import wavyFrameSvg from "@/assets/wavy-frame.svg";
 
 // More organic, hand-drawn wavy paths for each card position
 const wavyPaths = {
-  // Card 1: Large organic waves like the reference
+  // Card 1: Asymmetric with irregular curves
   card1: `
-    M 20,25
-    C 10,15 25,5 45,12 C 65,19 75,3 95,10 C 115,17 130,2 150,8 C 170,14 185,5 195,20
-    C 200,35 195,55 198,75 C 201,95 193,115 197,135 C 201,155 194,175 190,190
-    C 175,198 155,192 135,197 C 115,202 95,190 75,196 C 55,202 35,193 20,185
-    C 5,170 12,150 6,130 C 0,110 10,90 5,70 C 0,50 8,35 20,25
+    M 18,6
+    C 32,3 42,12 58,7 C 74,2 82,14 98,9 C 114,4 126,13 142,8 C 158,3 168,11 178,7 C 186,4 194,12 196,22
+    C 198,38 190,48 194,66 C 198,84 188,96 193,114 C 198,132 189,146 194,164 C 197,178 191,190 182,196
+    C 166,200 154,192 138,197 C 122,202 108,190 92,196 C 76,202 62,189 46,195 C 30,201 18,191 10,184
+    C 4,170 12,154 6,138 C 0,122 10,106 5,90 C 0,74 9,58 4,42 C -1,26 8,14 18,6
     Z
   `,
   // Card 2: Different wave pattern
@@ -57,9 +56,7 @@ const WavyCard = ({
   borderColor = colors.darkOlive,
   illustration,
   illustrationPosition = "bottom-right",
-  wavyPath = wavyPaths.card1,
-  useCustomFrame = false,
-  frameScale = 1.7
+  wavyPath = wavyPaths.card1
 }: {
   children: React.ReactNode;
   className?: string;
@@ -69,8 +66,6 @@ const WavyCard = ({
   illustration?: string;
   illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";
   wavyPath?: string;
-  useCustomFrame?: boolean;
-  frameScale?: number;
 }) => {
   const clipId = useId();
   const positionClasses = {
@@ -78,31 +73,20 @@ const WavyCard = ({
     "bottom-left": "bottom-8 left-6",
     "top-right": "top-6 right-6"
   };
-  
   return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
     transitionDelay: visible ? delay : "0ms"
   }}>
-      {useCustomFrame ? (
-        <img 
-          src={wavyFrameSvg} 
-          alt="" 
-          className="absolute inset-0 w-full h-full pointer-events-none" 
-          style={{ transform: `rotate(90deg) scale(${frameScale})`, transformOrigin: 'center center' }}
-          aria-hidden="true" 
-        />
-      ) : (
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <clipPath id={clipId}>
-              <path d={wavyPath} />
-            </clipPath>
-          </defs>
-          <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
-          <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-        </svg>
-      )}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <clipPath id={clipId}>
+            <path d={wavyPath} />
+          </clipPath>
+        </defs>
+        <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
+        <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+      </svg>
       {/* More padding, centered content with breathing room */}
-      <div className={`relative z-10 py-12 h-full flex flex-col ${useCustomFrame ? 'px-16 pl-20' : 'px-10'}`}>
+      <div className="relative z-10 px-10 py-12 h-full flex flex-col">
         {children}
       </div>
       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
@@ -125,10 +109,10 @@ const TwoPartTitle = ({
   }}>
       {part1}
     </span>
-    <div className="flex items-baseline gap-1 mt-0.5">
-      <span className="font-brittany text-2xl md:text-3xl font-light" style={{
+    <div className="flex items-baseline gap-0.5 mt-0.5">
+      <span className="font-brittany text-sm md:text-base font-light" style={{
       color,
-      opacity: 0.7
+      opacity: 0.6
     }}>
         och
       </span>
@@ -186,7 +170,7 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} useCustomFrame={true} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
                 color: colors.textOlive,
                 fontWeight: 400
@@ -223,7 +207,7 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
@@ -233,7 +217,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
               <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
@@ -243,7 +227,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
