@@ -109,10 +109,10 @@ const TwoPartTitle = ({
   }}>
       {part1}
     </span>
-    <div className="flex items-baseline gap-0.5 mt-0.5">
-      <span className="font-brittany text-sm md:text-base font-light" style={{
+    <div className="flex items-baseline gap-1 mt-0.5">
+      <span className="font-brittany text-2xl md:text-3xl font-light" style={{
       color,
-      opacity: 0.6
+      opacity: 0.7
     }}>
         och
       </span>
