@@ -15,13 +15,13 @@ const WavyBorderCard = ({
 }: WavyBorderCardProps) => {
   const clipId = useId();
   
-  // Gentler, more uniform wavy path matching original design
+  // More pronounced wavy path matching Friday card design
   const wavyPath = `
-    M 15,8
-    C 25,5 35,11 50,8 C 65,5 75,11 90,8 C 105,5 115,11 130,8 C 145,5 155,11 170,8 C 180,6 188,10 192,15
-    C 195,25 189,35 192,50 C 195,65 189,75 192,90 C 195,105 189,115 192,130 C 195,145 189,155 192,170 C 194,180 190,188 185,192
-    C 175,195 165,189 150,192 C 135,195 125,189 110,192 C 95,195 85,189 70,192 C 55,195 45,189 30,192 C 20,194 12,190 8,185
-    C 5,175 11,165 8,150 C 5,135 11,125 8,110 C 5,95 11,85 8,70 C 5,55 11,45 8,30 C 6,20 10,12 15,8
+    M 20,12
+    C 35,4 45,18 60,10 C 75,2 85,20 100,12 C 115,4 125,18 140,10 C 155,2 165,16 180,10 C 190,6 198,18 198,30
+    C 198,45 188,55 196,70 C 204,85 188,100 196,115 C 204,130 188,145 196,160 C 200,175 190,190 178,196
+    C 163,202 150,188 135,196 C 120,204 105,188 90,196 C 75,204 60,188 45,196 C 30,204 18,192 10,180
+    C 2,165 14,150 6,135 C -2,120 12,105 4,90 C -4,75 10,60 4,45 C -2,30 10,18 20,12
     Z
   `;
 
@@ -60,7 +60,7 @@ const WavyBorderCard = ({
           d={wavyPath}
           fill="none"
           stroke="hsl(var(--wedding-olive))"
-          strokeWidth="1.2"
+          strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
           vectorEffect="non-scaling-stroke"
