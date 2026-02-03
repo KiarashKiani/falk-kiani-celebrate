@@ -207,7 +207,7 @@
   }
 
   h1, h2 {
-    font-family: 'Lovely May', serif !important;
+    font-family: 'Lovely May', serif;
     color: hsl(var(--wedding-olive));
   }
 
