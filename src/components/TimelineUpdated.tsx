@@ -165,12 +165,6 @@ const Timeline = () => {
         }}>
             {t("timeline.header") || "Bröllopshelgen"}
           </h2>
-          {/* Decorative flourish */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
-            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: colors.mutedOrange, opacity: 0.5 }}></div>
-            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
-          </div>
           <p className="font-serif text-base max-w-xl mx-auto tracking-wide italic" style={{
           color: colors.textOlive,
           opacity: 0.85
