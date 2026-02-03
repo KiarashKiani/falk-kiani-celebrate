@@ -153,7 +153,7 @@ const Timeline = () => {
       saturdayObserver.disconnect();
     };
   }, []);
-  return <section id="timeline" className="py-28" style={{
+  return <section id="timeline" className="pt-12 pb-28" style={{
     backgroundColor: colors.cream
   }}>
       <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
