@@ -84,6 +84,15 @@ const translations = {
     'timeline.saturday.busend.title': 'Bussavgång',
     'timeline.saturday.busend.time': '01:30',
     'timeline.saturday.busend.description': 'Transport tillbaka till hotellen.',
+    // Timeline card titles
+    'timeline.card1.part1': 'VÄLKOMSTDRINK',
+    'timeline.card1.part2': 'VIGSEL',
+    'timeline.card2.part1': 'MIDDAG',
+    'timeline.card2.part2': 'FEST',
+    'timeline.card3.part1': 'DRINKAR',
+    'timeline.card3.part2': 'DANS',
+    'timeline.friday.mingle': 'välkomstmingel',
+    'timeline.och': 'och',
     
     // RSVP
     'rsvp.title': 'OSA',
@@ -233,6 +242,15 @@ const translations = {
     'timeline.saturday.busend.title': 'Bus departure',
     'timeline.saturday.busend.time': '1:30 AM',
     'timeline.saturday.busend.description': 'Transport back to the hotels.',
+    // Timeline card titles
+    'timeline.card1.part1': 'WELCOME DRINKS',
+    'timeline.card1.part2': 'CEREMONY',
+    'timeline.card2.part1': 'DINNER',
+    'timeline.card2.part2': 'PARTY',
+    'timeline.card3.part1': 'DRINKS',
+    'timeline.card3.part2': 'DANCING',
+    'timeline.friday.mingle': 'welcome mingle',
+    'timeline.och': 'and',
     
     // RSVP
     'rsvp.title': 'RSVP',
@@ -382,6 +400,15 @@ const translations = {
     'timeline.saturday.busend.title': 'Busabfahrt',
     'timeline.saturday.busend.time': '01:30 Uhr',
     'timeline.saturday.busend.description': 'Transport zurück zu den Hotels.',
+    // Timeline card titles
+    'timeline.card1.part1': 'EMPFANG',
+    'timeline.card1.part2': 'TRAUUNG',
+    'timeline.card2.part1': 'ABENDESSEN',
+    'timeline.card2.part2': 'FEIER',
+    'timeline.card3.part1': 'GETRÄNKE',
+    'timeline.card3.part2': 'TANZ',
+    'timeline.friday.mingle': 'Willkommenstreffen',
+    'timeline.och': 'und',
     
     // RSVP
     'rsvp.title': 'Rückmeldung',
