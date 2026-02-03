@@ -169,16 +169,14 @@ const Timeline = () => {
 
         {/* Friday Section */}
         <div ref={fridayRef}>
-          <div className={`text-center mb-14 transition-all duration-700 ease-out ${fridayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3 className="font-brittany text-4xl md:text-5xl" style={{
-            color: colors.textOlive
-          }}>
-              {t("timeline.friday.day") || "Fredag"}
-            </h3>
-          </div>
-
           <div className="flex justify-center mb-24">
             <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+              <h3 className="text-4xl md:text-5xl text-center mb-4" style={{
+                fontFamily: "'Lovely May', serif",
+                color: colors.textOlive
+              }}>
+                {t("timeline.friday.day") || "Fredag"}
+              </h3>
               <h4 className="font-brittany text-3xl md:text-4xl mb-6" style={{
               color: colors.textOlive
             }}>
