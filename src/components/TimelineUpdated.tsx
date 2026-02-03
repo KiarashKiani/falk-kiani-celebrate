@@ -40,8 +40,8 @@ const colors = {
   // Frame/och color for first card
   darkOliveText: "#1b2e00",
   // Text color for first card
-  sageGreen: "#8fa882",
-  // Softer sage
+  sageGreen: "#89b647",
+  // Frame/och color for middle card
   mutedOrange: "#c49a6c",
   // Warmer, muted orange
   textOlive: "#5a6b4d",
@@ -222,9 +222,9 @@ const Timeline = () => {
 
             {/* Card 2: Middag och Fest */}
             <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
-              <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.sageGreen} />
+              <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.darkOliveText} ochColor={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
-              color: colors.textOlive
+              color: colors.darkOliveText
             }}>
                 {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
               </p>
