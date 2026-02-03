@@ -10,10 +10,9 @@ const ContactSection = () => {
   return <section id="contact" className="py-24" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-script text-4xl md:text-5xl font-bold mb-4" style={{ color: '#416631' }}>
+          <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal mb-4" style={{ color: '#ff8a00' }}>
             {t("contact.title")}
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
         </div>
 
         <Card className="shadow-soft mb-12 bg-wedding-sage border-wedding-olive/20">
