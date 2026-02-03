@@ -46,7 +46,7 @@ const translations = {
     'travel.weekend.content': 'För er som stannar längre rekommenderar vi att utforska Västerås gamla stad, Anundshög och de vackra stränderna vid Mälaren.',
     
     // Timeline
-    'timeline.header': 'Info',
+    'timeline.header': 'Bröllopshelgen',
     'timeline.title': 'Schema för helgen',
     'timeline.subtitle': 'Här hittar du allt som händer under vår bröllopshelg',
     // Friday events
@@ -195,7 +195,7 @@ const translations = {
     'travel.weekend.content': 'For those staying longer, we recommend exploring Västerås old town, Anundshög, and the beautiful shores of Lake Mälaren.',
     
     // Timeline
-    'timeline.header': 'Info',
+    'timeline.header': 'Wedding Weekend',
     'timeline.title': 'Weekend Schedule',
     'timeline.subtitle': 'Here you\'ll find everything happening during our wedding weekend',
     // Friday events
@@ -344,7 +344,7 @@ const translations = {
     'travel.weekend.content': 'Für diejenigen, die länger bleiben, empfehlen wir die Altstadt von Västerås, Anundshög und die wunderschönen Strände am Mälaren-See zu erkunden.',
     
     // Timeline
-    'timeline.header': 'Info',
+    'timeline.header': 'Hochzeitswochenende',
     'timeline.title': 'Wochenendprogramm',
     'timeline.subtitle': 'Hier findet ihr alles, was während unseres Hochzeitswochenendes passiert',
     // Friday events
