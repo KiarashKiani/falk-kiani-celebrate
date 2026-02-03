@@ -177,7 +177,7 @@ const Timeline = () => {
               }}>
                 {t("timeline.friday.day") || "FREDAG"}
               </h3>
-              <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left" style={{
+              <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left pl-8" style={{
                 color: colors.textOlive
               }}>
                 välkomstmingel
