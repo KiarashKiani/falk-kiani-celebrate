@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
 import handsIllustration from "@/assets/hands-illustration.png";
 import cocktailIllustration from "@/assets/cocktail-illustration.png";
+import wavyFrameSvg from "@/assets/wavy-frame.svg";
 
 // More organic, hand-drawn wavy paths for each card position
 const wavyPaths = {
@@ -56,7 +57,8 @@ const WavyCard = ({
   borderColor = colors.darkOlive,
   illustration,
   illustrationPosition = "bottom-right",
-  wavyPath = wavyPaths.card1
+  wavyPath = wavyPaths.card1,
+  useCustomFrame = false
 }: {
   children: React.ReactNode;
   className?: string;
@@ -66,6 +68,7 @@ const WavyCard = ({
   illustration?: string;
   illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";
   wavyPath?: string;
+  useCustomFrame?: boolean;
 }) => {
   const clipId = useId();
   const positionClasses = {
@@ -73,18 +76,28 @@ const WavyCard = ({
     "bottom-left": "bottom-8 left-6",
     "top-right": "top-6 right-6"
   };
+  
   return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
     transitionDelay: visible ? delay : "0ms"
   }}>
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <clipPath id={clipId}>
-            <path d={wavyPath} />
-          </clipPath>
-        </defs>
-        <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
-        <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-      </svg>
+      {useCustomFrame ? (
+        <img 
+          src={wavyFrameSvg} 
+          alt="" 
+          className="absolute inset-0 w-full h-full pointer-events-none object-fill" 
+          aria-hidden="true" 
+        />
+      ) : (
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <clipPath id={clipId}>
+              <path d={wavyPath} />
+            </clipPath>
+          </defs>
+          <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
+          <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+        </svg>
+      )}
       {/* More padding, centered content with breathing room */}
       <div className="relative z-10 px-10 py-12 h-full flex flex-col">
         {children}
@@ -170,7 +183,7 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} useCustomFrame={true} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
                 color: colors.textOlive,
                 fontWeight: 400
