@@ -262,7 +262,7 @@ const RSVPForm = () => {
   );
 
   return (
-    <section id="rsvp" className="py-24 bg-wedding-sage">
+    <section id="rsvp" className="py-24" style={{ backgroundColor: '#fef5ef' }}>
       <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

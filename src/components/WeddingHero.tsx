@@ -40,7 +40,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-wedding-sage overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#fef5ef' }}>
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
         {/* Canva Hero Design */}
         <div className="mb-8">
