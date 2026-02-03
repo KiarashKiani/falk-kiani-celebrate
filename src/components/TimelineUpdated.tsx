@@ -44,7 +44,7 @@ const colors = {
   // Warmer, muted orange
   textOlive: "#5a6b4d",
   // Softer text color
-  cream: "#fef5ef" // Warmer peachy cream
+  cream: "#fff9f1" // Warm peachy cream
 };
 
 // Wavy border card with organic, hand-drawn feel
