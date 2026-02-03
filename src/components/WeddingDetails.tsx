@@ -47,12 +47,9 @@ const WeddingDetails = () => {
     <section id="details" className="py-24" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal mb-6" style={{ color: '#ff8a00' }}>
+          <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal" style={{ color: '#ff8a00' }}>
             {t("details.title")}
           </h2>
-          <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("details.subtitle")}
-          </p>
         </div>
 
         {/* How to Get Here Section - Full Width */}
