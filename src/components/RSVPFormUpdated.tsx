@@ -266,10 +266,9 @@ const RSVPForm = () => {
       <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-script text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wider" style={{ color: '#416631' }}>
+          <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal mb-4" style={{ color: '#ff8a00' }}>
             {t("rsvp.title")}
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-wedding-olive to-transparent mx-auto mb-6"></div>
           <p className="font-serif text-lg text-muted-foreground">
             {t("rsvp.subtitle").replace('[Datum]', '1 april 2026').replace('[Date]', 'April 1, 2026')}
           </p>
