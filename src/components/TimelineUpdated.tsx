@@ -159,8 +159,7 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-normal mb-3 tracking-wide" style={{
-          fontFamily: "'Brittany', cursive",
+          <h2 className="font-brittany text-4xl md:text-5xl font-normal mb-3 tracking-wide" style={{
           color: '#ff8a00'
         }}>
             {t("timeline.header") || "Bröllopshelgen"}
