@@ -85,7 +85,7 @@ const WavyCard = ({
           src={wavyFrameSvg} 
           alt="" 
           className="absolute inset-0 w-full h-full pointer-events-none" 
-          style={{ transform: 'rotate(90deg) scale(1.4)', transformOrigin: 'center center' }}
+          style={{ transform: 'rotate(90deg) scale(1.7)', transformOrigin: 'center center' }}
           aria-hidden="true" 
         />
       ) : (
