@@ -159,20 +159,13 @@ const Timeline = () => {
       <div className="max-w-6xl mx-auto px-6 border-[#fff8f0]">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-brittany text-4xl md:text-5xl font-normal mb-3 tracking-wide" style={{
+          <h2 className="font-brittany text-6xl md:text-7xl lg:text-8xl font-normal mb-4" style={{
           color: '#ff8a00'
         }}>
-            {t("timeline.header") || "Bröllopshelgen"}
+            Bröllopshelgen
           </h2>
-          {/* Decorative flourish */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
-            <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: colors.mutedOrange, opacity: 0.5 }}></div>
-            <div className="w-12 h-px" style={{ backgroundColor: colors.mutedOrange, opacity: 0.4 }}></div>
-          </div>
-          <p className="font-serif text-base max-w-xl mx-auto tracking-wide italic" style={{
-          color: colors.textOlive,
-          opacity: 0.85
+          <p className="font-serif text-lg md:text-xl max-w-xl mx-auto tracking-wide italic" style={{
+          color: colors.textOlive
         }}>
             {t("timeline.subtitle")}
           </p>
