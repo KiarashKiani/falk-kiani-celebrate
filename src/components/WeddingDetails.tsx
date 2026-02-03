@@ -59,28 +59,28 @@ const WeddingDetails = () => {
             delay="0ms"
             className="hover:-translate-y-1 transition-transform duration-300"
           >
-            <h3 className="font-lovely-may text-3xl md:text-4xl text-wedding-olive mb-6 uppercase tracking-wide">
+            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
               {t("travel.accommodation.title")}
             </h3>
-            <p className="font-serif text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="font-serif text-base leading-relaxed max-w-3xl mx-auto mb-8" style={{ color: '#1b2e00' }}>
               {t("travel.accommodation.content")}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Steam Hotel */}
               <div className="text-left rounded-lg p-6 flex flex-col" style={{ backgroundColor: '#fff9f1' }}>
-                <h4 className="font-serif text-xl font-bold text-primary mb-3">Steam Hotel</h4>
-                <p className="font-serif text-muted-foreground text-sm mb-3">
+                <h4 className="font-serif text-xl font-bold mb-3" style={{ color: '#1b2e00' }}>Steam Hotel</h4>
+                <p className="font-serif text-sm mb-3" style={{ color: '#1b2e00' }}>
                   {t("accommodation.steam.description")}
                 </p>
                 <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
-                  <p className="font-serif text-sm font-semibold text-primary">
+                  <p className="font-serif text-sm font-semibold" style={{ color: '#1b2e00' }}>
                     {t("accommodation.steam.discount")}
                   </p>
-                  <p className="font-serif text-xs text-muted-foreground mt-1">
+                  <p className="font-serif text-xs mt-1" style={{ color: '#1b2e00' }}>
                     {t("accommodation.steam.code")}
                   </p>
-                  <p className="font-serif text-xs text-muted-foreground mt-2 italic">
+                  <p className="font-serif text-xs mt-2 italic" style={{ color: '#1b2e00' }}>
                     {t("accommodation.steam.pricing")}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ const WeddingDetails = () => {
                   href="https://steamhotel.se" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="font-serif text-sm text-wedding-olive hover:underline"
+                  className="font-serif text-sm hover:underline" style={{ color: '#1b2e00' }}
                 >
                   steamhotel.se →
                 </a>
@@ -96,26 +96,26 @@ const WeddingDetails = () => {
               
               {/* Elite Stadshotellet */}
               <div className="text-left rounded-lg p-6 flex flex-col" style={{ backgroundColor: '#fff9f1' }}>
-                <h4 className="font-serif text-xl font-bold text-primary mb-3">Elite Stadshotellet Västerås</h4>
-                <p className="font-serif text-muted-foreground text-sm mb-3">
+                <h4 className="font-serif text-xl font-bold mb-3" style={{ color: '#1b2e00' }}>Elite Stadshotellet Västerås</h4>
+                <p className="font-serif text-sm mb-3" style={{ color: '#1b2e00' }}>
                   {t("accommodation.elite.description")}
                 </p>
                 <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
-                  <p className="font-serif text-sm font-semibold text-primary">
+                  <p className="font-serif text-sm font-semibold" style={{ color: '#1b2e00' }}>
                     {t("accommodation.elite.booking")}
                   </p>
-                  <p className="font-serif text-xs text-muted-foreground mt-2">
+                  <p className="font-serif text-xs mt-2" style={{ color: '#1b2e00' }}>
                     {t("accommodation.elite.pricing")}
                   </p>
                   <a 
                     href="tel:+46771788789" 
-                    className="font-serif text-xs text-wedding-olive hover:underline block mt-2"
+                    className="font-serif text-xs hover:underline block mt-2" style={{ color: '#1b2e00' }}
                   >
                     +46 (0)771-788 789
                   </a>
                   <a 
                     href="mailto:centralreservation@elite.se" 
-                    className="font-serif text-xs text-wedding-olive hover:underline block mt-1"
+                    className="font-serif text-xs hover:underline block mt-1" style={{ color: '#1b2e00' }}
                   >
                     centralreservation@elite.se
                   </a>
@@ -124,7 +124,7 @@ const WeddingDetails = () => {
                   href="https://elite.se/sv/hotell/vasteras/elite-stadshotellet-vasteras/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="font-serif text-sm text-wedding-olive hover:underline"
+                  className="font-serif text-sm hover:underline" style={{ color: '#1b2e00' }}
                 >
                   elite.se →
                 </a>
