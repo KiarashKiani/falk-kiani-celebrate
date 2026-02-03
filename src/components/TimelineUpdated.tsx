@@ -42,8 +42,8 @@ const colors = {
   // Text color for first card
   sageGreen: "#89b647",
   // Frame/och color for middle card
-  mutedOrange: "#c49a6c",
-  // Warmer, muted orange
+  mutedOrange: "#ff8a00",
+  // Frame/och color for right card
   textOlive: "#5a6b4d",
   // Softer text color
   cream: "#fff9f1" // Warm peachy cream
@@ -232,9 +232,9 @@ const Timeline = () => {
 
             {/* Card 3: Drinkar och Dans */}
             <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
-              <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.mutedOrange} />
+              <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.darkOliveText} ochColor={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
-              color: colors.textOlive
+              color: colors.darkOliveText
             }}>
                 {t("timeline.dancing.description") || "Dansa natten lång!"}
               </p>
