@@ -58,7 +58,8 @@ const WavyCard = ({
   illustration,
   illustrationPosition = "bottom-right",
   wavyPath = wavyPaths.card1,
-  useCustomFrame = false
+  useCustomFrame = false,
+  frameScale = 1.7
 }: {
   children: React.ReactNode;
   className?: string;
@@ -69,6 +70,7 @@ const WavyCard = ({
   illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";
   wavyPath?: string;
   useCustomFrame?: boolean;
+  frameScale?: number;
 }) => {
   const clipId = useId();
   const positionClasses = {
@@ -85,7 +87,7 @@ const WavyCard = ({
           src={wavyFrameSvg} 
           alt="" 
           className="absolute inset-0 w-full h-full pointer-events-none" 
-          style={{ transform: 'rotate(90deg) scale(1.7)', transformOrigin: 'center center' }}
+          style={{ transform: `rotate(90deg) scale(${frameScale})`, transformOrigin: 'center center' }}
           aria-hidden="true" 
         />
       ) : (
@@ -221,7 +223,7 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} useCustomFrame={true} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
@@ -231,7 +233,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} useCustomFrame={true} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
               <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
@@ -241,7 +243,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} useCustomFrame={true} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} useCustomFrame={true} frameScale={2.2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.textOlive
