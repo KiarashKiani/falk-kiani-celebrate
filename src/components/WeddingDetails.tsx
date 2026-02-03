@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
 import WavyBorderCard from "./ui/WavyBorderCard";
+import IrregularInfoBox from "./ui/IrregularInfoBox";
 
 const WeddingDetails = () => {
   const { t } = useLanguage();
@@ -73,7 +74,7 @@ const WeddingDetails = () => {
                 <p className="font-serif text-sm mb-3" style={{ color: '#1b2e00' }}>
                   {t("accommodation.steam.description")}
                 </p>
-                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
+                <IrregularInfoBox className="mb-3 flex-1">
                   <p className="font-serif text-sm font-semibold" style={{ color: '#1b2e00' }}>
                     {t("accommodation.steam.discount")}
                   </p>
@@ -83,7 +84,7 @@ const WeddingDetails = () => {
                   <p className="font-serif text-xs mt-2 italic" style={{ color: '#1b2e00' }}>
                     {t("accommodation.steam.pricing")}
                   </p>
-                </div>
+                </IrregularInfoBox>
                 <a 
                   href="https://steamhotel.se" 
                   target="_blank" 
@@ -100,7 +101,7 @@ const WeddingDetails = () => {
                 <p className="font-serif text-sm mb-3" style={{ color: '#1b2e00' }}>
                   {t("accommodation.elite.description")}
                 </p>
-                <div className="bg-wedding-champagne/50 rounded-md p-3 mb-3 flex-1">
+                <IrregularInfoBox className="mb-3 flex-1">
                   <p className="font-serif text-sm font-semibold" style={{ color: '#1b2e00' }}>
                     {t("accommodation.elite.booking")}
                   </p>
@@ -119,7 +120,7 @@ const WeddingDetails = () => {
                   >
                     centralreservation@elite.se
                   </a>
-                </div>
+                </IrregularInfoBox>
                 <a 
                   href="https://elite.se/sv/hotell/vasteras/elite-stadshotellet-vasteras/" 
                   target="_blank" 
