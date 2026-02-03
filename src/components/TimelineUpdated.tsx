@@ -107,20 +107,20 @@ const TwoPartTitle = ({
   color?: string;
   ochColor?: string;
 }) => <div className="mb-8">
-    <span className="block font-serif text-lg md:text-xl uppercase tracking-[0.25em] font-light" style={{
+    <span className="block font-serif text-lg md:text-xl uppercase tracking-[0.25em] font-extralight" style={{
     color,
     opacity: 0.85
   }}>
       {part1}
     </span>
     <div className="flex items-baseline gap-1 mt-0.5">
-      <span className="font-brittany text-2xl md:text-3xl font-light" style={{
+      <span className="font-brittany text-2xl md:text-3xl font-extralight" style={{
       color: ochColor || color,
       opacity: 0.85
     }}>
         och
       </span>
-      <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-light" style={{
+      <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-extralight" style={{
       color
     }}>
         {part2}
