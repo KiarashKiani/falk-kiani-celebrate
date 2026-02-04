@@ -1,5 +1,6 @@
 import suitIcon from "@/assets/icons/suit-icon.png";
 import childIcon from "@/assets/icons/child-icon.png";
+import giftIcon from "@/assets/icons/gift-icon.png";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
@@ -209,7 +210,14 @@ const WeddingDetails = () => {
                     className="absolute bottom-0 -right-4 w-24 h-28 object-contain" 
                   />
                 )}
-                <p className={index === 0 ? "pr-16" : ""}>{detail.content}</p>
+                {index === 1 && (
+                  <img 
+                    src={giftIcon} 
+                    alt="" 
+                    className="absolute bottom-0 -right-4 w-24 h-28 object-contain" 
+                  />
+                )}
+                <p className={index === 0 || index === 1 ? "pr-16" : ""}>{detail.content}</p>
               </div>
             </WavyBorderCard>
           ))}
