@@ -201,15 +201,15 @@ const WeddingDetails = () => {
               <h3 className="font-lovely-may text-xl md:text-2xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
                 {detail.title}
               </h3>
-              <div className="font-serif text-sm leading-relaxed" style={{ color: '#1b2e00' }}>
+              <div className="font-serif text-sm leading-relaxed relative" style={{ color: '#1b2e00' }}>
                 {index === 0 && (
                   <img 
                     src={childIcon} 
                     alt="" 
-                    className="float-right w-20 h-24 object-contain ml-2 mb-1" 
+                    className="absolute bottom-0 right-0 w-20 h-24 object-contain" 
                   />
                 )}
-                <p>{detail.content}</p>
+                <p className={index === 0 ? "pr-16" : ""}>{detail.content}</p>
               </div>
             </WavyBorderCard>
           ))}
