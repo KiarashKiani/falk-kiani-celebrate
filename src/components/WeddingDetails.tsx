@@ -223,9 +223,10 @@ const WeddingDetails = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold mb-3" style={{ color: '#1b2e00' }}>
+                  <h4 className="text-lg font-semibold mb-2" style={{ color: '#1b2e00' }}>
                     {t("details.dresscode.saturday.title")}
                   </h4>
+                  <p className="font-serif mb-3" style={{ color: '#1b2e00' }}>{t("details.dresscode.saturday.content")}</p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href="https://www.stroms.com/kladkod-brollop-dam/"

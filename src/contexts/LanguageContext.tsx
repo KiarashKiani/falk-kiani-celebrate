@@ -134,7 +134,8 @@ const translations = {
     'details.dresscode.title': 'Klädkod',
     'details.dresscode.friday.title': 'Fredag',
     'details.dresscode.friday.content': 'Festfint. Kvällarna kan bli svala – ta gärna med en extra tröja eller sjal.',
-    'details.dresscode.saturday.title': 'Lördag – Mörk kostym (smoking går såklart bra)',
+    'details.dresscode.saturday.title': 'Lördag',
+    'details.dresscode.saturday.content': 'Mörk kostym (smoking går såklart bra)',
     'details.dresscode.women': 'Beskrivning för kvinnor',
     'details.dresscode.men': 'Beskrivning för män',
     
@@ -283,7 +284,8 @@ const translations = {
     'details.dresscode.title': 'Dress Code',
     'details.dresscode.friday.title': 'Friday',
     'details.dresscode.friday.content': 'Cocktail / festive attire. Evenings can be chilly – feel free to bring a light layer.',
-    'details.dresscode.saturday.title': 'Saturday – Dark Suit (Tuxedo Welcome)',
+    'details.dresscode.saturday.title': 'Saturday',
+    'details.dresscode.saturday.content': 'Dark suit (tuxedo welcome)',
     'details.dresscode.women': 'Guide for women (Swedish)',
     'details.dresscode.men': 'Guide for men (Swedish)',
     
@@ -432,7 +434,8 @@ const translations = {
     'details.dresscode.title': 'Dresscode',
     'details.dresscode.friday.title': 'Freitag',
     'details.dresscode.friday.content': 'Festlich elegant. Abende können kühl werden – bringt gerne eine leichte Jacke mit.',
-    'details.dresscode.saturday.title': 'Samstag – Dunkler Anzug (Smoking willkommen)',
+    'details.dresscode.saturday.title': 'Samstag',
+    'details.dresscode.saturday.content': 'Dunkler Anzug (Smoking willkommen)',
     'details.dresscode.women': 'Hinweise für Damen',
     'details.dresscode.men': 'Hinweise für Herren',
     
