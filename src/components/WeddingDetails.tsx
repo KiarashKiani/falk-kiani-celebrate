@@ -197,7 +197,7 @@ const WeddingDetails = () => {
               borderColor={index === 1 ? '#89b647' : '#ff8a00'}
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[240px]"
             >
-              <h3 className="font-lovely-may text-2xl md:text-3xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
+              <h3 className="font-lovely-may text-xl md:text-2xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
                 {detail.title}
               </h3>
               <p className="font-serif text-sm leading-relaxed max-w-[240px] mx-auto" style={{ color: '#1b2e00' }}>
