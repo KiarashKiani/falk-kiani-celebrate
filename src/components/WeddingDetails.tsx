@@ -248,8 +248,18 @@ const WeddingDetails = () => {
               </div>
             </div>
             
-            <div className="hidden md:flex items-center justify-center pr-8">
-              <img src={suitIcon} alt="" className="w-48 h-64 object-contain" />
+            <div className="hidden md:flex items-center justify-center pr-8 relative">
+              <svg 
+                className="absolute w-56 h-72 -left-8 top-1/2 -translate-y-1/2" 
+                viewBox="0 0 100 100" 
+                preserveAspectRatio="none"
+              >
+                <path 
+                  d="M 15,20 C 25,5 45,8 60,12 C 80,18 90,35 88,55 C 86,75 70,90 50,92 C 30,94 12,80 8,60 C 4,40 5,35 15,20 Z" 
+                  fill="#fffeb8"
+                />
+              </svg>
+              <img src={suitIcon} alt="" className="w-48 h-64 object-contain relative z-10" />
             </div>
           </div>
         </Card>
