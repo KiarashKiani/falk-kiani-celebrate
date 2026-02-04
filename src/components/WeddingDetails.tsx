@@ -194,6 +194,7 @@ const WeddingDetails = () => {
               key={index} 
               visible={visible}
               delay={detail.delay}
+              borderColor={index === 1 ? '#89b647' : '#ff8a00'}
               className="hover:-translate-y-2 transition-transform duration-300 min-h-[240px]"
             >
               <h3 className="font-lovely-may text-2xl md:text-3xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
