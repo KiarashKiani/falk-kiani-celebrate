@@ -151,7 +151,7 @@ const WeddingDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* Address & Map */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <img src={pinIcon} alt="" className="w-10 h-10 mx-auto mb-3 object-contain" />
+                <img src={pinIcon} alt="" className="w-12 h-12 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.address")}
                 </p>
@@ -170,7 +170,7 @@ const WeddingDetails = () => {
               
               {/* Bus Transport */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <img src={busIcon} alt="" className="w-12 h-10 mx-auto mb-3 object-contain" />
+                <img src={busIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.transport")}
                 </p>
@@ -178,7 +178,7 @@ const WeddingDetails = () => {
               
               {/* Parking */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <img src={carIcon} alt="" className="w-12 h-10 mx-auto mb-3 object-contain" />
+                <img src={carIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.parking")}
                 </p>
