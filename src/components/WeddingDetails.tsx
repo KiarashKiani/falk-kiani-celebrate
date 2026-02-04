@@ -207,45 +207,51 @@ const WeddingDetails = () => {
         </div>
 
         {/* Larger Dress Code section */}
-        <Card className="shadow-soft bg-wedding-sage border-0">
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              <span className="font-lovely-may text-3xl md:text-4xl uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>{t("details.dresscode.title")}</span>
-              <img src={suitIcon} alt="" className="w-24 h-32 md:w-32 md:h-40 object-contain" />
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="font-serif space-y-6" style={{ color: '#1b2e00' }}>
-            <div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: '#1b2e00' }}>
-                {t("details.dresscode.friday.title")}
+        <Card className="shadow-soft bg-wedding-sage border-0 overflow-hidden">
+          <div className="flex">
+            <div className="flex-1 p-6">
+              <h3 className="font-lovely-may text-3xl md:text-4xl uppercase tracking-wide font-extralight mb-6" style={{ color: '#1b2e00' }}>
+                {t("details.dresscode.title")}
               </h3>
-              <p className="font-serif" style={{ color: '#1b2e00' }}>{t("details.dresscode.friday.content")}</p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: '#1b2e00' }}>
-                {t("details.dresscode.saturday.title")}
-              </h3>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="https://www.stroms.com/kladkod-brollop-dam/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-serif inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors duration-200 text-sm"
-                >
-                  {t("details.dresscode.women")}
-                </a>
-                <a
-                  href="https://www.stroms.com/kladkod-brollop-herr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-serif inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md transition-colors duration-200 text-sm"
-                >
-                  {t("details.dresscode.men")}
-                </a>
+              
+              <div className="font-serif space-y-6" style={{ color: '#1b2e00' }}>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2" style={{ color: '#1b2e00' }}>
+                    {t("details.dresscode.friday.title")}
+                  </h4>
+                  <p className="font-serif" style={{ color: '#1b2e00' }}>{t("details.dresscode.friday.content")}</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold mb-3" style={{ color: '#1b2e00' }}>
+                    {t("details.dresscode.saturday.title")}
+                  </h4>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://www.stroms.com/kladkod-brollop-dam/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-serif inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors duration-200 text-sm"
+                    >
+                      {t("details.dresscode.women")}
+                    </a>
+                    <a
+                      href="https://www.stroms.com/kladkod-brollop-herr/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-serif inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md transition-colors duration-200 text-sm"
+                    >
+                      {t("details.dresscode.men")}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </CardContent>
+            
+            <div className="hidden md:flex items-center justify-center pr-8">
+              <img src={suitIcon} alt="" className="w-48 h-64 object-contain" />
+            </div>
+          </div>
         </Card>
       </div>
     </section>
