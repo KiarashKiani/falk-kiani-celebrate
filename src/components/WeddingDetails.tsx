@@ -250,7 +250,7 @@ const WeddingDetails = () => {
             
             <div className="hidden md:flex items-center justify-center pr-8 relative">
               <svg 
-                className="absolute w-40 h-52 left-0 top-1/3" 
+                className="absolute w-40 h-52 -left-4 top-4" 
                 viewBox="0 0 100 120" 
                 preserveAspectRatio="none"
               >
