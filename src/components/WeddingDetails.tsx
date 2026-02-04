@@ -1,4 +1,5 @@
 import suitIcon from "@/assets/icons/suit-icon.png";
+import childIcon from "@/assets/icons/child-icon.png";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
@@ -200,9 +201,16 @@ const WeddingDetails = () => {
               <h3 className="font-lovely-may text-xl md:text-2xl mb-3 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
                 {detail.title}
               </h3>
-              <p className="font-serif text-sm leading-relaxed max-w-[240px] mx-auto" style={{ color: '#1b2e00' }}>
-                {detail.content}
-              </p>
+              <div className="font-serif text-sm leading-relaxed" style={{ color: '#1b2e00' }}>
+                {index === 0 && (
+                  <img 
+                    src={childIcon} 
+                    alt="" 
+                    className="float-right w-20 h-24 object-contain ml-2 mb-1" 
+                  />
+                )}
+                <p>{detail.content}</p>
+              </div>
             </WavyBorderCard>
           ))}
         </div>
