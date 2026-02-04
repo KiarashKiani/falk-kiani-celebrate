@@ -88,7 +88,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       {/* More padding, centered content with breathing room */}
-      <div className="relative z-10 px-12 py-16 md:px-14 md:py-20 h-full flex flex-col">
+      <div className="relative z-10 px-12 pr-16 py-16 md:px-14 md:pr-20 md:py-20 h-full flex flex-col">
         {children}
       </div>
       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
