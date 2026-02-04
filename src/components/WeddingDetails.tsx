@@ -206,7 +206,7 @@ const WeddingDetails = () => {
                   <img 
                     src={childIcon} 
                     alt="" 
-                    className="absolute bottom-0 right-0 w-20 h-24 object-contain" 
+                    className="absolute bottom-0 -right-4 w-24 h-28 object-contain" 
                   />
                 )}
                 <p className={index === 0 ? "pr-16" : ""}>{detail.content}</p>
