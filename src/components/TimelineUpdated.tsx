@@ -211,7 +211,7 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={handsIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={handsIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOliveText} ochColor={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
@@ -221,7 +221,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]">
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.darkOliveText} ochColor={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
@@ -231,7 +231,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[320px]" illustration={cocktailIllustration} illustrationPosition="top-right">
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={cocktailIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.darkOliveText} ochColor={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
