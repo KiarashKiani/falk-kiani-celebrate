@@ -1,4 +1,4 @@
-import { Shirt } from "lucide-react";
+import { } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
@@ -209,8 +209,7 @@ const WeddingDetails = () => {
         {/* Larger Dress Code section */}
         <Card className="shadow-soft bg-wedding-sage border-0">
           <CardHeader>
-            <CardTitle className="flex items-center text-xl font-extralight">
-              <Shirt className="w-6 h-6 mr-3" style={{ color: '#1b2e00' }} />
+            <CardTitle className="text-xl font-extralight">
               <span className="font-lovely-may uppercase tracking-wide" style={{ color: '#1b2e00' }}>{t("details.dresscode.title")}</span>
             </CardTitle>
           </CardHeader>
