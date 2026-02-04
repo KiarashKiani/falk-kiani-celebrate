@@ -214,7 +214,7 @@ const WeddingDetails = () => {
                   <img 
                     src={giftIcon} 
                     alt="" 
-                    className="absolute bottom-0 -right-4 w-24 h-28 object-contain" 
+                    className="absolute -bottom-2 -right-6 w-20 h-24 object-contain" 
                   />
                 )}
                 <p className={index === 0 || index === 1 ? "pr-16" : ""}>{detail.content}</p>
