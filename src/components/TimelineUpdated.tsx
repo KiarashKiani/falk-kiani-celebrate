@@ -88,7 +88,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       {/* More padding, centered content with breathing room */}
-      <div className="relative z-10 px-10 py-12 h-full flex flex-col">
+      <div className="relative z-10 px-12 py-16 md:px-14 md:py-20 h-full flex flex-col">
         {children}
       </div>
       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
@@ -174,7 +174,7 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-lg w-full min-h-[320px]">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
                 color: colors.textOlive,
                 fontWeight: 400
