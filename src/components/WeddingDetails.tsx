@@ -207,7 +207,7 @@ const WeddingDetails = () => {
         </div>
 
         {/* Larger Dress Code section */}
-        <Card className="shadow-soft bg-wedding-sage border-wedding-olive/20">
+        <Card className="shadow-soft bg-wedding-sage border-0">
           <CardHeader>
             <CardTitle className="flex items-center text-xl font-extralight">
               <Shirt className="w-6 h-6 mr-3" style={{ color: '#1b2e00' }} />
