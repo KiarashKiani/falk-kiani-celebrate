@@ -5,13 +5,15 @@ interface WavyBorderCardProps {
   className?: string;
   visible?: boolean;
   delay?: string;
+  borderColor?: string;
 }
 
 const WavyBorderCard = ({
   children,
   className = "",
   visible = true,
-  delay = "0ms"
+  delay = "0ms",
+  borderColor
 }: WavyBorderCardProps) => {
   const clipId = useId();
   
@@ -59,7 +61,7 @@ const WavyBorderCard = ({
         <path
           d={wavyPath}
           fill="none"
-          stroke="hsl(var(--wedding-olive))"
+          stroke={borderColor || "hsl(var(--wedding-olive))"}
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
