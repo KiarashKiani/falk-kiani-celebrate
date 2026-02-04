@@ -70,7 +70,7 @@ const WavyBorderCard = ({
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 px-10 py-8 text-center h-full flex flex-col justify-center">
+      <div className="relative z-10 px-10 py-8 text-left h-full flex flex-col justify-center">
         {children}
       </div>
     </div>
