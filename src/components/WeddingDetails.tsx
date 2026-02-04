@@ -250,12 +250,12 @@ const WeddingDetails = () => {
             
             <div className="hidden md:flex items-center justify-center pr-8 relative">
               <svg 
-                className="absolute w-56 h-72 -left-8 top-1/2 -translate-y-1/2" 
-                viewBox="0 0 100 100" 
+                className="absolute w-64 h-80 -left-6 top-1/2 -translate-y-1/2" 
+                viewBox="0 0 100 120" 
                 preserveAspectRatio="none"
               >
                 <path 
-                  d="M 15,20 C 25,5 45,8 60,12 C 80,18 90,35 88,55 C 86,75 70,90 50,92 C 30,94 12,80 8,60 C 4,40 5,35 15,20 Z" 
+                  d="M 25,8 C 40,2 55,12 70,6 C 88,0 98,18 96,38 C 94,52 85,58 90,75 C 96,95 78,115 55,118 C 35,120 20,108 12,90 C 4,72 8,58 5,42 C 2,26 10,14 25,8 Z" 
                   fill="#fffeb8"
                 />
               </svg>
