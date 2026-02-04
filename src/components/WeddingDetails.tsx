@@ -1,9 +1,12 @@
-import { Shirt, MapPin, Bus, Car } from "lucide-react";
+import { Shirt } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
 import WavyBorderCard from "./ui/WavyBorderCard";
 import IrregularInfoBox from "./ui/IrregularInfoBox";
+import pinIcon from "@/assets/icons/pin-icon.png";
+import busIcon from "@/assets/icons/bus-icon.png";
+import carIcon from "@/assets/icons/car-icon.png";
 
 const WeddingDetails = () => {
   const { t } = useLanguage();
@@ -148,7 +151,7 @@ const WeddingDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* Address & Map */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <MapPin className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <img src={pinIcon} alt="" className="w-10 h-10 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.address")}
                 </p>
@@ -167,7 +170,7 @@ const WeddingDetails = () => {
               
               {/* Bus Transport */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <Bus className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <img src={busIcon} alt="" className="w-12 h-10 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.transport")}
                 </p>
@@ -175,7 +178,7 @@ const WeddingDetails = () => {
               
               {/* Parking */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
-                <Car className="w-8 h-8 mx-auto mb-3" style={{ color: '#1b2e00' }} />
+                <img src={carIcon} alt="" className="w-12 h-10 mx-auto mb-3 object-contain" />
                 <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
                   {t("travel.findus.parking")}
                 </p>
