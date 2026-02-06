@@ -68,13 +68,13 @@ const WeddingNavigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-[#416631] hover:bg-[#416631]/10"
             >
-              <div className="relative w-6 h-6">
+              <div className="relative w-8 h-8">
                 <Menu className={cn(
-                  "h-6 w-6 absolute inset-0 transition-all duration-300",
+                  "h-8 w-8 absolute inset-0 transition-all duration-300",
                   isOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
                 )} />
                 <X className={cn(
-                  "h-6 w-6 absolute inset-0 transition-all duration-300",
+                  "h-8 w-8 absolute inset-0 transition-all duration-300",
                   isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
                 )} />
               </div>
