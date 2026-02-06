@@ -40,11 +40,6 @@ const WeddingDetails = () => {
       title: t("details.gifts.title"),
       content: t("details.gifts.content"),
       delay: "100ms"
-    },
-    {
-      title: t("details.venue.title"),
-      content: t("details.venue.content"),
-      delay: "200ms"
     }
   ];
 
@@ -189,7 +184,7 @@ const WeddingDetails = () => {
         </div>
 
         {/* Grid of wavy boxes - 3 per row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 mb-12 max-w-3xl mx-auto">
           {details.map((detail, index) => (
             <WavyBorderCard 
               key={index} 
