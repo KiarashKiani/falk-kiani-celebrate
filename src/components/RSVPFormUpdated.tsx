@@ -13,7 +13,6 @@ interface GuestDetails {
   name: string;
   dietary: string;
   mealChoice: string;
-  shuttle: string;
 }
 
 const RSVPForm = () => {
@@ -28,7 +27,6 @@ const RSVPForm = () => {
     name: "",
     dietary: "",
     mealChoice: "",
-    shuttle: "",
   });
   const [email, setEmail] = useState("");
   
@@ -38,7 +36,6 @@ const RSVPForm = () => {
     name: "",
     dietary: "",
     mealChoice: "",
-    shuttle: "",
   });
   
   // Shared fields
@@ -93,7 +90,6 @@ const RSVPForm = () => {
           name: mainGuest.name,
           dietary: mainGuest.dietary,
           mealChoice: mainGuest.mealChoice,
-          shuttle: mainGuest.shuttle,
           isMainGuest: true,
         }
       ];
@@ -103,7 +99,6 @@ const RSVPForm = () => {
           name: partnerGuest.name,
           dietary: partnerGuest.dietary,
           mealChoice: partnerGuest.mealChoice,
-          shuttle: partnerGuest.shuttle,
           isMainGuest: false,
         });
       }
@@ -135,10 +130,10 @@ const RSVPForm = () => {
 
       // Reset form
       setAttending("");
-      setMainGuest({ name: "", dietary: "", mealChoice: "", shuttle: "" });
+      setMainGuest({ name: "", dietary: "", mealChoice: "" });
       setEmail("");
       setBringingPartner("");
-      setPartnerGuest({ name: "", dietary: "", mealChoice: "", shuttle: "" });
+      setPartnerGuest({ name: "", dietary: "", mealChoice: "" });
       setSongRequest("");
       setMessage("");
     } catch (err) {
@@ -172,7 +167,7 @@ const RSVPForm = () => {
     label: string,
     delayMs: number = 0
   ) => (
-    <WavyBorderCard className="min-h-[420px]" delay={`${delayMs}ms`}>
+    <WavyBorderCard className="min-h-[320px]" delay={`${delayMs}ms`}>
       <div className="space-y-6 text-left">
         <SectionHeader>{label}</SectionHeader>
         
@@ -224,33 +219,6 @@ const RSVPForm = () => {
               >
                 <RadioGroupItem value={option.value} id={`${prefix}-${option.value}`} className="shrink-0" />
                 <Label htmlFor={`${prefix}-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
-                  {option.label}
-                </Label>
-              </div>
-            ))}
-          </RadioGroup>
-        </div>
-
-        {/* Shuttle */}
-        <div className="space-y-3">
-          <Label className="font-serif font-bold text-foreground">{t("rsvp.shuttle")}</Label>
-          <RadioGroup 
-            value={guest.shuttle} 
-            onValueChange={(value) => setGuest({ ...guest, shuttle: value })}
-            className="grid grid-cols-2 gap-2"
-          >
-            {[
-              { value: "both", label: t("rsvp.shuttle.both") },
-              { value: "to", label: t("rsvp.shuttle.to") },
-              { value: "from", label: t("rsvp.shuttle.from") },
-              { value: "no", label: t("rsvp.shuttle.no") },
-            ].map((option) => (
-              <div 
-                key={option.value}
-                className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
-              >
-                <RadioGroupItem value={option.value} id={`${prefix}-shuttle-${option.value}`} className="shrink-0" />
-                <Label htmlFor={`${prefix}-shuttle-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
                   {option.label}
                 </Label>
               </div>
