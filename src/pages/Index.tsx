@@ -25,7 +25,7 @@ const Index = () => {
   // Show password gate on hero
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen" style={{ backgroundColor: '#fff9f1' }}>
         <main>
           <section id="home">
             <WeddingHero showPasswordInput={true} onAuthenticated={handleAuthenticated} />
