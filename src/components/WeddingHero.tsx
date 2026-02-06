@@ -67,7 +67,7 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
               )}
               <Button 
                 type="submit" 
-                className="w-full rounded-full bg-wedding-olive hover:bg-wedding-olive/90 text-white font-serif text-lg py-6"
+                className="w-full rounded-full border-2 border-wedding-olive bg-transparent hover:bg-wedding-olive/10 text-wedding-olive font-serif text-lg py-6"
               >
                 {t('password.submit')}
               </Button>
