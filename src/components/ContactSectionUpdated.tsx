@@ -52,7 +52,7 @@ const ContactSection = () => {
           
           {/* Logo at the bottom */}
           <div className="mt-8">
-            <img src={weddingLogo} alt="Josefin & Kiarash" className="w-16 md:w-20 h-auto mx-auto opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer" />
+            <img src={weddingLogo} alt="Josefin & Kiarash" className="w-32 md:w-40 h-auto mx-auto opacity-70 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer" />
           </div>
         </div>
       </div>
