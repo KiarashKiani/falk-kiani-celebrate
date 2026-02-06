@@ -49,7 +49,7 @@ const WeddingDetails = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="details" className="pt-8 pb-24" style={{ backgroundColor: '#fff9f1' }}>
+    <section ref={sectionRef} id="details" className="pt-8 pb-12" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal" style={{ color: '#ff8a00' }}>
