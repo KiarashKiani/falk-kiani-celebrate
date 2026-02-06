@@ -25,7 +25,7 @@ const ToastmastersSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16" style={{ backgroundColor: '#fff9f1' }}>
+    <section ref={sectionRef} className="pt-8 pb-16" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-brittany-heading text-5xl md:text-6xl font-normal" style={{ color: '#4a5c3d' }}>
