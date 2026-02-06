@@ -145,7 +145,7 @@ const translations = {
     // Toastmasters
     'toastmasters.title': 'Toastmasters',
     'toastmasters.names': 'Dennis & Jiezzah Lindahl',
-    'toastmasters.bio': 'Vi presenterar stolt våra toastmasters, Dennis och Jiezzah Lindahl. De har känt brudgummen i nästan 30 år och träffade oss tidigt i vår relation. Sedan dess har vi delat många minnen tillsammans, från midsommarfiranden och nyårsaftnar till konserter och långa nätter av skratt. Med sin värme, humor och timing är de det perfekta paret att guida oss genom firandet.',
+    'toastmasters.bio': 'Vi presenterar stolt våra toastmasters, Dennis och Jiezzah Lindahl. De har känt brudgummen i nästan 30 år och träffade oss tidigt i vår relation. Sedan dess har vi delat många minnen tillsammans, från midsommarfiranden och nyårsaftnar till konserter och långa diskussioner. Med sin värme, humor och timing är de det perfekta paret att guida oss genom firandet.',
     'toastmasters.cta': 'Vill du hålla tal eller överraska brudparet? Kontakta oss!',
     'toastmasters.email': 'toastmasters.falkkiani@gmail.com',
     
