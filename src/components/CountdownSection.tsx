@@ -32,7 +32,7 @@ const CountdownSection = () => {
   }, []);
 
   return (
-    <section className="pt-20 pb-10" style={{ backgroundColor: '#fff9f1' }}>
+    <section className="pt-8 pb-10" style={{ backgroundColor: '#fff9f1' }}>
       <div className="max-w-2xl mx-auto px-6 text-center">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-normal mb-8 uppercase tracking-wider" style={{ fontFamily: "'Lovely May', serif", color: '#416631' }}>
           {t("countdown.title")}
