@@ -16,7 +16,7 @@ const translations = {
     'nav.home': 'Hem',
     'nav.info': 'Bra att veta',
     'nav.travel': 'Resa',
-    'nav.timeline': 'Schema',
+    'nav.timeline': 'Bröllopshelgen',
     'nav.rsvp': 'OSA',
     'nav.contact': 'Kontakt',
     
