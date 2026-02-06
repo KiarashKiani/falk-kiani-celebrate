@@ -65,7 +65,10 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
               {error && (
                 <p className="text-destructive text-sm text-center">{error}</p>
               )}
-              <Button type="submit" className="w-full">
+              <Button 
+                type="submit" 
+                className="w-full rounded-full bg-wedding-olive hover:bg-wedding-olive/90 text-white font-serif text-lg py-6"
+              >
                 {t('password.submit')}
               </Button>
             </form>
