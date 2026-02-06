@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
+
 import weddingHeroSv from "@/assets/wedding-hero-canva.png";
 import weddingHeroEn from "@/assets/wedding-hero-en.png";
 import weddingHeroDe from "@/assets/wedding-hero-de.png";
@@ -66,7 +66,6 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
                 <p className="text-destructive text-sm text-center">{error}</p>
               )}
               <Button type="submit" className="w-full">
-                <Heart className="w-4 h-4 mr-2" />
                 {t('password.submit')}
               </Button>
             </form>
