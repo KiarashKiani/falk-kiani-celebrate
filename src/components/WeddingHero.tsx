@@ -40,10 +40,10 @@ const WeddingHero = ({ onAuthenticated, showPasswordInput = false }: WeddingHero
   };
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-12 md:py-16" style={{ backgroundColor: '#fff9f1' }}>
+    <section className="relative flex items-center justify-center overflow-hidden pt-12 pb-4 md:py-16" style={{ backgroundColor: '#fff9f1' }}>
       <div className="text-center px-6 max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center">
         {/* Canva Hero Design */}
-        <div className="mb-8">
+        <div className="mb-4 md:mb-8">
           <img 
             src={heroImage} 
             alt="Josefin & Kiarash - Wedding Weekend - 17-18 July 2026" 
