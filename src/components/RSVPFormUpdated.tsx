@@ -180,7 +180,7 @@ const RSVPForm = () => {
             id={`${prefix}-name`}
             value={guest.name}
             onChange={(e) => setGuest({ ...guest, name: e.target.value })}
-            placeholder={t("rsvp.names.placeholder")}
+            placeholder={prefix === "partner" ? t("rsvp.plusOne.name.placeholder") : t("rsvp.names.placeholder")}
             className={inputStyles}
           />
         </div>
