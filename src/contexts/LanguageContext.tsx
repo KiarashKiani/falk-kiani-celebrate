@@ -164,9 +164,9 @@ const translations = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.info': 'Information',
+    'nav.info': 'Good to Know',
     'nav.travel': 'Travel',
-    'nav.timeline': 'Schedule',
+    'nav.timeline': 'Wedding Weekend',
     'nav.rsvp': 'RSVP',
     'nav.contact': 'Contact',
     
@@ -314,9 +314,9 @@ const translations = {
   de: {
     // Navigation
     'nav.home': 'Startseite',
-    'nav.info': 'Information',
+    'nav.info': 'Gut zu wissen',
     'nav.travel': 'Anreise',
-    'nav.timeline': 'Ablauf',
+    'nav.timeline': 'Hochzeitswochenende',
     'nav.rsvp': 'RSVP',
     'nav.contact': 'Kontakt',
     
