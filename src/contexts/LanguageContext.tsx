@@ -14,7 +14,7 @@ const translations = {
   sv: {
     // Navigation
     'nav.home': 'Hem',
-    'nav.info': 'Information',
+    'nav.info': 'Bra att veta',
     'nav.travel': 'Resa',
     'nav.timeline': 'Schema',
     'nav.rsvp': 'OSA',
