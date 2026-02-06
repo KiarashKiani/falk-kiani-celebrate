@@ -7,13 +7,11 @@ const MusicPlayer = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // YouTube embed URL - Replace VIDEO_ID with your YouTube video ID
-  // Current: eClhtAge0IY from the playlist
-  const YOUTUBE_VIDEO_ID = "eClhtAge0IY";
-  const YOUTUBE_PLAYLIST_ID = "RDeClhtAge0IY";
+  // YouTube embed URL - Ludovico Einaudi – Experience
+  const YOUTUBE_VIDEO_ID = "_VONMkKkdf4";
   
   // Construct the embed URL with autoplay parameters
-  const embedUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?enablejsapi=1&list=${YOUTUBE_PLAYLIST_ID}&loop=1&autoplay=1&mute=0`;
+  const embedUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?enablejsapi=1&loop=1&autoplay=1&mute=0&playlist=${YOUTUBE_VIDEO_ID}`;
 
   useEffect(() => {
     // Attempt to auto-play when component mounts
