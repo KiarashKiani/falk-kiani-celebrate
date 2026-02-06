@@ -11,6 +11,7 @@ import WavyBorderCard from "./ui/WavyBorderCard";
 
 interface GuestDetails {
   name: string;
+  attendanceDays: string;
   dietary: string;
   mealChoice: string;
 }
@@ -25,6 +26,7 @@ const RSVPForm = () => {
   // Main guest details
   const [mainGuest, setMainGuest] = useState<GuestDetails>({
     name: "",
+    attendanceDays: "",
     dietary: "",
     mealChoice: "",
   });
@@ -34,6 +36,7 @@ const RSVPForm = () => {
   const [bringingPartner, setBringingPartner] = useState<string>("");
   const [partnerGuest, setPartnerGuest] = useState<GuestDetails>({
     name: "",
+    attendanceDays: "",
     dietary: "",
     mealChoice: "",
   });
@@ -88,6 +91,7 @@ const RSVPForm = () => {
       const guests = [
         {
           name: mainGuest.name,
+          attendanceDays: mainGuest.attendanceDays,
           dietary: mainGuest.dietary,
           mealChoice: mainGuest.mealChoice,
           isMainGuest: true,
@@ -97,6 +101,7 @@ const RSVPForm = () => {
       if (bringingPartner === "yes" && partnerGuest.name) {
         guests.push({
           name: partnerGuest.name,
+          attendanceDays: partnerGuest.attendanceDays,
           dietary: partnerGuest.dietary,
           mealChoice: partnerGuest.mealChoice,
           isMainGuest: false,
@@ -130,10 +135,10 @@ const RSVPForm = () => {
 
       // Reset form
       setAttending("");
-      setMainGuest({ name: "", dietary: "", mealChoice: "" });
+      setMainGuest({ name: "", attendanceDays: "", dietary: "", mealChoice: "" });
       setEmail("");
       setBringingPartner("");
-      setPartnerGuest({ name: "", dietary: "", mealChoice: "" });
+      setPartnerGuest({ name: "", attendanceDays: "", dietary: "", mealChoice: "" });
       setSongRequest("");
       setMessage("");
     } catch (err) {
@@ -167,7 +172,7 @@ const RSVPForm = () => {
     label: string,
     delayMs: number = 0
   ) => (
-    <WavyBorderCard className="min-h-[320px]" delay={`${delayMs}ms`}>
+    <WavyBorderCard className="min-h-[420px]" delay={`${delayMs}ms`}>
       <div className="space-y-6 text-left">
         <SectionHeader>{label}</SectionHeader>
         
@@ -183,6 +188,31 @@ const RSVPForm = () => {
             placeholder={t("rsvp.names.placeholder")}
             className={inputStyles}
           />
+        </div>
+
+        {/* Attendance Days */}
+        <div className="space-y-3">
+          <Label className="font-serif font-bold text-foreground">{t("rsvp.days")}</Label>
+          <RadioGroup 
+            value={guest.attendanceDays} 
+            onValueChange={(value) => setGuest({ ...guest, attendanceDays: value })}
+            className="grid grid-cols-1 gap-2"
+          >
+            {[
+              { value: "both", label: t("rsvp.days.both") },
+              { value: "saturday", label: t("rsvp.days.saturday") },
+            ].map((option) => (
+              <div 
+                key={option.value}
+                className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+              >
+                <RadioGroupItem value={option.value} id={`${prefix}-days-${option.value}`} className="shrink-0" />
+                <Label htmlFor={`${prefix}-days-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
+                  {option.label}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
         </div>
 
         {/* Dietary */}
