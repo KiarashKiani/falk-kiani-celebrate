@@ -109,11 +109,8 @@ const TwoPartTitle = ({
   color?: string;
   ochColor?: string;
 }) => {
-  // Adjust font size for longer text
-  const part1Length = part1.length;
-  const part1SizeClass = part1Length > 12 ? "text-xs md:text-sm" : part1Length > 10 ? "text-sm md:text-base" : "text-base md:text-lg";
   return <div className="mb-8">
-      <span className={`block font-serif ${part1SizeClass} uppercase tracking-[0.25em] font-extralight`} style={{
+      <span className="block font-serif text-sm md:text-base uppercase tracking-[0.2em] font-extralight break-words" style={{
       color,
       opacity: 0.85
     }}>
@@ -126,7 +123,7 @@ const TwoPartTitle = ({
       }}>
           {andText}
         </span>
-        <span className="font-serif text-4xl uppercase tracking-[0.04em] font-extralight md:text-3xl" style={{
+        <span className="font-serif text-2xl md:text-3xl uppercase tracking-[0.04em] font-extralight" style={{
         color
       }}>
           {part2}
