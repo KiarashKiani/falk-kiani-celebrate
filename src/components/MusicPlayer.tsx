@@ -55,12 +55,12 @@ const MusicPlayer = () => {
         title="Wedding Background Music"
       />
 
-      {/* Floating music control button */}
+      {/* Floating music control button - adjusted for mobile bottom nav */}
       <button
         onClick={togglePlay}
         aria-label={isPlaying ? "Pause music" : "Play music"}
         className={cn(
-          "fixed bottom-6 right-6 z-50",
+          "fixed bottom-24 md:bottom-6 right-6 z-50",
           "w-14 h-14 rounded-full",
           "bg-primary/90 hover:bg-primary",
           "text-primary-foreground",
@@ -91,7 +91,7 @@ const MusicPlayer = () => {
         </div>
       </button>
 
-      {/* Optional: Tooltip hint on first load */}
+      {/* Optional: Tooltip hint on first load - desktop only */}
       {!isPlaying && (
         <div
           className={cn(
