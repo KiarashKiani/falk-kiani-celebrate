@@ -1,7 +1,6 @@
 import suitIcon from "@/assets/icons/suit-icon.png";
 import childIcon from "@/assets/icons/child-icon.png";
 import giftIcon from "@/assets/icons/gift-icon.png";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef } from "react";
 import WavyBorderCard from "./ui/WavyBorderCard";
@@ -224,9 +223,14 @@ const WeddingDetails = () => {
         </div>
 
         {/* Larger Dress Code section */}
-        <Card className="shadow-soft bg-wedding-sage border-0 overflow-hidden">
-          <div className="flex">
-            <div className="flex-1 p-6">
+        <WavyBorderCard 
+          visible={visible}
+          delay="300ms"
+          borderColor="#1b2e00"
+          className="hover:-translate-y-1 transition-transform duration-300"
+        >
+          <div className="flex flex-col md:flex-row">
+            <div className="flex-1">
               <h3 className="font-lovely-may text-3xl md:text-4xl uppercase tracking-wide font-extralight mb-6" style={{ color: '#1b2e00' }}>
                 {t("details.dresscode.title")}
               </h3>
@@ -266,9 +270,9 @@ const WeddingDetails = () => {
               </div>
             </div>
             
-            <div className="hidden md:flex items-center justify-center pr-8 relative">
+            <div className="flex items-center justify-center mt-6 md:mt-0 md:pr-4 relative">
               <svg 
-                className="absolute w-40 h-52 -left-4 top-4" 
+                className="absolute w-28 h-36 md:w-40 md:h-52 -left-2 md:-left-4 top-2 md:top-4" 
                 viewBox="0 0 100 120" 
                 preserveAspectRatio="none"
               >
@@ -277,10 +281,10 @@ const WeddingDetails = () => {
                   fill="#fffeb8"
                 />
               </svg>
-              <img src={suitIcon} alt="" className="w-48 h-64 object-contain relative z-10" />
+              <img src={suitIcon} alt="" className="w-32 h-44 md:w-48 md:h-64 object-contain relative z-10" />
             </div>
           </div>
-        </Card>
+        </WavyBorderCard>
       </div>
     </section>
   );
