@@ -333,40 +333,26 @@ const RSVPForm = () => {
               {/* Partner Guest Details */}
               {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", t("rsvp.names"), 400)}
 
-              {/* Extras Section */}
-              <WavyBorderCard className="min-h-[260px]" delay="500ms">
-                <div className="space-y-6 text-left">
-                  <SectionHeader>{t("rsvp.message")}</SectionHeader>
-                  
-                  {/* Song Request */}
-                  <div className="space-y-2">
-                    <Label htmlFor="song" className="font-serif font-bold text-foreground">
-                      {t("rsvp.song")}
-                    </Label>
-                    <Input
-                      id="song"
-                      value={songRequest}
-                      onChange={(e) => setSongRequest(e.target.value)}
-                      placeholder={t("rsvp.song.placeholder")}
-                      className={inputStyles}
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-serif font-bold text-foreground">
-                      {t("rsvp.message")}
-                    </Label>
-                    <Textarea
-                      id="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder={t("rsvp.message.placeholder")}
-                      className={`${inputStyles} min-h-[80px]`}
-                    />
-                  </div>
-                </div>
-              </WavyBorderCard>
+               {/* Song Request Section */}
+               <WavyBorderCard className="min-h-[160px]" delay="500ms">
+                 <div className="space-y-6 text-left">
+                   <SectionHeader>{t("rsvp.song")}</SectionHeader>
+                   
+                   {/* Song Request */}
+                   <div className="space-y-2">
+                     <Label htmlFor="song" className="font-serif font-bold text-foreground">
+                       {t("rsvp.song")}
+                     </Label>
+                     <Input
+                       id="song"
+                       value={songRequest}
+                       onChange={(e) => setSongRequest(e.target.value)}
+                       placeholder={t("rsvp.song.placeholder")}
+                       className={inputStyles}
+                     />
+                   </div>
+                 </div>
+               </WavyBorderCard>
             </div>
           )}
 
