@@ -37,12 +37,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <WeddingNavigation />
       <main>
         <MusicPlayer />
         <section id="home">
           <WeddingHero />
         </section>
-        <WeddingNavigation />
         <section id="countdown">
           <CountdownSection />
         </section>
