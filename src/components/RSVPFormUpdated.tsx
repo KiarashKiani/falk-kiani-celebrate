@@ -13,7 +13,6 @@ interface GuestDetails {
   name: string;
   attendanceDays: string;
   dietary: string;
-  mealChoice: string;
 }
 
 const RSVPForm = () => {
@@ -28,7 +27,6 @@ const RSVPForm = () => {
     name: "",
     attendanceDays: "",
     dietary: "",
-    mealChoice: "",
   });
   const [email, setEmail] = useState("");
   
@@ -38,7 +36,6 @@ const RSVPForm = () => {
     name: "",
     attendanceDays: "",
     dietary: "",
-    mealChoice: "",
   });
   
   // Shared fields
@@ -93,7 +90,6 @@ const RSVPForm = () => {
           name: mainGuest.name,
           attendanceDays: mainGuest.attendanceDays,
           dietary: mainGuest.dietary,
-          mealChoice: mainGuest.mealChoice,
           isMainGuest: true,
         }
       ];
@@ -103,7 +99,6 @@ const RSVPForm = () => {
           name: partnerGuest.name,
           attendanceDays: partnerGuest.attendanceDays,
           dietary: partnerGuest.dietary,
-          mealChoice: partnerGuest.mealChoice,
           isMainGuest: false,
         });
       }
@@ -135,10 +130,10 @@ const RSVPForm = () => {
 
       // Reset form
       setAttending("");
-      setMainGuest({ name: "", attendanceDays: "", dietary: "", mealChoice: "" });
+      setMainGuest({ name: "", attendanceDays: "", dietary: "" });
       setEmail("");
       setBringingPartner("");
-      setPartnerGuest({ name: "", attendanceDays: "", dietary: "", mealChoice: "" });
+      setPartnerGuest({ name: "", attendanceDays: "", dietary: "" });
       setSongRequest("");
       setMessage("");
     } catch (err) {
@@ -229,32 +224,6 @@ const RSVPForm = () => {
           />
         </div>
 
-        {/* Meal Choice */}
-        <div className="space-y-3">
-          <Label className="font-serif font-bold text-foreground">{t("rsvp.meal")}</Label>
-          <RadioGroup 
-            value={guest.mealChoice} 
-            onValueChange={(value) => setGuest({ ...guest, mealChoice: value })}
-            className="grid grid-cols-2 gap-2"
-          >
-            {[
-              { value: "meat", label: t("rsvp.meal.meat") },
-              { value: "fish", label: t("rsvp.meal.fish") },
-              { value: "vegetarian", label: t("rsvp.meal.vegetarian") },
-              { value: "vegan", label: t("rsvp.meal.vegan") },
-            ].map((option) => (
-              <div 
-                key={option.value}
-                className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
-              >
-                <RadioGroupItem value={option.value} id={`${prefix}-${option.value}`} className="shrink-0" />
-                <Label htmlFor={`${prefix}-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
-                  {option.label}
-                </Label>
-              </div>
-            ))}
-          </RadioGroup>
-        </div>
       </div>
     </WavyBorderCard>
   );
