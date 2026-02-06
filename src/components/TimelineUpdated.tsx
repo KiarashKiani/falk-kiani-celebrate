@@ -99,34 +99,51 @@ const WavyCard = ({
 const TwoPartTitle = ({
   part1,
   part2,
+  andText = "och",
   color = colors.textOlive,
   ochColor
 }: {
   part1: string;
   part2: string;
+  andText?: string;
   color?: string;
   ochColor?: string;
-}) => <div className="mb-8">
-    <span className="block font-serif text-lg md:text-xl uppercase tracking-[0.25em] font-extralight" style={{
-    color,
-    opacity: 0.85
-  }}>
-      {part1}
-    </span>
-    <div className="flex items-baseline gap-1 mt-0.5">
-      <span className="font-brittany text-2xl md:text-3xl font-extralight" style={{
-      color: ochColor || color,
-      opacity: 0.85
-    }}>
-        och
+}) => {
+  // Adjust font size for longer text
+  const part1Length = part1.length;
+  const part1SizeClass = part1Length > 12 
+    ? "text-sm md:text-base" 
+    : part1Length > 10 
+      ? "text-base md:text-lg" 
+      : "text-lg md:text-xl";
+  
+  return (
+    <div className="mb-8">
+      <span 
+        className={`block font-serif ${part1SizeClass} uppercase tracking-[0.25em] font-extralight`} 
+        style={{
+          color,
+          opacity: 0.85
+        }}
+      >
+        {part1}
       </span>
-      <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-extralight" style={{
-      color
-    }}>
-        {part2}
-      </span>
+      <div className="flex items-baseline gap-1 mt-0.5">
+        <span className="font-brittany text-2xl md:text-3xl font-extralight" style={{
+          color: ochColor || color,
+          opacity: 0.85
+        }}>
+          {andText}
+        </span>
+        <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-extralight" style={{
+          color
+        }}>
+          {part2}
+        </span>
+      </div>
     </div>
-  </div>;
+  );
+};
 const Timeline = () => {
   const {
     t
@@ -184,7 +201,7 @@ const Timeline = () => {
               <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left pl-8" style={{
                 color: colors.textOlive
               }}>
-                välkomstmingel
+                {t("timeline.friday.subtitle") || "välkomstmingel"}
               </h4>
               <div className="font-serif text-sm space-y-2 tracking-wide leading-relaxed" style={{
               color: colors.textOlive
@@ -212,7 +229,7 @@ const Timeline = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
             <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={handsIllustration} illustrationPosition="bottom-right">
-              <TwoPartTitle part1="VÄLKOMSTDRINK" part2="VIGSEL" color={colors.darkOliveText} ochColor={colors.darkOlive} />
+              <TwoPartTitle part1={t("timeline.card1.part1") || "VÄLKOMSTDRINK"} part2={t("timeline.card1.part2") || "VIGSEL"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
@@ -222,7 +239,7 @@ const Timeline = () => {
 
             {/* Card 2: Middag och Fest */}
             <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
-              <TwoPartTitle part1="MIDDAG" part2="FEST" color={colors.darkOliveText} ochColor={colors.sageGreen} />
+              <TwoPartTitle part1={t("timeline.card2.part1") || "MIDDAG"} part2={t("timeline.card2.part2") || "FEST"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
@@ -232,7 +249,7 @@ const Timeline = () => {
 
             {/* Card 3: Drinkar och Dans */}
             <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={cocktailIllustration} illustrationPosition="top-right">
-              <TwoPartTitle part1="DRINKAR" part2="DANS" color={colors.darkOliveText} ochColor={colors.mutedOrange} />
+              <TwoPartTitle part1={t("timeline.card3.part1") || "DRINKAR"} part2={t("timeline.card3.part2") || "DANS"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
