@@ -270,7 +270,7 @@ const RSVPForm = () => {
             {t("rsvp.title")}
           </h2>
           <p className="font-serif text-lg text-muted-foreground">
-            {t("rsvp.subtitle").replace('[Datum]', '1 april 2026').replace('[Date]', 'April 1, 2026')}
+            {t("rsvp.subtitle").replace('[Datum]', '15 maj 2026').replace('[Date]', 'May 15, 2026')}
           </p>
         </div>
 
