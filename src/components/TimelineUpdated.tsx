@@ -112,10 +112,10 @@ const TwoPartTitle = ({
   // Adjust font size for longer text
   const part1Length = part1.length;
   const part1SizeClass = part1Length > 12 
-    ? "text-sm md:text-base" 
+    ? "text-xs md:text-sm" 
     : part1Length > 10 
-      ? "text-base md:text-lg" 
-      : "text-lg md:text-xl";
+      ? "text-sm md:text-base" 
+      : "text-base md:text-lg";
   
   return (
     <div className="mb-8">
