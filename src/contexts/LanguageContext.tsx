@@ -142,6 +142,13 @@ const translations = {
     'details.dresscode.women': 'Beskrivning för kvinnor',
     'details.dresscode.men': 'Beskrivning för män',
     
+    // Toastmasters
+    'toastmasters.title': 'Toastmasters',
+    'toastmasters.names': 'Dennis & Jiezzah Lindahl',
+    'toastmasters.bio': 'Vi presenterar stolt våra toastmasters, Dennis och Jiezzah Lindahl. De har känt brudgummen i nästan 30 år och träffade oss tidigt i vår relation. Sedan dess har vi delat många minnen tillsammans, från midsommarfiranden och nyårsaftnar till konserter och långa nätter av skratt. Med sin värme, humor och timing är de det perfekta paret att guida oss genom firandet.',
+    'toastmasters.cta': 'Vill du hålla tal eller överraska brudparet? Kontakta oss!',
+    'toastmasters.email': 'toastmaster@example.com',
+    
     // Accommodation details
     'accommodation.steam.description': 'Designhotell vid Mälaren med spa.',
     'accommodation.steam.discount': '10% rabatt för bröllopsgäster',
@@ -295,6 +302,13 @@ const translations = {
     'details.dresscode.women': 'Guide for women (Swedish)',
     'details.dresscode.men': 'Guide for men (Swedish)',
     
+    // Toastmasters
+    'toastmasters.title': 'Toastmasters',
+    'toastmasters.names': 'Dennis & Jiezzah Lindahl',
+    'toastmasters.bio': 'We are proud to present our toastmasters, Dennis and Jiezzah Lindahl. They have known the groom for almost 30 years and met us early in our relationship. Since then, we have shared many memories together, from midsummer celebrations and New Year\'s Eves to concerts and long nights of laughter. With their warmth, humor, and sense of timing, they are the perfect duo to guide us through the celebrations.',
+    'toastmasters.cta': 'Would you like to give a speech or surprise the couple? Get in touch!',
+    'toastmasters.email': 'toastmaster@example.com',
+    
     // Accommodation details
     'accommodation.steam.description': 'Design hotel by Lake Mälaren with spa.',
     'accommodation.steam.discount': '10% discount for wedding guests',
@@ -447,6 +461,13 @@ const translations = {
     'details.dresscode.saturday.content': 'Dunkler Anzug (Smoking willkommen)',
     'details.dresscode.women': 'Hinweise für Damen',
     'details.dresscode.men': 'Hinweise für Herren',
+    
+    // Toastmasters
+    'toastmasters.title': 'Toastmasters',
+    'toastmasters.names': 'Dennis & Jiezzah Lindahl',
+    'toastmasters.bio': 'Wir präsentieren stolz unsere Toastmasters, Dennis und Jiezzah Lindahl. Sie kennen den Bräutigam seit fast 30 Jahren und haben uns früh in unserer Beziehung kennengelernt. Seitdem haben wir viele Erinnerungen geteilt, von Mittsommerfeiern und Silvesterabenden bis zu Konzerten und langen Nächten voller Gelächter. Mit ihrer Wärme, ihrem Humor und ihrem Timing sind sie das perfekte Duo, um uns durch die Feierlichkeiten zu führen.',
+    'toastmasters.cta': 'Möchtest du eine Rede halten oder das Brautpaar überraschen? Kontaktiere uns!',
+    'toastmasters.email': 'toastmaster@example.com',
     
     // Accommodation details
     'accommodation.steam.description': 'Designhotel am Mälaren-See mit Spa.',

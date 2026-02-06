@@ -5,6 +5,7 @@ import CountdownSection from "@/components/CountdownSection";
 import Timeline from "@/components/TimelineUpdated";
 import RSVPForm from "@/components/RSVPFormUpdated";
 import WeddingDetails from "@/components/WeddingDetails";
+import ToastmastersSection from "@/components/ToastmastersSection";
 import ContactSection from "@/components/ContactSectionUpdated";
 import MusicPlayer from "@/components/MusicPlayer";
 
@@ -51,6 +52,9 @@ const Index = () => {
         </section>
         <section id="details">
           <WeddingDetails />
+        </section>
+        <section id="toastmasters">
+          <ToastmastersSection />
         </section>
         <section id="rsvp">
           <RSVPForm />
