@@ -111,38 +111,28 @@ const TwoPartTitle = ({
 }) => {
   // Adjust font size for longer text
   const part1Length = part1.length;
-  const part1SizeClass = part1Length > 12 
-    ? "text-xs md:text-sm" 
-    : part1Length > 10 
-      ? "text-sm md:text-base" 
-      : "text-base md:text-lg";
-  
-  return (
-    <div className="mb-8">
-      <span 
-        className={`block font-serif ${part1SizeClass} uppercase tracking-[0.25em] font-extralight`} 
-        style={{
-          color,
-          opacity: 0.85
-        }}
-      >
+  const part1SizeClass = part1Length > 12 ? "text-xs md:text-sm" : part1Length > 10 ? "text-sm md:text-base" : "text-base md:text-lg";
+  return <div className="mb-8">
+      <span className={`block font-serif ${part1SizeClass} uppercase tracking-[0.25em] font-extralight`} style={{
+      color,
+      opacity: 0.85
+    }}>
         {part1}
       </span>
       <div className="flex items-baseline gap-1 mt-0.5">
         <span className="font-brittany text-2xl md:text-3xl font-extralight" style={{
-          color: ochColor || color,
-          opacity: 0.85
-        }}>
+        color: ochColor || color,
+        opacity: 0.85
+      }}>
           {andText}
         </span>
-        <span className="font-serif text-4xl md:text-5xl uppercase tracking-[0.04em] font-extralight" style={{
-          color
-        }}>
+        <span className="font-serif text-4xl uppercase tracking-[0.04em] font-extralight md:text-3xl" style={{
+        color
+      }}>
           {part2}
         </span>
       </div>
-    </div>
-  );
+    </div>;
 };
 const Timeline = () => {
   const {
@@ -193,14 +183,14 @@ const Timeline = () => {
           <div className="flex justify-center mb-24">
             <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
-                color: colors.textOlive,
-                fontWeight: 400
-              }}>
+              color: colors.textOlive,
+              fontWeight: 400
+            }}>
                 {t("timeline.friday.day") || "FREDAG"}
               </h3>
               <h4 className="font-brittany-heading text-3xl md:text-4xl mb-6 text-left pl-8" style={{
-                color: colors.textOlive
-              }}>
+              color: colors.textOlive
+            }}>
                 {t("timeline.friday.subtitle") || "välkomstmingel"}
               </h4>
               <div className="font-serif text-sm space-y-2 tracking-wide leading-relaxed" style={{
