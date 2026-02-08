@@ -196,7 +196,6 @@ const Timeline = () => {
                 <p>{t("timeline.friday.time") || "Från 18:00"}</p>
                 <p>{t("timeline.friday.location") || "Vi samlas på Nybynäs Gård"}</p>
                 <p>{t("timeline.friday.food") || "Mat och dryck serveras."}</p>
-                <p>{t("timeline.friday.end") || "Kvällen avslutas med bussar tillbaka till Västerås."}</p>
               </div>
             </WavyCard>
           </div>
