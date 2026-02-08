@@ -140,10 +140,6 @@ const WeddingDetails = () => {
             delay="0ms"
             className="hover:-translate-y-1 transition-transform duration-300"
           >
-            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
-              {t("travel.findus.title")}
-            </h3>
-            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {/* Address & Map */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
@@ -167,8 +163,26 @@ const WeddingDetails = () => {
               {/* Bus Transport */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
                 <img src={busIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
-                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport")}
+                <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport.title")}
+                </p>
+                <p className="font-serif text-sm mb-1" style={{ color: '#1b2e00' }}>
+                  <span className="font-bold">{t("travel.findus.transport.friday.day")}</span>
+                </p>
+                <p className="font-serif text-xs mb-1" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport.friday.out")}
+                </p>
+                <p className="font-serif text-xs mb-2" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport.friday.back")}
+                </p>
+                <p className="font-serif text-sm mb-1" style={{ color: '#1b2e00' }}>
+                  <span className="font-bold">{t("travel.findus.transport.saturday.day")}</span>
+                </p>
+                <p className="font-serif text-xs mb-1" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport.saturday.out")}
+                </p>
+                <p className="font-serif text-xs" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport.saturday.back")}
                 </p>
               </div>
               
