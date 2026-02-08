@@ -217,7 +217,7 @@ const Timeline = () => {
             {/* Card 1: Välkomstdrink och Vigsel */}
             <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={handsIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1={t("timeline.card1.part1") || "VÄLKOMSTDRINK"} part2={t("timeline.card1.part2") || "VIGSEL"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.darkOlive} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
@@ -227,7 +227,7 @@ const Timeline = () => {
             {/* Card 2: Middag och Fest */}
             <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card2.part1") || "MIDDAG"} part2={t("timeline.card2.part2") || "FEST"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.sageGreen} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
@@ -237,7 +237,7 @@ const Timeline = () => {
             {/* Card 3: Drinkar och Dans */}
             <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={cocktailIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1={t("timeline.card3.part1") || "DRINKAR"} part2={t("timeline.card3.part2") || "DANS"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.mutedOrange} />
-              <p className="font-serif text-sm tracking-wide mt-auto leading-relaxed" style={{
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
             }}>
                 {t("timeline.dancing.description") || "Dansa natten lång!"}
