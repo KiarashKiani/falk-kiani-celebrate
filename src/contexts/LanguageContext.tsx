@@ -63,7 +63,7 @@ const translations = {
     'timeline.friday.bus.description': 'Transport till hotellen.',
     // Saturday events
     'timeline.saturday.day': 'Lördag',
-    'timeline.saturday.subtitle': 'Bröllopshelgen',
+    'timeline.saturday.subtitle': 'bröllopshelgen',
     'timeline.saturday.bus.title': 'Bussavgång från hotellen',
     'timeline.saturday.bus.time': '13:00',
     'timeline.saturday.bus.description': 'Bussen avgår från hotellen.',
@@ -234,7 +234,7 @@ const translations = {
     'timeline.friday.bus.description': 'Transport to the hotels.',
     // Saturday events
     'timeline.saturday.day': 'Saturday',
-    'timeline.saturday.subtitle': 'Wedding Day',
+    'timeline.saturday.subtitle': 'wedding day',
     'timeline.saturday.bus.title': 'Bus departure from hotels',
     'timeline.saturday.bus.time': '1:00 PM',
     'timeline.saturday.bus.description': 'Bus departs from the hotels.',
@@ -405,7 +405,7 @@ const translations = {
     'timeline.friday.bus.description': 'Transport zu den Hotels.',
     // Saturday events
     'timeline.saturday.day': 'Samstag',
-    'timeline.saturday.subtitle': 'Hochzeitstag',
+    'timeline.saturday.subtitle': 'hochzeitstag',
     'timeline.saturday.bus.title': 'Busabfahrt von den Hotels',
     'timeline.saturday.bus.time': '13:00 Uhr',
     'timeline.saturday.bus.description': 'Der Bus fährt von den Hotels ab.',
