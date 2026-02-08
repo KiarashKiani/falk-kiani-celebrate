@@ -133,6 +133,55 @@ const WeddingDetails = () => {
           </WavyBorderCard>
         </div>
 
+        {/* How to Get Here Section - Full Width */}
+        <div className="mb-12">
+          <WavyBorderCard 
+            visible={visible}
+            delay="0ms"
+            className="hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h3 className="font-lovely-may text-3xl md:text-4xl mb-6 uppercase tracking-wide font-extralight" style={{ color: '#1b2e00' }}>
+              {t("travel.findus.title")}
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {/* Address & Map */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <img src={pinIcon} alt="" className="w-12 h-12 mx-auto mb-3 object-contain" />
+                <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.address")}
+                </p>
+                <p className="font-serif text-xs mb-3" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.distance")}
+                </p>
+                <a 
+                  href="https://maps.app.goo.gl/yJ8WBRLqUyPoYbK69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-serif text-sm hover:underline" style={{ color: '#1b2e00' }}
+                >
+                  {t("travel.findus.link")} →
+                </a>
+              </div>
+              
+              {/* Bus Transport */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <img src={busIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
+                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport")}
+                </p>
+              </div>
+              
+              {/* Parking */}
+              <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
+                <img src={carIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
+                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.parking")}
+                </p>
+              </div>
+            </div>
+          </WavyBorderCard>
+        </div>
 
         {/* Grid of wavy boxes - 3 per row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 mb-12 max-w-3xl mx-auto">
