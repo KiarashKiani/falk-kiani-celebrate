@@ -163,29 +163,8 @@ const WeddingDetails = () => {
               {/* Bus Transport */}
               <div className="text-center rounded-lg p-5" style={{ backgroundColor: '#fff9f1' }}>
                 <img src={busIcon} alt="" className="w-14 h-12 mx-auto mb-3 object-contain" />
-                <p className="font-serif text-sm mb-3" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.intro")}
-                </p>
-                <p className="font-serif text-sm font-semibold mb-2" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.title")}
-                </p>
-                <p className="font-serif text-sm mb-1" style={{ color: '#1b2e00' }}>
-                  <span className="font-bold">{t("travel.findus.transport.friday.day")}</span>
-                </p>
-                <p className="font-serif text-xs mb-1" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.friday.out")}
-                </p>
-                <p className="font-serif text-xs mb-2" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.friday.back")}
-                </p>
-                <p className="font-serif text-sm mb-1" style={{ color: '#1b2e00' }}>
-                  <span className="font-bold">{t("travel.findus.transport.saturday.day")}</span>
-                </p>
-                <p className="font-serif text-xs mb-1" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.saturday.out")}
-                </p>
-                <p className="font-serif text-xs" style={{ color: '#1b2e00' }}>
-                  {t("travel.findus.transport.saturday.back")}
+                <p className="font-serif text-sm" style={{ color: '#1b2e00' }}>
+                  {t("travel.findus.transport")}
                 </p>
               </div>
               
