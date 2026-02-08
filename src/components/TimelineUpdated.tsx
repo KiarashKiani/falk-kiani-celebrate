@@ -110,7 +110,7 @@ const TwoPartTitle = ({
   ochColor?: string;
 }) => {
   return <div className="mb-8 min-h-[80px] md:min-h-[90px]">
-      <span className="block font-serif text-sm md:text-base uppercase tracking-[0.2em] font-extralight break-words" style={{
+      <span className="block font-lovely-may text-sm md:text-base uppercase tracking-[0.2em] font-extralight whitespace-nowrap" style={{
       color,
       opacity: 0.85
     }}>
@@ -123,7 +123,7 @@ const TwoPartTitle = ({
       }}>
           {andText}
         </span>
-        <span className="font-serif text-2xl md:text-3xl uppercase tracking-[0.04em] font-extralight" style={{
+        <span className="font-lovely-may text-2xl md:text-3xl uppercase tracking-[0.04em] font-extralight" style={{
         color
       }}>
           {part2}
