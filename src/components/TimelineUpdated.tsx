@@ -204,11 +204,16 @@ const Timeline = () => {
         {/* Saturday Section */}
         <div ref={saturdayRef}>
           <div className={`text-center mb-14 transition-all duration-700 ease-out ${saturdayVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <h3 className="font-brittany text-4xl md:text-5xl" style={{
+            <h3 className="font-lovely-may text-4xl md:text-5xl uppercase tracking-wide" style={{
             color: colors.textOlive
           }}>
               {t("timeline.saturday.day") || "Lördag"}
             </h3>
+            <h4 className="font-brittany-heading text-3xl md:text-4xl" style={{
+            color: colors.textOlive
+          }}>
+              {t("timeline.saturday.subtitle") || "Bröllopshelgen"}
+            </h4>
           </div>
 
           {/* Saturday Events - 3 cards with unique wavy borders */}
