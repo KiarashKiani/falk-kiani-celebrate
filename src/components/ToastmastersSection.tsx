@@ -81,7 +81,7 @@ const ToastmastersSection = () => {
                 {t("toastmasters.cta")}
               </p>
               <a 
-                href="mailto:toastmaster@example.com"
+                href="mailto:toastmasters.falkkiani@gmail.com"
                 className="font-serif text-base font-semibold hover:underline inline-flex items-center gap-2"
                 style={{ color: '#4a5c3d' }}
               >
