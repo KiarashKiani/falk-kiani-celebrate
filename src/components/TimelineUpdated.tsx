@@ -109,7 +109,7 @@ const TwoPartTitle = ({
   color?: string;
   ochColor?: string;
 }) => {
-  return <div className="mb-8">
+  return <div className="mb-8 min-h-[80px] md:min-h-[90px]">
       <span className="block font-serif text-sm md:text-base uppercase tracking-[0.2em] font-extralight break-words" style={{
       color,
       opacity: 0.85
