@@ -497,8 +497,8 @@ const translations = {
     
     // Toastmasters
     'toastmasters.title': 'Toastmasters',
-    'toastmasters.names': 'Dennis & Jiezzah Lindahl',
-    'toastmasters.bio': 'Wir präsentieren stolz unsere Toastmasters, Dennis und Jiezzah Lindahl. Sie kennen den Bräutigam seit fast 30 Jahren und haben uns früh in unserer Beziehung kennengelernt. Seitdem haben wir viele Erinnerungen geteilt, von Mittsommerfeiern und Silvesterabenden bis zu Konzerten und langen Nächten voller Gelächter. Mit ihrer Wärme, ihrem Humor und ihrem Timing sind sie das perfekte Duo, um uns durch die Feierlichkeiten zu führen.',
+    'toastmasters.names': 'Dennis & Jiezzah Lindahl Odell',
+    'toastmasters.bio': 'Wir präsentieren stolz unsere Toastmasters, Dennis und Jiezzah Lindahl Odell. Sie kennen den Bräutigam seit fast 30 Jahren und haben uns früh in unserer Beziehung kennengelernt. Seitdem haben wir viele Erinnerungen geteilt, von Mittsommerfeiern und Silvesterabenden bis zu Konzerten und langen Nächten voller Gelächter. Mit ihrer Wärme, ihrem Humor und ihrem Timing sind sie das perfekte Duo, um uns durch die Feierlichkeiten zu führen.',
     'toastmasters.cta': 'Möchtest du eine Rede halten oder das Brautpaar überraschen? Kontaktiere uns!',
     'toastmasters.email': 'toastmasters.falkkiani@gmail.com',
     
