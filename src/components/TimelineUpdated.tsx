@@ -85,7 +85,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="relative z-10 h-full flex items-start justify-start p-10 md:p-12 pr-12 md:pr-14 pb-12 md:pb-14">
-        <div className="max-w-[65%] text-left">
+        <div className="max-w-[58%] text-left">
           {children}
         </div>
       </div>
