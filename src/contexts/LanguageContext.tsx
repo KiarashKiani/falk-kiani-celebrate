@@ -157,7 +157,7 @@ const translations = {
     'toastmasters.title': 'Toastmasters',
     'toastmasters.names': 'Dennis & Jiezzah Lindahl Odell',
     'toastmasters.bio': 'Vi presenterar stolt våra toastmasters, Dennis och Jiezzah Lindahl Odell. De har känt brudgummen i nästan 30 år och träffade oss tidigt i vår relation. Sedan dess har vi delat många minnen tillsammans, från midsommarfiranden och nyårsaftnar till konserter och långa diskussioner. Med sin värme, humor och timing är de det perfekta paret att guida oss genom firandet.',
-    'toastmasters.cta': 'Vill du hålla tal eller överraska brudparet? Kontakta oss!',
+    'toastmasters.cta': 'Vill du hålla tal eller överraska brudparet? Kontakta oss senast 31 maj.',
     'toastmasters.email': 'toastmasters.falkkiani@gmail.com',
     
     // Accommodation details
