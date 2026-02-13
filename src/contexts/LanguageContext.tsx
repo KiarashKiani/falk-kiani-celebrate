@@ -328,7 +328,7 @@ const translations = {
     'toastmasters.title': 'Toastmasters',
     'toastmasters.names': 'Dennis & Jiezzah Lindahl Odell',
     'toastmasters.bio': 'We are proud to present our toastmasters, Dennis and Jiezzah Lindahl Odell. They have known the groom for almost 30 years and met us early in our relationship. Since then, we have shared many memories together, from midsummer celebrations and New Year\'s Eves to concerts and long nights of laughter. With their warmth, humor, and sense of timing, they are the perfect duo to guide us through the celebrations.',
-    'toastmasters.cta': 'Would you like to give a speech or surprise the couple? Get in touch!',
+    'toastmasters.cta': 'Would you like to give a speech or surprise the couple? Contact us by May 31.',
     'toastmasters.email': 'toastmasters.falkkiani@gmail.com',
     
     // Accommodation details
@@ -499,7 +499,7 @@ const translations = {
     'toastmasters.title': 'Toastmasters',
     'toastmasters.names': 'Dennis & Jiezzah Lindahl Odell',
     'toastmasters.bio': 'Wir präsentieren stolz unsere Toastmasters, Dennis und Jiezzah Lindahl Odell. Sie kennen den Bräutigam seit fast 30 Jahren und haben uns früh in unserer Beziehung kennengelernt. Seitdem haben wir viele Erinnerungen geteilt, von Mittsommerfeiern und Silvesterabenden bis zu Konzerten und langen Nächten voller Gelächter. Mit ihrer Wärme, ihrem Humor und ihrem Timing sind sie das perfekte Duo, um uns durch die Feierlichkeiten zu führen.',
-    'toastmasters.cta': 'Möchtest du eine Rede halten oder das Brautpaar überraschen? Kontaktiere uns!',
+    'toastmasters.cta': 'Möchtest du eine Rede halten oder das Brautpaar überraschen? Kontaktiere uns bis spätestens 31. Mai.',
     'toastmasters.email': 'toastmasters.falkkiani@gmail.com',
     
     // Accommodation details
