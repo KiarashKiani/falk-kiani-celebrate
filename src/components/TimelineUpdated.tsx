@@ -256,7 +256,7 @@ const Timeline = () => {
                 className="hover:-translate-y-1 transition-transform duration-500 aspect-square"
               >
                 {/* Single centered text block (heading + body) */}
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 max-w-[60%] pr-2">
                   <TwoPartTitle
                     part1={card.part1}
                     part2={card.part2}
@@ -265,20 +265,24 @@ const Timeline = () => {
                     ochColor={card.ochColor}
                   />
                   <p
-                    className="font-serif text-sm tracking-wide leading-relaxed"
+                    className="font-serif text-sm tracking-wide leading-[1.8]"
                     style={{ color: colors.darkOliveText }}
                   >
                     {card.description}
                   </p>
                 </div>
 
-                {/* Icon - absolutely positioned, identical size */}
-                <img
-                  src={card.icon}
-                  alt=""
-                  className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-28 h-28 md:w-32 md:h-32 object-contain opacity-75 pointer-events-none"
+                {/* Icon wrapper - fixed 120x120 box, identical position */}
+                <div
+                  className="absolute bottom-5 right-5 md:bottom-7 md:right-7 w-[120px] h-[120px] pointer-events-none flex items-end justify-end"
                   aria-hidden="true"
-                />
+                >
+                  <img
+                    src={card.icon}
+                    alt=""
+                    className="w-full h-full object-contain object-right-bottom opacity-75"
+                  />
+                </div>
               </WavyCard>
             ))}
           </div>
