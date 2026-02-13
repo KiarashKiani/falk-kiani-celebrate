@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
-import handsIllustration from "@/assets/hands-illustration.png";
+import vigselIllustration from "@/assets/vigsel-illustration.png";
 import cocktailIllustration from "@/assets/cocktail-illustration.png";
 
 // More organic, hand-drawn wavy paths with pronounced curves matching reference
@@ -219,7 +219,7 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={handsIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={vigselIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1={t("timeline.card1.part1") || "VÄLKOMSTDRINK"} part2={t("timeline.card1.part2") || "VIGSEL"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.darkOlive} />
               <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
