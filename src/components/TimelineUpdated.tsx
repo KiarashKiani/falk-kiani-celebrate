@@ -61,16 +61,16 @@ const WavyCard = ({
   illustration,
   illustrationPosition = "bottom-right",
   wavyPath = wavyPaths.card1
-}: {
-  children: React.ReactNode;
-  className?: string;
-  visible?: boolean;
-  delay?: string;
-  borderColor?: string;
-  illustration?: string;
-  illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";
-  wavyPath?: string;
-}) => {
+
+
+
+
+
+
+
+
+
+}: {children: React.ReactNode;className?: string;visible?: boolean;delay?: string;borderColor?: string;illustration?: string;illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";wavyPath?: string;}) => {
   const clipId = useId();
   return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
     transitionDelay: visible ? delay : "0ms"
@@ -84,8 +84,8 @@ const WavyCard = ({
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
-      <div className="relative z-10 h-full flex items-start justify-start p-10 md:p-12 pr-12 md:pr-14 pb-12 md:pb-14">
-        <div className="max-w-[75%] text-left">
+      <div className="relative z-10 h-full flex items-start justify-start p-10 md:p-12 pr-12 md:pr-14 pb-12 md:pb-14 my-px">
+        <div className="max-w-[58%] text-left pl-px">
           {children}
         </div>
       </div>
@@ -99,13 +99,13 @@ const TwoPartTitle = ({
   andText = "och",
   color = colors.textOlive,
   ochColor
-}: {
-  part1: string;
-  part2: string;
-  andText?: string;
-  color?: string;
-  ochColor?: string;
-}) => {
+
+
+
+
+
+
+}: {part1: string;part2: string;andText?: string;color?: string;ochColor?: string;}) => {
   return <div>
       <span className="block font-lovely-may text-sm md:text-base uppercase tracking-[0.2em] font-extralight whitespace-nowrap" style={{
       color,
@@ -141,13 +141,13 @@ const Timeline = () => {
       threshold: 0.2,
       rootMargin: "0px 0px -50px 0px"
     };
-    const fridayObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const fridayObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) setFridayVisible(true);
       });
     }, observerOptions);
-    const saturdayObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const saturdayObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) setSaturdayVisible(true);
       });
     }, observerOptions);
@@ -175,7 +175,7 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
               color: colors.textOlive,
               fontWeight: 400
@@ -216,72 +216,71 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with identical layout structure */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              {
-                delay: "100ms",
-                borderColor: colors.darkOlive,
-                wavyPath: wavyPaths.card1,
-                part1: t("timeline.card1.part1") || "VÄLKOMSTDRINK",
-                part2: t("timeline.card1.part2") || "VIGSEL",
-                ochColor: colors.darkOlive,
-                description: t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås",
-                icon: vigselIllustration,
-              },
-              {
-                delay: "200ms",
-                borderColor: colors.sageGreen,
-                wavyPath: wavyPaths.card2,
-                part1: t("timeline.card2.part1") || "MIDDAG",
-                part2: t("timeline.card2.part2") || "FEST",
-                ochColor: colors.sageGreen,
-                description: t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård.",
-                icon: middagIllustration,
-              },
-              {
-                delay: "300ms",
-                borderColor: colors.mutedOrange,
-                wavyPath: wavyPaths.card3,
-                part1: t("timeline.card3.part1") || "DRINKAR",
-                part2: t("timeline.card3.part2") || "DANS",
-                ochColor: colors.mutedOrange,
-                description: t("timeline.dancing.description") || "Dansa natten lång!",
-                icon: drinkIllustration,
-              },
-            ].map((card, i) => (
-              <WavyCard
-                key={i}
-                visible={saturdayVisible}
-                delay={card.delay}
-                borderColor={card.borderColor}
-                wavyPath={card.wavyPath}
-                className="hover:-translate-y-1 transition-transform duration-500 min-h-[280px] md:min-h-[320px]"
+          {
+            delay: "100ms",
+            borderColor: colors.darkOlive,
+            wavyPath: wavyPaths.card1,
+            part1: t("timeline.card1.part1") || "VÄLKOMSTDRINK",
+            part2: t("timeline.card1.part2") || "VIGSEL",
+            ochColor: colors.darkOlive,
+            description: t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås",
+            icon: vigselIllustration
+          },
+          {
+            delay: "200ms",
+            borderColor: colors.sageGreen,
+            wavyPath: wavyPaths.card2,
+            part1: t("timeline.card2.part1") || "MIDDAG",
+            part2: t("timeline.card2.part2") || "FEST",
+            ochColor: colors.sageGreen,
+            description: t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård.",
+            icon: middagIllustration
+          },
+          {
+            delay: "300ms",
+            borderColor: colors.mutedOrange,
+            wavyPath: wavyPaths.card3,
+            part1: t("timeline.card3.part1") || "DRINKAR",
+            part2: t("timeline.card3.part2") || "DANS",
+            ochColor: colors.mutedOrange,
+            description: t("timeline.dancing.description") || "Dansa natten lång!",
+            icon: drinkIllustration
+          }].
+          map((card, i) =>
+          <WavyCard
+            key={i}
+            visible={saturdayVisible}
+            delay={card.delay}
+            borderColor={card.borderColor}
+            wavyPath={card.wavyPath}
+            className="hover:-translate-y-1 transition-transform duration-500 aspect-square">
 
-              >
                 {/* Single centered text block (heading + body) */}
                 <div className="flex flex-col gap-6">
                   <TwoPartTitle
-                    part1={card.part1}
-                    part2={card.part2}
-                    andText={t("timeline.and") || "och"}
-                    color={colors.darkOliveText}
-                    ochColor={card.ochColor}
-                  />
+                part1={card.part1}
+                part2={card.part2}
+                andText={t("timeline.and") || "och"}
+                color={colors.darkOliveText}
+                ochColor={card.ochColor} />
+
                   <p
-                    className="font-serif text-sm tracking-wide leading-relaxed"
-                    style={{ color: colors.darkOliveText }}
-                  >
+                className="font-serif text-sm tracking-wide leading-relaxed"
+                style={{ color: colors.darkOliveText }}>
+
                     {card.description}
                   </p>
                 </div>
 
                 {/* Icon - absolutely positioned, identical size */}
                 <img
-                  src={card.icon}
-                  alt=""
-                  className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-28 h-28 md:w-32 md:h-32 object-contain opacity-75 pointer-events-none"
-                  aria-hidden="true"
-                />
+              src={card.icon}
+              alt=""
+              className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-28 h-28 md:w-32 md:h-32 object-contain opacity-75 pointer-events-none"
+              aria-hidden="true" />
+
               </WavyCard>
-            ))}
+          )}
           </div>
         </div>
       </div>
