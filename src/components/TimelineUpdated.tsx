@@ -209,7 +209,7 @@ const Timeline = () => {
           }}>
               {t("timeline.saturday.day") || "Lördag"}
             </h3>
-            <h4 className="font-brittany-heading text-3xl md:text-4xl" style={{
+            <h4 className="font-brittany-heading text-3xl md:text-4xl font-extralight" style={{
             color: colors.textOlive
           }}>
               {t("timeline.saturday.subtitle") || "Bröllopshelgen"}
