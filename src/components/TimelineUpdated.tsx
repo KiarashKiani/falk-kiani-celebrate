@@ -84,8 +84,10 @@ const WavyCard = ({
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
-      <div className="relative z-10 h-full flex items-center justify-start p-12 md:p-14 pr-[10rem] md:pr-[11rem] pb-[10rem] md:pb-[11rem]">
-        {children}
+      <div className="relative z-10 h-full flex items-center justify-center p-10 md:p-12 pr-12 md:pr-14 pb-12 md:pb-14">
+        <div className="max-w-[65%]">
+          {children}
+        </div>
       </div>
     </div>;
 };
