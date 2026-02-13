@@ -2,6 +2,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState, useRef, useId } from "react";
 import vigselIllustration from "@/assets/vigsel-illustration.png";
 import cocktailIllustration from "@/assets/cocktail-illustration.png";
+import middagIllustration from "@/assets/middag-illustration.png";
+import drinkIllustration from "@/assets/drink-illustration.png";
 
 // More organic, hand-drawn wavy paths with pronounced curves matching reference
 const wavyPaths = {
@@ -229,7 +231,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={middagIllustration} illustrationPosition="bottom-right">
               <TwoPartTitle part1={t("timeline.card2.part1") || "MIDDAG"} part2={t("timeline.card2.part2") || "FEST"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.sageGreen} />
               <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
@@ -239,7 +241,7 @@ const Timeline = () => {
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={cocktailIllustration} illustrationPosition="top-right">
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={drinkIllustration} illustrationPosition="top-right">
               <TwoPartTitle part1={t("timeline.card3.part1") || "DRINKAR"} part2={t("timeline.card3.part2") || "DANS"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.mutedOrange} />
               <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
               color: colors.darkOliveText
