@@ -93,7 +93,7 @@ const WavyCard = ({
        <div className="relative z-10 px-12 pr-16 py-16 md:px-14 md:pr-20 md:py-20 h-full flex flex-col">
          {children}
        </div>
-       {illustration && <img src={illustration} alt="" className={`absolute bottom-8 right-6 w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-25`} aria-hidden="true" />}
+       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-24 h-24 md:w-28 md:h-28 object-contain z-0 pointer-events-none opacity-75`} aria-hidden="true" />}
     </div>;
 };
 
