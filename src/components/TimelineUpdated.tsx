@@ -85,7 +85,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="relative z-10 h-full flex items-start justify-start p-10 md:p-12 pr-12 md:pr-14 pb-12 md:pb-14">
-        <div className="max-w-[58%] text-left">
+        <div className="max-w-[75%] text-left">
           {children}
         </div>
       </div>
@@ -175,7 +175,7 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-md w-full">
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
               color: colors.textOlive,
               fontWeight: 400
