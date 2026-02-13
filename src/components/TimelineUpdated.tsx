@@ -216,34 +216,28 @@ const Timeline = () => {
             {/* Card 1: Välkomstdrink och Vigsel */}
             <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card1.part1") || "VÄLKOMSTDRINK"} part2={t("timeline.card1.part2") || "VIGSEL"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.darkOlive} />
-              <div>
-                <img src={vigselIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
-                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
-                  {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
-                </p>
-              </div>
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                <img src={vigselIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 mt-2" style={{ shapeOutside: `url(${vigselIllustration})`, shapeMargin: '8px' }} aria-hidden="true" />
+                {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
+              </p>
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
             <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card2.part1") || "MIDDAG"} part2={t("timeline.card2.part2") || "FEST"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.sageGreen} />
-              <div>
-                <img src={middagIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
-                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
-                  {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
-                </p>
-              </div>
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                <img src={middagIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 mt-2" style={{ shapeOutside: `url(${middagIllustration})`, shapeMargin: '8px' }} aria-hidden="true" />
+                {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
+              </p>
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
             <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card3.part1") || "DRINKAR"} part2={t("timeline.card3.part2") || "DANS"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.mutedOrange} />
-              <div>
-                <img src={drinkIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
-                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
-                  {t("timeline.dancing.description") || "Dansa natten lång!"}
-                </p>
-              </div>
+              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                <img src={drinkIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 mt-2" style={{ shapeOutside: `url(${drinkIllustration})`, shapeMargin: '8px' }} aria-hidden="true" />
+                {t("timeline.dancing.description") || "Dansa natten lång!"}
+              </p>
             </WavyCard>
           </div>
         </div>
