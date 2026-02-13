@@ -72,11 +72,6 @@ const WavyCard = ({
   wavyPath?: string;
 }) => {
   const clipId = useId();
-  const positionClasses = {
-    "bottom-right": "bottom-8 right-6",
-    "bottom-left": "bottom-8 left-6",
-    "top-right": "top-6 right-6"
-  };
   return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
     transitionDelay: visible ? delay : "0ms"
   }}>
@@ -89,11 +84,9 @@ const WavyCard = ({
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
-      {/* More padding, centered content with breathing room */}
-       <div className="relative z-10 px-12 pr-16 py-16 md:px-14 md:pr-20 md:py-20 h-full flex flex-col">
-         {children}
-       </div>
-       {illustration && <img src={illustration} alt="" className={`absolute ${positionClasses[illustrationPosition]} w-32 h-32 md:w-40 md:h-40 object-contain z-0 pointer-events-none opacity-75`} aria-hidden="true" />}
+      <div className="relative z-10 px-12 pr-16 py-16 md:px-14 md:pr-20 md:py-20 h-full flex flex-col">
+        {children}
+      </div>
     </div>;
 };
 
@@ -221,33 +214,36 @@ const Timeline = () => {
           {/* Saturday Events - 3 cards with unique wavy borders */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Card 1: Välkomstdrink och Vigsel */}
-            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={vigselIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card1.part1") || "VÄLKOMSTDRINK"} part2={t("timeline.card1.part2") || "VIGSEL"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.darkOlive} />
-              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
-              color: colors.darkOliveText
-            }}>
-                {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
-              </p>
+              <div>
+                <img src={vigselIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
+                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                  {t("timeline.saturday.ceremony.description") || "Bussar avgår från Västerås"}
+                </p>
+              </div>
             </WavyCard>
 
             {/* Card 2: Middag och Fest */}
-            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={middagIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="200ms" borderColor={colors.sageGreen} wavyPath={wavyPaths.card2} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card2.part1") || "MIDDAG"} part2={t("timeline.card2.part2") || "FEST"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.sageGreen} />
-              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
-              color: colors.darkOliveText
-            }}>
-                {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
-              </p>
+              <div>
+                <img src={middagIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
+                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                  {t("timeline.dinner.description") || "Middagen serveras i den vackra trädgården på Nybynäsgård."}
+                </p>
+              </div>
             </WavyCard>
 
             {/* Card 3: Drinkar och Dans */}
-            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]" illustration={drinkIllustration} illustrationPosition="bottom-right">
+            <WavyCard visible={saturdayVisible} delay="300ms" borderColor={colors.mutedOrange} wavyPath={wavyPaths.card3} className="hover:-translate-y-1 transition-transform duration-500 min-h-[400px]">
               <TwoPartTitle part1={t("timeline.card3.part1") || "DRINKAR"} part2={t("timeline.card3.part2") || "DANS"} andText={t("timeline.and") || "och"} color={colors.darkOliveText} ochColor={colors.mutedOrange} />
-              <p className="font-serif text-sm tracking-wide leading-relaxed" style={{
-              color: colors.darkOliveText
-            }}>
-                {t("timeline.dancing.description") || "Dansa natten lång!"}
-              </p>
+              <div>
+                <img src={drinkIllustration} alt="" className="float-right w-28 h-28 md:w-36 md:h-36 object-contain pointer-events-none opacity-75 ml-3 -mb-2" style={{ shapeOutside: 'margin-box' }} aria-hidden="true" />
+                <p className="font-serif text-sm tracking-wide leading-relaxed" style={{ color: colors.darkOliveText }}>
+                  {t("timeline.dancing.description") || "Dansa natten lång!"}
+                </p>
+              </div>
             </WavyCard>
           </div>
         </div>
