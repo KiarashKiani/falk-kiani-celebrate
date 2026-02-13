@@ -84,7 +84,7 @@ const WavyCard = ({
         <rect x="0" y="0" width="200" height="200" fill={colors.cream} clipPath={`url(#${clipId})`} />
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
-      <div className="relative z-10 px-12 pr-16 py-16 md:px-14 md:pr-20 md:py-20 h-full flex flex-col">
+      <div className="relative z-10 h-full flex items-center justify-center p-12 md:p-14 pb-20 md:pb-24">
         {children}
       </div>
     </div>;
@@ -104,7 +104,7 @@ const TwoPartTitle = ({
   color?: string;
   ochColor?: string;
 }) => {
-  return <div className="mb-8 min-h-[80px] md:min-h-[90px]">
+  return <div>
       <span className="block font-lovely-may text-sm md:text-base uppercase tracking-[0.2em] font-extralight whitespace-nowrap" style={{
       color,
       opacity: 0.85
@@ -253,8 +253,8 @@ const Timeline = () => {
                 wavyPath={card.wavyPath}
                 className="hover:-translate-y-1 transition-transform duration-500 aspect-square"
               >
-                <div className="relative h-full flex flex-col">
-                  {/* Heading - fixed at top */}
+                {/* Single centered text block (heading + body) */}
+                <div className="flex flex-col gap-6">
                   <TwoPartTitle
                     part1={card.part1}
                     part2={card.part2}
@@ -262,25 +262,21 @@ const Timeline = () => {
                     color={colors.darkOliveText}
                     ochColor={card.ochColor}
                   />
-
-                  {/* Body text - centered in remaining space */}
-                  <div className="flex-1 flex items-center">
-                    <p
-                      className="font-serif text-sm tracking-wide leading-relaxed pr-20 md:pr-24"
-                      style={{ color: colors.darkOliveText }}
-                    >
-                      {card.description}
-                    </p>
-                  </div>
-
-                  {/* Icon - absolutely positioned, identical size across all cards */}
-                  <img
-                    src={card.icon}
-                    alt=""
-                    className="absolute bottom-0 right-0 w-28 h-28 md:w-32 md:h-32 object-contain opacity-75 pointer-events-none"
-                    aria-hidden="true"
-                  />
+                  <p
+                    className="font-serif text-sm tracking-wide leading-relaxed"
+                    style={{ color: colors.darkOliveText }}
+                  >
+                    {card.description}
+                  </p>
                 </div>
+
+                {/* Icon - absolutely positioned, identical size */}
+                <img
+                  src={card.icon}
+                  alt=""
+                  className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-28 h-28 md:w-32 md:h-32 object-contain opacity-75 pointer-events-none"
+                  aria-hidden="true"
+                />
               </WavyCard>
             ))}
           </div>
