@@ -253,7 +253,7 @@ const Timeline = () => {
             delay={card.delay}
             borderColor={card.borderColor}
             wavyPath={card.wavyPath}
-            className="hover:-translate-y-1 transition-transform duration-500 aspect-square">
+            className="hover:-translate-y-1 transition-transform duration-500 aspect-[4/5] md:aspect-square">
 
                 {/* Single centered text block (heading + body) */}
                 <div className="flex flex-col gap-6">
