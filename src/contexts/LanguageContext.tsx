@@ -212,7 +212,7 @@ const translations = {
     'travel.findus.parking': 'For those driving your own car to Nybynäs gård, free parking is available in the area.',
     'travel.findus.link': 'Open in Google Maps',
     'travel.accommodation.title': 'Accommodation',
-    'travel.accommodation.content': 'We recommend hotels in Västerås city center. Steam Hotel and Elite Stadshotellet Västerås are both excellent options.',
+    'travel.accommodation.content': 'For those who wish to stay overnight, we recommend hotels in Västerås city center. Steam Hotel and Elite Stadshotellet Västerås are both excellent options where we can offer our guests the following:',
     'travel.weekend.title': 'Weekend Tips',
     'travel.weekend.content': 'For those staying longer, we recommend exploring Västerås old town, Anundshög, and the beautiful shores of Lake Mälaren.',
     
@@ -383,7 +383,7 @@ const translations = {
     'travel.findus.parking': 'Für diejenigen, die mit dem eigenen Auto nach Nybynäs gård fahren, ist kostenloses Parken in der Gegend vorhanden.',
     'travel.findus.link': 'In Google Maps öffnen',
     'travel.accommodation.title': 'Unterkunft',
-    'travel.accommodation.content': 'Wir empfehlen Hotels im Stadtzentrum von Västerås. Das Steam Hotel und das Elite Stadshotellet Västerås sind beide ausgezeichnete Optionen.',
+    'travel.accommodation.content': 'Für diejenigen, die übernachten möchten, empfehlen wir Hotels im Stadtzentrum von Västerås. Das Steam Hotel und das Elite Stadshotellet Västerås sind beide ausgezeichnete Optionen, bei denen wir unseren Gästen Folgendes anbieten können:',
     'travel.weekend.title': 'Wochenendtipps',
     'travel.weekend.content': 'Für diejenigen, die länger bleiben, empfehlen wir die Altstadt von Västerås, Anundshög und die wunderschönen Strände am Mälaren-See zu erkunden.',
     
