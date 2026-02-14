@@ -81,7 +81,7 @@ const translations = {
     'timeline.dinner.description': 'Vi fortsätter bröllopsdagen med en sittande middag inne i Magasinet.',
     'timeline.dancing.title': 'Dans & Musik',
     'timeline.dancing.time': '22:00',
-    'timeline.dancing.description': 'Efter middagen fortsätter vi firandet på dansgolvet med musik och drinkar.',
+    'timeline.dancing.description': 'Efter middagen avslutar vi firandet med musik, drinkar och dans.',
     'timeline.saturday.busend.title': 'Bussavgång',
     'timeline.saturday.busend.time': '01:30',
     'timeline.saturday.busend.description': 'Transport tillbaka till hotellen.',
