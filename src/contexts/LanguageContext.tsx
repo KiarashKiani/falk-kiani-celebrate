@@ -164,7 +164,7 @@ const translations = {
     'accommodation.steam.description': 'Designhotell vid Mälaren med spa.',
     'accommodation.steam.discount': '10% rabatt för bröllopsgäster',
     'accommodation.steam.code': 'Använd kod: bröllop2026',
-    'accommodation.steam.pricing': 'Priserna är dynamiska och varierar.',
+    'accommodation.steam.pricing': 'Priserna är dynamiska och varierar baserat på efterfrågan.',
     'accommodation.elite.description': 'Klassiskt stadshotell i centrala Västerås.',
     'accommodation.elite.booking': 'Ring eller maila och nämn "Bröllop Josefin & Kiarash"',
     'accommodation.elite.pricing': 'Dubbelrum 1 350 kr/natt • Enkelrum 1 150 kr/natt',
