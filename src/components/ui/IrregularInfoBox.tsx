@@ -21,7 +21,8 @@ const IrregularInfoBox = ({ children, className = "" }: IrregularInfoBoxProps) =
   return (
     <div className={`relative ${className}`}>
       <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
+        className="absolute -inset-3 pointer-events-none"
+        style={{ width: 'calc(100% + 24px)', height: 'calc(100% + 24px)' }}
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden="true"
@@ -36,7 +37,7 @@ const IrregularInfoBox = ({ children, className = "" }: IrregularInfoBoxProps) =
           fill="#fffeb8"
         />
       </svg>
-      <div className="relative z-10 p-4">
+      <div className="relative z-10 p-5">
         {children}
       </div>
     </div>
