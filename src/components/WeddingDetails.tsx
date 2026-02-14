@@ -231,7 +231,7 @@ const WeddingDetails = () => {
                   <h4 className="text-lg font-semibold mb-2" style={{ color: '#1b2e00' }}>
                     {t("details.dresscode.friday.title")}
                   </h4>
-                  <p className="font-serif" style={{ color: '#1b2e00' }}>{t("details.dresscode.friday.content")}</p>
+                  <p className="font-serif whitespace-pre-line" style={{ color: '#1b2e00' }}>{t("details.dresscode.friday.content")}</p>
                 </div>
                 
                 <div>
