@@ -168,7 +168,7 @@ const Timeline = () => {
           fontFamily: "'Brittany', cursive",
           color: '#ff8a00'
         }}>
-            {t("timeline.header") || "Bröllopshelgen"}
+            {t("timeline.header") || "Bröllopsdagen"}
           </h2>
         </div>
 
@@ -209,7 +209,7 @@ const Timeline = () => {
             <h4 className="font-brittany-heading text-3xl md:text-4xl font-extralight" style={{
             color: colors.textOlive
           }}>
-              {t("timeline.saturday.subtitle") || "Bröllopshelgen"}
+              {t("timeline.saturday.subtitle") || "Bröllopsdagen"}
             </h4>
           </div>
 
