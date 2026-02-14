@@ -72,7 +72,7 @@ const translations = {
     'timeline.saturday.mingel.description': 'Välkomstmingel med champagne.',
     'timeline.saturday.ceremony.title': 'Vigsel',
     'timeline.saturday.ceremony.time': '15:00',
-    'timeline.saturday.ceremony.description': 'Vi samlas på Nybynäs gård för välkomstdrink innan det är dags för vigseln där vi säger ja till varandra.',
+    'timeline.saturday.ceremony.description': 'Vi samlas på Nybynäs gård för välkomstdrink innan vigseln där vi säger ja till varandra.',
     'timeline.saturday.mingel2.title': 'Mingel',
     'timeline.saturday.mingel2.time': '16:00',
     'timeline.saturday.mingel2.description': 'Mer champagne och tilltugg.',
