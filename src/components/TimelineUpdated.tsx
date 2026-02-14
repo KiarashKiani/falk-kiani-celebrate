@@ -160,7 +160,7 @@ const Timeline = () => {
           fontFamily: "'Brittany', cursive",
           color: '#ff8a00'
         }}>
-            {t("timeline.header") || "Bröllopsdagen"}
+            {t("timeline.header") || "Bröllopshelgen"}
           </h2>
         </div>
 
