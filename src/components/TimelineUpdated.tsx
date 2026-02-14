@@ -60,17 +60,9 @@ const WavyCard = ({
   borderColor = colors.darkOlive,
   illustration,
   illustrationPosition = "bottom-right",
-  wavyPath = wavyPaths.card1
-
-
-
-
-
-
-
-
-
-}: {children: React.ReactNode;className?: string;visible?: boolean;delay?: string;borderColor?: string;illustration?: string;illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";wavyPath?: string;}) => {
+  wavyPath = wavyPaths.card1,
+  fullWidth = false
+}: {children: React.ReactNode;className?: string;visible?: boolean;delay?: string;borderColor?: string;illustration?: string;illustrationPosition?: "bottom-right" | "bottom-left" | "top-right";wavyPath?: string;fullWidth?: boolean;}) => {
   const clipId = useId();
   return <div className={`relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} ${className}`} style={{
     transitionDelay: visible ? delay : "0ms"
@@ -85,7 +77,7 @@ const WavyCard = ({
         <path d={wavyPath} fill="none" stroke={borderColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="relative z-10 h-full flex items-start justify-start p-12 md:p-14 pb-10 md:pb-12 my-px">
-        <div className="max-w-[62%] text-left pl-px">
+        <div className={`${fullWidth ? "" : "max-w-[62%]"} text-left pl-px`}>
           {children}
         </div>
       </div>
@@ -175,8 +167,8 @@ const Timeline = () => {
         {/* Friday Section */}
         <div ref={fridayRef}>
           <div className="flex justify-center mb-24">
-            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
-              <div className="max-w-none">
+            <WavyCard visible={fridayVisible} delay="100ms" borderColor={colors.darkOlive} wavyPath={wavyPaths.card1} fullWidth className="hover:-translate-y-1 transition-transform duration-500 max-w-xl w-full min-h-[400px]">
+              <div>
               <h3 className="font-lovely-may text-4xl md:text-5xl text-left mb-1 uppercase tracking-wide" style={{
               color: colors.textOlive,
               fontWeight: 400
