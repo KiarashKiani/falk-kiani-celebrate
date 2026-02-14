@@ -147,7 +147,7 @@ const translations = {
     'details.photos.content': 'Efter bröllopet kommer vi samla alla bilder här så att ni kan ladda ner och återuppleva dagen tillsammans med oss.',
     'details.dresscode.title': 'Klädkod',
     'details.dresscode.friday.title': 'Fredag',
-    'details.dresscode.friday.content': 'Festfint. Kvällarna kan bli svala – ta gärna med en extra tröja eller sjal.',
+    'details.dresscode.friday.content': 'Sommarfint. \nMålet är att vara utomhus om vädret tillåter. Tänk på att kvällarna kan bli svala – ta gärna med en extra tröja eller sjal.',
     'details.dresscode.saturday.title': 'Lördag',
     'details.dresscode.saturday.content': 'Mörk kostym (smoking går såklart bra)',
     'details.dresscode.women': 'Beskrivning för kvinnor',
