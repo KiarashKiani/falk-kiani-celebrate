@@ -41,7 +41,7 @@ const translations = {
     'travel.findus.parking': 'För er som tar egen bil till Nybynäs gård finns gratis parkering i området.',
     'travel.findus.link': 'Öppna i Google Maps',
     'travel.accommodation.title': 'Boende',
-    'travel.accommodation.content': 'Vi rekommenderar hotell i Västerås centrum. Steam Hotel och Elite Stadshotellet Västerås är båda utmärkta alternativ.',
+    'travel.accommodation.content': 'För er som vill bo över rekommenderar vi hotell i Västerås centrum. Steam Hotel och Elite Stadshotellet Västerås är båda utmärkta alternativ där vi kan erbjuda våra gäster följande:',
     'travel.weekend.title': 'Helgtips',
     'travel.weekend.content': 'För er som stannar längre rekommenderar vi att utforska Västerås gamla stad, Anundshög och de vackra stränderna vid Mälaren.',
     
