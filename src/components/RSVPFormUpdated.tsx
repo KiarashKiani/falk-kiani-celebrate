@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -300,38 +300,94 @@ const RSVPForm = () => {
               {/* Main Guest Details */}
               {renderGuestFields(mainGuest, setMainGuest, "main", t("rsvp.names"), 200)}
 
-              {/* Bringing Partner Section */}
-              <WavyBorderCard className="min-h-[180px]" delay="300ms">
+              {/* Bringing Partner - Accordion Toggle */}
+              <WavyBorderCard className={bringingPartner === "yes" ? "min-h-[420px]" : "min-h-[80px]"} delay="300ms">
                 <div className="space-y-6 text-left">
-                  <SectionHeader>{t("rsvp.plusOne")}</SectionHeader>
-                  <RadioGroup value={bringingPartner} onValueChange={setBringingPartner} className="space-y-3">
-                    {[
-                      { value: "yes", label: t("rsvp.attending.yes").split(',')[0] || "Yes" },
-                      { value: "no", label: "No" },
-                    ].map((option) => (
-                      <div 
-                        key={option.value}
-                        className={`flex items-center space-x-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                          bringingPartner === option.value 
-                            ? "border-primary bg-primary/5" 
-                            : "border-primary/10 hover:border-primary/30 hover:bg-muted/30"
-                        }`}
-                      >
-                        <RadioGroupItem value={option.value} id={`partner-${option.value}`} />
-                        <Label 
-                          htmlFor={`partner-${option.value}`} 
-                          className="font-serif text-base cursor-pointer flex-1"
-                        >
-                          {option.label}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setBringingPartner(bringingPartner === "yes" ? "no" : "yes");
+                      if (bringingPartner === "yes") {
+                        setPartnerGuest({ name: "", attendanceDays: "", dietary: "" });
+                      }
+                    }}
+                    className="w-full flex items-center justify-between group"
+                  >
+                    <h3 className="font-serif font-bold text-lg text-primary">
+                      {t("rsvp.plusOne")}
+                    </h3>
+                    <svg
+                      className={`w-5 h-5 text-primary/60 transition-transform duration-300 ${bringingPartner === "yes" ? "rotate-180" : ""}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className="h-px bg-gradient-to-r from-transparent via-wedding-olive/40 to-transparent w-24 mx-auto"></div>
+
+                  {/* Partner fields revealed on expand */}
+                  {bringingPartner === "yes" && (
+                    <div className="space-y-6 animate-fade-in">
+                      {/* Name */}
+                      <div className="space-y-2">
+                        <Label htmlFor="partner-name" className="font-serif font-bold text-foreground">
+                          {t("rsvp.names")} <span className="text-primary">*</span>
                         </Label>
+                        <Input
+                          id="partner-name"
+                          value={partnerGuest.name}
+                          onChange={(e) => setPartnerGuest({ ...partnerGuest, name: e.target.value })}
+                          placeholder={t("rsvp.plusOne.name.placeholder")}
+                          className={inputStyles}
+                        />
                       </div>
-                    ))}
-                  </RadioGroup>
+
+                      {/* Attendance Days */}
+                      <div className="space-y-3">
+                        <Label className="font-serif font-bold text-foreground">{t("rsvp.days")}</Label>
+                        <RadioGroup 
+                          value={partnerGuest.attendanceDays} 
+                          onValueChange={(value) => setPartnerGuest({ ...partnerGuest, attendanceDays: value })}
+                          className="grid grid-cols-1 gap-2"
+                        >
+                          {[
+                            { value: "both", label: t("rsvp.days.both") },
+                            { value: "saturday", label: t("rsvp.days.saturday") },
+                          ].map((option) => (
+                            <div 
+                              key={option.value}
+                              className="flex items-center space-x-2 p-2 rounded-lg border border-primary/10 hover:border-primary/30 hover:bg-muted/30 transition-all cursor-pointer"
+                            >
+                              <RadioGroupItem value={option.value} id={`partner-days-${option.value}`} className="shrink-0" />
+                              <Label htmlFor={`partner-days-${option.value}`} className="font-serif text-sm cursor-pointer flex-1">
+                                {option.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </RadioGroup>
+                      </div>
+
+                      {/* Dietary */}
+                      <div className="space-y-2">
+                        <Label htmlFor="partner-dietary" className="font-serif font-bold text-foreground">
+                          {t("rsvp.dietary")}
+                        </Label>
+                        <Textarea
+                          id="partner-dietary"
+                          value={partnerGuest.dietary}
+                          onChange={(e) => setPartnerGuest({ ...partnerGuest, dietary: e.target.value })}
+                          placeholder={t("rsvp.dietary.placeholder")}
+                          className={`${inputStyles} min-h-[60px]`}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </WavyBorderCard>
 
-              {/* Partner Guest Details */}
-              {bringingPartner === "yes" && renderGuestFields(partnerGuest, setPartnerGuest, "partner", t("rsvp.names"), 400)}
 
                {/* Song Request Section */}
                <WavyBorderCard className="min-h-[160px]" delay="500ms">
