@@ -239,24 +239,6 @@ const WeddingDetails = () => {
                     {t("details.dresscode.saturday.title")}
                   </h4>
                   <p className="font-serif mb-3" style={{ color: '#1b2e00' }}>{t("details.dresscode.saturday.content")}</p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <a
-                      href="https://www.stroms.com/kladkod-brollop-dam/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-serif inline-flex items-center justify-center px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors duration-200 text-sm"
-                    >
-                      {t("details.dresscode.women")}
-                    </a>
-                    <a
-                      href="https://www.stroms.com/kladkod-brollop-herr/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-serif inline-flex items-center justify-center px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md transition-colors duration-200 text-sm"
-                    >
-                      {t("details.dresscode.men")}
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
