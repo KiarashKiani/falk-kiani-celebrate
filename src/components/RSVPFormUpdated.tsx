@@ -316,15 +316,20 @@ const RSVPForm = () => {
                     <h3 className="font-serif font-bold text-lg text-primary">
                       {t("rsvp.plusOne")}
                     </h3>
-                    <svg
-                      className={`w-5 h-5 text-primary/60 transition-transform duration-300 ${bringingPartner === "yes" ? "rotate-180" : ""}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                    <span
+                      className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${bringingPartner === "yes" ? "rotate-180" : ""}`}
+                      style={{ backgroundColor: '#ff8a00' }}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
+                      <svg
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
                   </button>
                   <div className="h-px bg-gradient-to-r from-transparent via-wedding-olive/40 to-transparent w-24 mx-auto"></div>
 
