@@ -269,7 +269,7 @@ const translations = {
     // RSVP
     'rsvp.title': 'RSVP',
     'rsvp.subtitle': 'Please reply no later than [Date]',
-    'rsvp.attending': 'Will you/you all attend?',
+    'rsvp.attending': 'Will you attend?',
     'rsvp.attending.yes': 'Of course, see you in July!',
     'rsvp.attending.no': 'Unfortunately I/we can\'t make it',
     'rsvp.names': 'Name(s)',
@@ -440,8 +440,8 @@ const translations = {
     // RSVP
     'rsvp.title': 'Rückmeldung',
     'rsvp.subtitle': 'Bitte antwortet bis spätestens [Datum]',
-    'rsvp.attending': 'Kommt ihr?',
-    'rsvp.attending.yes': 'Natürlich, wir sehen uns im Juli!',
+    'rsvp.attending': 'Kommst du/kommt ihr?',
+    'rsvp.attending.yes': 'Na klar, wir sehen uns im Juli!',
     'rsvp.attending.no': 'Leider kann ich/können wir nicht dabei sein',
     'rsvp.names': 'Name(n)',
     'rsvp.names.placeholder': 'Dein Name',
