@@ -98,7 +98,7 @@ const translations = {
     // RSVP
     'rsvp.title': 'OSA',
     'rsvp.subtitle': 'Vänligen svara senast [Datum]',
-    'rsvp.attending': 'Kommer du?',
+    'rsvp.attending': 'Kommer du/ni?',
     'rsvp.attending.yes': 'Ja, jag kommer!',
     'rsvp.attending.no': 'Nej, jag kan tyvärr inte komma',
     'rsvp.names': 'Namn',
