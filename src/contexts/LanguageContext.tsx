@@ -106,7 +106,7 @@ const translations = {
     'rsvp.plusOne.name.placeholder': 'Din partners namn',
     'rsvp.email': 'E-post',
     'rsvp.email.placeholder': 'din@email.com',
-    'rsvp.plusOne': 'Tar du med dig en partner?',
+    'rsvp.plusOne': 'Är ni två på inbjudan, vänligen lägg till det andra namnet här',
     'rsvp.dietary': 'Allergier/Specialkost',
     'rsvp.dietary.placeholder': 'Berätta om eventuella allergier eller specialkost...',
     'rsvp.meal': 'Måltidsval',
