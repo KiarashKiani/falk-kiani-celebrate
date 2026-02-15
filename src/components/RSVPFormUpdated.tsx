@@ -318,7 +318,7 @@ const RSVPForm = () => {
                     </h3>
                     <span
                       className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${bringingPartner === "yes" ? "rotate-180" : ""}`}
-                      style={{ backgroundColor: '#ff8a00' }}
+                      style={{ backgroundColor: '#3f5f10' }}
                     >
                       <svg
                         className="w-4 h-4 text-white"
