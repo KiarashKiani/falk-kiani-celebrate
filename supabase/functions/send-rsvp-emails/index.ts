@@ -4,24 +4,43 @@ import { Resend } from "npm:resend@2.0.0";
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 // Allowed origins for CORS - restrict to wedding website domains
-const ALLOWED_ORIGIN_PATTERNS = [
+const ALLOWED_ORIGIN_PATTERNS: (string | RegExp)[] = [
+  "https://falkkiani.se",
+  "https://www.falkkiani.se",
   "https://falk-kiani-celebrate.lovable.app",
   /^https:\/\/.*eb0e59a1-4e5c-437b-9aa9-3a6605d24d00\.(lovable\.app|lovableproject\.com)$/,
   "http://localhost:5173",
-  "http://localhost:8080"
+  "http://localhost:8080",
 ];
 
-const getCorsHeaders = (origin: string | null): Record<string, string> => {
-  const isAllowed = origin && ALLOWED_ORIGIN_PATTERNS.some(p => 
-    typeof p === 'string' ? origin === p : p.test(origin)
+const isOriginAllowed = (origin: string | null): boolean => {
+  if (!origin) return false;
+  return ALLOWED_ORIGIN_PATTERNS.some(p =>
+    typeof p === "string" ? origin === p : p.test(origin)
   );
-  const allowedOrigin = isAllowed ? origin : "https://falk-kiani-celebrate.lovable.app";
-  
-  return {
+};
+
+const getCorsHeaders = (req: Request): Record<string, string> => {
+  const origin = req.headers.get("origin");
+  const allowedOrigin = isOriginAllowed(origin) ? origin! : "https://falkkiani.se";
+
+  // Mirror whatever headers the browser asks for in preflight
+  const requestedHeaders = req.headers.get("access-control-request-headers");
+
+  const headers: Record<string, string> = {
     "Access-Control-Allow-Origin": allowedOrigin,
-    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Vary": "Origin",
   };
+
+  if (requestedHeaders) {
+    headers["Access-Control-Allow-Headers"] = requestedHeaders;
+  } else {
+    headers["Access-Control-Allow-Headers"] =
+      "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version";
+  }
+
+  return headers;
 };
 
 // Simple in-memory rate limiting (resets on function cold start)
@@ -345,11 +364,10 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
 };
 
 const handler = async (req: Request): Promise<Response> => {
-  const origin = req.headers.get("origin");
-  const corsHeaders = getCorsHeaders(origin);
+  const corsHeaders = getCorsHeaders(req);
 
   if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { status: 204, headers: corsHeaders });
   }
 
   // Only allow POST requests

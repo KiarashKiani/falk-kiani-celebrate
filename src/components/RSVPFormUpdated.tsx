@@ -5,7 +5,7 @@ import { Textarea } from "./ui/textarea";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
 import { useToast } from "./ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import WavyBorderCard from "./ui/WavyBorderCard";
 
@@ -103,24 +103,35 @@ const RSVPForm = () => {
         });
       }
 
-      const { error } = await supabase.functions.invoke("send-rsvp-emails", {
-        body: {
-          attending,
-          email: attending === "yes" ? email : "",
-          guests,
-          songRequest,
-          message,
+      const url = `https://iljkckqqahcutzsukzkp.supabase.co/functions/v1/send-rsvp-emails`;
+      const body = {
+        attending,
+        email: attending === "yes" ? email : "",
+        guests,
+        songRequest,
+        message,
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlsamtja3FxYWhjdXR6c3VremtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3MDAxMTMsImV4cCI6MjA3MTI3NjExM30.AweX-33vRNqrgLMGY37-Vn8edz2JIYFh19oeCOEuwAg",
         },
+        body: JSON.stringify(body),
       });
 
-      if (error) {
-        console.error("Error sending RSVP:", error);
+      if (!response.ok) {
+        const text = await response.text().catch(() => "");
+        console.error("RSVP submission failed:", { url, method: "POST", status: response.status, body: text });
         toast({
-          title: "Något gick fel. Försök igen.",
+          title: `Fel (${response.status}): ${text || "Försök igen."}`,
           variant: "destructive",
         });
         return;
       }
+
+      console.log("RSVP submitted successfully:", { url, method: "POST", status: response.status });
 
       toast({
         title: attending === "yes" 
@@ -136,10 +147,10 @@ const RSVPForm = () => {
       setPartnerGuest({ name: "", attendanceDays: "", dietary: "" });
       setSongRequest("");
       setMessage("");
-    } catch (err) {
-      console.error("Error submitting RSVP:", err);
+    } catch (err: any) {
+      console.error("RSVP network/blocked error:", err?.message || err);
       toast({
-        title: "Något gick fel. Försök igen.",
+        title: "Nätverksfel – kontrollera din anslutning och försök igen.",
         variant: "destructive",
       });
     } finally {
