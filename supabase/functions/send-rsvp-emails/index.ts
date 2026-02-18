@@ -134,6 +134,7 @@ const validateInput = (data: RSVPEmailRequest): { valid: boolean; error?: string
 interface Guest {
   name: string;
   dietary: string;
+  attendanceDays: string;
   mealChoice: string;
   shuttle: string;
   isMainGuest: boolean;
@@ -147,24 +148,12 @@ interface RSVPEmailRequest {
   message: string;
 }
 
-const getMealText = (meal: string): string => {
+const getAttendanceDaysText = (days: string): string => {
   const texts: Record<string, string> = {
-    meat: "Kött",
-    fish: "Fisk",
-    vegetarian: "Vegetarisk",
-    vegan: "Vegansk",
+    both: "Fredag & Lördag",
+    saturday: "Endast lördag",
   };
-  return texts[meal] || escapeHtml(meal) || "Ej valt";
-};
-
-const getShuttleText = (shuttle: string): string => {
-  const texts: Record<string, string> = {
-    both: "Ja, tur och retur",
-    to: "Bara dit",
-    from: "Bara hem",
-    no: "Nej tack",
-  };
-  return texts[shuttle] || escapeHtml(shuttle) || "Ej valt";
+  return texts[days] || escapeHtml(days) || "Ej valt";
 };
 
 const getConfirmationEmail = (data: RSVPEmailRequest): string => {
@@ -175,16 +164,12 @@ const getConfirmationEmail = (data: RSVPEmailRequest): string => {
     <div style="background: #f8f6f3; padding: 20px; border-radius: 8px; margin: 15px 0;">
       <h3 style="color: #2d4a3e; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e8e4df; padding-bottom: 10px;">${escapeHtml(label)}: ${escapeHtml(guest.name)}</h3>
       <div style="margin: 10px 0;">
+        <strong style="color: #2d4a3e;">Dagar:</strong>
+        <span style="color: #4a4a4a;"> ${getAttendanceDaysText(guest.attendanceDays)}</span>
+      </div>
+      <div style="margin: 10px 0;">
         <strong style="color: #2d4a3e;">Allergier/Specialkost:</strong>
         <span style="color: #4a4a4a;"> ${escapeHtml(guest.dietary) || "Inga"}</span>
-      </div>
-      <div style="margin: 10px 0;">
-        <strong style="color: #2d4a3e;">Måltidsval:</strong>
-        <span style="color: #4a4a4a;"> ${getMealText(guest.mealChoice)}</span>
-      </div>
-      <div style="margin: 10px 0;">
-        <strong style="color: #2d4a3e;">Pendlingsbuss:</strong>
-        <span style="color: #4a4a4a;"> ${getShuttleText(guest.shuttle)}</span>
       </div>
     </div>
   `;
@@ -304,16 +289,12 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
       </td>
     </tr>
     <tr>
+      <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Dagar</td>
+      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${getAttendanceDaysText(guest.attendanceDays)}</td>
+    </tr>
+    <tr>
       <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Allergier/Specialkost</td>
       <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${escapeHtml(guest.dietary) || "Inga"}</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Måltidsval</td>
-      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${getMealText(guest.mealChoice)}</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Pendlingsbuss</td>
-      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${getShuttleText(guest.shuttle)}</td>
     </tr>
   `;
 
