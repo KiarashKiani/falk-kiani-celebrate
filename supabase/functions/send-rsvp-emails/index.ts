@@ -6,7 +6,7 @@ const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 // Allowed origins for CORS - restrict to wedding website domains
 const ALLOWED_ORIGIN_PATTERNS = [
   "https://falk-kiani-celebrate.lovable.app",
-  /^https:\/\/.*--eb0e59a1-4e5c-437b-9aa9-3a6605d24d00\.lovable\.app$/,
+  /^https:\/\/.*eb0e59a1-4e5c-437b-9aa9-3a6605d24d00\.(lovable\.app|lovableproject\.com)$/,
   "http://localhost:5173",
   "http://localhost:8080"
 ];
