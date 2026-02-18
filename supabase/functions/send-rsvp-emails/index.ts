@@ -4,17 +4,18 @@ import { Resend } from "npm:resend@2.0.0";
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 // Allowed origins for CORS - restrict to wedding website domains
-const ALLOWED_ORIGINS = [
+const ALLOWED_ORIGIN_PATTERNS = [
   "https://falk-kiani-celebrate.lovable.app",
-  "https://id-preview--eb0e59a1-4e5c-437b-9aa9-3a6605d24d00.lovable.app",
+  /^https:\/\/.*--eb0e59a1-4e5c-437b-9aa9-3a6605d24d00\.lovable\.app$/,
   "http://localhost:5173",
   "http://localhost:8080"
 ];
 
 const getCorsHeaders = (origin: string | null): Record<string, string> => {
-  const allowedOrigin = origin && ALLOWED_ORIGINS.some(o => origin.startsWith(o.replace(/https?:\/\//, ''))) 
-    ? origin 
-    : ALLOWED_ORIGINS[0];
+  const isAllowed = origin && ALLOWED_ORIGIN_PATTERNS.some(p => 
+    typeof p === 'string' ? origin === p : p.test(origin)
+  );
+  const allowedOrigin = isAllowed ? origin : "https://falk-kiani-celebrate.lovable.app";
   
   return {
     "Access-Control-Allow-Origin": allowedOrigin,
