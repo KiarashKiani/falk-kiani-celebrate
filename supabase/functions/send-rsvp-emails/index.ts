@@ -160,64 +160,107 @@ const getConfirmationEmail = (data: RSVPEmailRequest): string => {
   const mainGuest = data.guests.find(g => g.isMainGuest);
   const partnerGuest = data.guests.find(g => !g.isMainGuest);
   
-  const guestSummary = (guest: Guest, label: string) => `
-    <div style="background: #f8f6f3; padding: 20px; border-radius: 8px; margin: 15px 0;">
-      <h3 style="color: #2d4a3e; margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid #e8e4df; padding-bottom: 10px;">${escapeHtml(label)}: ${escapeHtml(guest.name)}</h3>
-      <div style="margin: 10px 0;">
-        <strong style="color: #2d4a3e;">Dagar:</strong>
-        <span style="color: #4a4a4a;"> ${getAttendanceDaysText(guest.attendanceDays)}</span>
-      </div>
-      <div style="margin: 10px 0;">
-        <strong style="color: #2d4a3e;">Allergier/Specialkost:</strong>
-        <span style="color: #4a4a4a;"> ${escapeHtml(guest.dietary) || "Inga"}</span>
-      </div>
-    </div>
+  const guestCard = (guest: Guest, label: string) => `
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin: 16px 0;">
+      <tr>
+        <td style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; padding: 24px;">
+          <p style="margin: 0 0 12px 0; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #8fa882; font-family: Georgia, serif;">${escapeHtml(label)}</p>
+          <p style="margin: 0 0 16px 0; font-size: 20px; color: #1b2e00; font-family: Georgia, serif; font-weight: bold;">${escapeHtml(guest.name)}</p>
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding: 8px 0; border-top: 1px solid #4a5c3d20;">
+                <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">Dagar</span><br/>
+                <span style="color: #1b2e00; font-size: 15px; font-family: Georgia, serif;">${getAttendanceDaysText(guest.attendanceDays)}</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; border-top: 1px solid #4a5c3d20;">
+                <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">Allergier / Specialkost</span><br/>
+                <span style="color: #1b2e00; font-size: 15px; font-family: Georgia, serif;">${escapeHtml(guest.dietary) || "Inga"}</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   `;
 
   return `
     <!DOCTYPE html>
     <html>
-    <head>
-      <style>
-        body { font-family: Georgia, serif; color: #1a1a1a; background-color: #f8f6f3; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { color: #2d4a3e; font-size: 28px; margin: 0; }
-        .content { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .closing { margin-top: 30px; font-style: italic; text-align: center; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h1>💍 Falk & Kiani 2026 💍</h1>
-        </div>
-        <div class="content">
-          <p style="font-size: 18px;">Hej ${escapeHtml(mainGuest?.name || "")}!</p>
-          <p>Tack för din OSA! Vi är så glada att du kommer och firar med oss.</p>
-          
-          <p><strong>Här är en sammanfattning av ditt svar:</strong></p>
-          
-          ${mainGuest ? guestSummary(mainGuest, "Gäst") : ""}
-          ${partnerGuest ? guestSummary(partnerGuest, "Partner") : ""}
-          
-          ${data.songRequest ? `
-          <div style="margin: 20px 0;">
-            <strong style="color: #2d4a3e;">Låtönskemål:</strong>
-            <span style="color: #4a4a4a;"> ${escapeHtml(data.songRequest)}</span>
-          </div>
-          ` : ""}
-          
-          ${data.message ? `
-          <div style="margin: 20px 0;">
-            <strong style="color: #2d4a3e;">Meddelande:</strong>
-            <span style="color: #4a4a4a;"> ${escapeHtml(data.message)}</span>
-          </div>
-          ` : ""}
-          
-          <p class="closing">Vi ser fram emot att fira med dig!<br><br>Med kärlek,<br>Falk & Kiani</p>
-        </div>
-      </div>
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <body style="margin: 0; padding: 0; background-color: #fff9f1; font-family: Georgia, 'Times New Roman', serif;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fff9f1;">
+        <tr><td align="center" style="padding: 40px 20px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px;">
+            
+            <!-- Header -->
+            <tr><td style="text-align: center; padding: 0 0 8px 0;">
+              <p style="margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #8fa882; font-family: Georgia, serif;">Bröllopet</p>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 0 4px 0;">
+              <h1 style="margin: 0; font-size: 36px; color: #ff8a00; font-family: Georgia, cursive; font-weight: normal; font-style: italic;">Falk &amp; Kiani</h1>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 0 32px 0;">
+              <p style="margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #4a5c3d; font-family: Georgia, serif;">Juli 2026</p>
+            </td></tr>
+
+            <!-- Divider -->
+            <tr><td style="padding: 0 60px 32px 60px;">
+              <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+            </td></tr>
+
+            <!-- Greeting -->
+            <tr><td style="text-align: center; padding: 0 20px 24px 20px;">
+              <p style="margin: 0 0 12px 0; font-size: 20px; color: #1b2e00; font-family: Georgia, serif;">Hej ${escapeHtml(mainGuest?.name || "")}!</p>
+              <p style="margin: 0; font-size: 15px; color: #4a5c3d; line-height: 1.6; font-family: Georgia, serif;">Tack för din OSA! Vi är så glada att du kommer och firar med oss. Här är en sammanfattning av ditt svar.</p>
+            </td></tr>
+
+            <!-- Guest cards -->
+            <tr><td style="padding: 0 0 8px 0;">
+              ${mainGuest ? guestCard(mainGuest, "Gäst") : ""}
+              ${partnerGuest ? guestCard(partnerGuest, "Partner") : ""}
+            </td></tr>
+
+            <!-- Song request -->
+            ${data.songRequest ? `
+            <tr><td style="padding: 8px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr><td style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; padding: 20px;">
+                  <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">🎵 Låtönskemål</span><br/>
+                  <span style="color: #1b2e00; font-size: 15px; font-family: Georgia, serif;">${escapeHtml(data.songRequest)}</span>
+                </td></tr>
+              </table>
+            </td></tr>
+            ` : ""}
+
+            <!-- Message -->
+            ${data.message ? `
+            <tr><td style="padding: 8px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr><td style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; padding: 20px;">
+                  <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">💬 Meddelande</span><br/>
+                  <span style="color: #1b2e00; font-size: 15px; font-family: Georgia, serif;">${escapeHtml(data.message)}</span>
+                </td></tr>
+              </table>
+            </td></tr>
+            ` : ""}
+
+            <!-- Divider -->
+            <tr><td style="padding: 24px 60px;">
+              <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+            </td></tr>
+
+            <!-- Closing -->
+            <tr><td style="text-align: center; padding: 0 20px 40px 20px;">
+              <p style="margin: 0 0 8px 0; font-size: 15px; color: #4a5c3d; font-style: italic; font-family: Georgia, serif;">Vi ser fram emot att fira med dig!</p>
+              <p style="margin: 0; font-size: 14px; color: #8fa882; font-family: Georgia, serif;">Med kärlek,</p>
+              <p style="margin: 4px 0 0 0; font-size: 22px; color: #ff8a00; font-family: Georgia, cursive; font-style: italic;">Falk &amp; Kiani</p>
+            </td></tr>
+            
+          </table>
+        </td></tr>
+      </table>
     </body>
     </html>
   `;
@@ -227,26 +270,37 @@ const getDeclineConfirmationEmail = (): string => {
   return `
     <!DOCTYPE html>
     <html>
-    <head>
-      <style>
-        body { font-family: Georgia, serif; color: #1a1a1a; background-color: #f8f6f3; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { color: #2d4a3e; font-size: 28px; margin: 0; }
-        .content { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h1>💍 Falk & Kiani 2026 💍</h1>
-        </div>
-        <div class="content">
-          <p>Tack för ditt svar.</p>
-          <p>Vi beklagar att du inte kan vara med oss på vår stora dag, men vi förstår att livet inte alltid passar in.</p>
-          <p style="font-style: italic; margin-top: 30px;">Med kärlek,<br>Falk & Kiani</p>
-        </div>
-      </div>
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <body style="margin: 0; padding: 0; background-color: #fff9f1; font-family: Georgia, 'Times New Roman', serif;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fff9f1;">
+        <tr><td align="center" style="padding: 40px 20px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px;">
+            <tr><td style="text-align: center; padding: 0 0 8px 0;">
+              <p style="margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #8fa882; font-family: Georgia, serif;">Bröllopet</p>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 0 4px 0;">
+              <h1 style="margin: 0; font-size: 36px; color: #ff8a00; font-family: Georgia, cursive; font-weight: normal; font-style: italic;">Falk &amp; Kiani</h1>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 0 32px 0;">
+              <p style="margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: #4a5c3d; font-family: Georgia, serif;">Juli 2026</p>
+            </td></tr>
+            <tr><td style="padding: 0 60px 32px 60px;">
+              <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 20px 24px 20px;">
+              <p style="margin: 0 0 16px 0; font-size: 18px; color: #1b2e00; font-family: Georgia, serif;">Tack för ditt svar.</p>
+              <p style="margin: 0; font-size: 15px; color: #4a5c3d; line-height: 1.6; font-family: Georgia, serif;">Vi beklagar att du inte kan vara med oss på vår stora dag, men vi förstår att livet inte alltid passar in.</p>
+            </td></tr>
+            <tr><td style="padding: 0 60px 24px 60px;">
+              <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 20px 40px 20px;">
+              <p style="margin: 0; font-size: 14px; color: #8fa882; font-family: Georgia, serif;">Med kärlek,</p>
+              <p style="margin: 4px 0 0 0; font-size: 22px; color: #ff8a00; font-family: Georgia, cursive; font-style: italic;">Falk &amp; Kiani</p>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
     </body>
     </html>
   `;
@@ -260,85 +314,115 @@ const getNotificationEmail = (data: RSVPEmailRequest): string => {
     return `
       <!DOCTYPE html>
       <html>
-      <head>
-        <style>
-          body { font-family: Arial, sans-serif; color: #1a1a1a; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #dc2626; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-          .content { padding: 20px; background: #f8f6f3; border-radius: 0 0 8px 8px; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>❌ OSA - Kan inte komma</h1>
-          </div>
-          <div class="content">
-            <p>En gäst har svarat att de tyvärr inte kan komma.</p>
-          </div>
-        </div>
+      <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+      <body style="margin: 0; padding: 0; background-color: #fff9f1; font-family: Georgia, 'Times New Roman', serif;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fff9f1;">
+          <tr><td align="center" style="padding: 40px 20px;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px;">
+              <tr><td style="text-align: center; padding: 0 0 8px 0;">
+                <p style="margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #8fa882;">OSA Notifikation</p>
+              </td></tr>
+              <tr><td style="text-align: center; padding: 0 0 24px 0;">
+                <h1 style="margin: 0; font-size: 28px; color: #b91c1c; font-family: Georgia, serif;">❌ Kan inte komma</h1>
+              </td></tr>
+              <tr><td style="padding: 0 60px 24px 60px;">
+                <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+              </td></tr>
+              <tr><td style="text-align: center; padding: 0 20px 40px 20px;">
+                <p style="margin: 0; font-size: 15px; color: #4a5c3d; font-family: Georgia, serif;">En gäst har svarat att de tyvärr inte kan komma.</p>
+              </td></tr>
+            </table>
+          </td></tr>
+        </table>
       </body>
       </html>
     `;
   }
 
   const guestRow = (guest: Guest, label: string) => `
-    <tr style="background: #f0f9f6;">
-      <td colspan="2" style="padding: 15px; font-weight: bold; color: #2d4a3e; border-bottom: 2px solid #2d4a3e;">
-        ${escapeHtml(label)}: ${escapeHtml(guest.name)}
+    <tr>
+      <td colspan="2" style="padding: 16px 20px 8px 20px; background: #fff9f1;">
+        <p style="margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #8fa882; font-family: Georgia, serif;">${escapeHtml(label)}</p>
+        <p style="margin: 4px 0 0 0; font-size: 18px; color: #1b2e00; font-weight: bold; font-family: Georgia, serif;">${escapeHtml(guest.name)}</p>
       </td>
     </tr>
     <tr>
-      <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Dagar</td>
-      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${getAttendanceDaysText(guest.attendanceDays)}</td>
+      <td style="padding: 8px 20px; color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif; border-top: 1px solid #4a5c3d15;">Dagar</td>
+      <td style="padding: 8px 20px; color: #1b2e00; font-size: 14px; font-family: Georgia, serif; border-top: 1px solid #4a5c3d15;">${getAttendanceDaysText(guest.attendanceDays)}</td>
     </tr>
     <tr>
-      <td style="padding: 10px 15px; font-weight: bold; border-bottom: 1px solid #ddd;">Allergier/Specialkost</td>
-      <td style="padding: 10px 15px; border-bottom: 1px solid #ddd;">${escapeHtml(guest.dietary) || "Inga"}</td>
+      <td style="padding: 8px 20px 16px 20px; color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">Kost</td>
+      <td style="padding: 8px 20px 16px 20px; color: #1b2e00; font-size: 14px; font-family: Georgia, serif;">${escapeHtml(guest.dietary) || "Inga"}</td>
     </tr>
   `;
 
   return `
     <!DOCTYPE html>
     <html>
-    <head>
-      <style>
-        body { font-family: Arial, sans-serif; color: #1a1a1a; margin: 0; padding: 0; }
-      </style>
-    </head>
-    <body>
-      <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: #22c55e; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0;">✅ Ny OSA - Kommer!</h1>
-        </div>
-        <div style="padding: 20px; background: #f8f6f3; border-radius: 0 0 8px 8px;">
-          <div style="margin-bottom: 15px;">
-            <strong>E-post:</strong> <a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a>
-          </div>
-          <div style="margin-bottom: 15px;">
-            <strong>Antal gäster:</strong> ${data.guests?.length || 1}
-          </div>
-          
-          <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: white; border-radius: 8px; overflow: hidden;">
-            ${mainGuest ? guestRow(mainGuest, "Huvudgäst") : ""}
-            ${partnerGuest ? guestRow(partnerGuest, "Partner") : ""}
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <body style="margin: 0; padding: 0; background-color: #fff9f1; font-family: Georgia, 'Times New Roman', serif;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #fff9f1;">
+        <tr><td align="center" style="padding: 40px 20px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px;">
+            
+            <!-- Header -->
+            <tr><td style="text-align: center; padding: 0 0 8px 0;">
+              <p style="margin: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 4px; color: #8fa882;">OSA Notifikation</p>
+            </td></tr>
+            <tr><td style="text-align: center; padding: 0 0 24px 0;">
+              <h1 style="margin: 0; font-size: 28px; color: #4a5c3d; font-family: Georgia, serif;">✅ Ny OSA — Kommer!</h1>
+            </td></tr>
+            <tr><td style="padding: 0 60px 24px 60px;">
+              <div style="border-top: 1px solid #4a5c3d40; width: 100%;"></div>
+            </td></tr>
+
+            <!-- Summary -->
+            <tr><td style="padding: 0 0 16px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; overflow: hidden;">
+                <tr>
+                  <td style="padding: 16px 20px; color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">E-post</td>
+                  <td style="padding: 16px 20px; font-family: Georgia, serif;"><a href="mailto:${escapeHtml(data.email)}" style="color: #4a5c3d; text-decoration: none;">${escapeHtml(data.email)}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 20px 16px 20px; color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif; border-top: 1px solid #4a5c3d15;">Antal gäster</td>
+                  <td style="padding: 8px 20px 16px 20px; color: #1b2e00; font-size: 14px; font-family: Georgia, serif; border-top: 1px solid #4a5c3d15;">${data.guests?.length || 1}</td>
+                </tr>
+              </table>
+            </td></tr>
+
+            <!-- Guest details -->
+            <tr><td style="padding: 0 0 16px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background: white; border: 1px solid #4a5c3d30; border-radius: 12px; overflow: hidden;">
+                ${mainGuest ? guestRow(mainGuest, "Huvudgäst") : ""}
+                ${partnerGuest ? `<tr><td colspan="2" style="padding: 0 20px;"><div style="border-top: 2px solid #4a5c3d20;"></div></td></tr>${guestRow(partnerGuest, "Partner")}` : ""}
+              </table>
+            </td></tr>
+
+            ${data.songRequest ? `
+            <tr><td style="padding: 0 0 12px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr><td style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; padding: 16px 20px;">
+                  <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">🎵 Låtönskemål</span><br/>
+                  <span style="color: #1b2e00; font-size: 14px; font-family: Georgia, serif;">${escapeHtml(data.songRequest)}</span>
+                </td></tr>
+              </table>
+            </td></tr>
+            ` : ""}
+
+            ${data.message ? `
+            <tr><td style="padding: 0 0 12px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr><td style="background: #fff9f1; border: 1px solid #4a5c3d30; border-radius: 12px; padding: 16px 20px;">
+                  <span style="color: #8fa882; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: Georgia, serif;">💬 Meddelande</span><br/>
+                  <span style="color: #1b2e00; font-size: 14px; font-family: Georgia, serif;">${escapeHtml(data.message)}</span>
+                </td></tr>
+              </table>
+            </td></tr>
+            ` : ""}
+
           </table>
-          
-          ${data.songRequest ? `
-          <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
-            <strong style="color: #2d4a3e;">🎵 Låtönskemål:</strong>
-            <p style="margin: 5px 0 0 0;">${escapeHtml(data.songRequest)}</p>
-          </div>
-          ` : ""}
-          
-          ${data.message ? `
-          <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
-            <strong style="color: #2d4a3e;">💬 Meddelande:</strong>
-            <p style="margin: 5px 0 0 0;">${escapeHtml(data.message)}</p>
-          </div>
-          ` : ""}
-        </div>
-      </div>
+        </td></tr>
+      </table>
     </body>
     </html>
   `;
